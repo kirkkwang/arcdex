@@ -1,0 +1,1959 @@
+{
+  "data": [
+    {
+      "id": "det1-1",
+      "name": "Bulbasaur",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "60",
+      "types": [
+        "Grass"
+      ],
+      "evolvesTo": [
+        "Ivysaur"
+      ],
+      "attacks": [
+        {
+          "name": "Find a Friend",
+          "cost": [
+            "Grass"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "",
+          "text": "Search your deck for a Grass Pokémon, reveal it, and put it into your hand. Then, shuffle your deck."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fire",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "det1",
+        "name": "Detective Pikachu",
+        "series": "Sun & Moon",
+        "printedTotal": 18,
+        "total": 18,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "DET",
+        "releaseDate": "2019/04/05",
+        "updatedAt": "2021/09/01 05:37:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/det1/symbol.png",
+          "logo": "https://images.pokemontcg.io/det1/logo.png"
+        }
+      },
+      "number": "1",
+      "artist": "MPC Film",
+      "rarity": "Common",
+      "flavorText": "A strange seed was planted on its back at birth. The plant sprouts and grows with this Pokémon.",
+      "nationalPokedexNumbers": [
+        1
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/det1/1.png",
+        "large": "https://images.pokemontcg.io/det1/1_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/det1-1",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 0.15,
+            "mid": 0.5,
+            "high": 8.42,
+            "market": 0.74,
+            "directLow": 0.35
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/det1-1",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 0.32,
+          "lowPrice": 0.02,
+          "trendPrice": 0.59,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.21,
+          "reverseHoloLow": 0.02,
+          "reverseHoloTrend": 0.42,
+          "lowPriceExPlus": 0.02,
+          "avg1": 0.51,
+          "avg7": 0.53,
+          "avg30": 0.35,
+          "reverseHoloAvg1": 0.02,
+          "reverseHoloAvg7": 0.36,
+          "reverseHoloAvg30": 0.51
+        }
+      }
+    },
+    {
+      "id": "det1-2",
+      "name": "Ludicolo",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": "140",
+      "types": [
+        "Grass"
+      ],
+      "evolvesFrom": "Lombre",
+      "abilities": [
+        {
+          "name": "Table Service",
+          "text": "Once during your turn (before your attack), you may heal 30 damage from 1 of your Pokémon.",
+          "type": "Ability"
+        }
+      ],
+      "attacks": [
+        {
+          "name": "Punch and Run",
+          "cost": [
+            "Grass",
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 3,
+          "damage": "70",
+          "text": "Switch this Pokémon with 1 of your Benched Pokémon."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fire",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless",
+        "Colorless",
+        "Colorless"
+      ],
+      "convertedRetreatCost": 3,
+      "set": {
+        "id": "det1",
+        "name": "Detective Pikachu",
+        "series": "Sun & Moon",
+        "printedTotal": 18,
+        "total": 18,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "DET",
+        "releaseDate": "2019/04/05",
+        "updatedAt": "2021/09/01 05:37:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/det1/symbol.png",
+          "logo": "https://images.pokemontcg.io/det1/logo.png"
+        }
+      },
+      "number": "2",
+      "artist": "Framestore",
+      "rarity": "Rare",
+      "flavorText": "If it hears festive music, all its muscles fill with energy. It can't help breaking out into a dance.",
+      "nationalPokedexNumbers": [
+        272
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/det1/2.png",
+        "large": "https://images.pokemontcg.io/det1/2_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/det1-2",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 0.38,
+            "mid": 0.68,
+            "high": 3.95,
+            "market": 0.73,
+            "directLow": 0.53
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/det1-2",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 1.28,
+          "lowPrice": 0.19,
+          "trendPrice": 1.35,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 2.0,
+          "reverseHoloLow": 0.65,
+          "reverseHoloTrend": 1.7,
+          "lowPriceExPlus": 0.35,
+          "avg1": 1.91,
+          "avg7": 1.46,
+          "avg30": 1.39,
+          "reverseHoloAvg1": 2.0,
+          "reverseHoloAvg7": 1.61,
+          "reverseHoloAvg30": 2.06
+        }
+      }
+    },
+    {
+      "id": "det1-3",
+      "name": "Morelull",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "50",
+      "types": [
+        "Grass"
+      ],
+      "evolvesTo": [
+        "Shiinotic"
+      ],
+      "attacks": [
+        {
+          "name": "Sleep Spore",
+          "cost": [
+            "Grass"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "10",
+          "text": "Your opponent's Active Pokémon is now Asleep."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fire",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "det1",
+        "name": "Detective Pikachu",
+        "series": "Sun & Moon",
+        "printedTotal": 18,
+        "total": 18,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "DET",
+        "releaseDate": "2019/04/05",
+        "updatedAt": "2021/09/01 05:37:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/det1/symbol.png",
+          "logo": "https://images.pokemontcg.io/det1/logo.png"
+        }
+      },
+      "number": "3",
+      "artist": "MPC Film",
+      "rarity": "Common",
+      "flavorText": "It scatters its shining spores around itself. Even though they're dangerous, nighttime tours of forests where Morelull live are popular.",
+      "nationalPokedexNumbers": [
+        755
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/det1/3.png",
+        "large": "https://images.pokemontcg.io/det1/3_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/det1-3",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 0.04,
+            "mid": 0.25,
+            "high": 100.0,
+            "market": 0.18,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/det1-3",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 0.14,
+          "lowPrice": 0.02,
+          "trendPrice": 0.1,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.29,
+          "reverseHoloLow": 0.02,
+          "reverseHoloTrend": 0.42,
+          "lowPriceExPlus": 0.02,
+          "avg1": 0.15,
+          "avg7": 0.12,
+          "avg30": 0.16,
+          "reverseHoloAvg1": 0.7,
+          "reverseHoloAvg7": 0.4,
+          "reverseHoloAvg30": 0.22
+        }
+      }
+    },
+    {
+      "id": "det1-4",
+      "name": "Charmander",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "60",
+      "types": [
+        "Fire"
+      ],
+      "evolvesTo": [
+        "Charmeleon"
+      ],
+      "attacks": [
+        {
+          "name": "Reckless Charge",
+          "cost": [
+            "Colorless"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "20",
+          "text": "This Pokémon does 10 damage to itself."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Water",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "det1",
+        "name": "Detective Pikachu",
+        "series": "Sun & Moon",
+        "printedTotal": 18,
+        "total": 18,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "DET",
+        "releaseDate": "2019/04/05",
+        "updatedAt": "2021/09/01 05:37:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/det1/symbol.png",
+          "logo": "https://images.pokemontcg.io/det1/logo.png"
+        }
+      },
+      "number": "4",
+      "artist": "MPC Film",
+      "rarity": "Common",
+      "flavorText": "The flame on its tail indicates Charmander's life force. If it is healthy, the flame burns brightly.",
+      "nationalPokedexNumbers": [
+        4
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/det1/4.png",
+        "large": "https://images.pokemontcg.io/det1/4_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/det1-4",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 0.06,
+            "mid": 0.33,
+            "high": 65.0,
+            "market": 0.3,
+            "directLow": 0.3
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/det1-4",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 0.26,
+          "lowPrice": 0.02,
+          "trendPrice": 0.4,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.26,
+          "reverseHoloLow": 0.02,
+          "reverseHoloTrend": 0.13,
+          "lowPriceExPlus": 0.02,
+          "avg1": 0.36,
+          "avg7": 0.45,
+          "avg30": 0.28,
+          "reverseHoloAvg1": 0.35,
+          "reverseHoloAvg7": 0.3,
+          "reverseHoloAvg30": 0.47
+        }
+      }
+    },
+    {
+      "id": "det1-5",
+      "name": "Charizard",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": "180",
+      "types": [
+        "Fire"
+      ],
+      "evolvesFrom": "Charmeleon",
+      "attacks": [
+        {
+          "name": "Slash",
+          "cost": [
+            "Fire",
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 3,
+          "damage": "70",
+          "text": ""
+        },
+        {
+          "name": "Wild Tackle",
+          "cost": [
+            "Fire",
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 4,
+          "damage": "180",
+          "text": "This Pokémon does 50 damage to itself."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Water",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless",
+        "Colorless",
+        "Colorless"
+      ],
+      "convertedRetreatCost": 3,
+      "set": {
+        "id": "det1",
+        "name": "Detective Pikachu",
+        "series": "Sun & Moon",
+        "printedTotal": 18,
+        "total": 18,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "DET",
+        "releaseDate": "2019/04/05",
+        "updatedAt": "2021/09/01 05:37:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/det1/symbol.png",
+          "logo": "https://images.pokemontcg.io/det1/logo.png"
+        }
+      },
+      "number": "5",
+      "artist": "Framestore",
+      "rarity": "Rare Ultra",
+      "flavorText": "When expelling a blast of superhot fire, the red flame at the tip of its tail burns more intensely.",
+      "nationalPokedexNumbers": [
+        6
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/det1/5.png",
+        "large": "https://images.pokemontcg.io/det1/5_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/det1-5",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 5.0,
+            "mid": 8.01,
+            "high": 19.95,
+            "market": 8.35,
+            "directLow": 6.2
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/det1-5",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 10.09,
+          "lowPrice": 2.25,
+          "trendPrice": 8.78,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 17.65,
+          "lowPriceExPlus": 5.0,
+          "avg1": 11.3,
+          "avg7": 8.59,
+          "avg30": 10.37,
+          "reverseHoloAvg1": 17.45,
+          "reverseHoloAvg7": 18.32,
+          "reverseHoloAvg30": 18.7
+        }
+      }
+    },
+    {
+      "id": "det1-6",
+      "name": "Arcanine",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": "120",
+      "types": [
+        "Fire"
+      ],
+      "evolvesFrom": "Growlithe",
+      "abilities": [
+        {
+          "name": "Security Guard",
+          "text": "As long as this Pokémon is your Active Pokémon, all of your Pokémon take 30 less damage from your opponent's attacks (after applying Weakness and Resistance).",
+          "type": "Ability"
+        }
+      ],
+      "attacks": [
+        {
+          "name": "Sharp Fang",
+          "cost": [
+            "Fire",
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 3,
+          "damage": "90",
+          "text": ""
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Water",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless",
+        "Colorless",
+        "Colorless"
+      ],
+      "convertedRetreatCost": 3,
+      "set": {
+        "id": "det1",
+        "name": "Detective Pikachu",
+        "series": "Sun & Moon",
+        "printedTotal": 18,
+        "total": 18,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "DET",
+        "releaseDate": "2019/04/05",
+        "updatedAt": "2021/09/01 05:37:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/det1/symbol.png",
+          "logo": "https://images.pokemontcg.io/det1/logo.png"
+        }
+      },
+      "number": "6",
+      "artist": "MPC Film",
+      "rarity": "Rare",
+      "flavorText": "Legends tell of its fighting alongside a general and conquering a whole country.",
+      "nationalPokedexNumbers": [
+        59
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/det1/6.png",
+        "large": "https://images.pokemontcg.io/det1/6_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/det1-6",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 0.87,
+            "mid": 1.88,
+            "high": 5.0,
+            "market": 1.93,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/det1-6",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 2.63,
+          "lowPrice": 0.4,
+          "trendPrice": 3.36,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 8.5,
+          "reverseHoloLow": 3.0,
+          "reverseHoloTrend": 5.67,
+          "lowPriceExPlus": 0.9,
+          "avg1": 3.2,
+          "avg7": 3.65,
+          "avg30": 2.66,
+          "reverseHoloAvg1": 8.5,
+          "reverseHoloAvg7": 4.26,
+          "reverseHoloAvg30": 5.27
+        }
+      }
+    },
+    {
+      "id": "det1-7",
+      "name": "Psyduck",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "80",
+      "types": [
+        "Water"
+      ],
+      "evolvesTo": [
+        "Golduck"
+      ],
+      "attacks": [
+        {
+          "name": "Panic",
+          "cost": [
+            "Water"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "10",
+          "text": "This Pokémon is now Confused."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Grass",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless",
+        "Colorless",
+        "Colorless"
+      ],
+      "convertedRetreatCost": 3,
+      "set": {
+        "id": "det1",
+        "name": "Detective Pikachu",
+        "series": "Sun & Moon",
+        "printedTotal": 18,
+        "total": 18,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "DET",
+        "releaseDate": "2019/04/05",
+        "updatedAt": "2021/09/01 05:37:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/det1/symbol.png",
+          "logo": "https://images.pokemontcg.io/det1/logo.png"
+        }
+      },
+      "number": "7",
+      "artist": "Framestore",
+      "rarity": "Common",
+      "flavorText": "Using psychokinesis gives it a headache, so it normally passes the time spacing out and doing as little as possible.",
+      "nationalPokedexNumbers": [
+        54
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/det1/7.png",
+        "large": "https://images.pokemontcg.io/det1/7_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/det1-7",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 0.05,
+            "mid": 0.32,
+            "high": 2.0,
+            "market": 0.38,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/det1-7",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 0.3,
+          "lowPrice": 0.02,
+          "trendPrice": 0.45,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.49,
+          "reverseHoloLow": 0.05,
+          "reverseHoloTrend": 0.38,
+          "lowPriceExPlus": 0.02,
+          "avg1": 0.49,
+          "avg7": 0.29,
+          "avg30": 0.3,
+          "reverseHoloAvg1": 0.03,
+          "reverseHoloAvg7": 0.44,
+          "reverseHoloAvg30": 0.38
+        }
+      }
+    },
+    {
+      "id": "det1-8",
+      "name": "Magikarp",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "30",
+      "types": [
+        "Water"
+      ],
+      "evolvesTo": [
+        "Gyarados"
+      ],
+      "attacks": [
+        {
+          "name": "Hold Still",
+          "cost": [
+            "Water"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "",
+          "text": "Heal 10 damage from this Pokémon."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Lightning",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "det1",
+        "name": "Detective Pikachu",
+        "series": "Sun & Moon",
+        "printedTotal": 18,
+        "total": 18,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "DET",
+        "releaseDate": "2019/04/05",
+        "updatedAt": "2021/09/01 05:37:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/det1/symbol.png",
+          "logo": "https://images.pokemontcg.io/det1/logo.png"
+        }
+      },
+      "number": "8",
+      "artist": "Framestore",
+      "rarity": "Common",
+      "flavorText": "In the distant past, they were fairly strong, but they have become gradually weaker over time.",
+      "nationalPokedexNumbers": [
+        129
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/det1/8.png",
+        "large": "https://images.pokemontcg.io/det1/8_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/det1-8",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 0.04,
+            "mid": 0.3,
+            "high": 100.0,
+            "market": 0.3,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/det1-8",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 0.16,
+          "lowPrice": 0.02,
+          "trendPrice": 0.13,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.4,
+          "reverseHoloLow": 0.03,
+          "reverseHoloTrend": 0.32,
+          "lowPriceExPlus": 0.02,
+          "avg1": 0.24,
+          "avg7": 0.14,
+          "avg30": 0.17,
+          "reverseHoloAvg1": 1.45,
+          "reverseHoloAvg7": 0.37,
+          "reverseHoloAvg30": 0.23
+        }
+      }
+    },
+    {
+      "id": "det1-9",
+      "name": "Greninja",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": "140",
+      "types": [
+        "Water"
+      ],
+      "evolvesFrom": "Frogadier",
+      "abilities": [
+        {
+          "name": "Evasion Jutsu",
+          "text": "If any damage is done to this Pokémon by attacks, flip a coin. If heads, prevent that damage.",
+          "type": "Ability"
+        }
+      ],
+      "attacks": [
+        {
+          "name": "Furious Shurikens",
+          "cost": [
+            "Water",
+            "Water"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "",
+          "text": "This attack does 50 damage to 2 of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Grass",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "det1",
+        "name": "Detective Pikachu",
+        "series": "Sun & Moon",
+        "printedTotal": 18,
+        "total": 18,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "DET",
+        "releaseDate": "2019/04/05",
+        "updatedAt": "2021/09/01 05:37:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/det1/symbol.png",
+          "logo": "https://images.pokemontcg.io/det1/logo.png"
+        }
+      },
+      "number": "9",
+      "artist": "MPC Film",
+      "rarity": "Rare Ultra",
+      "flavorText": "It creates throwing stars out of compressed water. When it spins them and throws them at high speed, these stars can split metal in two.",
+      "nationalPokedexNumbers": [
+        658
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/det1/9.png",
+        "large": "https://images.pokemontcg.io/det1/9_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/det1-9",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 2.5,
+            "mid": 4.0,
+            "high": 8.0,
+            "market": 4.27,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/det1-9",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 5.52,
+          "lowPrice": 1.5,
+          "trendPrice": 5.78,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 7.96,
+          "lowPriceExPlus": 3.0,
+          "avg1": 5.9,
+          "avg7": 5.46,
+          "avg30": 5.26,
+          "reverseHoloAvg1": 7.5,
+          "reverseHoloAvg7": 8.61,
+          "reverseHoloAvg30": 7.15
+        }
+      }
+    },
+    {
+      "id": "det1-10",
+      "name": "Detective Pikachu",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "90",
+      "types": [
+        "Lightning"
+      ],
+      "evolvesTo": [
+        "Raichu"
+      ],
+      "attacks": [
+        {
+          "name": "Scout",
+          "cost": [
+            "Lightning"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "",
+          "text": "Your opponent reveals their hand."
+        },
+        {
+          "name": "Surprise Attack",
+          "cost": [
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 3,
+          "damage": "80",
+          "text": "Flip a coin. If tails, this attack does nothing."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fighting",
+          "value": "×2"
+        }
+      ],
+      "resistances": [
+        {
+          "type": "Metal",
+          "value": "-20"
+        }
+      ],
+      "retreatCost": [
+        "Colorless",
+        "Colorless"
+      ],
+      "convertedRetreatCost": 2,
+      "set": {
+        "id": "det1",
+        "name": "Detective Pikachu",
+        "series": "Sun & Moon",
+        "printedTotal": 18,
+        "total": 18,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "DET",
+        "releaseDate": "2019/04/05",
+        "updatedAt": "2021/09/01 05:37:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/det1/symbol.png",
+          "logo": "https://images.pokemontcg.io/det1/logo.png"
+        }
+      },
+      "number": "10",
+      "artist": "MPC Film",
+      "rarity": "Rare",
+      "flavorText": "He loves to show off his vast knowledge. This expressive Pikachu is like a middle-aged man.",
+      "nationalPokedexNumbers": [
+        25
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/det1/10.png",
+        "large": "https://images.pokemontcg.io/det1/10_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/det1-10",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 2.0,
+            "mid": 4.05,
+            "high": 9.99,
+            "market": 4.12,
+            "directLow": 4.19
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/det1-10",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 7.92,
+          "lowPrice": 0.99,
+          "trendPrice": 8.09,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 11.33,
+          "reverseHoloLow": 9.99,
+          "reverseHoloTrend": 8.72,
+          "lowPriceExPlus": 3.9,
+          "avg1": 7.49,
+          "avg7": 8.79,
+          "avg30": 7.76,
+          "reverseHoloAvg1": 5.0,
+          "reverseHoloAvg7": 9.35,
+          "reverseHoloAvg30": 8.32
+        }
+      }
+    },
+    {
+      "id": "det1-11",
+      "name": "Mr. Mime",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "80",
+      "types": [
+        "Psychic"
+      ],
+      "abilities": [
+        {
+          "name": "Pantomime",
+          "text": "When you play this Pokémon from your hand onto your Bench during your turn, you may switch 1 of your face-down Prize cards with the top card of your deck.",
+          "type": "Ability"
+        }
+      ],
+      "attacks": [
+        {
+          "name": "Juggling",
+          "cost": [
+            "Psychic",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "20×",
+          "text": "Flip 4 coins. This attack does 20 damage for each heads."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Psychic",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "det1",
+        "name": "Detective Pikachu",
+        "series": "Sun & Moon",
+        "printedTotal": 18,
+        "total": 18,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "DET",
+        "releaseDate": "2019/04/05",
+        "updatedAt": "2021/09/01 05:37:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/det1/symbol.png",
+          "logo": "https://images.pokemontcg.io/det1/logo.png"
+        }
+      },
+      "number": "11",
+      "artist": "MPC Film",
+      "rarity": "Rare",
+      "flavorText": "Its pantomime skills are wonderful. You may become enraptured while watching it, but next thing you know, Mr. Mime has made a real wall.",
+      "nationalPokedexNumbers": [
+        122
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/det1/11.png",
+        "large": "https://images.pokemontcg.io/det1/11_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/det1-11",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 0.5,
+            "mid": 1.23,
+            "high": 5.0,
+            "market": 1.23,
+            "directLow": 0.75
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/det1-11",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 1.86,
+          "lowPrice": 0.19,
+          "trendPrice": 2.6,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 1.6,
+          "reverseHoloLow": 1.0,
+          "reverseHoloTrend": 2.22,
+          "lowPriceExPlus": 0.5,
+          "avg1": 2.99,
+          "avg7": 2.58,
+          "avg30": 1.96,
+          "reverseHoloAvg1": 1.6,
+          "reverseHoloAvg7": 1.96,
+          "reverseHoloAvg30": 2.86
+        }
+      }
+    },
+    {
+      "id": "det1-12",
+      "name": "Mewtwo",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "130",
+      "types": [
+        "Psychic"
+      ],
+      "attacks": [
+        {
+          "name": "Psyjack",
+          "cost": [
+            "Psychic",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "30",
+          "text": "Choose 1 of your opponent's Active Pokémon's attacks. That Pokémon can't use that attack during your opponent's next turn."
+        },
+        {
+          "name": "Break Burn",
+          "cost": [
+            "Psychic",
+            "Psychic",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 3,
+          "damage": "130",
+          "text": "Discard 2 Psychic Energy from this Pokémon."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Psychic",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless",
+        "Colorless"
+      ],
+      "convertedRetreatCost": 2,
+      "set": {
+        "id": "det1",
+        "name": "Detective Pikachu",
+        "series": "Sun & Moon",
+        "printedTotal": 18,
+        "total": 18,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "DET",
+        "releaseDate": "2019/04/05",
+        "updatedAt": "2021/09/01 05:37:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/det1/symbol.png",
+          "logo": "https://images.pokemontcg.io/det1/logo.png"
+        }
+      },
+      "number": "12",
+      "artist": "MPC Film",
+      "rarity": "Rare Ultra",
+      "flavorText": "This Pokémon was created by years of horrific gene splicing and DNA engineering experiments.",
+      "nationalPokedexNumbers": [
+        150
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/det1/12.png",
+        "large": "https://images.pokemontcg.io/det1/12_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/det1-12",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 3.0,
+            "mid": 4.25,
+            "high": 9.95,
+            "market": 4.44,
+            "directLow": 4.09
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/det1-12",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 7.53,
+          "lowPrice": 1.9,
+          "trendPrice": 7.18,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 10.41,
+          "lowPriceExPlus": 4.0,
+          "avg1": 5.8,
+          "avg7": 7.03,
+          "avg30": 6.52,
+          "reverseHoloAvg1": 6.63,
+          "reverseHoloAvg7": 9.97,
+          "reverseHoloAvg30": 9.86
+        }
+      }
+    },
+    {
+      "id": "det1-13",
+      "name": "Machamp",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": "160",
+      "types": [
+        "Fighting"
+      ],
+      "evolvesFrom": "Machoke",
+      "attacks": [
+        {
+          "name": "Directing Traffic",
+          "cost": [
+            "Fighting"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "",
+          "text": "Look at the top 5 cards of your deck and put them back in any order."
+        },
+        {
+          "name": "Cross Chop",
+          "cost": [
+            "Fighting",
+            "Fighting"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "80+",
+          "text": "Flip a coin. If heads, this attack does 60 more damage."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Psychic",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless",
+        "Colorless"
+      ],
+      "convertedRetreatCost": 2,
+      "set": {
+        "id": "det1",
+        "name": "Detective Pikachu",
+        "series": "Sun & Moon",
+        "printedTotal": 18,
+        "total": 18,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "DET",
+        "releaseDate": "2019/04/05",
+        "updatedAt": "2021/09/01 05:37:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/det1/symbol.png",
+          "logo": "https://images.pokemontcg.io/det1/logo.png"
+        }
+      },
+      "number": "13",
+      "artist": "MPC Film",
+      "rarity": "Rare",
+      "flavorText": "It grasps its opponents with its four arms and twists them up in an intricate hold. People call it \"the Machamp special.\"",
+      "nationalPokedexNumbers": [
+        68
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/det1/13.png",
+        "large": "https://images.pokemontcg.io/det1/13_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/det1-13",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 0.43,
+            "mid": 1.01,
+            "high": 3.95,
+            "market": 1.2,
+            "directLow": 0.5
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/det1-13",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 1.42,
+          "lowPrice": 0.15,
+          "trendPrice": 1.51,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 1.6,
+          "reverseHoloLow": 0.5,
+          "reverseHoloTrend": 1.76,
+          "lowPriceExPlus": 0.5,
+          "avg1": 0.86,
+          "avg7": 1.58,
+          "avg30": 1.32,
+          "reverseHoloAvg1": 2.0,
+          "reverseHoloAvg7": 1.77,
+          "reverseHoloAvg30": 2.02
+        }
+      }
+    },
+    {
+      "id": "det1-14",
+      "name": "Jigglypuff",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "60",
+      "types": [
+        "Fairy"
+      ],
+      "evolvesTo": [
+        "Wigglytuff"
+      ],
+      "attacks": [
+        {
+          "name": "Healing Melody",
+          "cost": [
+            "Fairy"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "",
+          "text": "Heal 10 damage from each of your Pokémon."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Metal",
+          "value": "×2"
+        }
+      ],
+      "resistances": [
+        {
+          "type": "Darkness",
+          "value": "-20"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "det1",
+        "name": "Detective Pikachu",
+        "series": "Sun & Moon",
+        "printedTotal": 18,
+        "total": 18,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "DET",
+        "releaseDate": "2019/04/05",
+        "updatedAt": "2021/09/01 05:37:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/det1/symbol.png",
+          "logo": "https://images.pokemontcg.io/det1/logo.png"
+        }
+      },
+      "number": "14",
+      "artist": "Framestore",
+      "rarity": "Common",
+      "flavorText": "Recordings of Jigglypuff's strange lullabies can be purchased from department stores. These CDs can be found near the bedding area.",
+      "nationalPokedexNumbers": [
+        39
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/det1/14.png",
+        "large": "https://images.pokemontcg.io/det1/14_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/det1-14",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 0.03,
+            "mid": 0.25,
+            "high": 35.0,
+            "market": 0.25,
+            "directLow": 0.25
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/det1-14",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 0.19,
+          "lowPrice": 0.02,
+          "trendPrice": 0.21,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.28,
+          "reverseHoloLow": 0.02,
+          "reverseHoloTrend": 0.26,
+          "lowPriceExPlus": 0.02,
+          "avg1": 0.17,
+          "avg7": 0.19,
+          "avg30": 0.2,
+          "reverseHoloAvg1": 0.13,
+          "reverseHoloAvg7": 0.23,
+          "reverseHoloAvg30": 0.27
+        }
+      }
+    },
+    {
+      "id": "det1-15",
+      "name": "Snubbull",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "70",
+      "types": [
+        "Fairy"
+      ],
+      "evolvesTo": [
+        "Granbull"
+      ],
+      "attacks": [
+        {
+          "name": "Play Rough",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "10+",
+          "text": "Flip a coin. If heads, this attack does 30 more damage."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Metal",
+          "value": "×2"
+        }
+      ],
+      "resistances": [
+        {
+          "type": "Darkness",
+          "value": "-20"
+        }
+      ],
+      "retreatCost": [
+        "Colorless",
+        "Colorless"
+      ],
+      "convertedRetreatCost": 2,
+      "set": {
+        "id": "det1",
+        "name": "Detective Pikachu",
+        "series": "Sun & Moon",
+        "printedTotal": 18,
+        "total": 18,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "DET",
+        "releaseDate": "2019/04/05",
+        "updatedAt": "2021/09/01 05:37:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/det1/symbol.png",
+          "logo": "https://images.pokemontcg.io/det1/logo.png"
+        }
+      },
+      "number": "15",
+      "artist": "Framestore",
+      "rarity": "Common",
+      "flavorText": "It grows close to others easily and is also easily spoiled. The disparity between its face and its actions makes many young people wild about it.",
+      "nationalPokedexNumbers": [
+        209
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/det1/15.png",
+        "large": "https://images.pokemontcg.io/det1/15_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/det1-15",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 0.07,
+            "mid": 0.25,
+            "high": 30.0,
+            "market": 0.25,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/det1-15",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 0.17,
+          "lowPrice": 0.02,
+          "trendPrice": 0.22,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.38,
+          "reverseHoloLow": 0.02,
+          "reverseHoloTrend": 0.24,
+          "lowPriceExPlus": 0.02,
+          "avg1": 0.18,
+          "avg7": 0.23,
+          "avg30": 0.18,
+          "reverseHoloAvg1": 0.45,
+          "reverseHoloAvg7": 0.29,
+          "reverseHoloAvg30": 0.15
+        }
+      }
+    },
+    {
+      "id": "det1-16",
+      "name": "Lickitung",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "100",
+      "types": [
+        "Colorless"
+      ],
+      "evolvesTo": [
+        "Lickilicky"
+      ],
+      "attacks": [
+        {
+          "name": "Continuous Lick",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "20×",
+          "text": "Flip a coin until you get tails. This attack does 20 damage for each heads."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fighting",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless",
+        "Colorless",
+        "Colorless"
+      ],
+      "convertedRetreatCost": 3,
+      "set": {
+        "id": "det1",
+        "name": "Detective Pikachu",
+        "series": "Sun & Moon",
+        "printedTotal": 18,
+        "total": 18,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "DET",
+        "releaseDate": "2019/04/05",
+        "updatedAt": "2021/09/01 05:37:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/det1/symbol.png",
+          "logo": "https://images.pokemontcg.io/det1/logo.png"
+        }
+      },
+      "number": "16",
+      "artist": "MPC Film",
+      "rarity": "Common",
+      "flavorText": "It checks out whatever's around it by licking everything. If you don't clean off a spot where it's licked you, you'll break out in a rash!",
+      "nationalPokedexNumbers": [
+        108
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/det1/16.png",
+        "large": "https://images.pokemontcg.io/det1/16_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/det1-16",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 0.02,
+            "mid": 0.25,
+            "high": 30.0,
+            "market": 0.24,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/det1-16",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 0.19,
+          "lowPrice": 0.02,
+          "trendPrice": 0.23,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.23,
+          "reverseHoloLow": 0.02,
+          "reverseHoloTrend": 0.28,
+          "lowPriceExPlus": 0.02,
+          "avg1": 0.31,
+          "avg7": 0.24,
+          "avg30": 0.19,
+          "reverseHoloAvg1": 0.2,
+          "reverseHoloAvg7": 0.22,
+          "reverseHoloAvg30": 0.21
+        }
+      }
+    },
+    {
+      "id": "det1-17",
+      "name": "Ditto",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "60",
+      "types": [
+        "Colorless"
+      ],
+      "attacks": [
+        {
+          "name": "Copy Anything",
+          "cost": [
+            "Colorless"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "",
+          "text": "Choose 1 of your opponent's Pokémon's attacks and use it as this attack. If this Pokémon doesn't have the necessary Energy to use that attack, this attack does nothing."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fighting",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "det1",
+        "name": "Detective Pikachu",
+        "series": "Sun & Moon",
+        "printedTotal": 18,
+        "total": 18,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "DET",
+        "releaseDate": "2019/04/05",
+        "updatedAt": "2021/09/01 05:37:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/det1/symbol.png",
+          "logo": "https://images.pokemontcg.io/det1/logo.png"
+        }
+      },
+      "number": "17",
+      "artist": "MPC Film",
+      "rarity": "Rare Ultra",
+      "flavorText": "While it can transform into anything, each Ditto apparently has its own strengths and weaknesses when it comes to transformations.",
+      "nationalPokedexNumbers": [
+        132
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/det1/17.png",
+        "large": "https://images.pokemontcg.io/det1/17_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/det1-17",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 2.5,
+            "mid": 3.74,
+            "high": 7.45,
+            "market": 3.69,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/det1-17",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 5.12,
+          "lowPrice": 1.0,
+          "trendPrice": 5.27,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 6.08,
+          "lowPriceExPlus": 2.0,
+          "avg1": 4.7,
+          "avg7": 5.43,
+          "avg30": 4.51,
+          "reverseHoloAvg1": 6.73,
+          "reverseHoloAvg7": 5.59,
+          "reverseHoloAvg30": 6.54
+        }
+      }
+    },
+    {
+      "id": "det1-18",
+      "name": "Slaking",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": "180",
+      "types": [
+        "Colorless"
+      ],
+      "evolvesFrom": "Vigoroth",
+      "attacks": [
+        {
+          "name": "Pitch",
+          "cost": [
+            "Colorless",
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 4,
+          "damage": "150",
+          "text": "Your opponent switches their Active Pokémon with 1 of their Benched Pokémon."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fighting",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless",
+        "Colorless",
+        "Colorless",
+        "Colorless"
+      ],
+      "convertedRetreatCost": 4,
+      "set": {
+        "id": "det1",
+        "name": "Detective Pikachu",
+        "series": "Sun & Moon",
+        "printedTotal": 18,
+        "total": 18,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "DET",
+        "releaseDate": "2019/04/05",
+        "updatedAt": "2021/09/01 05:37:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/det1/symbol.png",
+          "logo": "https://images.pokemontcg.io/det1/logo.png"
+        }
+      },
+      "number": "18",
+      "artist": "Framestore",
+      "rarity": "Rare",
+      "flavorText": "The world's laziest Pokémon. It moves to another spot when there's no food left within its reach.",
+      "nationalPokedexNumbers": [
+        289
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/det1/18.png",
+        "large": "https://images.pokemontcg.io/det1/18_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/det1-18",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 0.3,
+            "mid": 0.76,
+            "high": 3.95,
+            "market": 0.84,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/det1-18",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 2.01,
+          "lowPrice": 0.2,
+          "trendPrice": 2.14,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 1.0,
+          "reverseHoloTrend": 1.72,
+          "lowPriceExPlus": 0.9,
+          "avg1": 4.3,
+          "avg7": 2.0,
+          "avg30": 1.97,
+          "reverseHoloAvg1": 1.0,
+          "reverseHoloAvg7": 1.75,
+          "reverseHoloAvg30": 2.05
+        }
+      }
+    }
+  ],
+  "totalCount": 18
+}

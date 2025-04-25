@@ -1,0 +1,2842 @@
+{
+  "data": [
+    {
+      "id": "mcd21-4",
+      "name": "Turtwig",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "80",
+      "types": [
+        "Grass"
+      ],
+      "evolvesTo": [
+        "Grotle"
+      ],
+      "attacks": [
+        {
+          "name": "Tackle",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "20",
+          "text": ""
+        },
+        {
+          "name": "Razor Leaf",
+          "cost": [
+            "Grass",
+            "Grass",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 3,
+          "damage": "50",
+          "text": ""
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fire",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless",
+        "Colorless"
+      ],
+      "convertedRetreatCost": 2,
+      "set": {
+        "id": "mcd21",
+        "name": "McDonald's Collection 2021",
+        "series": "Other",
+        "printedTotal": 25,
+        "total": 25,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2021/02/09",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd21/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd21/logo.png"
+        }
+      },
+      "number": "4",
+      "artist": "OOYAMA",
+      "flavorText": "It undertakes photosynthesis with its body, making oxygen. The leaf on its head wilts if it is thirsty.",
+      "nationalPokedexNumbers": [
+        387
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd21/4.png",
+        "large": "https://images.pokemontcg.io/mcd21/4_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd21-4",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "normal": {
+            "low": 0.2,
+            "mid": 0.38,
+            "high": 2.0,
+            "market": 0.38,
+            "directLow": null
+          },
+          "holofoil": {
+            "low": 0.37,
+            "mid": 1.24,
+            "high": 5.0,
+            "market": 1.03,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd21-4",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 1.04,
+          "lowPrice": 0.2,
+          "trendPrice": 1.17,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 0.51,
+          "lowPriceExPlus": 0.2,
+          "avg1": 1.0,
+          "avg7": 0.98,
+          "avg30": 0.97,
+          "reverseHoloAvg1": 2.99,
+          "reverseHoloAvg7": 2.79,
+          "reverseHoloAvg30": 3.74
+        }
+      }
+    },
+    {
+      "id": "mcd21-3",
+      "name": "Treecko",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "60",
+      "types": [
+        "Grass"
+      ],
+      "evolvesTo": [
+        "Grovyle"
+      ],
+      "attacks": [
+        {
+          "name": "Quick Attack",
+          "cost": [
+            "Grass"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "10+",
+          "text": "Flip a coin. If heads, this attack does 10 more damage."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fire",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "mcd21",
+        "name": "McDonald's Collection 2021",
+        "series": "Other",
+        "printedTotal": 25,
+        "total": 25,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2021/02/09",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd21/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd21/logo.png"
+        }
+      },
+      "number": "3",
+      "artist": "Akira Komayama",
+      "flavorText": "Small hooks on the bottom of its feet catch on walls and ceilings. That is how it can hang from above.",
+      "nationalPokedexNumbers": [
+        252
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd21/3.png",
+        "large": "https://images.pokemontcg.io/mcd21/3_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd21-3",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "normal": {
+            "low": 0.05,
+            "mid": 0.3,
+            "high": 2.0,
+            "market": 0.25,
+            "directLow": null
+          },
+          "holofoil": {
+            "low": 1.45,
+            "mid": 2.59,
+            "high": 19.99,
+            "market": 2.07,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd21-3",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 0.21,
+          "lowPrice": 0.02,
+          "trendPrice": 0.19,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 5.48,
+          "lowPriceExPlus": 0.02,
+          "avg1": 0.06,
+          "avg7": 0.18,
+          "avg30": 0.2,
+          "reverseHoloAvg1": 4.35,
+          "reverseHoloAvg7": 5.56,
+          "reverseHoloAvg30": 5.08
+        }
+      }
+    },
+    {
+      "id": "mcd21-13",
+      "name": "Tepig",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "70",
+      "types": [
+        "Fire"
+      ],
+      "evolvesTo": [
+        "Pignite"
+      ],
+      "attacks": [
+        {
+          "name": "Ember",
+          "cost": [
+            "Fire",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "30",
+          "text": "Discard an Energy attached to this Pokémon."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Water",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless",
+        "Colorless"
+      ],
+      "convertedRetreatCost": 2,
+      "set": {
+        "id": "mcd21",
+        "name": "McDonald's Collection 2021",
+        "series": "Other",
+        "printedTotal": 25,
+        "total": 25,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2021/02/09",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd21/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd21/logo.png"
+        }
+      },
+      "number": "13",
+      "artist": "Ken Sugimori",
+      "flavorText": "It blows fire through its nose. When it catches a cold, the fire becomes pitch-black smoke instead.",
+      "nationalPokedexNumbers": [
+        498
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd21/13.png",
+        "large": "https://images.pokemontcg.io/mcd21/13_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd21-13",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "normal": {
+            "low": 0.06,
+            "mid": 0.25,
+            "high": 5.0,
+            "market": 0.22,
+            "directLow": null
+          },
+          "holofoil": {
+            "low": 0.23,
+            "mid": 1.08,
+            "high": 7.5,
+            "market": 0.96,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd21-13",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 0.84,
+          "lowPrice": 0.05,
+          "trendPrice": 1.03,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 2.03,
+          "lowPriceExPlus": 0.05,
+          "avg1": 1.99,
+          "avg7": 0.94,
+          "avg30": 0.9,
+          "reverseHoloAvg1": 2.05,
+          "reverseHoloAvg7": 2.89,
+          "reverseHoloAvg30": 2.91
+        }
+      }
+    },
+    {
+      "id": "mcd21-18",
+      "name": "Totodile",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "60",
+      "types": [
+        "Water"
+      ],
+      "evolvesTo": [
+        "Croconaw"
+      ],
+      "attacks": [
+        {
+          "name": "Fury Strikes",
+          "cost": [
+            "Water"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "10×",
+          "text": "Flip 3 coins. This attack does 10 damage times the number of heads."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Grass",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "mcd21",
+        "name": "McDonald's Collection 2021",
+        "series": "Other",
+        "printedTotal": 25,
+        "total": 25,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2021/02/09",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd21/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd21/logo.png"
+        }
+      },
+      "number": "18",
+      "artist": "Kagemaru Himeno",
+      "flavorText": "It is small but rough and tough. It won't hesitate to take a bite out of anything that moves.",
+      "nationalPokedexNumbers": [
+        158
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd21/18.png",
+        "large": "https://images.pokemontcg.io/mcd21/18_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd21-18",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "normal": {
+            "low": 0.15,
+            "mid": 0.4,
+            "high": 19.0,
+            "market": 0.34,
+            "directLow": null
+          },
+          "holofoil": {
+            "low": 0.5,
+            "mid": 2.02,
+            "high": 5.97,
+            "market": 2.12,
+            "directLow": 3.97
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd21-18",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 1.59,
+          "lowPrice": 0.3,
+          "trendPrice": 1.26,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 2.64,
+          "lowPriceExPlus": 0.5,
+          "avg1": 0.95,
+          "avg7": 1.3,
+          "avg30": 1.57,
+          "reverseHoloAvg1": 3.1,
+          "reverseHoloAvg7": 3.16,
+          "reverseHoloAvg30": 4.16
+        }
+      }
+    },
+    {
+      "id": "mcd21-21",
+      "name": "Oshawott",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "60",
+      "types": [
+        "Water"
+      ],
+      "evolvesTo": [
+        "Dewott"
+      ],
+      "attacks": [
+        {
+          "name": "Water Pulse",
+          "cost": [
+            "Water",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "20",
+          "text": "Flip a coin. If heads, the Defending Pokémon is now Asleep."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Lightning",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "mcd21",
+        "name": "McDonald's Collection 2021",
+        "series": "Other",
+        "printedTotal": 25,
+        "total": 25,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2021/02/09",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd21/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd21/logo.png"
+        }
+      },
+      "number": "21",
+      "artist": "Ken Sugimori",
+      "flavorText": "It fights using the scalchop on its stomach. In response to an attack, it retaliates immediately by slashing.",
+      "nationalPokedexNumbers": [
+        501
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd21/21.png",
+        "large": "https://images.pokemontcg.io/mcd21/21_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd21-21",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "normal": {
+            "low": 0.07,
+            "mid": 0.3,
+            "high": 2.0,
+            "market": 0.25,
+            "directLow": null
+          },
+          "holofoil": {
+            "low": 0.4,
+            "mid": 1.01,
+            "high": 3.01,
+            "market": 0.94,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd21-21",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 0.15,
+          "lowPrice": 0.02,
+          "trendPrice": 0.15,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 1.96,
+          "lowPriceExPlus": 0.02,
+          "avg1": 0.1,
+          "avg7": 0.16,
+          "avg30": 0.15,
+          "reverseHoloAvg1": 2.2,
+          "reverseHoloAvg7": 2.32,
+          "reverseHoloAvg30": 2.91
+        }
+      }
+    },
+    {
+      "id": "mcd21-2",
+      "name": "Chikorita",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "70",
+      "types": [
+        "Grass"
+      ],
+      "evolvesTo": [
+        "Bayleef"
+      ],
+      "attacks": [
+        {
+          "name": "Mini Drain",
+          "cost": [
+            "Grass"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "10",
+          "text": "Heal 10 damage from this Pokémon."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fire",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "mcd21",
+        "name": "McDonald's Collection 2021",
+        "series": "Other",
+        "printedTotal": 25,
+        "total": 25,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2021/02/09",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd21/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd21/logo.png"
+        }
+      },
+      "number": "2",
+      "artist": "sowsow",
+      "flavorText": "It uses the leaf on its head to determine the temperature and humidity. It loves to sunbathe.",
+      "nationalPokedexNumbers": [
+        152
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd21/2.png",
+        "large": "https://images.pokemontcg.io/mcd21/2_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd21-2",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 0.5,
+            "mid": 1.38,
+            "high": 5.99,
+            "market": 1.38,
+            "directLow": null
+          },
+          "normal": {
+            "low": 0.1,
+            "mid": 0.34,
+            "high": 2.0,
+            "market": 0.36,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd21-2",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 1.26,
+          "lowPrice": 0.2,
+          "trendPrice": 1.35,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 3.08,
+          "lowPriceExPlus": 0.4,
+          "avg1": 1.0,
+          "avg7": 1.15,
+          "avg30": 1.17,
+          "reverseHoloAvg1": 3.5,
+          "reverseHoloAvg7": 3.59,
+          "reverseHoloAvg30": 4.55
+        }
+      }
+    },
+    {
+      "id": "mcd21-6",
+      "name": "Chespin",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "60",
+      "types": [
+        "Grass"
+      ],
+      "evolvesTo": [
+        "Quilladin"
+      ],
+      "attacks": [
+        {
+          "name": "Vine Whip",
+          "cost": [
+            "Grass"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "10",
+          "text": ""
+        },
+        {
+          "name": "Seed Bomb",
+          "cost": [
+            "Grass",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fire",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "mcd21",
+        "name": "McDonald's Collection 2021",
+        "series": "Other",
+        "printedTotal": 25,
+        "total": 25,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2021/02/09",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd21/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd21/logo.png"
+        }
+      },
+      "number": "6",
+      "artist": "5ban Graphics",
+      "flavorText": "The quills on its head are usually soft. When it flexes them, the points become so hard and sharp that they can pierce rock.",
+      "nationalPokedexNumbers": [
+        650
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd21/6.png",
+        "large": "https://images.pokemontcg.io/mcd21/6_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd21-6",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "normal": {
+            "low": 0.11,
+            "mid": 0.32,
+            "high": 2.0,
+            "market": 0.31,
+            "directLow": null
+          },
+          "holofoil": {
+            "low": 0.25,
+            "mid": 0.73,
+            "high": 5.0,
+            "market": 0.64,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd21-6",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 1.02,
+          "lowPrice": 0.02,
+          "trendPrice": 1.05,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 1.56,
+          "lowPriceExPlus": 0.2,
+          "avg1": 0.5,
+          "avg7": 1.09,
+          "avg30": 0.97,
+          "reverseHoloAvg1": 2.5,
+          "reverseHoloAvg7": 1.87,
+          "reverseHoloAvg30": 2.61
+        }
+      }
+    },
+    {
+      "id": "mcd21-11",
+      "name": "Torchic",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "60",
+      "types": [
+        "Fire"
+      ],
+      "evolvesTo": [
+        "Combusken"
+      ],
+      "attacks": [
+        {
+          "name": "Ember",
+          "cost": [
+            "Fire"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "20",
+          "text": "Flip a coin. If tails, discard a Fire Energy attached to this Pokémon."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Water",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "mcd21",
+        "name": "McDonald's Collection 2021",
+        "series": "Other",
+        "printedTotal": 25,
+        "total": 25,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2021/02/09",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd21/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd21/logo.png"
+        }
+      },
+      "number": "11",
+      "artist": "sui",
+      "flavorText": "A fire burns inside, so it feels very warm to hug. It launches fireballs of 1,800 degrees Fahrenheit.",
+      "nationalPokedexNumbers": [
+        255
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd21/11.png",
+        "large": "https://images.pokemontcg.io/mcd21/11_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd21-11",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 0.25,
+            "mid": 1.2,
+            "high": 9.22,
+            "market": 1.09,
+            "directLow": null
+          },
+          "normal": {
+            "low": 0.19,
+            "mid": 0.35,
+            "high": 2.0,
+            "market": 0.32,
+            "directLow": 0.33
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd21-11",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 1.23,
+          "lowPrice": 0.15,
+          "trendPrice": 1.4,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 2.84,
+          "lowPriceExPlus": 0.4,
+          "avg1": 0.6,
+          "avg7": 1.3,
+          "avg30": 1.28,
+          "reverseHoloAvg1": 5.83,
+          "reverseHoloAvg7": 4.29,
+          "reverseHoloAvg30": 4.82
+        }
+      }
+    },
+    {
+      "id": "mcd21-16",
+      "name": "Scorbunny",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "60",
+      "types": [
+        "Fire"
+      ],
+      "evolvesTo": [
+        "Raboot"
+      ],
+      "attacks": [
+        {
+          "name": "Super Singe",
+          "cost": [
+            "Fire"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "10",
+          "text": "Flip a coin. If heads, your opponent's Active Pokémon is now Burned."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Water",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "mcd21",
+        "name": "McDonald's Collection 2021",
+        "series": "Other",
+        "printedTotal": 25,
+        "total": 25,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2021/02/09",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd21/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd21/logo.png"
+        }
+      },
+      "number": "16",
+      "artist": "Hitoshi Ariga",
+      "flavorText": "A warm-up of running around gets fire energy coursing through this Pokémon's body. Once that happens, it's ready to fight at full power.",
+      "nationalPokedexNumbers": [
+        813
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "regulationMark": "D",
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd21/16.png",
+        "large": "https://images.pokemontcg.io/mcd21/16_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd21-16",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "normal": {
+            "low": 0.14,
+            "mid": 0.28,
+            "high": 2.0,
+            "market": 0.24,
+            "directLow": null
+          },
+          "holofoil": {
+            "low": 0.37,
+            "mid": 1.29,
+            "high": 8.0,
+            "market": 1.17,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd21-16",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 1.09,
+          "lowPrice": 0.16,
+          "trendPrice": 1.08,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 2.54,
+          "lowPriceExPlus": 0.34,
+          "avg1": 1.39,
+          "avg7": 1.15,
+          "avg30": 1.11,
+          "reverseHoloAvg1": 3.02,
+          "reverseHoloAvg7": 2.56,
+          "reverseHoloAvg30": 3.02
+        }
+      }
+    },
+    {
+      "id": "mcd21-20",
+      "name": "Piplup",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "70",
+      "types": [
+        "Water"
+      ],
+      "evolvesTo": [
+        "Prinplup"
+      ],
+      "attacks": [
+        {
+          "name": "Peck",
+          "cost": [
+            "Colorless"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "10",
+          "text": ""
+        },
+        {
+          "name": "Wave Splash",
+          "cost": [
+            "Water",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Lightning",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "mcd21",
+        "name": "McDonald's Collection 2021",
+        "series": "Other",
+        "printedTotal": 25,
+        "total": 25,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2021/02/09",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd21/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd21/logo.png"
+        }
+      },
+      "number": "20",
+      "artist": "Shibuzoh.",
+      "flavorText": "Because it is very proud, it hates accepting food from people. Its thick down guards it from cold.",
+      "nationalPokedexNumbers": [
+        393
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd21/20.png",
+        "large": "https://images.pokemontcg.io/mcd21/20_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd21-20",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "normal": {
+            "low": 0.15,
+            "mid": 0.36,
+            "high": 2.0,
+            "market": 0.36,
+            "directLow": null
+          },
+          "holofoil": {
+            "low": 0.8,
+            "mid": 2.39,
+            "high": 89.0,
+            "market": 2.47,
+            "directLow": 2.37
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd21-20",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 1.26,
+          "lowPrice": 0.1,
+          "trendPrice": 1.52,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 3.6,
+          "lowPriceExPlus": 0.4,
+          "avg1": 1.78,
+          "avg7": 1.53,
+          "avg30": 1.33,
+          "reverseHoloAvg1": 4.0,
+          "reverseHoloAvg7": 3.01,
+          "reverseHoloAvg30": 3.07
+        }
+      }
+    },
+    {
+      "id": "mcd21-23",
+      "name": "Popplio",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "70",
+      "types": [
+        "Water"
+      ],
+      "evolvesTo": [
+        "Brionne"
+      ],
+      "attacks": [
+        {
+          "name": "Pound",
+          "cost": [
+            "Water"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "10",
+          "text": ""
+        },
+        {
+          "name": "Water Gun",
+          "cost": [
+            "Water",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Grass",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "mcd21",
+        "name": "McDonald's Collection 2021",
+        "series": "Other",
+        "printedTotal": 25,
+        "total": 25,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2021/02/09",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd21/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd21/logo.png"
+        }
+      },
+      "number": "23",
+      "artist": "Kouki Saitou",
+      "flavorText": "This Pokémon snorts body fluids from its nose, blowing balloons to smash into its foes. It's famous for being a hard worker.",
+      "nationalPokedexNumbers": [
+        728
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd21/23.png",
+        "large": "https://images.pokemontcg.io/mcd21/23_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd21-23",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "normal": {
+            "low": 0.15,
+            "mid": 0.29,
+            "high": 5.0,
+            "market": 0.24,
+            "directLow": null
+          },
+          "holofoil": {
+            "low": 1.34,
+            "mid": 2.31,
+            "high": 8.01,
+            "market": 2.19,
+            "directLow": 2.3
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd21-23",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 2.75,
+          "lowPrice": 0.5,
+          "trendPrice": 4.22,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 3.75,
+          "lowPriceExPlus": 0.5,
+          "avg1": 6.0,
+          "avg7": 2.87,
+          "avg30": 2.63,
+          "reverseHoloAvg1": 4.0,
+          "reverseHoloAvg7": 3.97,
+          "reverseHoloAvg30": 3.42
+        }
+      }
+    },
+    {
+      "id": "mcd21-1",
+      "name": "Bulbasaur",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "70",
+      "types": [
+        "Grass"
+      ],
+      "evolvesTo": [
+        "Ivysaur"
+      ],
+      "attacks": [
+        {
+          "name": "Razor Leaf",
+          "cost": [
+            "Grass",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "30",
+          "text": ""
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fire",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless",
+        "Colorless"
+      ],
+      "convertedRetreatCost": 2,
+      "set": {
+        "id": "mcd21",
+        "name": "McDonald's Collection 2021",
+        "series": "Other",
+        "printedTotal": 25,
+        "total": 25,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2021/02/09",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd21/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd21/logo.png"
+        }
+      },
+      "number": "1",
+      "artist": "Mizue",
+      "flavorText": "A strange seed was planted on its back at birth. The plant sprouts and grows with this Pokémon.",
+      "nationalPokedexNumbers": [
+        1
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd21/1.png",
+        "large": "https://images.pokemontcg.io/mcd21/1_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd21-1",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "normal": {
+            "low": 0.17,
+            "mid": 0.52,
+            "high": 38.23,
+            "market": 0.55,
+            "directLow": null
+          },
+          "holofoil": {
+            "low": 1.27,
+            "mid": 3.15,
+            "high": 7.77,
+            "market": 2.76,
+            "directLow": 3.99
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd21-1",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 2.07,
+          "lowPrice": 0.3,
+          "trendPrice": 1.97,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 5.52,
+          "lowPriceExPlus": 0.95,
+          "avg1": 2.99,
+          "avg7": 1.91,
+          "avg30": 2.05,
+          "reverseHoloAvg1": 6.0,
+          "reverseHoloAvg7": 6.8,
+          "reverseHoloAvg30": 7.99
+        }
+      }
+    },
+    {
+      "id": "mcd21-8",
+      "name": "Grookey",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "60",
+      "types": [
+        "Grass"
+      ],
+      "evolvesTo": [
+        "Thwackey"
+      ],
+      "attacks": [
+        {
+          "name": "Branch Poke",
+          "cost": [
+            "Grass",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "30",
+          "text": ""
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fire",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "mcd21",
+        "name": "McDonald's Collection 2021",
+        "series": "Other",
+        "printedTotal": 25,
+        "total": 25,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2021/02/09",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd21/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd21/logo.png"
+        }
+      },
+      "number": "8",
+      "artist": "kirisAki",
+      "flavorText": "When it uses its special stick to strike up a beat, the sound waves produced carry revitalizing energy to the plants and flowers in the area.",
+      "nationalPokedexNumbers": [
+        810
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "regulationMark": "D",
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd21/8.png",
+        "large": "https://images.pokemontcg.io/mcd21/8_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd21-8",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 0.5,
+            "mid": 1.0,
+            "high": 9.05,
+            "market": 0.88,
+            "directLow": null
+          },
+          "normal": {
+            "low": 0.07,
+            "mid": 0.25,
+            "high": 2.0,
+            "market": 0.26,
+            "directLow": 0.3
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd21-8",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 0.83,
+          "lowPrice": 0.02,
+          "trendPrice": 1.25,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 0.91,
+          "lowPriceExPlus": 0.1,
+          "avg1": 1.28,
+          "avg7": 1.29,
+          "avg30": 0.95,
+          "reverseHoloAvg1": 2.8,
+          "reverseHoloAvg7": 3.32,
+          "reverseHoloAvg30": 3.96
+        }
+      }
+    },
+    {
+      "id": "mcd21-9",
+      "name": "Charmander",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "70",
+      "types": [
+        "Fire"
+      ],
+      "evolvesTo": [
+        "Charmeleon"
+      ],
+      "attacks": [
+        {
+          "name": "Scratch",
+          "cost": [
+            "Colorless"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "10",
+          "text": ""
+        },
+        {
+          "name": "Flame Tail",
+          "cost": [
+            "Fire",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Water",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "mcd21",
+        "name": "McDonald's Collection 2021",
+        "series": "Other",
+        "printedTotal": 25,
+        "total": 25,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2021/02/09",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd21/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd21/logo.png"
+        }
+      },
+      "number": "9",
+      "artist": "Kagemaru Himeno",
+      "flavorText": "The flame on its tail indicates Charmander's life force. If it is healthy, the flame burns brightly.",
+      "nationalPokedexNumbers": [
+        4
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd21/9.png",
+        "large": "https://images.pokemontcg.io/mcd21/9_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd21-9",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 0.99,
+            "mid": 3.41,
+            "high": 4321.0,
+            "market": 3.65,
+            "directLow": 3.94
+          },
+          "normal": {
+            "low": 0.05,
+            "mid": 0.5,
+            "high": 7.0,
+            "market": 0.37,
+            "directLow": 0.3
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd21-9",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 2.22,
+          "lowPrice": 0.5,
+          "trendPrice": 2.7,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 9.47,
+          "lowPriceExPlus": 0.5,
+          "avg1": 4.99,
+          "avg7": 2.61,
+          "avg30": 2.32,
+          "reverseHoloAvg1": 13.9,
+          "reverseHoloAvg7": 11.21,
+          "reverseHoloAvg30": 12.88
+        }
+      }
+    },
+    {
+      "id": "mcd21-12",
+      "name": "Chimchar",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "60",
+      "types": [
+        "Fire"
+      ],
+      "evolvesTo": [
+        "Monferno"
+      ],
+      "attacks": [
+        {
+          "name": "Fury Swipes",
+          "cost": [
+            "Colorless"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "10×",
+          "text": "Flip 3 coins. This attack does 10 damage for each heads."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Water",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "mcd21",
+        "name": "McDonald's Collection 2021",
+        "series": "Other",
+        "printedTotal": 25,
+        "total": 25,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2021/02/09",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd21/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd21/logo.png"
+        }
+      },
+      "number": "12",
+      "artist": "Kouki Saitou",
+      "flavorText": "The gas made in its belly burns from its rear end. The fire burns weakly when it feels sick.",
+      "nationalPokedexNumbers": [
+        390
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd21/12.png",
+        "large": "https://images.pokemontcg.io/mcd21/12_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd21-12",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 0.3,
+            "mid": 1.01,
+            "high": 5.0,
+            "market": 0.95,
+            "directLow": null
+          },
+          "normal": {
+            "low": 0.16,
+            "mid": 0.36,
+            "high": 5.0,
+            "market": 0.39,
+            "directLow": 0.22
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd21-12",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 0.18,
+          "lowPrice": 0.02,
+          "trendPrice": 0.32,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 3.12,
+          "lowPriceExPlus": 0.02,
+          "avg1": 0.05,
+          "avg7": 0.3,
+          "avg30": 0.19,
+          "reverseHoloAvg1": 2.9,
+          "reverseHoloAvg7": 3.17,
+          "reverseHoloAvg30": 2.93
+        }
+      }
+    },
+    {
+      "id": "mcd21-14",
+      "name": "Fennekin",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "60",
+      "types": [
+        "Fire"
+      ],
+      "evolvesTo": [
+        "Braixen"
+      ],
+      "attacks": [
+        {
+          "name": "Scratch",
+          "cost": [
+            "Fire"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "10",
+          "text": ""
+        },
+        {
+          "name": "Live Coal",
+          "cost": [
+            "Fire",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Water",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "mcd21",
+        "name": "McDonald's Collection 2021",
+        "series": "Other",
+        "printedTotal": 25,
+        "total": 25,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2021/02/09",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd21/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd21/logo.png"
+        }
+      },
+      "number": "14",
+      "artist": "5ban Graphics",
+      "flavorText": "Eating a twig fills it with energy, and its roomy ears give vent to air hotter than 390 degrees Fahrenheit.",
+      "nationalPokedexNumbers": [
+        653
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd21/14.png",
+        "large": "https://images.pokemontcg.io/mcd21/14_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd21-14",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 0.23,
+            "mid": 0.99,
+            "high": 53.0,
+            "market": 0.75,
+            "directLow": null
+          },
+          "normal": {
+            "low": 0.14,
+            "mid": 0.25,
+            "high": 2.0,
+            "market": 0.25,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd21-14",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 0.16,
+          "lowPrice": 0.02,
+          "trendPrice": 0.18,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 3.37,
+          "lowPriceExPlus": 0.02,
+          "avg1": 0.06,
+          "avg7": 0.16,
+          "avg30": 0.17,
+          "reverseHoloAvg1": 3.4,
+          "reverseHoloAvg7": 3.45,
+          "reverseHoloAvg30": 3.07
+        }
+      }
+    },
+    {
+      "id": "mcd21-15",
+      "name": "Litten",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "70",
+      "types": [
+        "Fire"
+      ],
+      "evolvesTo": [
+        "Torracat"
+      ],
+      "attacks": [
+        {
+          "name": "Bite",
+          "cost": [
+            "Fire"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "10",
+          "text": ""
+        },
+        {
+          "name": "Flare",
+          "cost": [
+            "Fire",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Water",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "mcd21",
+        "name": "McDonald's Collection 2021",
+        "series": "Other",
+        "printedTotal": 25,
+        "total": 25,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2021/02/09",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd21/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd21/logo.png"
+        }
+      },
+      "number": "15",
+      "artist": "Akira Komayama",
+      "flavorText": "While grooming itself, it builds up fur inside its stomach. It sets the fur alight and spews fiery attacks, which change based on how it coughs.",
+      "nationalPokedexNumbers": [
+        725
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd21/15.png",
+        "large": "https://images.pokemontcg.io/mcd21/15_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd21-15",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 0.33,
+            "mid": 1.26,
+            "high": 9.17,
+            "market": 1.23,
+            "directLow": 0.75
+          },
+          "normal": {
+            "low": 0.15,
+            "mid": 0.37,
+            "high": 2.0,
+            "market": 0.33,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd21-15",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 0.97,
+          "lowPrice": 0.02,
+          "trendPrice": 1.31,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 2.44,
+          "lowPriceExPlus": 0.19,
+          "avg1": 1.35,
+          "avg7": 1.1,
+          "avg30": 0.98,
+          "reverseHoloAvg1": 2.7,
+          "reverseHoloAvg7": 3.04,
+          "reverseHoloAvg30": 3.28
+        }
+      }
+    },
+    {
+      "id": "mcd21-17",
+      "name": "Squirtle",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "60",
+      "types": [
+        "Water"
+      ],
+      "evolvesTo": [
+        "Wartortle"
+      ],
+      "attacks": [
+        {
+          "name": "Bubble",
+          "cost": [
+            "Water"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "10",
+          "text": "Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Grass",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "mcd21",
+        "name": "McDonald's Collection 2021",
+        "series": "Other",
+        "printedTotal": 25,
+        "total": 25,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2021/02/09",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd21/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd21/logo.png"
+        }
+      },
+      "number": "17",
+      "artist": "tetsuya koizumi",
+      "flavorText": "It shelters itself in its shell, then strikes back with spouts of water at every opportunity.",
+      "nationalPokedexNumbers": [
+        7
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd21/17.png",
+        "large": "https://images.pokemontcg.io/mcd21/17_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd21-17",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 1.64,
+            "mid": 3.25,
+            "high": 20.0,
+            "market": 2.74,
+            "directLow": null
+          },
+          "normal": {
+            "low": 0.23,
+            "mid": 0.75,
+            "high": 20.0,
+            "market": 0.72,
+            "directLow": 0.89
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd21-17",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 2.23,
+          "lowPrice": 0.6,
+          "trendPrice": 2.01,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 5.59,
+          "lowPriceExPlus": 0.9,
+          "avg1": 2.99,
+          "avg7": 1.84,
+          "avg30": 2.21,
+          "reverseHoloAvg1": 8.0,
+          "reverseHoloAvg7": 6.45,
+          "reverseHoloAvg30": 9.2
+        }
+      }
+    },
+    {
+      "id": "mcd21-5",
+      "name": "Snivy",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "60",
+      "types": [
+        "Grass"
+      ],
+      "evolvesTo": [
+        "Servine"
+      ],
+      "attacks": [
+        {
+          "name": "Slam",
+          "cost": [
+            "Grass",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "20×",
+          "text": "Flip 2 coins. This attack does 20 damage times the number of heads."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fire",
+          "value": "×2"
+        }
+      ],
+      "resistances": [
+        {
+          "type": "Water",
+          "value": "-20"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "mcd21",
+        "name": "McDonald's Collection 2021",
+        "series": "Other",
+        "printedTotal": 25,
+        "total": 25,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2021/02/09",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd21/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd21/logo.png"
+        }
+      },
+      "number": "5",
+      "artist": "Ken Sugimori",
+      "flavorText": "It is very intelligent and calm. Being exposed to lots of sunlight makes its movements swifter.",
+      "nationalPokedexNumbers": [
+        495
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd21/5.png",
+        "large": "https://images.pokemontcg.io/mcd21/5_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd21-5",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "normal": {
+            "low": 0.15,
+            "mid": 0.36,
+            "high": 5.0,
+            "market": 0.37,
+            "directLow": null
+          },
+          "holofoil": {
+            "low": 0.25,
+            "mid": 1.01,
+            "high": 5.0,
+            "market": 0.99,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd21-5",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 0.19,
+          "lowPrice": 0.02,
+          "trendPrice": 0.24,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 3.2,
+          "lowPriceExPlus": 0.02,
+          "avg1": 0.1,
+          "avg7": 0.21,
+          "avg30": 0.2,
+          "reverseHoloAvg1": 2.2,
+          "reverseHoloAvg7": 3.02,
+          "reverseHoloAvg30": 2.97
+        }
+      }
+    },
+    {
+      "id": "mcd21-7",
+      "name": "Rowlet",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "60",
+      "types": [
+        "Grass"
+      ],
+      "evolvesTo": [
+        "Dartrix"
+      ],
+      "attacks": [
+        {
+          "name": "Tackle",
+          "cost": [
+            "Colorless"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "10",
+          "text": ""
+        },
+        {
+          "name": "Leafage",
+          "cost": [
+            "Grass",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fire",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "mcd21",
+        "name": "McDonald's Collection 2021",
+        "series": "Other",
+        "printedTotal": 25,
+        "total": 25,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2021/02/09",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd21/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd21/logo.png"
+        }
+      },
+      "number": "7",
+      "artist": "Megumi Mizutani",
+      "flavorText": "This wary Pokémon uses photosynthesis to store up energy during the day, while becoming active at night.",
+      "nationalPokedexNumbers": [
+        722
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd21/7.png",
+        "large": "https://images.pokemontcg.io/mcd21/7_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd21-7",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 0.5,
+            "mid": 1.16,
+            "high": 5.0,
+            "market": 1.12,
+            "directLow": 1.02
+          },
+          "normal": {
+            "low": 0.15,
+            "mid": 0.31,
+            "high": 24.55,
+            "market": 0.26,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd21-7",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 0.83,
+          "lowPrice": 0.09,
+          "trendPrice": 0.89,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 1.19,
+          "lowPriceExPlus": 0.1,
+          "avg1": 0.65,
+          "avg7": 0.81,
+          "avg30": 0.84,
+          "reverseHoloAvg1": 2.0,
+          "reverseHoloAvg7": 2.19,
+          "reverseHoloAvg30": 2.74
+        }
+      }
+    },
+    {
+      "id": "mcd21-10",
+      "name": "Cyndaquil",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "70",
+      "types": [
+        "Fire"
+      ],
+      "evolvesTo": [
+        "Quilava"
+      ],
+      "attacks": [
+        {
+          "name": "Hammer In",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "30",
+          "text": ""
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Water",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "mcd21",
+        "name": "McDonald's Collection 2021",
+        "series": "Other",
+        "printedTotal": 25,
+        "total": 25,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2021/02/09",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd21/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd21/logo.png"
+        }
+      },
+      "number": "10",
+      "artist": "kirisAki",
+      "flavorText": "It has a timid nature. If it is startled, the flames on its back burn more vigorously.",
+      "nationalPokedexNumbers": [
+        155
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd21/10.png",
+        "large": "https://images.pokemontcg.io/mcd21/10_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd21-10",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 0.31,
+            "mid": 1.53,
+            "high": 6.99,
+            "market": 1.29,
+            "directLow": null
+          },
+          "normal": {
+            "low": 0.14,
+            "mid": 0.34,
+            "high": 2.0,
+            "market": 0.31,
+            "directLow": 0.79
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd21-10",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 0.18,
+          "lowPrice": 0.02,
+          "trendPrice": 0.17,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 3.97,
+          "lowPriceExPlus": 0.02,
+          "avg1": 0.1,
+          "avg7": 0.14,
+          "avg30": 0.18,
+          "reverseHoloAvg1": 4.67,
+          "reverseHoloAvg7": 4.4,
+          "reverseHoloAvg30": 3.94
+        }
+      }
+    },
+    {
+      "id": "mcd21-19",
+      "name": "Mudkip",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "60",
+      "types": [
+        "Water"
+      ],
+      "evolvesTo": [
+        "Marshtomp"
+      ],
+      "attacks": [
+        {
+          "name": "Tackle",
+          "cost": [
+            "Water"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "10",
+          "text": ""
+        },
+        {
+          "name": "Mud-Slap",
+          "cost": [
+            "Water",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Grass",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "mcd21",
+        "name": "McDonald's Collection 2021",
+        "series": "Other",
+        "printedTotal": 25,
+        "total": 25,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2021/02/09",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd21/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd21/logo.png"
+        }
+      },
+      "number": "19",
+      "artist": "Aya Kusube",
+      "flavorText": "To alert it, the fin on its head senses the flow of water. It has the strength to heft boulders.",
+      "nationalPokedexNumbers": [
+        258
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd21/19.png",
+        "large": "https://images.pokemontcg.io/mcd21/19_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd21-19",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 0.27,
+            "mid": 1.65,
+            "high": 9.79,
+            "market": 1.74,
+            "directLow": 2.97
+          },
+          "normal": {
+            "low": 0.2,
+            "mid": 0.4,
+            "high": 2.5,
+            "market": 0.36,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd21-19",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 0.14,
+          "lowPrice": 0.02,
+          "trendPrice": 0.18,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 3.59,
+          "lowPriceExPlus": 0.02,
+          "avg1": 0.1,
+          "avg7": 0.21,
+          "avg30": 0.15,
+          "reverseHoloAvg1": 3.25,
+          "reverseHoloAvg7": 3.48,
+          "reverseHoloAvg30": 3.42
+        }
+      }
+    },
+    {
+      "id": "mcd21-22",
+      "name": "Froakie",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "60",
+      "types": [
+        "Water"
+      ],
+      "evolvesTo": [
+        "Frogadier"
+      ],
+      "attacks": [
+        {
+          "name": "Pound",
+          "cost": [
+            "Water"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "10",
+          "text": ""
+        },
+        {
+          "name": "Water Drip",
+          "cost": [
+            "Water",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Grass",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "mcd21",
+        "name": "McDonald's Collection 2021",
+        "series": "Other",
+        "printedTotal": 25,
+        "total": 25,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2021/02/09",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd21/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd21/logo.png"
+        }
+      },
+      "number": "22",
+      "artist": "5ban Graphics",
+      "flavorText": "It secretes flexible bubbles from its chest and back. The bubbles reduce the damage it would otherwise take when attacked.",
+      "nationalPokedexNumbers": [
+        656
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd21/22.png",
+        "large": "https://images.pokemontcg.io/mcd21/22_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd21-22",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "normal": {
+            "low": 0.04,
+            "mid": 0.25,
+            "high": 2.0,
+            "market": 0.23,
+            "directLow": 0.79
+          },
+          "holofoil": {
+            "low": 0.5,
+            "mid": 1.35,
+            "high": 10.0,
+            "market": 1.35,
+            "directLow": 2.47
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd21-22",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 1.11,
+          "lowPrice": 0.15,
+          "trendPrice": 1.46,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 1.4,
+          "lowPriceExPlus": 0.24,
+          "avg1": 0.7,
+          "avg7": 1.2,
+          "avg30": 1.0,
+          "reverseHoloAvg1": 2.0,
+          "reverseHoloAvg7": 2.68,
+          "reverseHoloAvg30": 3.51
+        }
+      }
+    },
+    {
+      "id": "mcd21-24",
+      "name": "Sobble",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "60",
+      "types": [
+        "Water"
+      ],
+      "evolvesTo": [
+        "Drizzile"
+      ],
+      "attacks": [
+        {
+          "name": "Bind",
+          "cost": [
+            "Water",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "20",
+          "text": "Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Lightning",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "mcd21",
+        "name": "McDonald's Collection 2021",
+        "series": "Other",
+        "printedTotal": 25,
+        "total": 25,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2021/02/09",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd21/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd21/logo.png"
+        }
+      },
+      "number": "24",
+      "artist": "Mizue",
+      "flavorText": "When scared, this Pokémon cries. Its tears pack the chemical punch of 100 onions, and attackers won't be able to resist weeping.",
+      "nationalPokedexNumbers": [
+        816
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "regulationMark": "D",
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd21/24.png",
+        "large": "https://images.pokemontcg.io/mcd21/24_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd21-24",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 1.75,
+            "mid": 2.94,
+            "high": 7.99,
+            "market": 2.41,
+            "directLow": null
+          },
+          "normal": {
+            "low": 0.06,
+            "mid": 0.3,
+            "high": 2.0,
+            "market": 0.27,
+            "directLow": 0.3
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd21-24",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 3.02,
+          "lowPrice": 0.3,
+          "trendPrice": 3.3,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 4.55,
+          "lowPriceExPlus": 0.8,
+          "avg1": 2.49,
+          "avg7": 3.22,
+          "avg30": 3.06,
+          "reverseHoloAvg1": 5.5,
+          "reverseHoloAvg7": 4.95,
+          "reverseHoloAvg30": 4.85
+        }
+      }
+    },
+    {
+      "id": "mcd21-25",
+      "name": "Pikachu",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "60",
+      "types": [
+        "Lightning"
+      ],
+      "evolvesTo": [
+        "Raichu"
+      ],
+      "attacks": [
+        {
+          "name": "Meal Time",
+          "cost": [
+            "Lightning"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "",
+          "text": "Flip a coin until you get tails. For each heads, draw a card."
+        },
+        {
+          "name": "Gnaw",
+          "cost": [
+            "Lightning",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fighting",
+          "value": "×2"
+        }
+      ],
+      "resistances": [
+        {
+          "type": "Metal",
+          "value": "-20"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "mcd21",
+        "name": "McDonald's Collection 2021",
+        "series": "Other",
+        "printedTotal": 25,
+        "total": 25,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2021/02/09",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd21/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd21/logo.png"
+        }
+      },
+      "number": "25",
+      "artist": "Sanosuke Sakuma",
+      "flavorText": "Its nature is to store up electricity. Forests where nests of Pikachu live are dangerous, since the trees are so often struck by lightning.",
+      "nationalPokedexNumbers": [
+        25
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd21/25.png",
+        "large": "https://images.pokemontcg.io/mcd21/25_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd21-25",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "normal": {
+            "low": 0.39,
+            "mid": 1.1,
+            "high": 9.99,
+            "market": 1.03,
+            "directLow": 1.25
+          },
+          "holofoil": {
+            "low": 8.0,
+            "mid": 13.67,
+            "high": 29.99,
+            "market": 11.89,
+            "directLow": 9.99
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd21-25",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 7.86,
+          "lowPrice": 2.5,
+          "trendPrice": 8.48,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 28.25,
+          "lowPriceExPlus": 3.0,
+          "avg1": 6.99,
+          "avg7": 8.16,
+          "avg30": 7.92,
+          "reverseHoloAvg1": 35.0,
+          "reverseHoloAvg7": 32.72,
+          "reverseHoloAvg30": 33.92
+        }
+      }
+    }
+  ],
+  "totalCount": 25
+}

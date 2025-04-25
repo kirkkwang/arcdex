@@ -1,0 +1,1303 @@
+{
+  "data": [
+    {
+      "id": "mcd11-1",
+      "name": "Snivy",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "60",
+      "types": [
+        "Grass"
+      ],
+      "evolvesTo": [
+        "Servine"
+      ],
+      "attacks": [
+        {
+          "name": "Slam",
+          "cost": [
+            "Grass",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "20×",
+          "text": "Flip 2 coins. This attack does 20 damage times the number of heads."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fire",
+          "value": "×2"
+        }
+      ],
+      "resistances": [
+        {
+          "type": "Water",
+          "value": "-20"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "mcd11",
+        "name": "McDonald's Collection 2011",
+        "series": "Other",
+        "printedTotal": 12,
+        "total": 12,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2011/06/17",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd11/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd11/logo.png"
+        }
+      },
+      "number": "1",
+      "artist": "Ken Sugimori",
+      "flavorText": "It is very intelligent and calm. Being exposed to lots of sunlight makes its movements swifter.",
+      "nationalPokedexNumbers": [
+        495
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd11/1.png",
+        "large": "https://images.pokemontcg.io/mcd11/1_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd11-1",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 1.59,
+            "mid": 3.46,
+            "high": 7.0,
+            "market": 3.96,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd11-1",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 0.97,
+          "lowPrice": 0.05,
+          "trendPrice": 0.92,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 1.13,
+          "lowPriceExPlus": 0.45,
+          "avg1": 3.0,
+          "avg7": 0.85,
+          "avg30": 1.13,
+          "reverseHoloAvg1": 0.5,
+          "reverseHoloAvg7": 0.84,
+          "reverseHoloAvg30": 0.88
+        }
+      }
+    },
+    {
+      "id": "mcd11-2",
+      "name": "Maractus",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "80",
+      "types": [
+        "Grass"
+      ],
+      "attacks": [
+        {
+          "name": "Mega Drain",
+          "cost": [
+            "Grass"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "20",
+          "text": "Heal 20 damage from this Pokémon."
+        },
+        {
+          "name": "Pin Missile",
+          "cost": [
+            "Grass",
+            "Grass",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 3,
+          "damage": "20×",
+          "text": "Flip 4 coins. This attack does 20 damage times the number of heads."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fire",
+          "value": "×2"
+        }
+      ],
+      "resistances": [
+        {
+          "type": "Water",
+          "value": "-20"
+        }
+      ],
+      "retreatCost": [
+        "Colorless",
+        "Colorless"
+      ],
+      "convertedRetreatCost": 2,
+      "set": {
+        "id": "mcd11",
+        "name": "McDonald's Collection 2011",
+        "series": "Other",
+        "printedTotal": 12,
+        "total": 12,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2011/06/17",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd11/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd11/logo.png"
+        }
+      },
+      "number": "2",
+      "artist": "Kagemaru Himeno",
+      "flavorText": "It uses an up-tempo song and dance to drive away the bird Pokémon that prey on its flower seeds.",
+      "nationalPokedexNumbers": [
+        556
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd11/2.png",
+        "large": "https://images.pokemontcg.io/mcd11/2_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd11-2",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 2.87,
+            "mid": 5.39,
+            "high": 8.43,
+            "market": 4.49,
+            "directLow": 4.79
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd11-2",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 0.9,
+          "lowPrice": 0.1,
+          "trendPrice": 0.61,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 0.35,
+          "lowPriceExPlus": 0.2,
+          "avg1": 0.15,
+          "avg7": 1.05,
+          "avg30": 2.04,
+          "reverseHoloAvg1": 0.15,
+          "reverseHoloAvg7": 0.43,
+          "reverseHoloAvg30": 0.65
+        }
+      }
+    },
+    {
+      "id": "mcd11-3",
+      "name": "Tepig",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "70",
+      "types": [
+        "Fire"
+      ],
+      "evolvesTo": [
+        "Pignite"
+      ],
+      "attacks": [
+        {
+          "name": "Ember",
+          "cost": [
+            "Fire",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "30",
+          "text": "Discard an Energy attached to this Pokémon."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Water",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless",
+        "Colorless"
+      ],
+      "convertedRetreatCost": 2,
+      "set": {
+        "id": "mcd11",
+        "name": "McDonald's Collection 2011",
+        "series": "Other",
+        "printedTotal": 12,
+        "total": 12,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2011/06/17",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd11/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd11/logo.png"
+        }
+      },
+      "number": "3",
+      "artist": "Ken Sugimori",
+      "flavorText": "It blows fire through its nose. When it catches a cold, the fire becomes pitch-black smoke instead.",
+      "nationalPokedexNumbers": [
+        498
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd11/3.png",
+        "large": "https://images.pokemontcg.io/mcd11/3_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd11-3",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 1.21,
+            "mid": 2.47,
+            "high": 4.38,
+            "market": 3.66,
+            "directLow": 4.34
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd11-3",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 0.82,
+          "lowPrice": 0.05,
+          "trendPrice": 0.04,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 0.77,
+          "lowPriceExPlus": 0.29,
+          "avg1": 0.5,
+          "avg7": 0.66,
+          "avg30": 1.06,
+          "reverseHoloAvg1": 0.2,
+          "reverseHoloAvg7": 0.68,
+          "reverseHoloAvg30": 0.8
+        }
+      }
+    },
+    {
+      "id": "mcd11-4",
+      "name": "Oshawott",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "60",
+      "types": [
+        "Water"
+      ],
+      "evolvesTo": [
+        "Dewott"
+      ],
+      "attacks": [
+        {
+          "name": "Water Pulse",
+          "cost": [
+            "Water",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "20",
+          "text": "Flip a coin. If heads, the Defending Pokémon is now Asleep."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Lightning",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "mcd11",
+        "name": "McDonald's Collection 2011",
+        "series": "Other",
+        "printedTotal": 12,
+        "total": 12,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2011/06/17",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd11/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd11/logo.png"
+        }
+      },
+      "number": "4",
+      "artist": "Ken Sugimori",
+      "flavorText": "It fights using the scalchop on its stomach. In response to an attack, it retaliates immediately by slashing.",
+      "nationalPokedexNumbers": [
+        501
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd11/4.png",
+        "large": "https://images.pokemontcg.io/mcd11/4_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd11-4",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 3.47,
+            "mid": 3.72,
+            "high": 5.56,
+            "market": 4.77,
+            "directLow": 3.04
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd11-4",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 1.05,
+          "lowPrice": 0.05,
+          "trendPrice": 1.42,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 0.71,
+          "lowPriceExPlus": 0.12,
+          "avg1": 2.0,
+          "avg7": 1.19,
+          "avg30": 1.54,
+          "reverseHoloAvg1": 0.85,
+          "reverseHoloAvg7": 0.64,
+          "reverseHoloAvg30": 0.74
+        }
+      }
+    },
+    {
+      "id": "mcd11-5",
+      "name": "Alomomola",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "100",
+      "types": [
+        "Water"
+      ],
+      "attacks": [
+        {
+          "name": "Pound",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "20",
+          "text": ""
+        },
+        {
+          "name": "Wave Splash",
+          "cost": [
+            "Water",
+            "Water",
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 4,
+          "damage": "60",
+          "text": ""
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Lightning",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless",
+        "Colorless"
+      ],
+      "convertedRetreatCost": 2,
+      "set": {
+        "id": "mcd11",
+        "name": "McDonald's Collection 2011",
+        "series": "Other",
+        "printedTotal": 12,
+        "total": 12,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2011/06/17",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd11/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd11/logo.png"
+        }
+      },
+      "number": "5",
+      "artist": "sui",
+      "flavorText": "Floating in the open sea is how they live. When they find a wounded Pokémon, they embrace it and bring it to shore.",
+      "nationalPokedexNumbers": [
+        594
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd11/5.png",
+        "large": "https://images.pokemontcg.io/mcd11/5_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd11-5",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 1.0,
+            "mid": 3.0,
+            "high": 5.0,
+            "market": 2.78,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd11-5",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 1.36,
+          "lowPrice": 0.08,
+          "trendPrice": 0.91,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 0.86,
+          "lowPriceExPlus": 0.15,
+          "avg1": 0.71,
+          "avg7": 1.17,
+          "avg30": 1.6,
+          "reverseHoloAvg1": 0.65,
+          "reverseHoloAvg7": 0.84,
+          "reverseHoloAvg30": 0.71
+        }
+      }
+    },
+    {
+      "id": "mcd11-6",
+      "name": "Blitzle",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "60",
+      "types": [
+        "Lightning"
+      ],
+      "evolvesTo": [
+        "Zebstrika"
+      ],
+      "attacks": [
+        {
+          "name": "Quick Attack",
+          "cost": [
+            "Lightning",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "10+",
+          "text": "Flip a coin. If heads, this attack does 20 more damage."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fighting",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "mcd11",
+        "name": "McDonald's Collection 2011",
+        "series": "Other",
+        "printedTotal": 12,
+        "total": 12,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2011/06/17",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd11/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd11/logo.png"
+        }
+      },
+      "number": "6",
+      "artist": "Ken Sugimori",
+      "flavorText": "Its mane shines when it discharges electricity. They use their flashing manes to communicate with one another.",
+      "nationalPokedexNumbers": [
+        522
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd11/6.png",
+        "large": "https://images.pokemontcg.io/mcd11/6_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd11-6",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 1.25,
+            "mid": 3.3,
+            "high": 5.97,
+            "market": 3.23,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd11-6",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 0.85,
+          "lowPrice": 0.08,
+          "trendPrice": 0.52,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 0.66,
+          "lowPriceExPlus": 0.39,
+          "avg1": 0.99,
+          "avg7": 0.92,
+          "avg30": 1.36,
+          "reverseHoloAvg1": 0.39,
+          "reverseHoloAvg7": 0.66,
+          "reverseHoloAvg30": 0.55
+        }
+      }
+    },
+    {
+      "id": "mcd11-7",
+      "name": "Munna",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "60",
+      "types": [
+        "Psychic"
+      ],
+      "evolvesTo": [
+        "Musharna"
+      ],
+      "attacks": [
+        {
+          "name": "Yawn",
+          "cost": [
+            "Psychic"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "",
+          "text": "The Defending Pokémon is now Asleep."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Psychic",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "mcd11",
+        "name": "McDonald's Collection 2011",
+        "series": "Other",
+        "printedTotal": 12,
+        "total": 12,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2011/06/17",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd11/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd11/logo.png"
+        }
+      },
+      "number": "7",
+      "artist": "Ken Sugimori",
+      "flavorText": "It eats the dreams of people and Pokémon. When it eats a pleasant dream, it expels pink-colored mist.",
+      "nationalPokedexNumbers": [
+        517
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd11/7.png",
+        "large": "https://images.pokemontcg.io/mcd11/7_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd11-7",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 1.5,
+            "mid": 2.99,
+            "high": 3.7,
+            "market": 3.06,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd11-7",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 0.75,
+          "lowPrice": 0.1,
+          "trendPrice": 0.02,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 0.4,
+          "lowPriceExPlus": 0.3,
+          "avg1": 0.44,
+          "avg7": 0.51,
+          "avg30": 1.44,
+          "reverseHoloAvg1": 0.25,
+          "reverseHoloAvg7": 0.49,
+          "reverseHoloAvg30": 0.36
+        }
+      }
+    },
+    {
+      "id": "mcd11-8",
+      "name": "Sandile",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "70",
+      "types": [
+        "Fighting"
+      ],
+      "evolvesTo": [
+        "Krokorok"
+      ],
+      "attacks": [
+        {
+          "name": "Sand Tomb",
+          "cost": [
+            "Fighting",
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 3,
+          "damage": "30",
+          "text": "The Defending Pokémon can't retreat during your opponent's next turn."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Water",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless",
+        "Colorless"
+      ],
+      "convertedRetreatCost": 2,
+      "set": {
+        "id": "mcd11",
+        "name": "McDonald's Collection 2011",
+        "series": "Other",
+        "printedTotal": 12,
+        "total": 12,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2011/06/17",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd11/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd11/logo.png"
+        }
+      },
+      "number": "8",
+      "artist": "Ken Sugimori",
+      "flavorText": "It moves along below the sand's surface, except for its nose and eyes. A dark membrane shields its eyes from the sun.",
+      "nationalPokedexNumbers": [
+        551
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd11/8.png",
+        "large": "https://images.pokemontcg.io/mcd11/8_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd11-8",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 1.45,
+            "mid": 2.57,
+            "high": 5.5,
+            "market": 2.59,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd11-8",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 0.77,
+          "lowPrice": 0.09,
+          "trendPrice": 0.54,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 0.58,
+          "lowPriceExPlus": 0.14,
+          "avg1": 1.5,
+          "avg7": 1.09,
+          "avg30": 1.26,
+          "reverseHoloAvg1": 0.44,
+          "reverseHoloAvg7": 0.5,
+          "reverseHoloAvg30": 0.54
+        }
+      }
+    },
+    {
+      "id": "mcd11-9",
+      "name": "Zorua",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "50",
+      "types": [
+        "Darkness"
+      ],
+      "evolvesTo": [
+        "Zoroark"
+      ],
+      "attacks": [
+        {
+          "name": "Scratch",
+          "cost": [
+            "Colorless"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "10",
+          "text": ""
+        },
+        {
+          "name": "Fury Swipes",
+          "cost": [
+            "Darkness",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "10×",
+          "text": "Flip 3 coins. This attack does 10 damage times the number of heads."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fighting",
+          "value": "×2"
+        }
+      ],
+      "resistances": [
+        {
+          "type": "Psychic",
+          "value": "-20"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "mcd11",
+        "name": "McDonald's Collection 2011",
+        "series": "Other",
+        "printedTotal": 12,
+        "total": 12,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2011/06/17",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd11/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd11/logo.png"
+        }
+      },
+      "number": "9",
+      "artist": "Ken Sugimori",
+      "flavorText": "It changes into the forms of others to surprise them. Apparently, it often transforms into a silent child.",
+      "nationalPokedexNumbers": [
+        570
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd11/9.png",
+        "large": "https://images.pokemontcg.io/mcd11/9_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd11-9",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 2.16,
+            "mid": 4.97,
+            "high": 6.97,
+            "market": 4.73,
+            "directLow": 5.92
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd11-9",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 1.06,
+          "lowPrice": 0.08,
+          "trendPrice": 0.73,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 0.63,
+          "lowPriceExPlus": 0.25,
+          "avg1": 1.01,
+          "avg7": 0.61,
+          "avg30": 1.11,
+          "reverseHoloAvg1": 1.12,
+          "reverseHoloAvg7": 0.76,
+          "reverseHoloAvg30": 0.67
+        }
+      }
+    },
+    {
+      "id": "mcd11-10",
+      "name": "Klink",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "50",
+      "types": [
+        "Metal"
+      ],
+      "evolvesTo": [
+        "Klang"
+      ],
+      "attacks": [
+        {
+          "name": "Charge Beam",
+          "cost": [
+            "Metal"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "10",
+          "text": "Flip a coin. If heads, attach an Energy card from your discard pile to this Pokémon."
+        },
+        {
+          "name": "Irongrip",
+          "cost": [
+            "Metal",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fire",
+          "value": "×2"
+        }
+      ],
+      "resistances": [
+        {
+          "type": "Psychic",
+          "value": "-20"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "mcd11",
+        "name": "McDonald's Collection 2011",
+        "series": "Other",
+        "printedTotal": 12,
+        "total": 12,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2011/06/17",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd11/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd11/logo.png"
+        }
+      },
+      "number": "10",
+      "artist": "Ken Sugimori",
+      "flavorText": "The two minigears that mesh together are predetermined. Each will rebound from other minigears without meshing.",
+      "nationalPokedexNumbers": [
+        599
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd11/10.png",
+        "large": "https://images.pokemontcg.io/mcd11/10_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd11-10",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 1.0,
+            "mid": 1.91,
+            "high": 16.45,
+            "market": 1.82,
+            "directLow": 1.19
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd11-10",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 1.09,
+          "lowPrice": 0.08,
+          "trendPrice": 0.53,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 0.51,
+          "lowPriceExPlus": 0.12,
+          "avg1": 0.3,
+          "avg7": 0.96,
+          "avg30": 1.5,
+          "reverseHoloAvg1": 0.2,
+          "reverseHoloAvg7": 0.41,
+          "reverseHoloAvg30": 0.59
+        }
+      }
+    },
+    {
+      "id": "mcd11-11",
+      "name": "Pidove",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "40",
+      "types": [
+        "Colorless"
+      ],
+      "evolvesTo": [
+        "Tranquill"
+      ],
+      "attacks": [
+        {
+          "name": "Growl",
+          "cost": [
+            "Colorless"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "",
+          "text": "During your opponent's next turn, any damage done by attacks from the Defending Pokémon is reduced by 20 (before applying Weakness and Resistance)."
+        },
+        {
+          "name": "Gust",
+          "cost": [
+            "Colorless"
+          ],
+          "convertedEnergyCost": 1,
+          "damage": "10",
+          "text": ""
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Lightning",
+          "value": "×2"
+        }
+      ],
+      "resistances": [
+        {
+          "type": "Fighting",
+          "value": "-20"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "mcd11",
+        "name": "McDonald's Collection 2011",
+        "series": "Other",
+        "printedTotal": 12,
+        "total": 12,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2011/06/17",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd11/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd11/logo.png"
+        }
+      },
+      "number": "11",
+      "artist": "Ken Sugimori",
+      "flavorText": "These Pokémon live in cities. They are accustomed to people. Flocks often gather in parks and plazas.",
+      "nationalPokedexNumbers": [
+        519
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd11/11.png",
+        "large": "https://images.pokemontcg.io/mcd11/11_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd11-11",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 0.94,
+            "mid": 2.75,
+            "high": 5.5,
+            "market": 2.83,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd11-11",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 0.86,
+          "lowPrice": 0.09,
+          "trendPrice": 0.27,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 1.25,
+          "lowPriceExPlus": 0.2,
+          "avg1": 0.2,
+          "avg7": 1.07,
+          "avg30": 2.18,
+          "reverseHoloAvg1": 0.87,
+          "reverseHoloAvg7": 0.84,
+          "reverseHoloAvg30": 0.71
+        }
+      }
+    },
+    {
+      "id": "mcd11-12",
+      "name": "Audino",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "80",
+      "types": [
+        "Colorless"
+      ],
+      "attacks": [
+        {
+          "name": "Double Slap",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "30×",
+          "text": "Flip 2 coins. This attack does 30 damage times the number of heads."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fighting",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless",
+        "Colorless"
+      ],
+      "convertedRetreatCost": 2,
+      "set": {
+        "id": "mcd11",
+        "name": "McDonald's Collection 2011",
+        "series": "Other",
+        "printedTotal": 12,
+        "total": 12,
+        "legalities": {
+          "unlimited": "Legal",
+          "expanded": "Legal"
+        },
+        "releaseDate": "2011/06/17",
+        "updatedAt": "2022/10/10 15:12:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/mcd11/symbol.png",
+          "logo": "https://images.pokemontcg.io/mcd11/logo.png"
+        }
+      },
+      "number": "12",
+      "artist": "MAHOU",
+      "flavorText": "It touches others with the feelers on its ears, using the sound of their heartbeats to tell how they are feeling.",
+      "nationalPokedexNumbers": [
+        531
+      ],
+      "legalities": {
+        "unlimited": "Legal",
+        "expanded": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/mcd11/12.png",
+        "large": "https://images.pokemontcg.io/mcd11/12_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/mcd11-12",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 0.98,
+            "mid": 1.76,
+            "high": 5.3,
+            "market": 2.37,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/mcd11-12",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 1.79,
+          "lowPrice": 0.05,
+          "trendPrice": 0.71,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 0.52,
+          "lowPriceExPlus": 0.2,
+          "avg1": 0.49,
+          "avg7": 1.66,
+          "avg30": 1.61,
+          "reverseHoloAvg1": 0.18,
+          "reverseHoloAvg7": 0.56,
+          "reverseHoloAvg30": 0.45
+        }
+      }
+    }
+  ],
+  "totalCount": 12
+}

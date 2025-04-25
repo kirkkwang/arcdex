@@ -47,6 +47,9 @@ to_field "normalized_title_ssm" do |_record, accumulator, context|
   accumulator << title
 end
 
+to_field "series_ssm", lambda { |record, accumulator| accumulator << record["set"]["series"] }
+to_field "series_tesim", lambda { |record, accumulator| accumulator << record["set"]["series"] }
+
 to_field "supertype_ssm", lambda { |record, accumulator| accumulator << record["supertype"] }
 
 to_field "subtypes_ssm" do |record, accumulator|
@@ -200,12 +203,6 @@ to_field "_nest_parent_", lambda { |record, accumulator| accumulator << record["
 to_field "component_level_isim", lambda { |_record, accumulator| accumulator << 1 }
 
 # Sort field for display order
-to_field "sort_isi" do |record, accumulator|
-  # Try to use the card number for sorting if it's numeric
-  if record['number'] =~ /^\d+$/
-    accumulator << record['number'].to_i
-  else
-    # Otherwise fall back to string order
-    accumulator << record['number'].to_s
-  end
+to_field "sort_ssi" do |record, accumulator|
+  accumulator << record['number'].to_s
 end

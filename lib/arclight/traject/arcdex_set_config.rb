@@ -24,8 +24,8 @@ to_field "title_tesim", lambda { |record, accumulator| accumulator << record["na
 to_field "normalized_title_ssm", lambda { |record, accumulator| accumulator << record["name"] }
 
 # Set this as a collection-level record
-to_field "level_ssm", lambda { |_record, accumulator| accumulator << "collection" }
-to_field "level_ssim", lambda { |_record, accumulator| accumulator << "Collection" }
+to_field "level_ssm", lambda { |_record, accumulator| accumulator << "set" }
+to_field "level_ssim", lambda { |_record, accumulator| accumulator << "Set" }
 
 to_field "series_ssm", lambda { |record, accumulator| accumulator << record["series"] if record["series"] }
 

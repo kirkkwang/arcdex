@@ -116,6 +116,11 @@ anymatch@~3.1.2:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
+arclight@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/arclight/-/arclight-1.4.0.tgz#1eab61115bc320394247084512e3194fa0a969d1"
+  integrity sha512-a8WGQHWTAg+CbR+1QL4GfDuEwlyEDeeesKe4HjDhaRS5uW3luMW+1FVLtnU79USxjepMkx/stOCQD4KPYVED+g==
+
 autoprefixer@^10.4.21:
   version "10.4.21"
   resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-10.4.21.tgz#77189468e7a8ad1d9a37fbc08efc9f480cf0a95d"
@@ -138,12 +143,19 @@ binary-extensions@^2.0.0:
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-2.3.0.tgz#f6e14a97858d327252200242d4ccfe522c445522"
   integrity sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==
 
+blacklight-frontend@8.9.0:
+  version "8.9.0"
+  resolved "https://registry.yarnpkg.com/blacklight-frontend/-/blacklight-frontend-8.9.0.tgz#fb8561b4ff252c01574e202e9a303a3bfff7a82b"
+  integrity sha512-AIug8HllEHUinqgN5lpJMjqNWAxNY5avD9ig0E1WvgP0JOyWIzvMRjueObKKXl4EVm/885XlhiIN1vkTpmGSvQ==
+  dependencies:
+    bootstrap ">=4.3.1 <6.0.0"
+
 bootstrap-icons@^1.11.3:
   version "1.11.3"
   resolved "https://registry.yarnpkg.com/bootstrap-icons/-/bootstrap-icons-1.11.3.tgz#03f9cb754ec005c52f9ee616e2e84a82cab3084b"
   integrity sha512-+3lpHrCw/it2/7lBL15VR0HEumaBss0+f/Lb6ZvHISn1mlK83jjFpooTLsMWbIjJMDjDjOExMsTxnXSIT4k4ww==
 
-bootstrap@^5.3.5:
+"bootstrap@>=4.3.1 <6.0.0", bootstrap@^5.3.5:
   version "5.3.5"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-5.3.5.tgz#be42cfe0d580e97ee1abb7d38ce94f5c393c9bb6"
   integrity sha512-ct1CHKtiobRimyGzmsSldEtM03E8fcEX4Tb3dGXz1V8faRwM50+vfHwTzOxB3IlKO7m+9vTH3s/3C6T2EAPeTA==

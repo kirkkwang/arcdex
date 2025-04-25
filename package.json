@@ -3,7 +3,9 @@
   "private": "true",
   "dependencies": {
     "@popperjs/core": "^2.11.8",
+    "arclight": "^1.4.0",
     "autoprefixer": "^10.4.21",
+    "blacklight-frontend": "8.9.0",
     "bootstrap": "^5.3.5",
     "bootstrap-icons": "^1.11.3",
     "nodemon": "^3.1.10",

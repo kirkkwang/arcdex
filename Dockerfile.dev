@@ -25,6 +25,9 @@ COPY . .
 # Precompile gems with bootsnap (optional but improves performance)
 RUN bundle exec bootsnap precompile --gemfile || true
 
+# Precompile assets
+RUN bundle exec rails assets:precompile RAILS_ENV=production
+
 # Expose Rails port
 EXPOSE 3000
 

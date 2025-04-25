@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    environment:
+      - RAILS_ENV=development
+      - DATABASE_URL=postgres://postgres:password@db:5432/development
+      - SOLR_URL=http://solr:8983/solr/arclight
+    depends_on:
+      - db
+      - solr
+    stdin_open: true
+    tty: true
+
+  db:
+    image: postgres:17
+    container_name: postgres_dev
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  solr:
+    image: solr:8.11
+    ports:
+      - "8983:8983"
+    volumes:
+      - ./solr/conf:/opt/solr/server/solr/configsets/arclight/conf
+      - solr_data:/var/solr
+    command:
+      - solr-precreate
+      - arclight
+      - /opt/solr/server/solr/configsets/arclight/conf
+
+volumes:
+  pgdata:
+  solr_data:

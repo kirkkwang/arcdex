@@ -1,0 +1,32 @@
+FROM ruby:3.4.3-slim
+
+# Install dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    git \
+    libyaml-dev \
+    nodejs \
+    npm \
+    libpq-dev \
+    && npm install -g yarn \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set working directory
+WORKDIR /app
+
+# Copy gemfiles and install
+COPY Gemfile Gemfile.lock ./
+RUN bundle install
+
+# Copy everything else
+COPY . .
+
+# Precompile gems with bootsnap (optional but improves performance)
+RUN bundle exec bootsnap precompile --gemfile || true
+
+# Expose Rails port
+EXPOSE 3000
+
+# Default command
+CMD ["bash"]

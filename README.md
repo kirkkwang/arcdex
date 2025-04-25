@@ -1,24 +1,13 @@
-# README
+# Development
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```sh
+docker compose build
+docker compose up -d
+docker compose exec web bash
+```
 
-Things you may want to cover:
+```
+bin/web
+```
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Goto `localhost:3000` for the web and `http://localhost:8983/` for the Solr dashboard

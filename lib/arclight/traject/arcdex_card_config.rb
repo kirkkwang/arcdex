@@ -36,8 +36,8 @@ to_field "parent_ssi" do |record, accumulator|
 end
 
 # Mark these as component-level records
-to_field "level_ssm", lambda { |_record, accumulator| accumulator << "item" }
-to_field "level_ssim", lambda { |_record, accumulator| accumulator << "Item" }
+to_field "level_ssm", lambda { |_record, accumulator| accumulator << "card" }
+to_field "level_ssim", lambda { |_record, accumulator| accumulator << "Card" }
 
 # Add title fields (from the 'name' property)
 to_field "title_ssm", lambda { |record, accumulator| accumulator << record["name"] }
@@ -189,5 +189,23 @@ end
 to_field "cardmarket_url_ssm" do |record, accumulator|
   if record["cardmarket"]
     accumulator << record["cardmarket"]["url"]
+  end
+end
+
+# Nesting fields for component display
+to_field "_nest_path_", lambda { |record, accumulator| accumulator << "#{record['set']['id']}/#{record['id']}" }
+to_field "_nest_parent_", lambda { |record, accumulator| accumulator << record["set"]["id"] }
+
+# Component level (1 = direct child of collection)
+to_field "component_level_isim", lambda { |_record, accumulator| accumulator << 1 }
+
+# Sort field for display order
+to_field "sort_isi" do |record, accumulator|
+  # Try to use the card number for sorting if it's numeric
+  if record['number'] =~ /^\d+$/
+    accumulator << record['number'].to_i
+  else
+    # Otherwise fall back to string order
+    accumulator << record['number'].to_s
   end
 end

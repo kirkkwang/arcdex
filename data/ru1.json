@@ -1,0 +1,1654 @@
+{
+  "data": [
+    {
+      "id": "ru1-1",
+      "name": "Venusaur",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": "140",
+      "types": [
+        "Grass"
+      ],
+      "evolvesFrom": "Ivysaur",
+      "attacks": [
+        {
+          "name": "Giga Drain",
+          "cost": [
+            "Grass",
+            "Grass",
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 4,
+          "damage": "50",
+          "text": "Remove from Venusaur the number of damage counters equal to the damage you did to the Defending Pokémon."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fire",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless",
+        "Colorless",
+        "Colorless",
+        "Colorless"
+      ],
+      "convertedRetreatCost": 4,
+      "set": {
+        "id": "ru1",
+        "name": "Pokémon Rumble",
+        "series": "Other",
+        "printedTotal": 16,
+        "total": 16,
+        "legalities": {
+          "unlimited": "Legal"
+        },
+        "releaseDate": "2009/12/02",
+        "updatedAt": "2019/01/28 16:44:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/ru1/symbol.png",
+          "logo": "https://images.pokemontcg.io/ru1/logo.png"
+        }
+      },
+      "number": "1",
+      "artist": "Pokemon Rumble",
+      "nationalPokedexNumbers": [
+        3
+      ],
+      "legalities": {
+        "unlimited": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/ru1/1.png",
+        "large": "https://images.pokemontcg.io/ru1/1_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/ru1-1",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 68.0,
+            "mid": 70.0,
+            "high": 82.35,
+            "market": 70.97,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/ru1-1",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 17.5,
+          "lowPrice": 15.0,
+          "trendPrice": 25.11,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 11.03,
+          "lowPriceExPlus": 29.0,
+          "avg1": 20.0,
+          "avg7": 25.67,
+          "avg30": 39.57,
+          "reverseHoloAvg1": 22.84,
+          "reverseHoloAvg7": 11.09,
+          "reverseHoloAvg30": 5.39
+        }
+      }
+    },
+    {
+      "id": "ru1-2",
+      "name": "Cherrim",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": "80",
+      "types": [
+        "Grass"
+      ],
+      "evolvesFrom": "Cherubi",
+      "attacks": [
+        {
+          "name": "Solarbeam",
+          "cost": [
+            "Grass",
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 3,
+          "damage": "60",
+          "text": ""
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fire",
+          "value": "×2"
+        }
+      ],
+      "resistances": [
+        {
+          "type": "Water",
+          "value": "-20"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "ru1",
+        "name": "Pokémon Rumble",
+        "series": "Other",
+        "printedTotal": 16,
+        "total": 16,
+        "legalities": {
+          "unlimited": "Legal"
+        },
+        "releaseDate": "2009/12/02",
+        "updatedAt": "2019/01/28 16:44:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/ru1/symbol.png",
+          "logo": "https://images.pokemontcg.io/ru1/logo.png"
+        }
+      },
+      "number": "2",
+      "artist": "Pokemon Rumble",
+      "nationalPokedexNumbers": [
+        421
+      ],
+      "legalities": {
+        "unlimited": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/ru1/2.png",
+        "large": "https://images.pokemontcg.io/ru1/2_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/ru1-2",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "normal": {
+            "low": 29.0,
+            "mid": 30.27,
+            "high": 33.5,
+            "market": 21.25,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/ru1-2",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 7.24,
+          "lowPrice": 2.0,
+          "trendPrice": 8.93,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 15.95,
+          "reverseHoloTrend": 5.07,
+          "lowPriceExPlus": 7.5,
+          "avg1": 12.0,
+          "avg7": 8.45,
+          "avg30": 7.61,
+          "reverseHoloAvg1": 4.99,
+          "reverseHoloAvg7": 4.16,
+          "reverseHoloAvg30": 4.16
+        }
+      }
+    },
+    {
+      "id": "ru1-3",
+      "name": "Ninetales",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": "90",
+      "types": [
+        "Fire"
+      ],
+      "evolvesFrom": "Vulpix",
+      "attacks": [
+        {
+          "name": "Flame Tail",
+          "cost": [
+            "Fire",
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 3,
+          "damage": "60",
+          "text": ""
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Water",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "ru1",
+        "name": "Pokémon Rumble",
+        "series": "Other",
+        "printedTotal": 16,
+        "total": 16,
+        "legalities": {
+          "unlimited": "Legal"
+        },
+        "releaseDate": "2009/12/02",
+        "updatedAt": "2019/01/28 16:44:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/ru1/symbol.png",
+          "logo": "https://images.pokemontcg.io/ru1/logo.png"
+        }
+      },
+      "number": "3",
+      "artist": "Pokemon Rumble",
+      "nationalPokedexNumbers": [
+        38
+      ],
+      "legalities": {
+        "unlimited": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/ru1/3.png",
+        "large": "https://images.pokemontcg.io/ru1/3_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/ru1-3",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "normal": {
+            "low": 21.97,
+            "mid": 25.91,
+            "high": 47.39,
+            "market": 39.19,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/ru1-3",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 20.47,
+          "lowPrice": 14.9,
+          "trendPrice": 15.45,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 12.78,
+          "lowPriceExPlus": 26.5,
+          "avg1": 12.99,
+          "avg7": 18.1,
+          "avg30": 15.21,
+          "reverseHoloAvg1": 11.95,
+          "reverseHoloAvg7": 13.23,
+          "reverseHoloAvg30": 13.23
+        }
+      }
+    },
+    {
+      "id": "ru1-4",
+      "name": "Heatran",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "110",
+      "types": [
+        "Fire"
+      ],
+      "attacks": [
+        {
+          "name": "Heat Boiler",
+          "cost": [
+            "Fire",
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 4,
+          "damage": "60+",
+          "text": "If the Defending Pokémon is a Water Pokémon, this attack does 60 damage plus 40 more damage."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Water",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless",
+        "Colorless",
+        "Colorless",
+        "Colorless"
+      ],
+      "convertedRetreatCost": 4,
+      "set": {
+        "id": "ru1",
+        "name": "Pokémon Rumble",
+        "series": "Other",
+        "printedTotal": 16,
+        "total": 16,
+        "legalities": {
+          "unlimited": "Legal"
+        },
+        "releaseDate": "2009/12/02",
+        "updatedAt": "2019/01/28 16:44:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/ru1/symbol.png",
+          "logo": "https://images.pokemontcg.io/ru1/logo.png"
+        }
+      },
+      "number": "4",
+      "artist": "Pokemon Rumble",
+      "nationalPokedexNumbers": [
+        485
+      ],
+      "legalities": {
+        "unlimited": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/ru1/4.png",
+        "large": "https://images.pokemontcg.io/ru1/4_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/ru1-4",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "normal": {
+            "low": 39.98,
+            "mid": 48.0,
+            "high": 49.27,
+            "market": 34.7,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/ru1-4",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 6.99,
+          "lowPrice": 7.25,
+          "trendPrice": 8.04,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 9.53,
+          "lowPriceExPlus": 9.0,
+          "avg1": 8.5,
+          "avg7": 8.48,
+          "avg30": 8.35,
+          "reverseHoloAvg1": 10.0,
+          "reverseHoloAvg7": 5.31,
+          "reverseHoloAvg30": 5.31
+        }
+      }
+    },
+    {
+      "id": "ru1-5",
+      "name": "Starmie",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": "80",
+      "types": [
+        "Water"
+      ],
+      "evolvesFrom": "Staryu",
+      "attacks": [
+        {
+          "name": "Spiral Drain",
+          "cost": [
+            "Water",
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 3,
+          "damage": "50",
+          "text": "Remove 1 damage counter from Starmie."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Lightning",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "ru1",
+        "name": "Pokémon Rumble",
+        "series": "Other",
+        "printedTotal": 16,
+        "total": 16,
+        "legalities": {
+          "unlimited": "Legal"
+        },
+        "releaseDate": "2009/12/02",
+        "updatedAt": "2019/01/28 16:44:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/ru1/symbol.png",
+          "logo": "https://images.pokemontcg.io/ru1/logo.png"
+        }
+      },
+      "number": "5",
+      "artist": "Pokemon Rumble",
+      "nationalPokedexNumbers": [
+        121
+      ],
+      "legalities": {
+        "unlimited": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/ru1/5.png",
+        "large": "https://images.pokemontcg.io/ru1/5_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/ru1-5",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "normal": {
+            "low": 10.0,
+            "mid": 14.99,
+            "high": 45.0,
+            "market": 34.09,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/ru1-5",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 10.09,
+          "lowPrice": 2.2,
+          "trendPrice": 10.7,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 15.95,
+          "reverseHoloTrend": 13.83,
+          "lowPriceExPlus": 9.99,
+          "avg1": 9.0,
+          "avg7": 9.8,
+          "avg30": 9.22,
+          "reverseHoloAvg1": 13.5,
+          "reverseHoloAvg7": 8.28,
+          "reverseHoloAvg30": 8.28
+        }
+      }
+    },
+    {
+      "id": "ru1-6",
+      "name": "Gyarados",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": "130",
+      "types": [
+        "Water"
+      ],
+      "evolvesFrom": "Magikarp",
+      "attacks": [
+        {
+          "name": "Thrash Tackle",
+          "cost": [
+            "Water",
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 4,
+          "damage": "80",
+          "text": "Gyarados does 20 damage to itself."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Lightning",
+          "value": "×2"
+        }
+      ],
+      "resistances": [
+        {
+          "type": "Fighting",
+          "value": "-20"
+        }
+      ],
+      "retreatCost": [
+        "Colorless",
+        "Colorless",
+        "Colorless"
+      ],
+      "convertedRetreatCost": 3,
+      "set": {
+        "id": "ru1",
+        "name": "Pokémon Rumble",
+        "series": "Other",
+        "printedTotal": 16,
+        "total": 16,
+        "legalities": {
+          "unlimited": "Legal"
+        },
+        "releaseDate": "2009/12/02",
+        "updatedAt": "2019/01/28 16:44:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/ru1/symbol.png",
+          "logo": "https://images.pokemontcg.io/ru1/logo.png"
+        }
+      },
+      "number": "6",
+      "artist": "Pokemon Rumble",
+      "nationalPokedexNumbers": [
+        130
+      ],
+      "legalities": {
+        "unlimited": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/ru1/6.png",
+        "large": "https://images.pokemontcg.io/ru1/6_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/ru1-6",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "normal": {
+            "low": 75.0,
+            "mid": 80.99,
+            "high": 85.36,
+            "market": 80.09,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/ru1-6",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 23.0,
+          "lowPrice": 15.0,
+          "trendPrice": 23.25,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 21.07,
+          "lowPriceExPlus": 36.0,
+          "avg1": 14.0,
+          "avg7": 21.63,
+          "avg30": 23.14,
+          "reverseHoloAvg1": 23.0,
+          "reverseHoloAvg7": 13.68,
+          "reverseHoloAvg30": 13.68
+        }
+      }
+    },
+    {
+      "id": "ru1-7",
+      "name": "Pikachu",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "60",
+      "types": [
+        "Lightning"
+      ],
+      "evolvesTo": [
+        "Raichu"
+      ],
+      "attacks": [
+        {
+          "name": "Volt Tackle",
+          "cost": [
+            "Lightning",
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 3,
+          "damage": "60",
+          "text": "Pikachu does 10 damage to itself."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fighting",
+          "value": "×2"
+        }
+      ],
+      "resistances": [
+        {
+          "type": "Metal",
+          "value": "-20"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "ru1",
+        "name": "Pokémon Rumble",
+        "series": "Other",
+        "printedTotal": 16,
+        "total": 16,
+        "legalities": {
+          "unlimited": "Legal"
+        },
+        "releaseDate": "2009/12/02",
+        "updatedAt": "2019/01/28 16:44:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/ru1/symbol.png",
+          "logo": "https://images.pokemontcg.io/ru1/logo.png"
+        }
+      },
+      "number": "7",
+      "artist": "Pokemon Rumble",
+      "nationalPokedexNumbers": [
+        25
+      ],
+      "legalities": {
+        "unlimited": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/ru1/7.png",
+        "large": "https://images.pokemontcg.io/ru1/7_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/ru1-7",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 89.99,
+            "mid": 199.99,
+            "high": 227.45,
+            "market": 149.99,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/ru1-7",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 86.66,
+          "lowPrice": 39.95,
+          "trendPrice": 89.62,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 41.46,
+          "lowPriceExPlus": 120.0,
+          "avg1": 149.99,
+          "avg7": 95.57,
+          "avg30": 90.53,
+          "reverseHoloAvg1": 39.99,
+          "reverseHoloAvg7": 37.71,
+          "reverseHoloAvg30": 16.09
+        }
+      }
+    },
+    {
+      "id": "ru1-8",
+      "name": "Zapdos",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "100",
+      "types": [
+        "Lightning"
+      ],
+      "attacks": [
+        {
+          "name": "Drill Peck",
+          "cost": [
+            "Lightning",
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 4,
+          "damage": "70",
+          "text": ""
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Lightning",
+          "value": "×2"
+        }
+      ],
+      "resistances": [
+        {
+          "type": "Fighting",
+          "value": "-20"
+        }
+      ],
+      "retreatCost": [
+        "Colorless",
+        "Colorless"
+      ],
+      "convertedRetreatCost": 2,
+      "set": {
+        "id": "ru1",
+        "name": "Pokémon Rumble",
+        "series": "Other",
+        "printedTotal": 16,
+        "total": 16,
+        "legalities": {
+          "unlimited": "Legal"
+        },
+        "releaseDate": "2009/12/02",
+        "updatedAt": "2019/01/28 16:44:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/ru1/symbol.png",
+          "logo": "https://images.pokemontcg.io/ru1/logo.png"
+        }
+      },
+      "number": "8",
+      "artist": "Pokemon Rumble",
+      "nationalPokedexNumbers": [
+        145
+      ],
+      "legalities": {
+        "unlimited": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/ru1/8.png",
+        "large": "https://images.pokemontcg.io/ru1/8_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/ru1-8",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "normal": {
+            "low": 85.2,
+            "mid": 85.71,
+            "high": 86.22,
+            "market": 43.77,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/ru1-8",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 25.73,
+          "lowPrice": 14.99,
+          "trendPrice": 27.02,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 24.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 30.34,
+          "lowPriceExPlus": 25.0,
+          "avg1": 44.95,
+          "avg7": 28.84,
+          "avg30": 22.89,
+          "reverseHoloAvg1": 24.0,
+          "reverseHoloAvg7": 15.2,
+          "reverseHoloAvg30": 15.2
+        }
+      }
+    },
+    {
+      "id": "ru1-9",
+      "name": "Mewtwo",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "100",
+      "types": [
+        "Psychic"
+      ],
+      "attacks": [
+        {
+          "name": "Super Psy Bolt",
+          "cost": [
+            "Psychic",
+            "Psychic",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 3,
+          "damage": "70",
+          "text": ""
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Psychic",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless",
+        "Colorless"
+      ],
+      "convertedRetreatCost": 2,
+      "set": {
+        "id": "ru1",
+        "name": "Pokémon Rumble",
+        "series": "Other",
+        "printedTotal": 16,
+        "total": 16,
+        "legalities": {
+          "unlimited": "Legal"
+        },
+        "releaseDate": "2009/12/02",
+        "updatedAt": "2019/01/28 16:44:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/ru1/symbol.png",
+          "logo": "https://images.pokemontcg.io/ru1/logo.png"
+        }
+      },
+      "number": "9",
+      "artist": "Pokemon Rumble",
+      "nationalPokedexNumbers": [
+        150
+      ],
+      "legalities": {
+        "unlimited": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/ru1/9.png",
+        "large": "https://images.pokemontcg.io/ru1/9_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/ru1-9",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "holofoil": {
+            "low": 49.99,
+            "mid": 62.5,
+            "high": 75.0,
+            "market": 45.0,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/ru1-9",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 97.48,
+          "lowPrice": 22.0,
+          "trendPrice": 68.72,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 20.72,
+          "lowPriceExPlus": 40.0,
+          "avg1": 24.95,
+          "avg7": 52.25,
+          "avg30": 77.88,
+          "reverseHoloAvg1": 45.0,
+          "reverseHoloAvg7": 27.87,
+          "reverseHoloAvg30": 11.29
+        }
+      }
+    },
+    {
+      "id": "ru1-10",
+      "name": "Mew",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "60",
+      "types": [
+        "Psychic"
+      ],
+      "attacks": [
+        {
+          "name": "Cut",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "30",
+          "text": ""
+        },
+        {
+          "name": "Will-o'-the-wisp",
+          "cost": [
+            "Psychic",
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 3,
+          "damage": "60",
+          "text": ""
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Psychic",
+          "value": "×2"
+        }
+      ],
+      "set": {
+        "id": "ru1",
+        "name": "Pokémon Rumble",
+        "series": "Other",
+        "printedTotal": 16,
+        "total": 16,
+        "legalities": {
+          "unlimited": "Legal"
+        },
+        "releaseDate": "2009/12/02",
+        "updatedAt": "2019/01/28 16:44:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/ru1/symbol.png",
+          "logo": "https://images.pokemontcg.io/ru1/logo.png"
+        }
+      },
+      "number": "10",
+      "artist": "Pokemon Rumble",
+      "nationalPokedexNumbers": [
+        151
+      ],
+      "legalities": {
+        "unlimited": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/ru1/10.png",
+        "large": "https://images.pokemontcg.io/ru1/10_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/ru1-10",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "normal": {
+            "low": 375.0,
+            "mid": 375.0,
+            "high": 375.0,
+            "market": 123.45,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/ru1-10",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 35.66,
+          "lowPrice": 30.0,
+          "trendPrice": 49.84,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 11.55,
+          "lowPriceExPlus": 58.0,
+          "avg1": 35.0,
+          "avg7": 43.64,
+          "avg30": 44.77,
+          "reverseHoloAvg1": 7.5,
+          "reverseHoloAvg7": 8.24,
+          "reverseHoloAvg30": 8.24
+        }
+      }
+    },
+    {
+      "id": "ru1-11",
+      "name": "Diglett",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "30",
+      "types": [
+        "Fighting"
+      ],
+      "evolvesTo": [
+        "Dugtrio"
+      ],
+      "attacks": [
+        {
+          "name": "Dig",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Grass",
+          "value": "×2"
+        }
+      ],
+      "resistances": [
+        {
+          "type": "Lightning",
+          "value": "-20"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "ru1",
+        "name": "Pokémon Rumble",
+        "series": "Other",
+        "printedTotal": 16,
+        "total": 16,
+        "legalities": {
+          "unlimited": "Legal"
+        },
+        "releaseDate": "2009/12/02",
+        "updatedAt": "2019/01/28 16:44:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/ru1/symbol.png",
+          "logo": "https://images.pokemontcg.io/ru1/logo.png"
+        }
+      },
+      "number": "11",
+      "artist": "Pokemon Rumble",
+      "nationalPokedexNumbers": [
+        50
+      ],
+      "legalities": {
+        "unlimited": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/ru1/11.png",
+        "large": "https://images.pokemontcg.io/ru1/11_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/ru1-11",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "normal": {
+            "low": 16.0,
+            "mid": 24.6,
+            "high": 27.99,
+            "market": 28.87,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/ru1-11",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 9.99,
+          "lowPrice": 8.0,
+          "trendPrice": 8.12,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 11.5,
+          "reverseHoloTrend": 8.85,
+          "lowPriceExPlus": 10.0,
+          "avg1": 9.99,
+          "avg7": 8.7,
+          "avg30": 10.58,
+          "reverseHoloAvg1": 5.0,
+          "reverseHoloAvg7": 6.48,
+          "reverseHoloAvg30": 6.48
+        }
+      }
+    },
+    {
+      "id": "ru1-12",
+      "name": "Lucario",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": "90",
+      "types": [
+        "Fighting"
+      ],
+      "evolvesFrom": "Riolu",
+      "attacks": [
+        {
+          "name": "Metal Claw",
+          "cost": [
+            "Fighting",
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 3,
+          "damage": "40",
+          "text": ""
+        },
+        {
+          "name": "Pulse Blast",
+          "cost": [
+            "Fighting",
+            "Metal",
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 4,
+          "damage": "80",
+          "text": ""
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Psychic",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "ru1",
+        "name": "Pokémon Rumble",
+        "series": "Other",
+        "printedTotal": 16,
+        "total": 16,
+        "legalities": {
+          "unlimited": "Legal"
+        },
+        "releaseDate": "2009/12/02",
+        "updatedAt": "2019/01/28 16:44:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/ru1/symbol.png",
+          "logo": "https://images.pokemontcg.io/ru1/logo.png"
+        }
+      },
+      "number": "12",
+      "artist": "Pokemon Rumble",
+      "nationalPokedexNumbers": [
+        448
+      ],
+      "legalities": {
+        "unlimited": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/ru1/12.png",
+        "large": "https://images.pokemontcg.io/ru1/12_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/ru1-12",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "normal": {
+            "low": 124.99,
+            "mid": 129.75,
+            "high": 150.0,
+            "market": 111.79,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/ru1-12",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 34.49,
+          "lowPrice": 17.0,
+          "trendPrice": 33.69,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 12.13,
+          "lowPriceExPlus": 37.5,
+          "avg1": 45.0,
+          "avg7": 37.49,
+          "avg30": 41.17,
+          "reverseHoloAvg1": 20.0,
+          "reverseHoloAvg7": 7.02,
+          "reverseHoloAvg30": 7.02
+        }
+      }
+    },
+    {
+      "id": "ru1-13",
+      "name": "Skuntank",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": "90",
+      "types": [
+        "Darkness"
+      ],
+      "evolvesFrom": "Stunky",
+      "attacks": [
+        {
+          "name": "Rage",
+          "cost": [
+            "Darkness",
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 3,
+          "damage": "20+",
+          "text": "Does 20 damage plus 10 more damage for each damage counter on Skuntank."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fighting",
+          "value": "×2"
+        }
+      ],
+      "resistances": [
+        {
+          "type": "Psychic",
+          "value": "-20"
+        }
+      ],
+      "retreatCost": [
+        "Colorless",
+        "Colorless"
+      ],
+      "convertedRetreatCost": 2,
+      "set": {
+        "id": "ru1",
+        "name": "Pokémon Rumble",
+        "series": "Other",
+        "printedTotal": 16,
+        "total": 16,
+        "legalities": {
+          "unlimited": "Legal"
+        },
+        "releaseDate": "2009/12/02",
+        "updatedAt": "2019/01/28 16:44:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/ru1/symbol.png",
+          "logo": "https://images.pokemontcg.io/ru1/logo.png"
+        }
+      },
+      "number": "13",
+      "artist": "Pokemon Rumble",
+      "nationalPokedexNumbers": [
+        435
+      ],
+      "legalities": {
+        "unlimited": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/ru1/13.png",
+        "large": "https://images.pokemontcg.io/ru1/13_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/ru1-13",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "normal": {
+            "low": 17.96,
+            "mid": 24.65,
+            "high": 35.59,
+            "market": 12.99,
+            "directLow": 24.65
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/ru1-13",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 7.5,
+          "lowPrice": 4.4,
+          "trendPrice": 8.47,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 9.49,
+          "lowPriceExPlus": 12.0,
+          "avg1": 8.0,
+          "avg7": 7.49,
+          "avg30": 7.76,
+          "reverseHoloAvg1": 9.99,
+          "reverseHoloAvg7": 5.49,
+          "reverseHoloAvg30": 5.49
+        }
+      }
+    },
+    {
+      "id": "ru1-14",
+      "name": "Bastiodon",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": "120",
+      "types": [
+        "Metal"
+      ],
+      "evolvesFrom": "Shieldon",
+      "attacks": [
+        {
+          "name": "Strength",
+          "cost": [
+            "Metal",
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 3,
+          "damage": "40",
+          "text": ""
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fire",
+          "value": "×2"
+        }
+      ],
+      "resistances": [
+        {
+          "type": "Psychic",
+          "value": "-20"
+        }
+      ],
+      "retreatCost": [
+        "Colorless",
+        "Colorless",
+        "Colorless",
+        "Colorless"
+      ],
+      "convertedRetreatCost": 4,
+      "set": {
+        "id": "ru1",
+        "name": "Pokémon Rumble",
+        "series": "Other",
+        "printedTotal": 16,
+        "total": 16,
+        "legalities": {
+          "unlimited": "Legal"
+        },
+        "releaseDate": "2009/12/02",
+        "updatedAt": "2019/01/28 16:44:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/ru1/symbol.png",
+          "logo": "https://images.pokemontcg.io/ru1/logo.png"
+        }
+      },
+      "number": "14",
+      "artist": "Pokemon Rumble",
+      "nationalPokedexNumbers": [
+        411
+      ],
+      "legalities": {
+        "unlimited": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/ru1/14.png",
+        "large": "https://images.pokemontcg.io/ru1/14_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/ru1-14",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "normal": {
+            "low": 12.93,
+            "mid": 20.84,
+            "high": 28.74,
+            "market": 19.99,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/ru1-14",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 6.65,
+          "lowPrice": 4.0,
+          "trendPrice": 6.98,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 6.5,
+          "reverseHoloTrend": 6.75,
+          "lowPriceExPlus": 6.5,
+          "avg1": 6.0,
+          "avg7": 6.95,
+          "avg30": 6.53,
+          "reverseHoloAvg1": 6.99,
+          "reverseHoloAvg7": 6.37,
+          "reverseHoloAvg30": 6.37
+        }
+      }
+    },
+    {
+      "id": "ru1-15",
+      "name": "Rattata",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": "30",
+      "types": [
+        "Colorless"
+      ],
+      "evolvesTo": [
+        "Raticate"
+      ],
+      "attacks": [
+        {
+          "name": "Bite",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 2,
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fighting",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "ru1",
+        "name": "Pokémon Rumble",
+        "series": "Other",
+        "printedTotal": 16,
+        "total": 16,
+        "legalities": {
+          "unlimited": "Legal"
+        },
+        "releaseDate": "2009/12/02",
+        "updatedAt": "2019/01/28 16:44:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/ru1/symbol.png",
+          "logo": "https://images.pokemontcg.io/ru1/logo.png"
+        }
+      },
+      "number": "15",
+      "artist": "Pokemon Rumble",
+      "nationalPokedexNumbers": [
+        19
+      ],
+      "legalities": {
+        "unlimited": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/ru1/15.png",
+        "large": "https://images.pokemontcg.io/ru1/15_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/ru1-15",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "normal": {
+            "low": 24.0,
+            "mid": 25.0,
+            "high": 30.0,
+            "market": 28.24,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/ru1-15",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 6.25,
+          "lowPrice": 2.99,
+          "trendPrice": 11.93,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 6.5,
+          "reverseHoloTrend": 3.36,
+          "lowPriceExPlus": 7.5,
+          "avg1": 5.0,
+          "avg7": 16.78,
+          "avg30": 9.0,
+          "reverseHoloAvg1": 1.95,
+          "reverseHoloAvg7": 5.48,
+          "reverseHoloAvg30": 5.48
+        }
+      }
+    },
+    {
+      "id": "ru1-16",
+      "name": "Bibarel",
+      "supertype": "Pokémon",
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": "90",
+      "types": [
+        "Colorless"
+      ],
+      "evolvesFrom": "Bidoof",
+      "attacks": [
+        {
+          "name": "Rollout",
+          "cost": [
+            "Colorless",
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "convertedEnergyCost": 4,
+          "damage": "50",
+          "text": ""
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fighting",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": [
+        "Colorless",
+        "Colorless",
+        "Colorless"
+      ],
+      "convertedRetreatCost": 3,
+      "set": {
+        "id": "ru1",
+        "name": "Pokémon Rumble",
+        "series": "Other",
+        "printedTotal": 16,
+        "total": 16,
+        "legalities": {
+          "unlimited": "Legal"
+        },
+        "releaseDate": "2009/12/02",
+        "updatedAt": "2019/01/28 16:44:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/ru1/symbol.png",
+          "logo": "https://images.pokemontcg.io/ru1/logo.png"
+        }
+      },
+      "number": "16",
+      "artist": "Pokemon Rumble",
+      "nationalPokedexNumbers": [
+        400
+      ],
+      "legalities": {
+        "unlimited": "Legal"
+      },
+      "images": {
+        "small": "https://images.pokemontcg.io/ru1/16.png",
+        "large": "https://images.pokemontcg.io/ru1/16_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/ru1-16",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "normal": {
+            "low": 12.0,
+            "mid": 19.94,
+            "high": 30.54,
+            "market": 15.15,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/ru1-16",
+        "updatedAt": "2025/04/25",
+        "prices": {
+          "averageSellPrice": 11.65,
+          "lowPrice": 3.0,
+          "trendPrice": 8.65,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 8.5,
+          "reverseHoloTrend": 10.3,
+          "lowPriceExPlus": 8.5,
+          "avg1": 10.0,
+          "avg7": 9.67,
+          "avg30": 8.47,
+          "reverseHoloAvg1": 7.0,
+          "reverseHoloAvg7": 6.05,
+          "reverseHoloAvg30": 6.05
+        }
+      }
+    }
+  ],
+  "totalCount": 16
+}

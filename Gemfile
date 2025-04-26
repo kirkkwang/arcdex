@@ -57,6 +57,7 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  # gem 'xray-rails', github: 'kirkkwang/xray-rails'
 end
 
 gem "arclight", github: "projectblacklight/arclight", branch: "main"

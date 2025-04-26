@@ -6,7 +6,11 @@ docker compose up -d
 docker compose exec web bash
 ```
 
-```
+```sh
+DIR=data rails arcdex:index_dir # to index everything
+# or
+FIle=data/base1.json rails arcdex:index # to index just one set
+
 bin/web
 ```
 

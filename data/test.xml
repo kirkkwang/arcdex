@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<series>
+  <series_id>base</series_id>
+  <set>
+    <name>Base</name>
+    <card>
+      <c id="base1" level="set">
+        <name>Base</name>
+        <c id="base1-4" level="card">
+          <name>Charizard</name>
+          <supertype>Pokémon</supertype>
+          <subtypes>Stage 2</subtypes>
+          <level>76</level>
+          <hp>120</hp>
+          <types>Fire</types>
+          <evolves_from>Charmeleon</evolves_from>
+          <abilities>
+            <name>Energy Burn</name>
+            <text>As often as you like during your turn (before your attack), you may turn all Energy attached to Charizard into Fire Energy for the rest of the turn. This power can't be used if Charizard is Asleep, Confused, or Paralyzed.</text>
+            <type>Pokémon Power</type>
+          </abilities>
+          <attacks>
+            <name>Fire Spin</name>
+            <cost>Fire</cost>
+            <cost>Fire</cost>
+            <cost>Fire</cost>
+            <cost>Fire</cost>
+            <converted_energy_cost>4</converted_energy_cost>
+            <damage>100</damage>
+            <text>Discard 2 Energy cards attached to Charizard in order to use this attack.</text>
+          </attacks>
+          <weaknesses>
+            <type>Water</type>
+            <value>×2</value>
+          </weaknesses>
+          <resistances>
+            <type>Fighting</type>
+            <value>-30</value>
+          </resistances>
+          <retreat_cost>Colorless</retreat_cost>
+          <retreat_cost>Colorless</retreat_cost>
+          <retreat_cost>Colorless</retreat_cost>
+          <converted_retreat_cost>3</converted_retreat_cost>
+          <number>4</number>
+          <artist>Mitsuhiro Arita</artist>
+          <rarity>Rare Holo</rarity>
+          <flavor_text>Spits fire that is hot enough to melt boulders. Known to unintentionally cause forest fires.</flavor_text>
+          <national_pokedex_numbers>6</national_pokedex_numbers>
+          <legalities>
+            <unlimited>Legal</unlimited>
+          </legalities>
+          <images>
+            <small>https://images.pokemontcg.io/base1/4.png</small>
+            <large>https://images.pokemontcg.io/base1/4_hires.png</large>
+          </images>
+          <tcgplayer>
+            <url>https://prices.pokemontcg.io/tcgplayer/base1-4</url>
+          </tcgplayer>
+          <cardmarket>
+            <url>https://prices.pokemontcg.io/cardmarket/base1-4</url>
+          </cardmarket>
+        </c>
+      </c>
+    </card>
+  </set>
+</series>

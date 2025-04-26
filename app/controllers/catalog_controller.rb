@@ -220,11 +220,11 @@ class CatalogController < ApplicationController
         pf:  "${pf_place}"
       }
     end
-    config.add_search_field "subject", label: "Subject" do |field|
+    config.add_search_field "series", label: "Series" do |field|
       field.qt = "search"
       field.solr_parameters = {
-        qf:  "${qf_subject}",
-        pf:  "${pf_subject}"
+        qf:  "series_tesim",
+        pf:  "series_tesim"
       }
     end
     config.add_search_field "title", label: "Title" do |field|
@@ -234,20 +234,20 @@ class CatalogController < ApplicationController
         pf:  "${pf_title}"
       }
     end
-    config.add_search_field "container", label: "Container" do |field|
-      field.qt = "search"
-      field.solr_parameters = {
-        qf:  "${qf_container}",
-        pf:  "${pf_container}"
-      }
-    end
-    config.add_search_field "identifier", label: "Identifier" do |field|
-      field.qt = "search"
-      field.solr_parameters = {
-        qf:  "${qf_identifier}",
-        pf:  "${pf_identifier}"
-      }
-    end
+    # config.add_search_field "container", label: "Container" do |field|
+    #   field.qt = "search"
+    #   field.solr_parameters = {
+    #     qf:  "${qf_container}",
+    #     pf:  "${pf_container}"
+    #   }
+    # end
+    # config.add_search_field "identifier", label: "Identifier" do |field|
+    #   field.qt = "search"
+    #   field.solr_parameters = {
+    #     qf:  "${qf_identifier}",
+    #     pf:  "${pf_identifier}"
+    #   }
+    # end
 
     # These are the parameters passed through in search_state.params_for_search
     config.search_state_fields += %i[id group hierarchy_context original_document]

@@ -1,67 +1,27 @@
 # frozen_string_literal: true
 
 namespace :arcdex do
-  desc "Index Pokemon TCG data (use FILE=path/to/file.json to index a single file)"
+  desc "Index an EAD document, use FILE=<path/to/ead.xml> and REPOSITORY_ID=<myid>"
+  # We need :environment to have access to the Blacklight confg
   task index: :environment do
-    require "traject"
+    raise "Please specify your EAD document, ex. FILE=<path/to/ead.xml>" unless ENV["FILE"]
 
-    solr_url = Blacklight.connection_config[:url]
-
-    # Determine which files to process
-    files_to_process = if ENV["FILE"].present?
-                         [ ENV["FILE"] ]
-    else
-                         Dir.glob(Rails.root.join("data", "*.json"))
+    print "Loading #{ENV.fetch("FILE", nil)} into index...\n"
+    solr_url = ENV.fetch("SOLR_URL", Blacklight.default_index.connection.base_uri)
+    elapsed_time = Benchmark.realtime do
+      `bundle exec traject -u #{solr_url} -c #{Rails.root}/lib/arclight/traject/arcdex_set_config.rb #{ENV.fetch("FILE", nil)}`
     end
+    print "Indexed #{ENV.fetch("FILE", nil)} (in #{elapsed_time.round(3)} secs).\n"
+  end
 
-    # Process each file
-    files_to_process.each do |file|
-      puts "Processing #{file}..."
-      start_time = Time.now
+  desc "Index a directory of EADs, use DIR=<path/to/directory> and REPOSITORY_ID=<myid>"
+  task :index_dir do
+    raise "Please specify your directory, ex. DIR=<path/to/directory>" unless ENV["DIR"]
 
-      begin
-        # Create fresh indexers for each file
-
-        # Set indexer
-        set_indexer = Traject::Indexer.new.tap do |i|
-          i.load_config_file(Rails.root.join("lib", "arclight", "traject", "arcdex_set_config.rb"))
-          i.settings do
-            provide "solr.url", solr_url
-            provide "reader_class_name", "Arclight::Traject::JsonReader"
-            provide "processing_collections", true
-          end
-        end
-
-        # Card indexer
-        card_indexer = Traject::Indexer.new.tap do |i|
-          i.load_config_file(Rails.root.join("lib", "arclight", "traject", "arcdex_card_config.rb"))
-          i.settings do
-            provide "solr.url", solr_url
-            provide "reader_class_name", "Arclight::Traject::JsonReader"
-            provide "processing_collections", false
-          end
-        end
-
-        # First index the set as a collection
-        puts "Indexing set information..."
-        File.open(file) do |f|
-          set_indexer.process(f)
-        end
-
-        # Then index all cards as components
-        puts "Indexing card information..."
-        File.open(file) do |f|
-          card_indexer.process(f)
-        end
-
-        puts "Indexed #{file} (in #{(Time.now - start_time).round(3)} secs)"
-      rescue => e
-        puts "Error indexing #{file}: #{e.message}"
-        puts e.backtrace.join("\n")
-      end
+    dir = ENV["DIR"]
+    Dir.glob(File.join(dir, "*.json")).each do |file|
+      system("FILE=#{file} rails arcdex:index")
     end
-
-    puts "Indexing complete!"
   end
 
   desc "Delete all documents from the Solr index"

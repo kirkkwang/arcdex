@@ -1,13 +1,6 @@
+require_relative "json_reader"
 require "logger"
-require "traject"
-require "traject_plus"
-require "traject_plus/macros"
-require "json"
-require "arclight/traject/json_reader"
-
-# rubocop:disable Style/MixinUsage
-extend TrajectPlus::Macros
-# rubocop:enable Style/MixinUsage
+require "debug"
 
 settings do
   provide "reader_class_name", "Arclight::Traject::JsonReader"
@@ -15,31 +8,39 @@ settings do
   provide "logger", Logger.new($stderr)
 end
 
-# ==================
-# Basic field mapping
-# ==================
-
-# ID field
-to_field "id", lambda { |record, accumulator| accumulator << record["id"] }
-
-# Establish relationships with the set "collection"
-to_field "collection_ssim" do |record, accumulator|
-  accumulator << record["set"]["name"]
+to_field "id" do |record, accumulator|
+  accumulator << record["id"]
 end
 
-to_field "parent_ssim" do |record, accumulator|
-  accumulator << record["set"]["id"]
+to_field "parent_ids_ssim" do |_record, accumulator, _context|
+  accumulator.concat(settings[:parent].output_hash["parent_ids_ssim"] || [])
+  accumulator.concat settings[:parent].output_hash["id"]
 end
 
-to_field "parent_ssi" do |record, accumulator|
-  accumulator << record["set"]["id"]
+to_field "parent_unittitles_ssm" do |_rec, accumulator, _context|
+  accumulator.concat settings[:parent].output_hash["normalized_title_ssm"] || []
 end
 
-# Mark these as component-level records
+to_field "parent_unittitles_tesim" do |_record, accumulator, context|
+  accumulator.concat context.output_hash["parent_unittitles_ssm"]
+end
+
+to_field "parent_levels_ssm" do |_record, accumulator, _context|
+  accumulator.concat settings[:parent].output_hash["parent_levels_ssm"] || []
+  accumulator.concat settings[:parent].output_hash["level_ssm"] || []
+end
+
+to_field "collection_ssim" do |_record, accumulator, _context|
+  accumulator.concat settings[:root].output_hash["normalized_title_ssm"]
+end
+
+to_field "component_level_isim" do |_record, accumulator|
+  accumulator << (settings[:depth] || 1)
+end
+
 to_field "level_ssm", lambda { |_record, accumulator| accumulator << "card" }
 to_field "level_ssim", lambda { |_record, accumulator| accumulator << "Card" }
 
-# Add title fields (from the 'name' property)
 to_field "title_ssm", lambda { |record, accumulator| accumulator << record["name"] }
 to_field "title_tesim", lambda { |record, accumulator| accumulator << record["name"] }
 to_field "normalized_title_ssm" do |_record, accumulator, context|
@@ -193,16 +194,4 @@ to_field "cardmarket_url_ssm" do |record, accumulator|
   if record["cardmarket"]
     accumulator << record["cardmarket"]["url"]
   end
-end
-
-# Nesting fields for component display
-to_field "_nest_path_", lambda { |record, accumulator| accumulator << "#{record['set']['id']}/#{record['id']}" }
-to_field "_nest_parent_", lambda { |record, accumulator| accumulator << record["set"]["id"] }
-
-# Component level (1 = direct child of collection)
-to_field "component_level_isim", lambda { |_record, accumulator| accumulator << 1 }
-
-# Sort field for display order
-to_field "sort_ssi" do |record, accumulator|
-  accumulator << record['number'].to_s
 end

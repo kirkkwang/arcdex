@@ -12,7 +12,6 @@ module Arclight
       def each
         json_content = JSON.parse(input_stream.read)
         cards = json_content["data"]
-        logger = settings["logger"]
 
         yield cards
       end

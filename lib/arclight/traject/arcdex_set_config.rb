@@ -16,7 +16,7 @@ end
 # Set this as a collection-level record
 to_field "level_ssm", lambda { |_record, accumulator| accumulator << "collection" }
 to_field "level_ssim", lambda { |_record, accumulator| accumulator << "Set" }
-to_field "id" do |record, accumulator| accumulator << record.first["set"]["id"] end
+to_field "id", lambda { |record, accumulator| accumulator << record.first["set"]["id"] }
 to_field "child_component_count_isi", lambda { |record, accumulator| accumulator << record.count }
 to_field "ead_ssi" do |record, accumulator| accumulator << record.first["set"]["id"] end
 
@@ -115,9 +115,6 @@ to_field "components" do |records, accumulator, context|
 
     i.load_config_file(context.settings[:card_config])
   end
-
-  # output = component_indexer.map_record(card)
-  # accumulator << output unless accumulator.include?(output)
 
   cards.each do |card|
     output = card_indexer.map_record(card)

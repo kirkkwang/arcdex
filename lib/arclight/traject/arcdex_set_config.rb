@@ -14,7 +14,7 @@ end
 # ==================
 
 # Set this as a collection-level record
-to_field "level_ssm", lambda { |_record, accumulator| accumulator << "set" }
+to_field "level_ssm", lambda { |_record, accumulator| accumulator << "collection" }
 to_field "level_ssim", lambda { |_record, accumulator| accumulator << "Set" }
 to_field "id" do |record, accumulator| accumulator << record.first["set"]["id"] end
 to_field "child_component_count_isi", lambda { |record, accumulator| accumulator << record.count }

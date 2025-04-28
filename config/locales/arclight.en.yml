@@ -62,5 +62,6 @@ en:
   arclight:
     views:
       show:
+        has_content: Card List
         sections:
           summary_field: Set Information

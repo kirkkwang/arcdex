@@ -26,10 +26,13 @@ to_field "title_tesim", lambda { |record, accumulator| accumulator << record.fir
 to_field "normalized_title_ssm", lambda { |record, accumulator| accumulator << record.first["set"]["name"] }
 
 to_field "series_ssm", lambda { |record, accumulator| accumulator << record.first["set"]["series"] if record.first["set"]["series"] }
+to_field "series_ssim", lambda { |record, accumulator| accumulator << record.first["set"]["series"] if record.first["set"]["series"] }
 
 to_field "printed_total_isi", lambda { |record, accumulator| accumulator << record.first["set"]["printedTotal"].to_i if record.first["set"]["printedTotal"] }
+to_field "printed_total_ssim", lambda { |record, accumulator| accumulator << record.first["set"]["printedTotal"] if record.first["set"]["printedTotal"] }
 
 to_field "total_items_isi", lambda { |record, accumulator| accumulator << record.first["set"]["total"].to_i if record.first["set"]["total"] }
+to_field "total_items_ssim", lambda { |record, accumulator| accumulator << record.first["set"]["total"] if record.first["set"]["total"] }
 
 to_field "legalities_json_ssi" do |record, accumulator|
   if record.first["set"]["legalities"]
@@ -45,6 +48,7 @@ to_field "legalities_ssm" do |record, accumulator|
 end
 
 to_field "ptcgo_code_ssi", lambda { |record, accumulator| accumulator << record.first["set"]["ptcgoCode"] if record.first["set"]["ptcgoCode"] }
+to_field "ptcgo_code_ssim", lambda { |record, accumulator| accumulator << record.first["set"]["ptcgoCode"] if record.first["set"]["ptcgoCode"] }
 
 to_field "release_date_ssm" do |record, accumulator|
   if record.first["set"]["releaseDate"]
@@ -81,9 +85,21 @@ to_field "symbol_url_ssm" do |record, accumulator|
     accumulator << record.first["set"]["images"]["symbol"]
   end
 end
+to_field "symbol_url_html_ssm" do |record, accumulator|
+  if record.first["set"]["images"] && record.first["set"]["images"]["symbol"]
+    url = record.first["set"]["images"]["symbol"]
+    accumulator << "<img src=\"#{url}\" alt=\"Set symbol\" class=\"set-symbol\" />"
+  end
+end
 to_field "logo_url_ssm" do |record, accumulator|
   if record.first["set"]["images"] && record.first["set"]["images"]["logo"]
     accumulator << record.first["set"]["images"]["logo"]
+  end
+end
+to_field "logo_url_html_ssm" do |record, accumulator|
+  if record.first["set"]["images"] && record.first["set"]["images"]["logo"]
+    url = record.first["set"]["images"]["logo"]
+    accumulator << "<img src=\"#{url}\" alt=\"Set logo\" class=\"set-logo\" />"
   end
 end
 

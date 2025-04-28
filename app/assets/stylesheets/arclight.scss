@@ -4,3 +4,12 @@
 
 // Arclight, imported from arclight frontend package
 @import 'arclight/app/assets/stylesheets/arclight/application';
+
+#set-information {
+  .set-symbol {
+    max-width: 40px;
+  }
+  .set-logo {
+    max-width: 100%;
+  }
+}

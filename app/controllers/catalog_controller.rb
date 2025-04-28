@@ -279,11 +279,13 @@ class CatalogController < ApplicationController
     # ===========================
 
     # Collection Show Page - Summary Section
-    config.add_summary_field "creators", field: "creator_ssim", link_to_facet: true
-    config.add_summary_field "abstract", field: "abstract_html_tesm", helper_method: :render_html_tags
-    config.add_summary_field "extent", field: "extent_ssm"
-    config.add_summary_field "language", field: "language_ssim"
-    config.add_summary_field "prefercite", field: "prefercite_html_tesm", helper_method: :render_html_tags
+    config.add_summary_field "series", field: "series_ssim", link_to_facet: true
+    config.add_summary_field "complete set count", field: "printed_total_ssim"
+    config.add_summary_field "master set count", field: "total_items_ssim", if: ->(_controller, _field, document) { document.master_set? }
+    config.add_summary_field "release date", field: "release_date_ssm"
+    config.add_summary_field label: "TCG Code", field: "ptcgo_code_ssim"
+    config.add_summary_field "symbol", field: "symbol_url_html_ssm", helper_method: :render_html_tags
+    config.add_summary_field "logo", field: "logo_url_html_ssm", helper_method: :render_html_tags
 
     # Collection Show Page - Background Section
     config.add_background_field "scopecontent", field: "scopecontent_html_tesm", helper_method: :render_html_tags

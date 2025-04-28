@@ -59,3 +59,8 @@ en:
           place: Place
           subject: Subject
           access: Access
+  arclight:
+    views:
+      show:
+        sections:
+          summary_field: Set Information

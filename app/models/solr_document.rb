@@ -17,4 +17,8 @@ class SolrDocument
   def series
     self["series_ssm"]&.first || ""
   end
+
+  def master_set?
+    self["printed_total_isi"] < self["total_items_isi"]
+  end
 end

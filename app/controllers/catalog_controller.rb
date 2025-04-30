@@ -83,29 +83,11 @@ class CatalogController < ApplicationController
     config.show.document_presenter_class = Arclight::ShowPresenter
     config.show.metadata_partials = %i[
       summary_field
-      background_field
-      related_field
-      indexed_terms_field
-      access_field
-    ]
-
-    config.show.collection_access_items = %i[
-      terms_field
-      cite_field
-      in_person_field
-      contact_field
     ]
 
     config.show.component_metadata_partials = %i[
       component_field
       component_indexed_terms_field
-    ]
-
-    config.show.component_access_items = %i[
-      component_terms_field
-      cite_field
-      in_person_field
-      contact_field
     ]
 
     ##
@@ -287,55 +269,6 @@ class CatalogController < ApplicationController
     config.add_summary_field "symbol", field: "symbol_url_html_ssm", helper_method: :render_html_tags
     config.add_summary_field "logo", field: "logo_url_html_ssm", helper_method: :render_html_tags
 
-    # Collection Show Page - Background Section
-    config.add_background_field "scopecontent", field: "scopecontent_html_tesm", helper_method: :render_html_tags
-    config.add_background_field "bioghist", field: "bioghist_html_tesm", helper_method: :render_html_tags
-    config.add_background_field "acqinfo", field: "acqinfo_ssim", helper_method: :render_html_tags
-    config.add_background_field "appraisal", field: "appraisal_html_tesm", helper_method: :render_html_tags
-    config.add_background_field "custodhist", field: "custodhist_html_tesm", helper_method: :render_html_tags
-    config.add_background_field "processinfo", field: "processinfo_html_tesm", helper_method: :render_html_tags
-    config.add_background_field "arrangement", field: "arrangement_html_tesm", helper_method: :render_html_tags
-    config.add_background_field "accruals", field: "accruals_html_tesm", helper_method: :render_html_tags
-    config.add_background_field "phystech", field: "phystech_html_tesm", helper_method: :render_html_tags
-    config.add_background_field "physloc", field: "physloc_html_tesm", helper_method: :render_html_tags
-    config.add_background_field "physdesc", field: "physdesc_tesim", helper_method: :render_html_tags
-    config.add_background_field "physfacet", field: "physfacet_tesim", helper_method: :render_html_tags
-    config.add_background_field "dimensions", field: "dimensions_tesim", helper_method: :render_html_tags
-    config.add_background_field "materialspec", field: "materialspec_html_tesm", helper_method: :render_html_tags
-    config.add_background_field "fileplan", field: "fileplan_html_tesm", helper_method: :render_html_tags
-    config.add_background_field "descrules", field: "descrules_ssm", helper_method: :render_html_tags
-    config.add_background_field "note", field: "note_html_tesm", helper_method: :render_html_tags
-
-    # Collection Show Page - Related Section
-    config.add_related_field "relatedmaterial", field: "relatedmaterial_html_tesm", helper_method: :render_html_tags
-    config.add_related_field "separatedmaterial", field: "separatedmaterial_html_tesm", helper_method: :render_html_tags
-    config.add_related_field "otherfindaid", field: "otherfindaid_html_tesm", helper_method: :render_html_tags
-    config.add_related_field "altformavail", field: "altformavail_html_tesm", helper_method: :render_html_tags
-    config.add_related_field "originalsloc", field: "originalsloc_html_tesm", helper_method: :render_html_tags
-    config.add_related_field "odd", field: "odd_html_tesm", helper_method: :render_html_tags
-
-    # Collection Show Page - Indexed Terms Section
-    config.add_indexed_terms_field "access_subjects", field: "access_subjects_ssim", link_to_facet: true, separator_options: {
-      words_connector: "<br/>",
-      two_words_connector: "<br/>",
-      last_word_connector: "<br/>"
-    }
-
-    config.add_indexed_terms_field "names_coll", field: "names_coll_ssim", separator_options: {
-      words_connector: "<br/>",
-      two_words_connector: "<br/>",
-      last_word_connector: "<br/>"
-    }, helper_method: :link_to_name_facet
-
-    config.add_indexed_terms_field "places", field: "places_ssim", link_to_facet: true, separator_options: {
-      words_connector: "<br/>",
-      two_words_connector: "<br/>",
-      last_word_connector: "<br/>"
-    }
-
-    config.add_indexed_terms_field "indexes", field: "indexes_html_tesm",
-                                              helper_method: :render_html_tags
-
     # ==========================
     # COMPONENT SHOW PAGE FIELDS
     # ==========================
@@ -348,32 +281,22 @@ class CatalogController < ApplicationController
     }, if: lambda { |_context, _field_config, document|
       document.containers.present?
     }
-    config.add_component_field "creators", field: "creator_ssim", link_to_facet: true
-    config.add_component_field "abstract", field: "abstract_html_tesm", helper_method: :render_html_tags
-    config.add_component_field "extent", field: "extent_ssm"
-    config.add_component_field "scopecontent", field: "scopecontent_html_tesm", helper_method: :render_html_tags
-    config.add_component_field "language", field: "language_ssim"
-    config.add_component_field "acqinfo", field: "acqinfo_ssim", helper_method: :render_html_tags
-    config.add_component_field "bioghist", field: "bioghist_html_tesm", helper_method: :render_html_tags
-    config.add_component_field "appraisal", field: "appraisal_html_tesm", helper_method: :render_html_tags
-    config.add_component_field "custodhist", field: "custodhist_html_tesm", helper_method: :render_html_tags
-    config.add_component_field "processinfo", field: "processinfo_html_tesm", helper_method: :render_html_tags
-    config.add_component_field "arrangement", field: "arrangement_html_tesm", helper_method: :render_html_tags
-    config.add_component_field "accruals", field: "accruals_html_tesm", helper_method: :render_html_tags
-    config.add_component_field "phystech", field: "phystech_html_tesm", helper_method: :render_html_tags
-    config.add_component_field "materialspec", field: "materialspec_html_tesm", helper_method: :render_html_tags
-    config.add_component_field "physloc", field: "physloc_html_tesm", helper_method: :render_html_tags
-    config.add_component_field "physdesc", field: "physdesc_tesim", helper_method: :render_html_tags
-    config.add_component_field "physfacet", field: "physfacet_tesim", helper_method: :render_html_tags
-    config.add_component_field "dimensions", field: "dimensions_tesim", helper_method: :render_html_tags
-    config.add_component_field "fileplan", field: "fileplan_html_tesm", helper_method: :render_html_tags
-    config.add_component_field "altformavail", field: "altformavail_html_tesm", helper_method: :render_html_tags
-    config.add_component_field "otherfindaid", field: "otherfindaid_html_tesm", helper_method: :render_html_tags
-    config.add_component_field "odd", field: "odd_html_tesm", helper_method: :render_html_tags
-    config.add_component_field "relatedmaterial", field: "relatedmaterial_html_tesm", helper_method: :render_html_tags
-    config.add_component_field "separatedmaterial", field: "separatedmaterial_html_tesm", helper_method: :render_html_tags
-    config.add_component_field "originalsloc", field: "originalsloc_html_tesm", helper_method: :render_html_tags
-    config.add_component_field "note", field: "note_html_tesm", helper_method: :render_html_tags
+
+    config.add_component_field "Card", field: "large_url_html_ssm", helper_method: :render_html_tags
+    config.add_component_field "supertype", field: "supertype_ssm", link_to_facet: true
+    config.add_component_field "subtypes", field: "subtypes_ssm", link_to_facet: true
+    config.add_component_field "level", field: "level_ssi"
+    config.add_component_field "hp", label: "HP", field: "hp_ssm"
+    config.add_component_field "types", label: "Type(s)", field: "types_ssm", link_to_facet: true
+    config.add_component_field "evolves_from", field: "evolves_from_ssi"
+    config.add_component_field "evolves_to", field: "evolves_to_ssm"
+    config.add_component_field "number", field: "number_ssm"
+    config.add_component_field "artist", field: "artist_ssm", link_to_facet: true
+    config.add_component_field "rarity", field: "rarity_ssm", link_to_facet: true
+    config.add_component_field "flavor_text", field: "flavor_text_ssi"
+    config.add_component_field "national_pokedex_number", field: "national_pokedex_numbers_ssm"
+    config.add_component_field "tcgplayer_url", label: "TCGplayer", field: "tcgplayer_url_html_ssi", helper_method: :render_html_tags
+    config.add_component_field "cardmarket_url", label: "Cardmarket", field: "cardmarket_url_html_ssi", helper_method: :render_html_tags
 
     # Component Show Page - Indexed Terms Section
     config.add_component_indexed_terms_field "access_subjects", field: "access_subjects_ssim", link_to_facet: true, separator_options: {

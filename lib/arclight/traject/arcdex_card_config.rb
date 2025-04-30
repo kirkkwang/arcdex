@@ -8,9 +8,7 @@ settings do
   provide "logger", Logger.new($stderr)
 end
 
-to_field "id" do |record, accumulator|
-  accumulator << record["id"]
-end
+to_field "id", lambda { |record, accumulator| accumulator << record["id"] }
 
 to_field "parent_ids_ssim" do |_record, accumulator, _context|
   accumulator.concat(settings[:parent].output_hash["parent_ids_ssim"] || [])
@@ -34,9 +32,7 @@ to_field "collection_ssim" do |_record, accumulator, _context|
   accumulator.concat settings[:root].output_hash["normalized_title_ssm"]
 end
 
-to_field "component_level_isim" do |_record, accumulator|
-  accumulator << (settings[:depth] || 1)
-end
+to_field "component_level_isim", lambda { |_record, accumulator| accumulator << (settings[:depth] || 1) }
 
 to_field "level_ssm", lambda { |_record, accumulator| accumulator << "card" }
 to_field "level_ssim", lambda { |_record, accumulator| accumulator << "Card" }
@@ -49,6 +45,7 @@ to_field "normalized_title_ssm" do |_record, accumulator, context|
 end
 
 to_field "series_ssm", lambda { |record, accumulator| accumulator << record["set"]["series"] }
+to_field "series_ssim", lambda { |record, accumulator| accumulator << record["set"]["series"] }
 to_field "series_tesim", lambda { |record, accumulator| accumulator << record["set"]["series"] }
 
 to_field "supertype_ssm", lambda { |record, accumulator| accumulator << record["supertype"] }
@@ -61,6 +58,7 @@ to_field "subtypes_ssm" do |record, accumulator|
   end
 end
 
+to_field "level_ssi", lambda { |record, accumulator| accumulator << record["level"] if record["level"] }
 to_field "hp_ssm", lambda { |record, accumulator| accumulator << record["hp"] if record["hp"] }
 
 to_field "types_ssm" do |record, accumulator|
@@ -71,7 +69,9 @@ to_field "types_ssm" do |record, accumulator|
   end
 end
 
-to_field "evolvesTo_ssm" do |record, accumulator|
+to_field "evolves_from_ssi", lambda { |record, accumulator| accumulator << record["evolvesFrom"] if record["evolvesFrom"] }
+
+to_field "evolves_to_ssm" do |record, accumulator|
   if record["evolvesTo"]
     record["evolvesTo"].each do |evolution|
       accumulator << evolution
@@ -145,7 +145,7 @@ to_field "artist_ssm", lambda { |record, accumulator| accumulator << record["art
 
 to_field "rarity_ssm", lambda { |record, accumulator| accumulator << record["rarity"] }
 
-to_field "flavor_text_ssim", lambda { |record, accumulator| accumulator << record["flavorText"] }
+to_field "flavor_text_ssi", lambda { |record, accumulator| accumulator << record["flavorText"] }
 
 to_field "national_pokedex_numbers_ssm" do |record, accumulator|
   if record["nationalPokedexNumbers"]
@@ -178,9 +178,21 @@ to_field "small_url_ssm" do |record, accumulator|
     accumulator << record["images"]["small"]
   end
 end
+to_field "small_url_html_ssm" do |record, accumulator|
+  if record["images"] && record["images"]["small"]
+    url = record["images"]["small"]
+    accumulator << "<img src=\"#{url}\" alt=\"Card image\" class=\"small-card-image\" />"
+  end
+end
 to_field "large_url_ssm" do |record, accumulator|
   if record["images"] && record["images"]["large"]
     accumulator << record["images"]["large"]
+  end
+end
+to_field "large_url_html_ssm" do |record, accumulator|
+  if record["images"] && record["images"]["large"]
+    url = record["images"]["large"]
+    accumulator << "<img src=\"#{url}\" alt=\"Card image\" class=\"large-card-image\" />"
   end
 end
 
@@ -189,9 +201,21 @@ to_field "tcgplayer_url_ssm" do |record, accumulator|
     accumulator << record["tcgplayer"]["url"]
   end
 end
+to_field "tcgplayer_url_html_ssi" do |record, accumulator|
+  if record["tcgplayer"]
+    url = record["tcgplayer"]["url"]
+    accumulator << "<a href=\"#{url}\" target=\"_blank\">#{url}</a>"
+  end
+end
 
 to_field "cardmarket_url_ssm" do |record, accumulator|
   if record["cardmarket"]
     accumulator << record["cardmarket"]["url"]
+  end
+end
+to_field "cardmarket_url_html_ssi" do |record, accumulator|
+  if record["cardmarket"]
+    url = record["cardmarket"]["url"]
+    accumulator << "<a href=\"#{url}\" target=\"_blank\">#{url}</a>"
   end
 end

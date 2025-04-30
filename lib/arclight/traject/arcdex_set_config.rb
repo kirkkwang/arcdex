@@ -57,6 +57,13 @@ to_field "release_date_ssm" do |record, accumulator|
     accumulator << formatted_date
   end
 end
+to_field "release_year_isi" do |_record, accumulator, context|
+  context.output_hash["release_date_ssm"].each do |date|
+    # Extract the year from the date string
+    year = date.split("-").first.to_i
+    accumulator << year if year > 0
+  end
+end
 to_field "release_date_sort" do |record, accumulator|
   if record.first["set"]["releaseDate"]
     # Keep the format YYYY/MM/DD which sorts correctly as strings

@@ -128,8 +128,13 @@ class CatalogController < ApplicationController
     config.add_facet_field "types", field: "types_ssm", limit: 10, excludable: true
     config.add_facet_field "artist", field: "artist_ssm", limit: 10, excludable: true
     config.add_facet_field "rarity", field: "rarity_ssm", limit: 10, excludable: true
-    config.add_facet_field "Hit Points", field: "hp_ssm", range: true, excludable: true
-    config.add_facet_field "release_date", field: "release_date_ssm", range: true, excludable: true
+
+    config.add_facet_field "Hit Points", field: "hp_isi", range: true, range_config: {
+      show_missing_link: false,
+    }
+    config.add_facet_field "release year", field: "release_year_isi", range: true, range_config: {
+      show_missing_link: false,
+    }
     config.add_facet_field "Category", field: "level_ssim", limit: 10, excludable: true
     config.add_facet_field "names", field: "names_ssim", limit: 10, excludable: true
 

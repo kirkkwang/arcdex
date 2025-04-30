@@ -14,6 +14,12 @@
   }
 }
 
+#about-this-level {
+  .large-card-image {
+    max-width: 100%;
+  }
+}
+
 // OVERRIDE Blacklight v8.9.0 to allow sidebar to scroll independently of the finding aid content
 #sidebar {
   @media (min-width: 992px) {

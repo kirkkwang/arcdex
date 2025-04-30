@@ -33,3 +33,54 @@
     height: 35px;
   }
 }
+
+.facet-values {
+  li {
+    position: relative;
+
+    a {
+      height: 1.5rem;
+    }
+
+    &:has(.exclude-facet-link .exclude-facet-icon) .facet-label:not(:has(.selected)) {
+      transform: translateX(-1.125rem);
+      transition: transform 0.2s ease;
+    }
+
+    a[rel="nofollow"] {
+      .exclude-facet-icon {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s ease, visibility 0.2s ease;
+      }
+
+      &:focus {
+        .exclude-facet-icon {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+
+    &:hover {
+      &:has(.exclude-facet-link .exclude-facet-icon) .facet-label:not(:has(.selected)) {
+        transform: translateX(0);
+      }
+
+      a[rel="nofollow"] {
+        .exclude-facet-icon {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
+
+.constraints-container {
+  .exclude-filter {
+    span {
+      text-decoration: line-through;
+    }
+  }
+}

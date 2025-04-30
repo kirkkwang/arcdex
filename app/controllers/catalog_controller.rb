@@ -120,17 +120,17 @@ class CatalogController < ApplicationController
     # :index_range can be an array or range of prefixes that will be used to create the navigation
     #  (note: It is case sensitive when searching values)
 
-    config.add_facet_field "series", field: "series_ssm", limit: 10
-    config.add_facet_field "set", field: "collection_ssim", limit: 10
-    config.add_facet_field "supertype", field: "supertype_ssm", limit: 10
-    config.add_facet_field "subtypes", field: "subtypes_ssm", limit: 10
-    config.add_facet_field "types", field: "types_ssm", limit: 10
-    config.add_facet_field "artist", field: "artist_ssm", limit: 10
-    config.add_facet_field "rarity", field: "rarity_ssm", limit: 10
-    config.add_facet_field "Hit Points", field: "hp_ssm", range: true
-    config.add_facet_field "release_date", field: "release_date_ssm", range: true
-    config.add_facet_field "Category", field: "level_ssim", limit: 10
-    config.add_facet_field "names", field: "names_ssim", limit: 10
+    config.add_facet_field "series", field: "series_ssm", limit: 10, excludable: true
+    config.add_facet_field "set", field: "collection_ssim", limit: 10, excludable: true
+    config.add_facet_field "supertype", field: "supertype_ssm", limit: 10, excludable: true
+    config.add_facet_field "subtypes", field: "subtypes_ssm", limit: 10, excludable: true
+    config.add_facet_field "types", field: "types_ssm", limit: 10, excludable: true
+    config.add_facet_field "artist", field: "artist_ssm", limit: 10, excludable: true
+    config.add_facet_field "rarity", field: "rarity_ssm", limit: 10, excludable: true
+    config.add_facet_field "Hit Points", field: "hp_ssm", range: true, excludable: true
+    config.add_facet_field "release_date", field: "release_date_ssm", range: true, excludable: true
+    config.add_facet_field "Category", field: "level_ssim", limit: 10, excludable: true
+    config.add_facet_field "names", field: "names_ssim", limit: 10, excludable: true
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request

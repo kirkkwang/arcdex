@@ -59,7 +59,7 @@ to_field "subtypes_ssm" do |record, accumulator|
 end
 
 to_field "level_ssi", lambda { |record, accumulator| accumulator << record["level"] if record["level"] }
-to_field "hp_ssm", lambda { |record, accumulator| accumulator << record["hp"] if record["hp"] }
+to_field "hp_isi", lambda { |record, accumulator| accumulator << record["hp"] if record["hp"] }
 
 to_field "types_ssm" do |record, accumulator|
   if record["types"]

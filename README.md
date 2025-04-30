@@ -8,9 +8,15 @@ docker compose exec web bash
 
 ```sh
 rails arcdex:pull # to pull json from pokemontcg.io, about 60MB of data
-DIR=data rails arcdex:index_dir # to index everything
-# or
-FIle=data/base1.json rails arcdex:index # to index just one set
+
+# Indexing options:
+rails arcdex:index_dir # to index everything in the ./data dir
+
+DIR=some_other_dir rails arcdex:index_dir # to index everything in a specific dir
+
+rails arcdex:index # to index ./data/base1.json
+
+FIle=data/some_other.json rails arcdex:index # to index a speicific json
 
 bin/web
 ```

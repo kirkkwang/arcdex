@@ -2,6 +2,7 @@
 
 class SearchBuilder < Blacklight::SearchBuilder
   include Blacklight::Solr::SearchBuilderBehavior
+  include BlacklightRangeLimit::RangeLimitBuilder
   include Arclight::SearchBehavior
 
   self.default_processor_chain += [ :exclude_facets ]

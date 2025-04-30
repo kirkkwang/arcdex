@@ -71,4 +71,6 @@ Rails.application.configure do
   # config.generators.apply_rubocop_autocorrect_after_generate!
 
   config.web_console.allowed_ips = [ "172.18.0.0/16", "172.27.0.0/16", "0.0.0.0/0" ]
+
+  config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 end

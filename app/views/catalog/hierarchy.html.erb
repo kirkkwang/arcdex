@@ -1,0 +1,25 @@
+<%#
+  OVERRIDE Arclight v2.0.0.alpha to change the ul to ol
+    Also, nil out the nest_path for `Arclight::DocumentCollectionHierarchyComponent` since
+    we are not just viewing the Card List and cards won't have any nested items.
+%>
+
+<p><%= params[:id] %></p>
+<%= turbo_frame_tag "al-hierarchy-#{params[:id]}#{params[:key]}" do %>
+  <%= render partial: "paginate_compact", object: @response if show_pagination? && params[:paginate] %>
+  <% presenters = @response.documents.map{ | document | document_presenter(document) } %>
+  <% if params[:hierarchy].present? %>
+    <ol class="documents">
+      <%= render Arclight::DocumentCollectionHierarchyComponent.with_collection(presenters,
+                                                                                blacklight_config: blacklight_config,
+                                                                                nest_path: nil) %>
+    </ol>
+  <% else %>
+    <table class="table table-striped">
+      <%= render Arclight::DocumentCollectionContextComponent.with_collection(presenters,
+                                                                              blacklight_config: blacklight_config) %>
+    </table>
+  <% end %>
+
+  <%= render 'results_pagination' if params[:paginate] %>
+<% end %>

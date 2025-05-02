@@ -16,6 +16,19 @@ module ArclightHelperDecorator
       }
     )
   end
+
+  def repository_collections_path(repository)
+    search_action_url(
+      f: {
+        series: [ repository.name ],
+        Category: [ "Set" ]
+      }
+    )
+  end
+
+  def repository_path(name)
+    "/repositories/#{name}"
+  end
 end
 
 ArclightHelper.prepend(ArclightHelperDecorator)

@@ -269,13 +269,14 @@ class CatalogController < ApplicationController
     # ===========================
 
     # Collection Show Page - Summary Section
+    config.add_summary_field "logo", field: "logo_url_html_ssm", helper_method: :render_html_tags
     config.add_summary_field "series", field: "series_ssim", link_to_facet: true
+    config.add_summary_field "set", field: "collection_ssim", link_to_facet: true
     config.add_summary_field "complete set count", field: "printed_total_ssim"
     config.add_summary_field "master set count", field: "total_items_ssim", if: ->(_controller, _field, document) { document.master_set? }
     config.add_summary_field "release date", field: "release_date_ssm"
     config.add_summary_field label: "TCG Code", field: "ptcgo_code_ssim"
     config.add_summary_field "symbol", field: "symbol_url_html_ssm", helper_method: :render_html_tags
-    config.add_summary_field "logo", field: "logo_url_html_ssm", helper_method: :render_html_tags
 
     # ==========================
     # COMPONENT SHOW PAGE FIELDS
@@ -291,10 +292,11 @@ class CatalogController < ApplicationController
     }
 
     config.add_component_field "Card", field: "large_url_html_ssm", helper_method: :render_html_tags
+    config.add_component_field "set", field: "parent_unittitles_ssm", link_to_facet: true
     config.add_component_field "supertype", field: "supertype_ssm", link_to_facet: true
     config.add_component_field "subtypes", field: "subtypes_ssm", link_to_facet: true
     config.add_component_field "level", field: "level_ssi"
-    config.add_component_field "hp", label: "HP", field: "hp_ssm"
+    config.add_component_field "hp", label: "HP", field: "hp_isi"
     config.add_component_field "types", label: "Type(s)", field: "types_ssm", link_to_facet: true
     config.add_component_field "evolves_from", field: "evolves_from_ssi"
     config.add_component_field "evolves_to", field: "evolves_to_ssm"

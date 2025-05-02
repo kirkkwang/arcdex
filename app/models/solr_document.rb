@@ -21,4 +21,12 @@ class SolrDocument
   def master_set?
     self["printed_total_isi"] < self["total_items_isi"]
   end
+
+  def logo_url
+    self["logo_url_ssm"].first || ""
+  end
+
+  def release_date
+    self["release_date_ssm"].first || ""
+  end
 end

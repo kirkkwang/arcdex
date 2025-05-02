@@ -1,0 +1,35 @@
+<%#
+  OVERRIDE Arclight v2.0.0.alpha for a complete redesign since we are not using
+    the yml loaded Arclight::Repository objects.
+%>
+
+<div class="card arcdex-series mb-5">
+  <div class="card-header">
+    <h2 class="card-title mb-0">
+      <%= link_to repository.name, repository_path(repository.name), class: "text-decoration-none text-reset" %>
+    </h2>
+  </div>
+  <div class="card-body">
+    <div class="arcdex-sets row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+      <% repository.documents.reverse.each do |document| %>
+        <div class="col">
+          <div class="card h-100 overflow-hidden">
+            <div class="image-container card-header">
+              <%=
+                link_to(
+                  image_tag(document.logo_url,
+                    alt: "#{document.normalized_title} logo",
+                    class: "img-fluid mx-auto d-block p-3"),
+                  solr_document_path(id: document.id)
+                )
+              %>
+            </div>
+            <div class="card-body text-center d-flex justify-content-center align-items-center">
+              <h5 class="card-title" title="<%= document.normalized_title %>"><%= document.normalized_title %></h5>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

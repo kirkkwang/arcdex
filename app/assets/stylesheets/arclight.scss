@@ -84,3 +84,19 @@
     }
   }
 }
+
+.arcdex-series {
+  .arcdex-sets {
+    .image-container {
+      height: 12.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #F9F8F8;
+
+      img {
+        max-height: 12.5rem;
+      }
+    }
+  }
+}

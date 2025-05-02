@@ -60,7 +60,12 @@ en:
           subject: Subject
           access: Access
   arclight:
+    routes:
+      repositories: Series
+      collections: Sets
     views:
+      repositories:
+        view_all_collections: View all sets
       show:
         has_content: Card List
         sections:

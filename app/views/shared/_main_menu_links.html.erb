@@ -1,0 +1,11 @@
+<%#
+  OVERRIDE Arclight v2.0.0.alpha to change the collection path to a faceted
+    search for all sets that belong to that series
+%>
+
+<li class="nav-item <%= repositories_active_class %>">
+  <%= link_to t('arclight.routes.repositories'), arclight_engine.repositories_path, class: 'nav-link' %>
+</li>
+<li class="nav-item ms-3 <%= collection_active_class %>">
+  <%= link_to t('arclight.routes.collections'), sets_path, class: 'nav-link' %>
+</li>

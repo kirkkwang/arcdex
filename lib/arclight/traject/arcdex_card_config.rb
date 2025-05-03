@@ -139,7 +139,9 @@ end
 
 to_field "converted_retreat_cost_isi", lambda { |record, accumulator| accumulator << record["convertedRetreatCost"].to_i }
 
-to_field "number_ssm", lambda { |record, accumulator| accumulator << record["number"] }
+to_field "number_ssm" do |record, accumulator|
+  accumulator << "#{record["number"]}/#{settings[:complete_set_count]}"
+end
 
 to_field "artist_ssm", lambda { |record, accumulator| accumulator << record["artist"] }
 

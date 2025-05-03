@@ -29,4 +29,8 @@ class SolrDocument
   def release_date
     self["release_date_ssm"].first || ""
   end
+
+  def icon_url
+    collection? ? self["symbol_url_ssm"].first : self["small_url_ssm"].first
+  end
 end

@@ -134,6 +134,7 @@ to_field "components" do |records, accumulator, context|
       provide :logger, context.settings[:logger]
       provide :card_config, context.settings[:card_config]
       provide :total_records_count, cards.size
+      provide :complete_set_count, cards.first["set"]["printedTotal"]
     end
 
     i.load_config_file(context.settings[:card_config])

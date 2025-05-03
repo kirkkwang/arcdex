@@ -294,17 +294,15 @@ class CatalogController < ApplicationController
     config.add_component_field "Card", field: "large_url_html_ssm", helper_method: :render_html_tags
     config.add_component_field "set", field: "parent_unittitles_ssm", link_to_facet: true
     config.add_component_field "supertype", field: "supertype_ssm", link_to_facet: true
+    config.add_component_field "national_pokedex_number", field: "national_pokedex_numbers_ssm"
     config.add_component_field "subtypes", field: "subtypes_ssm", link_to_facet: true
     config.add_component_field "level", field: "level_ssi"
-    config.add_component_field "hp", label: "HP", field: "hp_isi"
     config.add_component_field "types", label: "Type(s)", field: "types_ssm", link_to_facet: true
+    config.add_component_field "rarity", field: "rarity_ssm", link_to_facet: true
     config.add_component_field "evolves_from", field: "evolves_from_ssi"
     config.add_component_field "evolves_to", field: "evolves_to_ssm"
-    config.add_component_field "number", field: "number_ssm"
+    config.add_component_field "card number", field: "number_ssm"
     config.add_component_field "artist", field: "artist_ssm", link_to_facet: true
-    config.add_component_field "rarity", field: "rarity_ssm", link_to_facet: true
-    config.add_component_field "flavor_text", field: "flavor_text_ssi"
-    config.add_component_field "national_pokedex_number", field: "national_pokedex_numbers_ssm"
     config.add_component_field "tcgplayer_url", label: "TCGplayer", field: "tcgplayer_url_html_ssi", helper_method: :render_html_tags
     config.add_component_field "cardmarket_url", label: "Cardmarket", field: "cardmarket_url_html_ssi", helper_method: :render_html_tags
 

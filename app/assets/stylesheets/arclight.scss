@@ -16,7 +16,7 @@
 
 #about-this-level {
   .large-card-image {
-    max-width: 100%;
+    max-width: 85%;
   }
 }
 
@@ -25,7 +25,7 @@
   @media (min-width: 992px) {
     position: sticky;
     top: 1rem;
-    height: calc(100vh - 5rem);
+    height: 100vh;
     overflow-y: auto;
   }
 

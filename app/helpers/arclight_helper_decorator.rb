@@ -29,6 +29,10 @@ module ArclightHelperDecorator
   def repository_path(name)
     "/repositories/#{name}"
   end
+
+  def sanitized_nest_path
+    params[:nest_path]&.include?("/components#") ? params[:nest_path] : nil
+  end
 end
 
 ArclightHelper.prepend(ArclightHelperDecorator)

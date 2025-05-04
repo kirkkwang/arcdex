@@ -5,7 +5,7 @@ class SearchBuilder < Blacklight::SearchBuilder
   include BlacklightRangeLimit::RangeLimitBuilder
   include Arclight::SearchBehavior
 
-  self.default_processor_chain += [ :exclude_facets ]
+  self.default_processor_chain += [ :exclude_facets, :filter_sets_on_grouped_search ]
 
   ##
   # @example Adding a new step to the processor chain
@@ -37,6 +37,13 @@ class SearchBuilder < Blacklight::SearchBuilder
     elsif queries.present? && solr_parameters[:fq].blank?
                              queries.join(" AND ")
     end
+  end
+
+  def filter_sets_on_grouped_search(solr_parameters)
+    return unless solr_parameters[:group] == true
+
+    solr_parameters[:fq] ||= []
+    solr_parameters[:fq] << "-level_ssm:collection"
   end
 
   private

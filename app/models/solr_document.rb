@@ -33,4 +33,8 @@ class SolrDocument
   def icon_url
     collection? ? self["symbol_url_ssm"].first : self["small_url_ssm"].first
   end
+
+  def supertype
+    self["supertype_ssm"].first || ""
+  end
 end

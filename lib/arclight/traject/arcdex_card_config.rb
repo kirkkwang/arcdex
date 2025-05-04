@@ -69,7 +69,7 @@ to_field "types_ssm" do |record, accumulator|
   end
 end
 
-to_field "evolves_from_ssi", lambda { |record, accumulator| accumulator << record["evolvesFrom"] if record["evolvesFrom"] }
+to_field "evolves_from_ssm", lambda { |record, accumulator| accumulator << record["evolvesFrom"] if record["evolvesFrom"] }
 
 to_field "evolves_to_ssm" do |record, accumulator|
   if record["evolvesTo"]

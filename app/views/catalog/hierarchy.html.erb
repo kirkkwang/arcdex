@@ -12,7 +12,7 @@
     <ol class="documents">
       <%= render Arclight::DocumentCollectionHierarchyComponent.with_collection(presenters,
                                                                                 blacklight_config: blacklight_config,
-                                                                                nest_path: nil) %>
+                                                                                nest_path: sanitized_nest_path) %>
     </ol>
   <% else %>
     <table class="table table-striped">

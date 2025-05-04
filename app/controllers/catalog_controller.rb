@@ -299,8 +299,8 @@ class CatalogController < ApplicationController
     config.add_component_field "level", field: "level_ssi"
     config.add_component_field "types", label: "Type(s)", field: "types_ssm", link_to_facet: true
     config.add_component_field "rarity", field: "rarity_ssm", link_to_facet: true
-    config.add_component_field "evolves_from", field: "evolves_from_ssi"
-    config.add_component_field "evolves_to", field: "evolves_to_ssm"
+    config.add_component_field "evolves_from", field: "evolves_from_ssm", component: Arcdex::PokemonSearchComponent
+    config.add_component_field "evolves_to", field: "evolves_to_ssm", component: Arcdex::PokemonSearchComponent
     config.add_component_field "card number", field: "number_ssm"
     config.add_component_field "artist", field: "artist_ssm", link_to_facet: true
     config.add_component_field "tcgplayer_url", label: "TCGplayer", field: "tcgplayer_url_html_ssi", helper_method: :render_html_tags

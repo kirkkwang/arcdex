@@ -155,6 +155,9 @@ to_field "artist_ssm", lambda { |record, accumulator| accumulator << record["art
 to_field "rarity_ssm", lambda { |record, accumulator| accumulator << record["rarity"] }
 
 to_field "flavor_text_ssi", lambda { |record, accumulator| accumulator << record["flavorText"] }
+to_field "flavor_text_html_ssm" do |record, accumulator|
+  accumulator << "<em>#{record["flavorText"]}</em>" if record["flavorText"]
+end
 
 to_field "national_pokedex_numbers_ssm" do |record, accumulator|
   if record["nationalPokedexNumbers"]

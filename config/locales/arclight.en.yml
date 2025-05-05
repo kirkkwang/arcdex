@@ -1,5 +1,22 @@
 en:
+  arclight:
+    masthead_heading_html: Arcdex
+    routes:
+      repositories: Series
+      collections: Sets
+    views:
+      index:
+        group_by_collection: Grouped by set
+      repositories:
+        view_all_collections: View all sets
+      show:
+        has_content: Card List
+        sections:
+          summary_field: Set Information
   blacklight:
+    entry_name:
+      grouped:
+        _root_: sets
     search:
       fields:
         abstract: Abstract
@@ -59,14 +76,3 @@ en:
           place: Place
           subject: Subject
           access: Access
-  arclight:
-    routes:
-      repositories: Series
-      collections: Sets
-    views:
-      repositories:
-        view_all_collections: View all sets
-      show:
-        has_content: Card List
-        sections:
-          summary_field: Set Information

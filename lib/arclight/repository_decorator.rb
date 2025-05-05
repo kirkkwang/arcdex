@@ -3,6 +3,24 @@
 
 module Arclight
   module RepositoryDecorator
+    extend ActiveSupport::Concern
+
+    class_methods do
+      def all
+        @repositories ||=
+          begin
+          search_service = Blacklight.repository_class.new(CatalogController.blacklight_config)
+          documents = search_service.search(q: "series_ssim:*", fq: "level_ssm:\"collection\"", rows: 10_000).documents
+
+          documents.group_by(&:series).map { |name, documents| new(name, documents) }
+          end
+      end
+
+      def find(id)
+        all.find { |repository| repository.name == id }
+      end
+    end
+
     attr_reader :name, :documents
 
     def initialize(name, documents)
@@ -20,6 +38,11 @@ module Arclight
     end
 
     def attributes
+      []
+    end
+
+    # Override Arclight v2.0.0.alpha because we don't use request types and it was throwing an error.
+    def request_types
       []
     end
   end

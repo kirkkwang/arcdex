@@ -37,4 +37,16 @@ class SolrDocument
   def supertype
     self["supertype_ssm"].first || ""
   end
+
+  # OVERRIDE Arclight v2.0.0.alpha to look for series_ssm instead of repository_ssm
+  def repository
+    first("series_ssm") || collection&.first("series_ssm")
+  end
+
+  # OVERRIDE Arclight v2.0.0.alpha to use find instead of find_by
+  def repository_config
+    return unless repository
+
+    @repository_config ||= Arclight::Repository.find(repository)
+  end
 end

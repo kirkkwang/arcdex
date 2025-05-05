@@ -8,6 +8,10 @@ module Arcdex
       @document = field.document
     end
 
+    def label
+      "#{field.field_config.label}:"
+    end
+
     def pokemon_search(field, values)
       method =
         if field.include?("evolves_from")

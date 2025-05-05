@@ -5,7 +5,7 @@ class SearchBuilder < Blacklight::SearchBuilder
   include BlacklightRangeLimit::RangeLimitBuilder
   include Arclight::SearchBehavior
 
-  self.default_processor_chain += [ :exclude_facets, :filter_sets_on_grouped_search ]
+  self.default_processor_chain += [ :exclude_facets, :filter_sets_on_grouped_search, :sort_by_string ]
 
   ##
   # @example Adding a new step to the processor chain
@@ -44,6 +44,16 @@ class SearchBuilder < Blacklight::SearchBuilder
 
     solr_parameters[:fq] ||= []
     solr_parameters[:fq] << "-level_ssm:collection"
+  end
+
+  # OVERRIDE Arclight v2.0.0.alpha to use sort_ssi instead of sort_isi
+  #   because we're sorting by the "number" and it isn't always a number
+  #   see: "hgss4-FOUR"
+  def sort_by_string(solr_parameters)
+    return if solr_parameters[:sort].nil?
+
+    sort = solr_parameters[:sort].dup.gsub("sort_isi", "sort_ssi")
+    solr_parameters[:sort] = sort
   end
 
   private

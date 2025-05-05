@@ -152,8 +152,9 @@ class CatalogController < ApplicationController
       two_words_connector: "<br/>",
       last_word_connector: "<br/>"
     }, compact: true, component: Arclight::IndexMetadataFieldComponent
-    config.add_index_field "creator", accessor: true, component: Arclight::IndexMetadataFieldComponent
-    config.add_index_field "abstract_or_scope", accessor: true, truncate: true, repository_context: true, helper_method: :render_html_tags, component: Arclight::IndexMetadataFieldComponent
+    # config.add_index_field "creator", accessor: true, component: Arclight::IndexMetadataFieldComponent
+    # config.add_index_field "abstract_or_scope", accessor: true, truncate: true, repository_context: true, helper_method: :render_html_tags, component: Arclight::IndexMetadataFieldComponent
+    config.add_index_field "flavor_text_html", accessor: "flavor_text_html", component: Arclight::IndexMetadataFieldComponent, helper_method: :render_html_tags
     config.add_index_field "breadcrumbs", accessor: :itself, component: Arclight::SearchResultBreadcrumbsComponent, compact: { count: 2 }
 
     config.add_facet_field "access", query: {
@@ -287,6 +288,7 @@ class CatalogController < ApplicationController
     }
 
     config.add_component_field "Card", field: "large_url_html_ssm", helper_method: :render_html_tags
+    config.add_component_field "name", field: "normalized_title_ssm", component: Arcdex::PokemonSearchComponent
     config.add_component_field "set", field: "parent_unittitles_ssm", link_to_facet: true
     config.add_component_field "supertype", field: "supertype_ssm", link_to_facet: true
     config.add_component_field "national_pokedex_number", field: "national_pokedex_numbers_ssm"

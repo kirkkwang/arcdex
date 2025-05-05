@@ -49,4 +49,8 @@ class SolrDocument
 
     @repository_config ||= Arclight::Repository.find(repository)
   end
+
+  def flavor_text_html
+    self["flavor_text_html_ssm"]&.first || ""
+  end
 end

@@ -143,6 +143,13 @@ to_field "number_ssm" do |record, accumulator|
   accumulator << "#{record["number"]}/#{settings[:complete_set_count]}"
 end
 
+to_field "sort_ssi" do |record, accumulator|
+  # the api doesn't necessarily return all cards in the right order
+  # ex. in set 151, Ivysaur is first and Bulbasaur is second
+  number = record["number"].rjust(8, "0")
+  accumulator << number
+end
+
 to_field "artist_ssm", lambda { |record, accumulator| accumulator << record["artist"] }
 
 to_field "rarity_ssm", lambda { |record, accumulator| accumulator << record["rarity"] }
@@ -167,6 +174,27 @@ to_field "legalities_ssm" do |record, accumulator|
     record["legalities"].each do |format, status|
       accumulator << "#{format}: #{status}"
     end
+  end
+end
+
+to_field "release_date_ssm" do |record, accumulator|
+  if record["set"]["releaseDate"]
+    # Convert from 1999/01/09 to 1999-01-09 format
+    formatted_date = record["set"]["releaseDate"].gsub("/", "-")
+    accumulator << formatted_date
+  end
+end
+to_field "release_year_isi" do |_record, accumulator, context|
+  context.output_hash["release_date_ssm"].each do |date|
+    # Extract the year from the date string
+    year = date.split("-").first.to_i
+    accumulator << year if year > 0
+  end
+end
+to_field "release_date_sort" do |record, accumulator|
+  if record["set"]["releaseDate"]
+    # Keep the format YYYY/MM/DD which sorts correctly as strings
+    accumulator << record["set"]["releaseDate"]
   end
 end
 

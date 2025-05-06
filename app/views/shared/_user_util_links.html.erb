@@ -1,0 +1,9 @@
+<%#
+  OVERRIDE Blacklight v8.9.0 to remove login link
+%>
+
+<ul class="navbar-nav">
+  <%= render_nav_actions do |config, action|%>
+    <li class="nav-item"><%= action %></li>
+  <% end %>
+</ul>

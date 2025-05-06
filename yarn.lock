@@ -376,6 +376,11 @@ lilconfig@^3.1.1:
   resolved "https://registry.yarnpkg.com/lilconfig/-/lilconfig-3.1.3.tgz#a1bcfd6257f9585bf5ae14ceeebb7b559025e4c4"
   integrity sha512-/vlFKAoH5Cgt3Ie+JLhRbwOsCQePABiU3tJ1egGvyQ+33R/vcwM2Zl2QR/LzjsBeItPt3oSVXapn+m4nQDvpzw==
 
+mdb-ui-kit@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/mdb-ui-kit/-/mdb-ui-kit-9.0.0.tgz#a03615546f79310123ccbfb9f7f443373423c8b2"
+  integrity sha512-bb/cZM8jTSi/ILaqaxTtoQss4Jf0W2WqPT4dNukNkbBStgKYHqb8SOaN81o22a4SBgKRaTavZ8OdQPYj6FJe5w==
+
 micromatch@^4.0.5:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/micromatch/-/micromatch-4.0.8.tgz#d66fa18f3a47076789320b9b1af32bd86d9fa202"

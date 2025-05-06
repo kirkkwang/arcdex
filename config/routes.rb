@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     concerns :searchable
     concerns :range_searchable
   end
-  devise_for :users
+  devise_for :users, skip: :all
 
   concern :exportable, Blacklight::Routes::Exportable.new
   concern :hierarchy, Arclight::Routes::Hierarchy.new

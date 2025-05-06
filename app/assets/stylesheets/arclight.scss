@@ -92,7 +92,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #F9F8F8;
 
       img {
         max-height: 12.5rem;
@@ -104,5 +103,12 @@
 #documents {
   .document-type-icon {
     width: 4rem;
+  }
+}
+
+// OVERRIDE Blacklight v8.9.0 to expand search bar to full width
+.navbar-search {
+  .search-query-form {
+    width: 100%;
   }
 }

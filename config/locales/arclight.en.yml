@@ -13,6 +13,10 @@ en:
         has_content: Card List
         sections:
           summary_field: Set Information
+    within_collection_dropdown:
+      all_collections: all sets
+      label_html: Search<span class="sr-only visually-hidden"> within</span>
+      this_collection: this set
   blacklight:
     entry_name:
       grouped:

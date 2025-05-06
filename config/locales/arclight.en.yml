@@ -8,6 +8,8 @@ en:
       index:
         group_by_collection: Grouped by set
       repositories:
+        show: "%{name} - Arcdex"
+        title: Arcdex
         view_all_collections: View all sets
       show:
         has_content: Card List

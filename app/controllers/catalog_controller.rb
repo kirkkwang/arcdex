@@ -8,8 +8,8 @@ class CatalogController < ApplicationController
 
   configure_blacklight do |config|
     config.view.gallery(document_component: Blacklight::Gallery::DocumentComponent, icon: Blacklight::Gallery::Icons::GalleryComponent)
-    config.view.masonry(document_component: Blacklight::Gallery::DocumentComponent, icon: Blacklight::Gallery::Icons::MasonryComponent)
-    config.view.slideshow(document_component: Blacklight::Gallery::SlideshowComponent, icon: Blacklight::Gallery::Icons::SlideshowComponent)
+    # config.view.masonry(document_component: Blacklight::Gallery::DocumentComponent, icon: Blacklight::Gallery::Icons::MasonryComponent)
+    # config.view.slideshow(document_component: Blacklight::Gallery::SlideshowComponent, icon: Blacklight::Gallery::Icons::SlideshowComponent)
     config.show.tile_source_field = :content_metadata_image_iiif_info_ssm
     config.show.partials ||= []
     config.show.partials.insert(1, :openseadragon)
@@ -75,7 +75,7 @@ class CatalogController < ApplicationController
     config.index.constraints_component = Arclight::ConstraintsComponent
     config.index.document_presenter_class = Arclight::IndexPresenter
     config.index.search_bar_component = Arcdex::SearchBarComponent
-    # config.index.thumbnail_field = 'thumbnail_path_ss'
+    config.index.thumbnail_field = "thumbnail_path_ssi"
 
     # solr field configuration for document/show views
     # config.show.title_field = 'title_display'
@@ -86,7 +86,7 @@ class CatalogController < ApplicationController
     config.show.access_component = Arclight::AccessComponent
     config.show.online_status_component = Arclight::OnlineStatusIndicatorComponent
     config.show.display_type_field = "level_ssm"
-    # config.show.thumbnail_field = 'thumbnail_path_ss'
+    config.show.thumbnail_field = "thumbnail_path_ssi"
     config.show.document_presenter_class = Arclight::ShowPresenter
     config.show.metadata_partials = %i[
       summary_field
@@ -99,7 +99,7 @@ class CatalogController < ApplicationController
 
     ##
     # Compact index view
-    config.view.compact!
+    # config.view.compact!
 
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display

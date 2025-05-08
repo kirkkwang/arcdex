@@ -61,6 +61,7 @@ group :development do
 end
 
 gem "arclight", github: "projectblacklight/arclight", branch: "main"
+gem "blacklight-gallery", github: "projectblacklight/blacklight-gallery", branch: "main"
 
 group :development, :test do
   gem "solr_wrapper", ">= 0.3"
@@ -72,3 +73,4 @@ gem "devise-guests", "~> 0.8"
 gem "blacklight-locale_picker"
 gem "listen"
 gem "blacklight_range_limit"
+gem "openseadragon", "~> 1.0"

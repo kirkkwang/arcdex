@@ -7,6 +7,12 @@ class CatalogController < ApplicationController
   include Arclight::Catalog
 
   configure_blacklight do |config|
+    config.view.gallery(document_component: Blacklight::Gallery::DocumentComponent, icon: Blacklight::Gallery::Icons::GalleryComponent)
+    config.view.masonry(document_component: Blacklight::Gallery::DocumentComponent, icon: Blacklight::Gallery::Icons::MasonryComponent)
+    config.view.slideshow(document_component: Blacklight::Gallery::SlideshowComponent, icon: Blacklight::Gallery::Icons::SlideshowComponent)
+    config.show.tile_source_field = :content_metadata_image_iiif_info_ssm
+    config.show.partials ||= []
+    config.show.partials.insert(1, :openseadragon)
     ## Class for sending and receiving requests from a search index
     # config.repository_class = Blacklight::Solr::Repository
     #

@@ -8,3 +8,7 @@ import Blacklight from "blacklight"
 import "arclight"
 import BlacklightRangeLimit from "blacklight-range-limit";
 BlacklightRangeLimit.init({onLoadHandler: Blacklight.onLoad });
+
+import "openseadragon"
+import "openseadragon-rails"
+

@@ -1,6 +1,6 @@
 {
   "name": "app",
-  "private": "true",
+  "private": true,
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "arclight": "^1.4.0",
@@ -9,6 +9,7 @@
     "bootstrap": "^5.3.5",
     "bootstrap-icons": "^1.11.3",
     "nodemon": "^3.1.10",
+    "openseadragon-rails": "^1.0.17",
     "postcss": "^8.5.3",
     "postcss-cli": "^11.0.1",
     "sass": "^1.87.0"
@@ -21,5 +22,9 @@
   },
   "browserslist": [
     "defaults"
-  ]
+  ],
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/kirkkwang/arcdex.git",
+  "license": "MIT"
 }

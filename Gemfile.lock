@@ -10,6 +10,15 @@ GIT
       traject (~> 3.0)
       traject_plus (~> 2.0)
 
+GIT
+  remote: https://github.com/projectblacklight/blacklight-gallery.git
+  revision: 7ce739af8506c8bf9cb0562b766d76949a93f206
+  branch: main
+  specs:
+    blacklight-gallery (4.8.4)
+      blacklight (>= 7.17, < 9)
+      rails (>= 6.1, < 9)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -283,6 +292,8 @@ GEM
       racc (~> 1.4)
     nokogiri (1.18.8-x86_64-linux-musl)
       racc (~> 1.4)
+    openseadragon (1.0.17)
+      rails (> 6.1.0)
     orm_adapter (0.5.0)
     ostruct (0.6.1)
     parallel (1.27.0)
@@ -492,6 +503,7 @@ PLATFORMS
 
 DEPENDENCIES
   arclight!
+  blacklight-gallery!
   blacklight-locale_picker
   blacklight_range_limit
   bootsnap
@@ -505,6 +517,7 @@ DEPENDENCIES
   jbuilder
   kamal
   listen
+  openseadragon (~> 1.0)
   pg (~> 1.1)
   propshaft
   puma (>= 5.0)

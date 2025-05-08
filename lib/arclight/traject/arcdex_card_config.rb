@@ -217,6 +217,11 @@ to_field "small_url_html_ssm" do |record, accumulator|
     accumulator << "<img src=\"#{url}\" alt=\"Card image\" class=\"small-card-image\" />"
   end
 end
+to_field "thumbnail_path_ssi" do |record, accumulator|
+  if record["images"] && record["images"]["small"]
+    accumulator << record["images"]["small"]
+  end
+end
 to_field "large_url_ssm" do |record, accumulator|
   if record["images"] && record["images"]["large"]
     accumulator << record["images"]["large"]

@@ -109,6 +109,11 @@ to_field "logo_url_html_ssm" do |record, accumulator|
     accumulator << "<img src=\"#{url}\" alt=\"Set logo\" class=\"set-logo\" />"
   end
 end
+to_field "thumbnail_path_ssi" do |record, accumulator|
+  if record.first["set"]["images"] && record.first["set"]["images"]["logo"]
+    accumulator << record.first["set"]["images"]["logo"]
+  end
+end
 
 # =============================
 # Each component child document

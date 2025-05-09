@@ -104,6 +104,21 @@
   .document-type-icon {
     width: 4rem;
   }
+
+  &.documents-gallery {
+    .blacklight-card {
+      margin-bottom: 2rem;
+
+      .document-thumbnail {
+        display: flex;
+        justify-content: center;
+
+        .img-thumbnail {
+          border: none;
+        }
+      }
+    }
+  }
 }
 
 // OVERRIDE Blacklight v8.9.0 to expand search bar to full width

@@ -104,6 +104,23 @@
   .document-type-icon {
     width: 4rem;
   }
+
+  &.documents-gallery {
+    .document {
+      margin-bottom: 2rem;
+
+      .document-thumbnail {
+        min-height: 12.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .img-thumbnail {
+          border: none;
+        }
+      }
+    }
+  }
 }
 
 // OVERRIDE Blacklight v8.9.0 to expand search bar to full width

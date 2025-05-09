@@ -69,6 +69,7 @@ class CatalogController < ApplicationController
     config.index.partials = %i[arclight_index_default]
     config.index.title_field = "normalized_title_ssm"
     config.index.display_type_field = "level_ssm"
+    config.index.title_component = Arcdex::DocumentTitleComponent
     config.index.document_component = Arclight::SearchResultComponent
     config.index.group_component = Arclight::GroupComponent
     config.index.constraints_component = Arclight::ConstraintsComponent
@@ -159,8 +160,8 @@ class CatalogController < ApplicationController
     }, compact: true, component: Arclight::IndexMetadataFieldComponent
     # config.add_index_field "creator", accessor: true, component: Arclight::IndexMetadataFieldComponent
     # config.add_index_field "abstract_or_scope", accessor: true, truncate: true, repository_context: true, helper_method: :render_html_tags, component: Arclight::IndexMetadataFieldComponent
-    config.add_index_field "flavor_text_html", accessor: "flavor_text_html", component: Arclight::IndexMetadataFieldComponent, helper_method: :render_html_tags
-    config.add_index_field "breadcrumbs", accessor: :itself, component: Arclight::SearchResultBreadcrumbsComponent, compact: { count: 2 }
+    config.add_index_field "flavor_text_html", accessor: "flavor_text_html", component: Arclight::IndexMetadataFieldComponent, helper_method: :render_html_tags, if: ->(controller, _field, _document) { controller.params[:view] == "list" }
+    config.add_index_field "breadcrumbs", accessor: :itself, component: Arclight::SearchResultBreadcrumbsComponent, compact: { count: 2 }, if: ->(controller, _field, _document) { controller.params[:view] == "list" }
 
     config.add_facet_field "access", query: {
       online: { label: "Online access", fq: "has_online_content_ssim:true" }

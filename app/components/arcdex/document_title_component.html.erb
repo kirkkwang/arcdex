@@ -1,0 +1,21 @@
+<%#
+  OVERRIDE Blacklight v8.9.0 to not render the title
+%>
+
+<header class="documentHeader row">
+  <%= content_tag @as, class: @classes do %>
+    <% before_titles.each do |t| %>
+      <%= t %>
+    <% end %>
+
+    <%#= counter -%><%#= title -%>
+
+    <% after_titles.each do |t| %>
+      <%= t %>
+    <% end %>
+  <% end %>
+
+  <% actions.each do |action| %>
+    <%= action %>
+  <% end %>
+</header>

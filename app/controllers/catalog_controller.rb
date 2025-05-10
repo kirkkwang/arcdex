@@ -71,7 +71,7 @@ class CatalogController < ApplicationController
     config.index.display_type_field = "level_ssm"
     config.index.title_component = Arcdex::DocumentTitleComponent
     config.index.document_component = Arclight::SearchResultComponent
-    config.index.group_component = Arclight::GroupComponent
+    config.index.group_component = Arcdex::GroupComponent
     config.index.constraints_component = Arclight::ConstraintsComponent
     config.index.document_presenter_class = Arclight::IndexPresenter
     config.index.search_bar_component = Arcdex::SearchBarComponent

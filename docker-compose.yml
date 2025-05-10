@@ -35,11 +35,12 @@ services:
     ports:
       - "8983:8983"
     volumes:
-      - ./solr/conf:/var/solr/data/arclight/conf/
+      - ./solr/conf:/tmp/arclight_conf
     command:
-      - solr-precreate
-      - arclight
-      - /var/solr/data/arclight/conf/
+      - bash
+      - -c
+      - |
+        solr-create -c arclight -d /tmp/arclight_conf
 
 volumes:
   pgdata:

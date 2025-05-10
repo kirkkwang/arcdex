@@ -421,4 +421,5 @@
    <copyField source="places_ssim" dest="suggest"/>
    <copyField source="access_subjects_ssim" dest="suggest"/>
 
+   <copyField source="*_tesim" dest="text"/>
 </schema>

@@ -79,6 +79,34 @@ to_field "evolves_to_ssm" do |record, accumulator|
   end
 end
 
+to_field "abilities_json_ssm" do |record, accumulator|
+  if record["abilities"]
+    accumulator << record["abilities"].to_json
+  end
+end
+to_field "ability_fields" do |record, accumulator, context|
+  if record["abilities"]
+    record["abilities"].each_with_index do |ability, index|
+      # Create indexed field names (1-based index)
+      ability_num = index + 1
+
+      # Ability name
+      context.output_hash["ability_#{ability_num}_name_tesim"] = [ ability["name"] ] if ability["name"]
+
+      # Ability text
+      context.output_hash["ability_#{ability_num}_text_tesim"] = [ ability["text"] ] if ability["text"]
+
+      # Ability type
+      context.output_hash["ability_#{ability_num}_type_tesim"] = [ ability["type"] ] if ability["type"]
+    end
+  end
+end
+to_field "number_of_abilities_isi" do |record, accumulator|
+  if record["abilities"]
+    accumulator << record["abilities"].length
+  end
+end
+
 to_field "attacks_json_ssm" do |record, accumulator|
   if record["attacks"]
     accumulator << record["attacks"].to_json
@@ -91,7 +119,7 @@ to_field "attack_fields" do |record, accumulator, context|
       attack_num = index + 1
 
       # Attack name
-      context.output_hash["attack_#{attack_num}_name_ssm"] = [ attack["name"] ] if attack["name"]
+      context.output_hash["attack_#{attack_num}_name_tesim"] = [ attack["name"] ] if attack["name"]
 
       # Attack cost
       if attack["cost"]
@@ -107,13 +135,18 @@ to_field "attack_fields" do |record, accumulator, context|
       context.output_hash["attack_#{attack_num}_damage_ssm"] = [ attack["damage"] ] if attack["damage"]
 
       # Attack text/effect
-      context.output_hash["attack_#{attack_num}_text_ssm"] = [ attack["text"] ] if attack["text"]
+      context.output_hash["attack_#{attack_num}_text_tesim"] = [ attack["text"] ] if attack["text"]
     end
   end
 
   # Also store complete attacks as JSON for flexibility
   if record["attacks"]
     context.output_hash["attacks_json_ssi"] = [ record["attacks"].to_json ]
+  end
+end
+to_field "number_of_attacks_isi" do |record, accumulator|
+  if record["attacks"]
+    accumulator << record["attacks"].length
   end
 end
 
@@ -155,6 +188,7 @@ to_field "artist_ssm", lambda { |record, accumulator| accumulator << record["art
 to_field "rarity_ssm", lambda { |record, accumulator| accumulator << record["rarity"] }
 
 to_field "flavor_text_ssi", lambda { |record, accumulator| accumulator << record["flavorText"] }
+to_field "flavor_text_tesim", lambda { |record, accumulator| accumulator << record["flavorText"] }
 to_field "flavor_text_html_ssm" do |record, accumulator|
   accumulator << "<em>#{record["flavorText"]}</em>" if record["flavorText"]
 end

@@ -144,7 +144,6 @@ class CatalogController < ApplicationController
       show_missing_link: false
     }
     config.add_facet_field "Category", field: "level_ssim", limit: 10, excludable: true
-    config.add_facet_field "names", field: "names_ssim", limit: 10, excludable: true
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
@@ -189,6 +188,28 @@ class CatalogController < ApplicationController
     # since we aren't specifying it otherwise.
     config.add_search_field "all_fields", label: "All Fields" do |field|
       field.include_in_simple_select = true
+
+      fields = %w[
+        attack_1_name_tesim
+        attack_2_name_tesim
+        attack_3_name_tesim
+        attack_4_name_tesim
+        attack_1_text_tesim
+        attack_2_text_tesim
+        attack_3_text_tesim
+        attack_4_text_tesim
+        ability_1_name_tesim
+        ability_2_name_tesim
+        ability_1_text_tesim
+        ability_2_text_tesim
+        title_tesim
+        flavor_text_tesim
+      ].join(" ")
+
+      field.solr_parameters = {
+        qf: fields,
+        pf: fields
+      }
     end
 
     config.add_search_field "within_collection" do |field|
@@ -200,51 +221,9 @@ class CatalogController < ApplicationController
 
     # Field-based searches. We have registered handlers in the Solr configuration
     # so we have Blacklight use the `qt` parameter to invoke them
-    config.add_search_field "keyword", label: "Keyword" do |field|
-      field.qt = "search" # default
-    end
-    config.add_search_field "name", label: "Name" do |field|
-      field.qt = "search"
-      field.solr_parameters = {
-        qf:  "${qf_name}",
-        pf:  "${pf_name}"
-      }
-    end
-    config.add_search_field "place", label: "Place" do |field|
-      field.qt = "search"
-      field.solr_parameters = {
-        qf:  "${qf_place}",
-        pf:  "${pf_place}"
-      }
-    end
-    config.add_search_field "subject", label: "Subject" do |field|
-      field.qt = "search"
-      field.solr_parameters = {
-        qf:  "${qf_subject}",
-        pf:  "${pf_subject}"
-      }
-    end
-    config.add_search_field "title", label: "Title" do |field|
-      field.qt = "search"
-      field.solr_parameters = {
-        qf:  "${qf_title}",
-        pf:  "${pf_title}"
-      }
-    end
-    config.add_search_field "container", label: "Container" do |field|
-      field.qt = "search"
-      field.solr_parameters = {
-        qf:  "${qf_container}",
-        pf:  "${pf_container}"
-      }
-    end
-    config.add_search_field "identifier", label: "Identifier" do |field|
-      field.qt = "search"
-      field.solr_parameters = {
-        qf:  "${qf_identifier}",
-        pf:  "${pf_identifier}"
-      }
-    end
+    # config.add_search_field "keyword", label: "Keyword" do |field|
+    #   field.qt = "search" # default
+    # end
 
     # These are the parameters passed through in search_state.params_for_search
     config.search_state_fields += %i[id group hierarchy_context original_document]

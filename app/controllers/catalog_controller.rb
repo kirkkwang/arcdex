@@ -288,43 +288,44 @@ class CatalogController < ApplicationController
       document.containers.present?
     }
 
-    config.add_component_field "Card", field: "large_url_html_ssm", helper_method: :render_html_tags
-    config.add_component_field "name", field: "normalized_title_ssm", component: Arcdex::PokemonSearchComponent
-    config.add_component_field "set", field: "parent_unittitles_ssm", link_to_facet: true
-    config.add_component_field "supertype", field: "supertype_ssm", link_to_facet: true
-    config.add_component_field "national_pokedex_number", field: "national_pokedex_numbers_ssm"
-    config.add_component_field "subtypes", field: "subtypes_ssm", link_to_facet: true
-    config.add_component_field "level", field: "level_ssi"
-    config.add_component_field "types", label: "Type(s)", field: "types_ssm", link_to_facet: true
-    config.add_component_field "rarity", field: "rarity_ssm", link_to_facet: true
-    config.add_component_field "evolves_from", field: "evolves_from_ssm", component: Arcdex::PokemonSearchComponent
-    config.add_component_field "evolves_to", field: "evolves_to_ssm", component: Arcdex::PokemonSearchComponent
-    config.add_component_field "card number", field: "number_ssm"
-    config.add_component_field "artist", field: "artist_ssm", link_to_facet: true
-    config.add_component_field "tcgplayer_url", label: "TCGplayer", field: "tcgplayer_url_html_ssi", helper_method: :render_html_tags
-    config.add_component_field "cardmarket_url", label: "Cardmarket", field: "cardmarket_url_html_ssi", helper_method: :render_html_tags
+    config.add_component_field "Card", field: "large_url_html_ssm", helper_method: :render_html_tags, component: Arcdex::CardViewComponent
 
-    # Component Show Page - Indexed Terms Section
-    config.add_component_indexed_terms_field "access_subjects", field: "access_subjects_ssim", link_to_facet: true, separator_options: {
-      words_connector: "<br/>",
-      two_words_connector: "<br/>",
-      last_word_connector: "<br/>"
-    }
+    config.add_component_indexed_terms_field "name", field: "normalized_title_ssm", component: Arcdex::PokemonSearchComponent
+    config.add_component_indexed_terms_field "set", field: "parent_unittitles_ssm", link_to_facet: true
+    config.add_component_indexed_terms_field "supertype", field: "supertype_ssm", link_to_facet: true
+    config.add_component_indexed_terms_field "national_pokedex_number", field: "national_pokedex_numbers_ssm"
+    config.add_component_indexed_terms_field "subtypes", field: "subtypes_ssm", link_to_facet: true
+    config.add_component_indexed_terms_field "level", field: "level_ssi"
+    config.add_component_indexed_terms_field "types", label: "Type(s)", field: "types_ssm", link_to_facet: true
+    config.add_component_indexed_terms_field "rarity", field: "rarity_ssm", link_to_facet: true
+    config.add_component_indexed_terms_field "evolves_from", field: "evolves_from_ssm", component: Arcdex::PokemonSearchComponent
+    config.add_component_indexed_terms_field "evolves_to", field: "evolves_to_ssm", component: Arcdex::PokemonSearchComponent
+    config.add_component_indexed_terms_field "card number", field: "number_ssm"
+    config.add_component_indexed_terms_field "artist", field: "artist_ssm", link_to_facet: true
+    config.add_component_indexed_terms_field "tcgplayer_url", label: "TCGplayer", field: "tcgplayer_url_html_ssi", helper_method: :render_html_tags
+    config.add_component_indexed_terms_field "cardmarket_url", label: "Cardmarket", field: "cardmarket_url_html_ssi", helper_method: :render_html_tags
 
-    config.add_component_indexed_terms_field "names", field: "names_ssim", separator_options: {
-      words_connector: "<br/>",
-      two_words_connector: "<br/>",
-      last_word_connector: "<br/>"
-    }, helper_method: :link_to_name_facet
+    # # Component Show Page - Indexed Terms Section
+    # config.add_component_indexed_terms_field "access_subjects", field: "access_subjects_ssim", link_to_facet: true, separator_options: {
+    #   words_connector: "<br/>",
+    #   two_words_connector: "<br/>",
+    #   last_word_connector: "<br/>"
+    # }
 
-    config.add_component_indexed_terms_field "places", field: "places_ssim", link_to_facet: true, separator_options: {
-      words_connector: "<br/>",
-      two_words_connector: "<br/>",
-      last_word_connector: "<br/>"
-    }
+    # config.add_component_indexed_terms_field "names", field: "names_ssim", separator_options: {
+    #   words_connector: "<br/>",
+    #   two_words_connector: "<br/>",
+    #   last_word_connector: "<br/>"
+    # }, helper_method: :link_to_name_facet
 
-    config.add_component_indexed_terms_field "indexes", field: "indexes_html_tesm",
-                                              helper_method: :render_html_tags
+    # config.add_component_indexed_terms_field "places", field: "places_ssim", link_to_facet: true, separator_options: {
+    #   words_connector: "<br/>",
+    #   two_words_connector: "<br/>",
+    #   last_word_connector: "<br/>"
+    # }
+
+    # config.add_component_indexed_terms_field "indexes", field: "indexes_html_tesm",
+    #                                           helper_method: :render_html_tags
 
     # =================
     # ACCESS TAB FIELDS

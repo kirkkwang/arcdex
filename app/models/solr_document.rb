@@ -54,4 +54,8 @@ class SolrDocument
   def flavor_text_html
     self["flavor_text_html_ssm"]&.first || ""
   end
+
+  def image_html
+    self["large_url_html_ssm"]&.first || ""
+  end
 end

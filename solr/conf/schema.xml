@@ -360,7 +360,7 @@
 
    <!-- The catch all `text` field -->
    <!-- grab the fielded searches -->
-   <copyField source="normalized_title_ssm" dest="text" />
+   <!-- <copyField source="normalized_title_ssm" dest="text" /> -->
    <copyField source="places_ssim" dest="text" />
    <copyField source="names_ssim" dest="text" />
    <copyField source="access_subjects_ssim" dest="text" />

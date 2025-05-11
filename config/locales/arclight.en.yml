@@ -16,6 +16,7 @@ en:
         has_content: Card List
         sections:
           summary_field: Set Information
+          component_field: About this set
     within_collection_dropdown:
       all_collections: all sets
       label_html: Search<span class="sr-only visually-hidden"> within</span>

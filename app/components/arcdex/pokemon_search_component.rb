@@ -26,7 +26,7 @@ module Arcdex
           helpers.search_action_url(
             f: { supertype: [ document.supertype ] },
             q: value,
-            search_field: "all_fields")
+            search_field: "normalized_title_ssm")
         )
       end
 

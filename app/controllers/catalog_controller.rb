@@ -90,6 +90,7 @@ class CatalogController < ApplicationController
     config.show.document_presenter_class = Arclight::ShowPresenter
     config.show.metadata_partials = %i[
       summary_field
+      indexed_terms_field
     ]
 
     config.show.component_metadata_partials = %i[
@@ -266,27 +267,29 @@ class CatalogController < ApplicationController
     # ===========================
 
     # Collection Show Page - Summary Section
-    config.add_summary_field "logo", field: "logo_url_html_ssm", helper_method: :render_html_tags
-    config.add_summary_field "series", field: "series_ssim", link_to_facet: true
-    config.add_summary_field "set", field: "collection_ssim", link_to_facet: true
-    config.add_summary_field "complete set count", field: "printed_total_ssim"
-    config.add_summary_field "master set count", field: "total_items_ssim", if: ->(_controller, _field, document) { document.master_set? }
-    config.add_summary_field "release date", field: "release_date_ssm"
-    config.add_summary_field label: "TCG Code", field: "ptcgo_code_ssim"
-    config.add_summary_field "symbol", field: "symbol_url_html_ssm", helper_method: :render_html_tags
+    config.add_summary_field "logo", field: "logo_url_html_ssm", helper_method: :render_html_tags, component: Arcdex::CardViewComponent
+
+    # Collection Show Page - Indexed Terms Section
+    config.add_indexed_terms_field "series", field: "series_ssim", link_to_facet: true
+    config.add_indexed_terms_field "set", field: "normalized_title_ssm", link_to_facet: true
+    config.add_indexed_terms_field "complete set count", field: "printed_total_ssim"
+    config.add_indexed_terms_field "master set count", field: "total_items_ssim", if: ->(_controller, _field, document) { document.master_set? }
+    config.add_indexed_terms_field "release date", field: "release_date_ssm"
+    config.add_indexed_terms_field label: "TCG Code", field: "ptcgo_code_ssim"
+    config.add_indexed_terms_field "symbol", field: "symbol_url_html_ssm", helper_method: :render_html_tags
 
     # ==========================
     # COMPONENT SHOW PAGE FIELDS
     # ==========================
 
     # Component Show Page - Metadata Section
-    config.add_component_field "containers", accessor: "containers", separator_options: {
-      words_connector: ", ",
-      two_words_connector: ", ",
-      last_word_connector: ", "
-    }, if: lambda { |_context, _field_config, document|
-      document.containers.present?
-    }
+    # config.add_component_field "containers", accessor: "containers", separator_options: {
+    #   words_connector: ", ",
+    #   two_words_connector: ", ",
+    #   last_word_connector: ", "
+    # }, if: lambda { |_context, _field_config, document|
+    #   document.containers.present?
+    # }
 
     config.add_component_field "Card", field: "large_url_html_ssm", helper_method: :render_html_tags, component: Arcdex::CardViewComponent
 

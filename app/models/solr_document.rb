@@ -56,6 +56,6 @@ class SolrDocument
   end
 
   def image_html
-    self["large_url_html_ssm"]&.first || ""
+    (collection? ? self["logo_url_html_ssm"].first : self["large_url_html_ssm"]&.first) || ""
   end
 end

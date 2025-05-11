@@ -17,6 +17,14 @@ module ArclightHelperDecorator
     )
   end
 
+  def cards_path
+    search_action_url(
+      f: {
+        Category: [ "Card" ]
+      }
+    )
+  end
+
   def repository_collections_path(repository)
     search_action_url(
       f: {

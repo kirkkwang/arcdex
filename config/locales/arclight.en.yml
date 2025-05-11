@@ -4,6 +4,7 @@ en:
     routes:
       repositories: Series
       collections: Sets
+      cards: Cards
     views:
       index:
         group_by_collection: Grouped by set

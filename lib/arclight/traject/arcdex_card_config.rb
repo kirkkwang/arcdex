@@ -163,6 +163,13 @@ to_field "weaknesses_ssm" do |record, accumulator|
     end
   end
 end
+to_field "weakness_type_ssm" do |record, accumulator|
+  if record["weaknesses"]
+    record["weaknesses"].each do |weakness|
+      accumulator << weakness["type"]
+    end
+  end
+end
 
 to_field "retreat_cost_ssm" do |record, accumulator|
   if record["retreatCost"]

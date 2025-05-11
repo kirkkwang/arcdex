@@ -130,20 +130,36 @@ class CatalogController < ApplicationController
     config.add_facet_field "Category", field: "level_ssim", limit: 10, excludable: true
     config.add_facet_field "series", field: "series_ssm", limit: 10, excludable: true
     config.add_facet_field "set", field: "collection_ssim", limit: 10, excludable: true
+    config.add_facet_field "rarity", field: "rarity_ssm", limit: 10, excludable: true
+    config.add_facet_field "release year", field: "release_year_isi", range: true, range_config: {
+      show_missing_link: false
+    }
     config.add_facet_field "supertype", field: "supertype_ssm", limit: 10, excludable: true
     config.add_facet_field "subtypes", field: "subtypes_ssm", limit: 10, excludable: true
-    config.add_facet_field "types", field: "types_ssm", limit: 10, excludable: true
-    config.add_facet_field "artist", field: "artist_ssm", limit: 10, excludable: true
-    config.add_facet_field "rarity", field: "rarity_ssm", limit: 10, excludable: true
-
     config.add_facet_field "Hit Points", field: "hp_isi", range: true, range_config: {
       show_missing_link: false
     }, if: ->(_controller, _field, facet_field) do
       facet_field.response.facet_counts["facet_fields"]["hp_isi"].present?
     end
-    config.add_facet_field "release year", field: "release_year_isi", range: true, range_config: {
+    config.add_facet_field "types", field: "types_ssm", limit: 10, excludable: true
+    config.add_facet_field "number of abilities", field: "number_of_abilities_isi", range: true, range_config: {
       show_missing_link: false
-    }
+    }, if: ->(_controller, _field, facet_field) do
+      facet_field.response.facet_counts["facet_fields"]["number_of_abilities_isi"].present?
+    end
+    config.add_facet_field "number of attacks", field: "number_of_attacks_isi", range: true, range_config: {
+      show_missing_link: false
+    }, if: ->(_controller, _field, facet_field) do
+      facet_field.response.facet_counts["facet_fields"]["number_of_attacks_isi"].present?
+    end
+    config.add_facet_field "weakness type", field: "weakness_type_ssm", limit: 10, excludable: true
+    config.add_facet_field "retreat cost", field: "converted_retreat_cost_isi", range: true, range_config: {
+      show_missing_link: false
+    }, if: ->(_controller, _field, facet_field) do
+      facet_field.response.facet_counts["facet_fields"]["converted_retreat_cost_isi"].present?
+    end
+    config.add_facet_field "artist", field: "artist_ssm", limit: 10, excludable: true
+
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request

@@ -127,6 +127,7 @@ class CatalogController < ApplicationController
     # :index_range can be an array or range of prefixes that will be used to create the navigation
     #  (note: It is case sensitive when searching values)
 
+    config.add_facet_field "Category", field: "level_ssim", limit: 10, excludable: true
     config.add_facet_field "series", field: "series_ssm", limit: 10, excludable: true
     config.add_facet_field "set", field: "collection_ssim", limit: 10, excludable: true
     config.add_facet_field "supertype", field: "supertype_ssm", limit: 10, excludable: true
@@ -143,7 +144,6 @@ class CatalogController < ApplicationController
     config.add_facet_field "release year", field: "release_year_isi", range: true, range_config: {
       show_missing_link: false
     }
-    config.add_facet_field "Category", field: "level_ssim", limit: 10, excludable: true
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request

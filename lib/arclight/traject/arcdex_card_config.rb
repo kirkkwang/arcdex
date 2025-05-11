@@ -168,6 +168,8 @@ to_field "weakness_type_ssm" do |record, accumulator|
     record["weaknesses"].each do |weakness|
       accumulator << weakness["type"]
     end
+  else
+    accumulator << "None" if record["supertype"] == "Pokémon"
   end
 end
 

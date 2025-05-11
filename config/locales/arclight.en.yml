@@ -3,7 +3,9 @@ en:
     masthead_heading_html: Arcdex
     routes:
       repositories: Series
+      series: Series
       collections: Sets
+      sets: Sets
       cards: Cards
     views:
       index:

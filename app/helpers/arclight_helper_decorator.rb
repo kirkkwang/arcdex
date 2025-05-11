@@ -41,6 +41,22 @@ module ArclightHelperDecorator
   def sanitized_nest_path
     params[:nest_path]&.include?("/components#") ? params[:nest_path] : nil
   end
+
+  def collection_active?
+    search_state.filter("Category").values == [ "Set" ]
+  end
+
+  def collection_active_class
+    "active" if collection_active?
+  end
+
+  def card_active?
+    search_state.filter("Category").values == [ "Card" ]
+  end
+
+  def card_active_class
+    "active" if card_active?
+  end
 end
 
 ArclightHelper.prepend(ArclightHelperDecorator)

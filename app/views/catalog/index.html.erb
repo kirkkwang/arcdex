@@ -1,0 +1,17 @@
+<%#
+  OVERRIDE Arclight v2.0.0.alpha to add the data-controller="scroll-position"
+    to activate the scroll_position_controller.js
+%>
+
+<% content_for(:sidebar) do %>
+  <% conf = blacklight_config.view_config(document_index_view_type) %>
+  <%= render conf.sidebar_component.new(blacklight_config: blacklight_config,
+                                        response: @response,
+                                        view_config: conf) %>
+<% end %>
+
+<% breadcrumb :search_results, search_state %>
+
+<div data-controller="scroll-position">
+  <%= render 'search_results' %>
+</div>

@@ -5,6 +5,10 @@
 // Arclight, imported from arclight frontend package
 @import 'arclight/app/assets/stylesheets/arclight/application';
 
+html {
+  scroll-behavior: smooth;
+}
+
 #indexed-terms {
   .set-symbol {
     max-width: 40px;

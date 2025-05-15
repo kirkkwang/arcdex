@@ -9,6 +9,11 @@ html {
   scroll-behavior: smooth;
 }
 
+.navbar-logo {
+  background: url("logo.png") no-repeat top left;
+  width: 170px;
+}
+
 #indexed-terms {
   .set-symbol {
     max-width: 40px;

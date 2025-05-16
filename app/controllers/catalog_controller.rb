@@ -236,11 +236,21 @@ class CatalogController < ApplicationController
       }
     end
 
-    config.add_search_field "normalized_title_ssm", label: "Card Name" do |field|
+    config.add_search_field "card_name", label: "Card Name" do |field|
       field.qt = "search"
       field.solr_parameters = {
-        qf:  "title_tesim",
-        pf:  "title_tesim"
+        qf: "title_tesim",
+        pf: "title_tesim",
+        fq: "level_ssim:Card"
+      }
+    end
+
+    config.add_search_field "set_name", label: "Set Name" do |field|
+      field.qt = "search"
+      field.solr_parameters = {
+        qf: "title_tesim",
+        pf: "title_tesim",
+        fq: "level_ssim:Set"
       }
     end
 

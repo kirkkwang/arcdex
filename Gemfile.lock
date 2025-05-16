@@ -1,10 +1,10 @@
 GIT
   remote: https://github.com/projectblacklight/arclight.git
-  revision: 6503a847de93709a852ac4a90b77913954234e6a
+  revision: 8274ec83720a8fc46e34022cc54ee4faa63e6beb
   branch: main
   specs:
     arclight (2.0.0.alpha)
-      blacklight (>= 8.0.0, < 9)
+      blacklight (>= 8.0.0, < 10)
       gretel
       rails (>= 7.1, < 9)
       traject (~> 3.0)

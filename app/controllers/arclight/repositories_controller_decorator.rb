@@ -8,7 +8,7 @@ module Arclight
 
     def show
       @repository = Arclight::Repository.find(params[:id])
-      @collections = @repository.documents
+      @collections = @repository.documents.reverse
     end
   end
 end

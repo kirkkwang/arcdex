@@ -16,6 +16,7 @@ en:
         view_all_collections: View all sets
       show:
         has_content: Card List
+        our_collections: Set list
         sections:
           summary_field: Set Information
           component_field: About this set

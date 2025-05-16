@@ -145,3 +145,63 @@ html {
     width: 100%;
   }
 }
+
+// Facets opening and closing animation
+.facet-field-heading button.collapsed::after {
+    transition: transform 0.25s ease;
+}
+
+.facet-field-heading button::after {
+    transition: transform 0.25s ease;
+}
+
+.collapsing {
+    transition: height 0.25s ease;
+}
+
+// For summary/details animation like on the range limit facets
+details {
+	position: relative;
+	max-inline-size: 40rem;
+	margin-block: 1rem 0;
+	margin-inline: auto;
+	border-radius: 0.3rem;
+}
+
+summary {
+  padding-left: 1rem;
+  position: relative;
+  font-weight: inherit;
+  cursor: pointer;
+}
+
+details::details-content {
+	display: block;
+	block-size: 0;
+	overflow: hidden;
+	transition-property: block-size, content-visibility;
+	transition-duration: 0.25s;
+	transition-behavior: allow-discrete;
+}
+
+details[open]::details-content {
+	block-size: auto;
+	block-size: calc-size(auto, size);
+}
+
+summary::marker {
+	content: '▶';
+	content: none;
+}
+
+summary::before {
+  margin-left: -1rem;
+	content: '▶';
+	position: absolute;
+	transition: rotate 0.25s;
+}
+
+details[open] summary::before {
+  margin-left: -1rem;
+	rotate: 90deg;
+}

@@ -10,8 +10,18 @@ html {
 }
 
 .navbar-logo {
-  background: url("logo.png") no-repeat top left;
+  background: url("logo-dark.png") no-repeat top left;
   width: 170px;
+}
+
+.navbar-search {
+  border-bottom: 1px solid var(--bs-border-color);
+  border-top: 1px solid var(--bs-border-color);
+}
+
+.bg-dark {
+  // OVERIDE Blacklight v8.10.1 to use the bg-primary color instead
+  background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
 }
 
 #indexed-terms {

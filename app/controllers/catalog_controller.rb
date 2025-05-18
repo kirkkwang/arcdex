@@ -255,6 +255,14 @@ class CatalogController < ApplicationController
       }
     end
 
+    config.add_search_field "id", label: "ID" do |field|
+      field.qt = "search"
+      field.solr_parameters = {
+        qf: "id",
+        pf: "id"
+      }
+    end
+
     # Field-based searches. We have registered handlers in the Solr configuration
     # so we have Blacklight use the `qt` parameter to invoke them
     # config.add_search_field "keyword", label: "Keyword" do |field|

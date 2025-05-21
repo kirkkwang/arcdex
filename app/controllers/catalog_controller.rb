@@ -64,6 +64,7 @@ class CatalogController < ApplicationController
 
     config.add_nav_action(:bookmark, partial: "blacklight/nav/bookmark", if: :render_bookmarks_control?)
     config.add_nav_action(:search_history, partial: "blacklight/nav/search_history")
+    config.add_nav_action(:theme_picker, partial: "arcdex/nav/theme_picker", additional_classes: "dropdown")
 
     # solr field configuration for search results/index views
     config.index.partials = %i[arclight_index_default]

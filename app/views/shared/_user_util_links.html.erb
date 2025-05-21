@@ -1,9 +1,28 @@
 <%#
-  OVERRIDE Blacklight v8.9.0 to remove login link
+  OVERRIDE Blacklight v8.9.0 to remove login link; to add additional_classes to li tags;
+    to render a divider; to add a script to change the bs-theme color
 %>
+<script>
+  (function() {
+    const savedTheme = localStorage.getItem('theme');
 
+    if (savedTheme) {
+      document.documentElement.setAttribute('data-bs-theme', savedTheme);
+    } else {
+      const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-bs-theme', prefersDarkMode ? 'dark' : 'light');
+    }
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      if (!localStorage.getItem('theme')) {
+        document.documentElement.setAttribute('data-bs-theme', e.matches ? 'dark' : 'light');
+      }
+    });
+  })();
+</script>
 <ul class="navbar-nav">
   <%= render_nav_actions do |config, action|%>
-    <li class="nav-item"><%= action %></li>
+    <li class="nav-item <%= config.additional_classes %>"><%= action %></li>
+    <%= render "shared/divider" unless last_navbar_partial?(config) %>
   <% end %>
 </ul>

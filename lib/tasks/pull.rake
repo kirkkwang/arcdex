@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 namespace :arcdex do
-  desc "Pull data from pokemontcg.io"
+  desc 'Pull data from pokemontcg.io'
   task :pull do
-    BASE_URL = "https://api.pokemontcg.io/v2"
+    BASE_URL = 'https://api.pokemontcg.io/v2'
     response = HTTP.get("#{BASE_URL}/sets")
-    set_infos = response.parse["data"].map do |data|
-      { id: data["id"], total: data["total"], name: data["name"] }
+    set_infos = response.parse['data'].map do |data|
+      { id: data['id'], total: data['total'], name: data['name'] }
     end
 
     set_infos.each do |set_info|
@@ -25,8 +25,8 @@ namespace :arcdex do
         page_hash = r.parse
 
         # Extract just the cards data and add to our collection
-        if page_hash["data"]
-          all_cards += page_hash["data"]
+        if page_hash['data']
+          all_cards += page_hash['data']
         end
 
         page += 1
@@ -35,12 +35,12 @@ namespace :arcdex do
 
       # Create the simplified structure with just data and totalCount
       simplified_data = {
-        "data" => all_cards,
-        "totalCount" => all_cards.size
+        'data' => all_cards,
+        'totalCount' => all_cards.size
       }
 
       puts "  Saving #{all_cards.size} cards for set #{id}"
-      File.write(Rails.root.join("data", "#{id}.json"), JSON.pretty_generate(simplified_data))
+      File.write(Rails.root.join('data', "#{id}.json"), JSON.pretty_generate(simplified_data))
     end
   end
 end

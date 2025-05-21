@@ -3,7 +3,7 @@
 
 module Blacklight
   module ConstraintComponentDecorator
-    def initialize(facet_item_presenter:, classes: "filter", layout: Blacklight::ConstraintLayoutComponent)
+    def initialize(facet_item_presenter:, classes: 'filter', layout: Blacklight::ConstraintLayoutComponent)
       super
 
       @classes = facet_item_presenter.classes.presence || classes

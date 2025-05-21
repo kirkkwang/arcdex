@@ -16,32 +16,32 @@ class SolrDocument
   use_extension(Blacklight::Document::DublinCore)
 
   def series
-    self["series_ssm"]&.first || ""
+    self['series_ssm']&.first || ''
   end
 
   def master_set?
-    self["printed_total_isi"] < self["total_items_isi"]
+    self['printed_total_isi'] < self['total_items_isi']
   end
 
   def logo_url
-    self["logo_url_ssm"].first || ""
+    self['logo_url_ssm'].first || ''
   end
 
   def release_date
-    self["release_date_ssm"].first || ""
+    self['release_date_ssm'].first || ''
   end
 
   def icon_url
-    collection? ? self["symbol_url_ssm"].first : self["small_url_ssm"].first
+    collection? ? self['symbol_url_ssm'].first : self['small_url_ssm'].first
   end
 
   def supertype
-    self["supertype_ssm"].first || ""
+    self['supertype_ssm'].first || ''
   end
 
   # OVERRIDE Arclight v2.0.0.alpha to look for series_ssm instead of repository_ssm
   def repository
-    first("series_ssm") || collection&.first("series_ssm")
+    first('series_ssm') || collection&.first('series_ssm')
   end
 
   # OVERRIDE Arclight v2.0.0.alpha to use find instead of find_by
@@ -52,10 +52,10 @@ class SolrDocument
   end
 
   def flavor_text_html
-    self["flavor_text_html_ssm"]&.first || ""
+    self['flavor_text_html_ssm']&.first || ''
   end
 
   def image_html
-    (collection? ? self["logo_url_html_ssm"].first : self["large_url_html_ssm"]&.first) || ""
+    (collection? ? self['logo_url_html_ssm'].first : self['large_url_html_ssm']&.first) || ''
   end
 end

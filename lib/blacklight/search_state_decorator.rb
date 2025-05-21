@@ -12,7 +12,7 @@ module Blacklight
       keys = params[:f]&.keys
       return [] if keys.nil?
 
-      keys.select { |key| key.starts_with?("-") }
+      keys.select { |key| key.starts_with?('-') }
     end
   end
 end

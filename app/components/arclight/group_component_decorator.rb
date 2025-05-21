@@ -3,7 +3,7 @@
 module Arclight
   module GroupComponentDecorator
     def search_within_collection_url
-      search_catalog_path(helpers.search_without_group.deep_merge(f: { set: [ document.collection_name ] }))
+      search_catalog_path(helpers.search_without_group.deep_merge(f: { set: [document.collection_name] }))
     end
   end
 end

@@ -10,7 +10,7 @@ module Arclight
         @repositories ||=
           begin
           search_service = Blacklight.repository_class.new(CatalogController.blacklight_config)
-          documents = search_service.search(q: "series_ssim:*", fq: "level_ssm:\"collection\"", rows: 10_000).documents
+          documents = search_service.search(q: 'series_ssim:*', fq: 'level_ssm:"collection"', rows: 10_000).documents
 
           documents.group_by(&:series).map { |name, documents| new(name, documents) }
           end

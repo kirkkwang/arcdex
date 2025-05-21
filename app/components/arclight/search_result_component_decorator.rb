@@ -4,7 +4,7 @@ module Arclight
   module SearchResultComponentDecorator
     def icon
       link_to(
-        image_tag(@document.icon_url, width: "100%", alt: "#{@document.normalized_title} thumbnail", loading: "lazy"),
+        image_tag(@document.icon_url, width: '100%', alt: "#{@document.normalized_title} thumbnail", loading: 'lazy'),
         solr_document_path(@document.id)
       )
     end

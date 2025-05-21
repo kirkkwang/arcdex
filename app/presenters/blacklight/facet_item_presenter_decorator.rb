@@ -9,13 +9,13 @@ module Blacklight
     end
 
     def classes
-      ""
+      ''
     end
 
     private
 
     def add_exclude_href(path_options = {})
-      negated_facet_config_key = "-" + facet_config.key
+      negated_facet_config_key = '-' + facet_config.key
       view_context.search_action_path(search_state.add_facet_params_and_redirect(negated_facet_config_key, facet_item).merge(path_options))
     end
   end

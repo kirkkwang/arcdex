@@ -5,7 +5,7 @@ class SearchBuilder < Blacklight::SearchBuilder
   include BlacklightRangeLimit::RangeLimitBuilder
   include Arclight::SearchBehavior
 
-  self.default_processor_chain += [ :exclude_facets, :filter_sets_on_grouped_search, :sort_by_string ]
+  self.default_processor_chain += [:exclude_facets, :filter_sets_on_grouped_search, :sort_by_string]
 
   ##
   # @example Adding a new step to the processor chain
@@ -17,7 +17,7 @@ class SearchBuilder < Blacklight::SearchBuilder
 
   # Adding logic to alter the fq to exclude facets using the '-' (NOT) operator
   def exclude_facets(solr_parameters)
-    f = blacklight_params[:f]&.select { |key, _| key.starts_with?("-") }
+    f = blacklight_params[:f]&.select { |key, _| key.starts_with?('-') }
     return if f.blank?
 
     queries = []
@@ -29,13 +29,13 @@ class SearchBuilder < Blacklight::SearchBuilder
       end
     end
 
-    queries << f.map { |key, value| "#{solr_field_for(key)}:(#{value.map { |v| "\"#{v}\"" }.join(' OR ')})" }.join(" AND ")
+    queries << f.map { |key, value| "#{solr_field_for(key)}:(#{value.map { |v| "\"#{v}\"" }.join(' OR ')})" }.join(' AND ')
     queries.compact_blank!
 
     solr_parameters[:fq] = if queries.present? && solr_parameters[:fq].present?
-                             (solr_parameters[:fq].map { |fq| "(_query_:\"#{fq}\")" } + queries).join(" AND ")
+                             (solr_parameters[:fq].map { |fq| "(_query_:\"#{fq}\")" } + queries).join(' AND ')
     elsif queries.present? && solr_parameters[:fq].blank?
-                             queries.join(" AND ")
+                             queries.join(' AND ')
     end
   end
 
@@ -43,7 +43,7 @@ class SearchBuilder < Blacklight::SearchBuilder
     return unless solr_parameters[:group] == true
 
     solr_parameters[:fq] ||= []
-    solr_parameters[:fq] << "-level_ssm:collection"
+    solr_parameters[:fq] << '-level_ssm:collection'
   end
 
   # OVERRIDE Arclight v2.0.0.alpha to use sort_ssi instead of sort_isi
@@ -52,7 +52,7 @@ class SearchBuilder < Blacklight::SearchBuilder
   def sort_by_string(solr_parameters)
     return if solr_parameters[:sort].nil?
 
-    sort = solr_parameters[:sort].dup.gsub("sort_isi", "sort_ssi")
+    sort = solr_parameters[:sort].dup.gsub('sort_isi', 'sort_ssi')
     solr_parameters[:sort] = sort
   end
 
@@ -64,10 +64,10 @@ class SearchBuilder < Blacklight::SearchBuilder
     field = blacklight_config.facet_fields[key]&.field
     return if field.nil?
 
-    "-" + field
+    '-' + field
   end
 
   def handle_query(query)
-    query.values.map { |entry| "-" + entry[:fq] }.join(" AND ")
+    query.values.map { |entry| '-' + entry[:fq] }.join(' AND ')
   end
 end

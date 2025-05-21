@@ -25,31 +25,31 @@ class CatalogController < ApplicationController
     ## Default parameters to send to solr for all search-like requests. See also SearchBuilder#processed_parameters
     config.default_solr_params = {
       rows: 10,
-      fl: "*,collection:[subquery]",
-      'collection.q': "{!terms f=id v=$row._root_}",
-      'collection.defType': "lucene",
-      'collection.fl': "*",
+      fl: '*,collection:[subquery]',
+      'collection.q': '{!terms f=id v=$row._root_}',
+      'collection.defType': 'lucene',
+      'collection.fl': '*',
       'collection.rows': 1
     }
 
     # Sets the indexed Solr field that will display with highlighted matches
-    config.highlight_field = "text"
+    config.highlight_field = 'text'
 
     # solr path which will be added to solr base url before the other solr params.
     # config.solr_path = 'select'
 
     # items to show per page, each number in the array represent another option to choose from.
-    config.per_page = [ 9, 18, 45, 90 ]
+    config.per_page = [9, 18, 45, 90]
     ## Default parameters to send on single-document requests to Solr.
     ## These settings are the Blacklight defaults (see SearchHelper#solr_doc_params) or
     ## parameters included in the Blacklight-jetty document requestHandler.
     #
     config.default_document_solr_params = {
-     qt: "document",
-     fl: "*,collection:[subquery]",
-     'collection.q': "{!terms f=id v=$row._root_}",
-     'collection.defType': "lucene",
-     'collection.fl': "*",
+     qt: 'document',
+     fl: '*,collection:[subquery]',
+     'collection.q': '{!terms f=id v=$row._root_}',
+     'collection.defType': 'lucene',
+     'collection.fl': '*',
      'collection.rows': 1
     }
 
@@ -62,21 +62,21 @@ class CatalogController < ApplicationController
     config.add_results_collection_tool(:per_page_widget)
     config.add_results_collection_tool(:view_type_group)
 
-    config.add_nav_action(:bookmark, partial: "blacklight/nav/bookmark", if: :render_bookmarks_control?)
-    config.add_nav_action(:search_history, partial: "blacklight/nav/search_history")
-    config.add_nav_action(:theme_picker, partial: "arcdex/nav/theme_picker", additional_classes: "dropdown")
+    config.add_nav_action(:bookmark, partial: 'blacklight/nav/bookmark', if: :render_bookmarks_control?)
+    config.add_nav_action(:search_history, partial: 'blacklight/nav/search_history')
+    config.add_nav_action(:theme_picker, partial: 'arcdex/nav/theme_picker', additional_classes: 'dropdown')
 
     # solr field configuration for search results/index views
     config.index.partials = %i[arclight_index_default]
-    config.index.title_field = "normalized_title_ssm"
-    config.index.display_type_field = "level_ssm"
+    config.index.title_field = 'normalized_title_ssm'
+    config.index.display_type_field = 'level_ssm'
     config.index.title_component = Arcdex::Blacklight::DocumentTitleComponent
     config.index.document_component = Arclight::SearchResultComponent
     config.index.group_component = Arcdex::Arclight::GroupComponent
     config.index.constraints_component = Arclight::ConstraintsComponent
     config.index.document_presenter_class = Arclight::IndexPresenter
     config.index.search_bar_component = Arcdex::Arclight::SearchBarComponent
-    config.index.thumbnail_field = "thumbnail_path_ssi"
+    config.index.thumbnail_field = 'thumbnail_path_ssi'
 
     # solr field configuration for document/show views
     # config.show.title_field = 'title_display'
@@ -87,8 +87,8 @@ class CatalogController < ApplicationController
     config.show.access_component = Arclight::AccessComponent
     config.show.online_status_component = Arclight::OnlineStatusIndicatorComponent
     config.show.expand_hierarchy_component = Arclight::ExpandHierarchyButtonComponent
-    config.show.display_type_field = "level_ssm"
-    config.show.thumbnail_field = "thumbnail_path_ssi"
+    config.show.display_type_field = 'level_ssm'
+    config.show.thumbnail_field = 'thumbnail_path_ssi'
     config.show.document_presenter_class = Arclight::ShowPresenter
     config.show.metadata_partials = %i[
       summary_field
@@ -130,38 +130,38 @@ class CatalogController < ApplicationController
     # :index_range can be an array or range of prefixes that will be used to create the navigation
     #  (note: It is case sensitive when searching values)
 
-    config.add_facet_field "Category", field: "level_ssim", limit: 10, excludable: true
-    config.add_facet_field "series", field: "series_ssm", limit: 10, excludable: true
-    config.add_facet_field "set", field: "collection_ssim", limit: 10, excludable: true
-    config.add_facet_field "rarity", field: "rarity_ssm", limit: 10, excludable: true
-    config.add_facet_field "release year", field: "release_year_isi", range: true, range_config: {
+    config.add_facet_field 'Category', field: 'level_ssim', limit: 10, excludable: true
+    config.add_facet_field 'series', field: 'series_ssm', limit: 10, excludable: true
+    config.add_facet_field 'set', field: 'collection_ssim', limit: 10, excludable: true
+    config.add_facet_field 'rarity', field: 'rarity_ssm', limit: 10, excludable: true
+    config.add_facet_field 'release year', field: 'release_year_isi', range: true, range_config: {
       show_missing_link: false
     }
-    config.add_facet_field "supertype", field: "supertype_ssm", limit: 10, excludable: true
-    config.add_facet_field "subtypes", field: "subtypes_ssm", limit: 10, excludable: true
-    config.add_facet_field "Hit Points", field: "hp_isi", range: true, range_config: {
+    config.add_facet_field 'supertype', field: 'supertype_ssm', limit: 10, excludable: true
+    config.add_facet_field 'subtypes', field: 'subtypes_ssm', limit: 10, excludable: true
+    config.add_facet_field 'Hit Points', field: 'hp_isi', range: true, range_config: {
       show_missing_link: false
     }, if: ->(_controller, _field, facet_field) do
-      facet_field.response.facet_counts["facet_fields"]["hp_isi"].present?
+      facet_field.response.facet_counts['facet_fields']['hp_isi'].present?
     end
-    config.add_facet_field "types", field: "types_ssm", excludable: true
-    config.add_facet_field "number of abilities", field: "number_of_abilities_isi", range: true, range_config: {
+    config.add_facet_field 'types', field: 'types_ssm', excludable: true
+    config.add_facet_field 'number of abilities', field: 'number_of_abilities_isi', range: true, range_config: {
       show_missing_link: false
     }, if: ->(_controller, _field, facet_field) do
-      facet_field.response.facet_counts["facet_fields"]["number_of_abilities_isi"].present?
+      facet_field.response.facet_counts['facet_fields']['number_of_abilities_isi'].present?
     end
-    config.add_facet_field "number of attacks", field: "number_of_attacks_isi", range: true, range_config: {
+    config.add_facet_field 'number of attacks', field: 'number_of_attacks_isi', range: true, range_config: {
       show_missing_link: false
     }, if: ->(_controller, _field, facet_field) do
-      facet_field.response.facet_counts["facet_fields"]["number_of_attacks_isi"].present?
+      facet_field.response.facet_counts['facet_fields']['number_of_attacks_isi'].present?
     end
-    config.add_facet_field "weakness type", field: "weakness_type_ssm", excludable: true
-    config.add_facet_field "retreat cost", field: "converted_retreat_cost_isi", range: true, range_config: {
+    config.add_facet_field 'weakness type', field: 'weakness_type_ssm', excludable: true
+    config.add_facet_field 'retreat cost', field: 'converted_retreat_cost_isi', range: true, range_config: {
       show_missing_link: false
     }, if: ->(_controller, _field, facet_field) do
-      facet_field.response.facet_counts["facet_fields"]["converted_retreat_cost_isi"].present?
+      facet_field.response.facet_counts['facet_fields']['converted_retreat_cost_isi'].present?
     end
-    config.add_facet_field "artist", field: "artist_ssm", limit: 10, excludable: true
+    config.add_facet_field 'artist', field: 'artist_ssm', limit: 10, excludable: true
 
 
     # Have BL send all facet field names to Solr, which has been the default
@@ -171,18 +171,18 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
-    config.add_index_field "highlight", accessor: "highlights", separator_options: {
-      words_connector: "<br/>",
-      two_words_connector: "<br/>",
-      last_word_connector: "<br/>"
+    config.add_index_field 'highlight', accessor: 'highlights', separator_options: {
+      words_connector: '<br/>',
+      two_words_connector: '<br/>',
+      last_word_connector: '<br/>'
     }, compact: true, component: Arclight::IndexMetadataFieldComponent
     # config.add_index_field "creator", accessor: true, component: Arclight::IndexMetadataFieldComponent
     # config.add_index_field "abstract_or_scope", accessor: true, truncate: true, repository_context: true, helper_method: :render_html_tags, component: Arclight::IndexMetadataFieldComponent
-    config.add_index_field "flavor_text_html", accessor: "flavor_text_html", component: Arclight::IndexMetadataFieldComponent, helper_method: :render_html_tags, if: ->(controller, _field, _document) { controller.params[:view] == "list" }
-    config.add_index_field "breadcrumbs", accessor: :itself, component: Arclight::SearchResultBreadcrumbsComponent, compact: { count: 2 }, if: ->(controller, _field, _document) { controller.params[:view] == "list" }
+    config.add_index_field 'flavor_text_html', accessor: 'flavor_text_html', component: Arclight::IndexMetadataFieldComponent, helper_method: :render_html_tags, if: ->(controller, _field, _document) { controller.params[:view] == 'list' }
+    config.add_index_field 'breadcrumbs', accessor: :itself, component: Arclight::SearchResultBreadcrumbsComponent, compact: { count: 2 }, if: ->(controller, _field, _document) { controller.params[:view] == 'list' }
 
-    config.add_facet_field "access", query: {
-      online: { label: "Online access", fq: "has_online_content_ssim:true" }
+    config.add_facet_field 'access', query: {
+      online: { label: 'Online access', fq: 'has_online_content_ssim:true' }
     }
 
     # solr fields to be displayed in the show (single result) view
@@ -205,7 +205,7 @@ class CatalogController < ApplicationController
     # This one uses all the defaults set by the solr request handler. Which
     # solr request handler? The one set in config[:default_solr_parameters][:qt],
     # since we aren't specifying it otherwise.
-    config.add_search_field "all_fields", label: "All Fields" do |field|
+    config.add_search_field 'all_fields', label: 'All Fields' do |field|
       field.include_in_simple_select = true
 
       fields = %w[
@@ -223,7 +223,7 @@ class CatalogController < ApplicationController
         ability_2_text_tesim
         title_tesim
         flavor_text_tesim
-      ].join(" ")
+      ].join(' ')
 
       field.solr_parameters = {
         qf: fields,
@@ -231,36 +231,36 @@ class CatalogController < ApplicationController
       }
     end
 
-    config.add_search_field "within_collection" do |field|
+    config.add_search_field 'within_collection' do |field|
       field.include_in_simple_select = false
       field.solr_parameters = {
-        fq: "-level_ssim:Collection"
+        fq: '-level_ssim:Collection'
       }
     end
 
-    config.add_search_field "card_name", label: "Card Name" do |field|
-      field.qt = "search"
+    config.add_search_field 'card_name', label: 'Card Name' do |field|
+      field.qt = 'search'
       field.solr_parameters = {
-        qf: "title_tesim",
-        pf: "title_tesim",
-        fq: "level_ssim:Card"
+        qf: 'title_tesim',
+        pf: 'title_tesim',
+        fq: 'level_ssim:Card'
       }
     end
 
-    config.add_search_field "set_name", label: "Set Name" do |field|
-      field.qt = "search"
+    config.add_search_field 'set_name', label: 'Set Name' do |field|
+      field.qt = 'search'
       field.solr_parameters = {
-        qf: "title_tesim",
-        pf: "title_tesim",
-        fq: "level_ssim:Set"
+        qf: 'title_tesim',
+        pf: 'title_tesim',
+        fq: 'level_ssim:Set'
       }
     end
 
-    config.add_search_field "id", label: "ID" do |field|
-      field.qt = "search"
+    config.add_search_field 'id', label: 'ID' do |field|
+      field.qt = 'search'
       field.solr_parameters = {
-        qf: "id",
-        pf: "id"
+        qf: 'id',
+        pf: 'id'
       }
     end
 
@@ -278,8 +278,8 @@ class CatalogController < ApplicationController
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
-    config.add_sort_field "release_date_sort desc, sort_ssi asc", label: "release date (new to old)"
-    config.add_sort_field "release_date_sort asc, sort_ssi asc", label: "release date (old to new)"
+    config.add_sort_field 'release_date_sort desc, sort_ssi asc', label: 'release date (new to old)'
+    config.add_sort_field 'release_date_sort asc, sort_ssi asc', label: 'release date (old to new)'
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
@@ -287,7 +287,7 @@ class CatalogController < ApplicationController
 
     # Configuration for autocomplete suggestor
     config.autocomplete_enabled = true
-    config.autocomplete_path = "suggest"
+    config.autocomplete_path = 'suggest'
 
 
     # ===========================
@@ -295,16 +295,16 @@ class CatalogController < ApplicationController
     # ===========================
 
     # Collection Show Page - Summary Section
-    config.add_summary_field "logo", field: "logo_url_html_ssm", helper_method: :render_html_tags, component: Arcdex::CardViewComponent
+    config.add_summary_field 'logo', field: 'logo_url_html_ssm', helper_method: :render_html_tags, component: Arcdex::CardViewComponent
 
     # Collection Show Page - Indexed Terms Section
-    config.add_indexed_terms_field "series", field: "series_ssim", link_to_facet: true
-    config.add_indexed_terms_field "set", field: "normalized_title_ssm", link_to_facet: true
-    config.add_indexed_terms_field "complete set count", field: "printed_total_ssim"
-    config.add_indexed_terms_field "master set count", field: "total_items_ssim", if: ->(_controller, _field, document) { document.master_set? }
-    config.add_indexed_terms_field "release date", field: "release_date_ssm"
-    config.add_indexed_terms_field label: "TCG Code", field: "ptcgo_code_ssim"
-    config.add_indexed_terms_field "symbol", field: "symbol_url_html_ssm", helper_method: :render_html_tags
+    config.add_indexed_terms_field 'series', field: 'series_ssim', link_to_facet: true
+    config.add_indexed_terms_field 'set', field: 'normalized_title_ssm', link_to_facet: true
+    config.add_indexed_terms_field 'complete set count', field: 'printed_total_ssim'
+    config.add_indexed_terms_field 'master set count', field: 'total_items_ssim', if: ->(_controller, _field, document) { document.master_set? }
+    config.add_indexed_terms_field 'release date', field: 'release_date_ssm'
+    config.add_indexed_terms_field label: 'TCG Code', field: 'ptcgo_code_ssim'
+    config.add_indexed_terms_field 'symbol', field: 'symbol_url_html_ssm', helper_method: :render_html_tags
 
     # ==========================
     # COMPONENT SHOW PAGE FIELDS
@@ -319,22 +319,22 @@ class CatalogController < ApplicationController
     #   document.containers.present?
     # }
 
-    config.add_component_field "Card", field: "large_url_html_ssm", helper_method: :render_html_tags, component: Arcdex::CardViewComponent
+    config.add_component_field 'Card', field: 'large_url_html_ssm', helper_method: :render_html_tags, component: Arcdex::CardViewComponent
 
-    config.add_component_indexed_terms_field "name", field: "normalized_title_ssm", component: Arcdex::PokemonSearchComponent
-    config.add_component_indexed_terms_field "set", field: "parent_unittitles_ssm", link_to_facet: true
-    config.add_component_indexed_terms_field "supertype", field: "supertype_ssm", link_to_facet: true
-    config.add_component_indexed_terms_field "national_pokedex_number", field: "national_pokedex_numbers_ssm"
-    config.add_component_indexed_terms_field "subtypes", field: "subtypes_ssm", link_to_facet: true
-    config.add_component_indexed_terms_field "level", field: "level_ssi"
-    config.add_component_indexed_terms_field "types", label: "Type(s)", field: "types_ssm", link_to_facet: true
-    config.add_component_indexed_terms_field "rarity", field: "rarity_ssm", link_to_facet: true
-    config.add_component_indexed_terms_field "evolves_from", field: "evolves_from_ssm", component: Arcdex::PokemonSearchComponent
-    config.add_component_indexed_terms_field "evolves_to", field: "evolves_to_ssm", component: Arcdex::PokemonSearchComponent
-    config.add_component_indexed_terms_field "card number", field: "number_ssm"
-    config.add_component_indexed_terms_field "artist", field: "artist_ssm", link_to_facet: true
-    config.add_component_indexed_terms_field "tcgplayer_url", label: "TCGplayer", field: "tcgplayer_url_html_ssi", helper_method: :render_html_tags
-    config.add_component_indexed_terms_field "cardmarket_url", label: "Cardmarket", field: "cardmarket_url_html_ssi", helper_method: :render_html_tags
+    config.add_component_indexed_terms_field 'name', field: 'normalized_title_ssm', component: Arcdex::PokemonSearchComponent
+    config.add_component_indexed_terms_field 'set', field: 'parent_unittitles_ssm', link_to_facet: true
+    config.add_component_indexed_terms_field 'supertype', field: 'supertype_ssm', link_to_facet: true
+    config.add_component_indexed_terms_field 'national_pokedex_number', field: 'national_pokedex_numbers_ssm'
+    config.add_component_indexed_terms_field 'subtypes', field: 'subtypes_ssm', link_to_facet: true
+    config.add_component_indexed_terms_field 'level', field: 'level_ssi'
+    config.add_component_indexed_terms_field 'types', label: 'Type(s)', field: 'types_ssm', link_to_facet: true
+    config.add_component_indexed_terms_field 'rarity', field: 'rarity_ssm', link_to_facet: true
+    config.add_component_indexed_terms_field 'evolves_from', field: 'evolves_from_ssm', component: Arcdex::PokemonSearchComponent
+    config.add_component_indexed_terms_field 'evolves_to', field: 'evolves_to_ssm', component: Arcdex::PokemonSearchComponent
+    config.add_component_indexed_terms_field 'card number', field: 'number_ssm'
+    config.add_component_indexed_terms_field 'artist', field: 'artist_ssm', link_to_facet: true
+    config.add_component_indexed_terms_field 'tcgplayer_url', label: 'TCGplayer', field: 'tcgplayer_url_html_ssi', helper_method: :render_html_tags
+    config.add_component_indexed_terms_field 'cardmarket_url', label: 'Cardmarket', field: 'cardmarket_url_html_ssi', helper_method: :render_html_tags
 
     # # Component Show Page - Indexed Terms Section
     # config.add_component_indexed_terms_field "access_subjects", field: "access_subjects_ssim", link_to_facet: true, separator_options: {
@@ -363,26 +363,26 @@ class CatalogController < ApplicationController
     # =================
 
     # Collection Show Page Access Tab - Terms and Conditions Section
-    config.add_terms_field "restrictions", field: "accessrestrict_html_tesm", helper_method: :render_html_tags
-    config.add_terms_field "terms", field: "userestrict_html_tesm", helper_method: :render_html_tags
+    config.add_terms_field 'restrictions', field: 'accessrestrict_html_tesm', helper_method: :render_html_tags
+    config.add_terms_field 'terms', field: 'userestrict_html_tesm', helper_method: :render_html_tags
 
     # Component Show Page Access Tab - Terms and Condition Section
-    config.add_component_terms_field "restrictions", field: "accessrestrict_html_tesm", helper_method: :render_html_tags
-    config.add_component_terms_field "terms", field: "userestrict_html_tesm", helper_method: :render_html_tags
-    config.add_component_terms_field "parent_restrictions", field: "parent_access_restrict_tesm", helper_method: :render_html_tags
-    config.add_component_terms_field "parent_terms", field: "parent_access_terms_tesm", helper_method: :render_html_tags
+    config.add_component_terms_field 'restrictions', field: 'accessrestrict_html_tesm', helper_method: :render_html_tags
+    config.add_component_terms_field 'terms', field: 'userestrict_html_tesm', helper_method: :render_html_tags
+    config.add_component_terms_field 'parent_restrictions', field: 'parent_access_restrict_tesm', helper_method: :render_html_tags
+    config.add_component_terms_field 'parent_terms', field: 'parent_access_terms_tesm', helper_method: :render_html_tags
 
     # Collection and Component Show Page Access Tab - In Person Section
-    config.add_in_person_field "repository_location", values: ->(_, document, _) { document.repository_config }, component: Arclight::RepositoryLocationComponent
-    config.add_in_person_field "before_you_visit", values: ->(_, document, _) { document.repository_config&.visit_note }
+    config.add_in_person_field 'repository_location', values: ->(_, document, _) { document.repository_config }, component: Arclight::RepositoryLocationComponent
+    config.add_in_person_field 'before_you_visit', values: ->(_, document, _) { document.repository_config&.visit_note }
 
     # Collection and Component Show Page Access Tab - How to Cite Section
-    config.add_cite_field "prefercite", field: "prefercite_html_tesm", helper_method: :render_html_tags
+    config.add_cite_field 'prefercite', field: 'prefercite_html_tesm', helper_method: :render_html_tags
 
     # Collection and Component Show Page Access Tab - Contact Section
-    config.add_contact_field "repository_contact", values: ->(_, document, _) { document.repository_config&.contact }
+    config.add_contact_field 'repository_contact', values: ->(_, document, _) { document.repository_config&.contact }
 
     # Group header values
-    config.add_group_header_field "abstract_or_scope", accessor: true, truncate: true, helper_method: :render_html_tags
+    config.add_group_header_field 'abstract_or_scope', accessor: true, truncate: true, helper_method: :render_html_tags
   end
 end

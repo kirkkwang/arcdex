@@ -6,12 +6,12 @@ module Arclight
       def initialize(input_stream, settings)
         @input_stream = input_stream
         @settings = settings
-        @logger = settings["logger"]
+        @logger = settings['logger']
       end
 
       def each
         json_content = JSON.parse(input_stream.read)
-        cards = json_content["data"]
+        cards = json_content['data']
 
         yield cards
       end

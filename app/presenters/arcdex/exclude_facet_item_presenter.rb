@@ -7,7 +7,7 @@ module Arcdex
     end
 
     def classes
-      "exclude-filter"
+      'exclude-filter'
     end
   end
 end

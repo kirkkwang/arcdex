@@ -5,7 +5,7 @@ module Blacklight
   module FacetItemComponentDecorator
     attr_reader :exclude_href
 
-    def initialize(facet_item:, wrapping_element: "li", suppress_link: false)
+    def initialize(facet_item:, wrapping_element: 'li', suppress_link: false)
       super
 
       @exclude_href = facet_item.exclude_href
@@ -16,15 +16,15 @@ module Blacklight
     end
 
     def exclude_facet_link
-      link_to_unless(@suppress_link, exclude_filter_icon, exclude_href, class: "me-1 exclude-facet-link", rel: "nofollow")
+      link_to_unless(@suppress_link, exclude_filter_icon, exclude_href, class: 'me-1 exclude-facet-link', rel: 'nofollow')
     end
 
     private
 
     def exclude_filter_icon
-      return "" unless @facet_item.facet_config.excludable
+      return '' unless @facet_item.facet_config.excludable
 
-      tag.span("Ⓧ", class: "exclude-facet-icon", title: "Exclude facet", label: @label)
+      tag.span('Ⓧ', class: 'exclude-facet-icon', title: 'Exclude facet', label: @label)
     end
   end
 end

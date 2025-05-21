@@ -24,7 +24,7 @@ module Blacklight
       exclude_filter_presenters = []
       f = @search_state.params[:f]
       if f
-        f.select { |key, _| key.starts_with?("-") }.each do |k, v|
+        f.select { |key, _| key.starts_with?('-') }.each do |k, v|
           v.each do |val|
             exclude_filter_presenters << exclude_facet_item_presenter(@search_state.blacklight_config.facet_fields[k[1..]], val, k)
           end

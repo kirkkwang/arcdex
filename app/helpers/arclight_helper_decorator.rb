@@ -2,17 +2,17 @@
 
 module ArclightHelperDecorator
   def show_content_classes
-    "col-12 col-lg-9 show-document order-2"
+    'col-12 col-lg-9 show-document order-2'
   end
 
   def show_sidebar_classes
-    "col-lg-3 order-1 collection-sidebar"
+    'col-lg-3 order-1 collection-sidebar'
   end
 
   def sets_path
     search_action_url(
       f: {
-        Category: [ "Set" ]
+        Category: ['Set']
       }
     )
   end
@@ -20,7 +20,7 @@ module ArclightHelperDecorator
   def cards_path
     search_action_url(
       f: {
-        Category: [ "Card" ]
+        Category: ['Card']
       }
     )
   end
@@ -28,8 +28,8 @@ module ArclightHelperDecorator
   def repository_collections_path(repository)
     search_action_url(
       f: {
-        series: [ repository.name ],
-        Category: [ "Set" ]
+        series: [repository.name],
+        Category: ['Set']
       }
     )
   end
@@ -39,23 +39,23 @@ module ArclightHelperDecorator
   end
 
   def sanitized_nest_path
-    params[:nest_path]&.include?("/components#") ? params[:nest_path] : nil
+    params[:nest_path]&.include?('/components#') ? params[:nest_path] : nil
   end
 
   def collection_active?
-    search_state.filter("Category").values == [ "Set" ]
+    search_state.filter('Category').values == ['Set']
   end
 
   def collection_active_class
-    "active" if collection_active?
+    'active' if collection_active?
   end
 
   def card_active?
-    search_state.filter("Category").values == [ "Card" ]
+    search_state.filter('Category').values == ['Card']
   end
 
   def card_active_class
-    "active" if card_active?
+    'active' if card_active?
   end
 
   def last_navbar_partial?(config)

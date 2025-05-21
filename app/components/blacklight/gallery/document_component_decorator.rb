@@ -4,7 +4,7 @@ module Blacklight
   module Gallery
     module DocumentComponentDecorator
       def before_render
-        with_thumbnail(image_options: { class: 'img-thumbnail', loading: 'lazy' }) unless thumbnail.present?
+        with_thumbnail(image_options: { class: 'img-thumbnail', loading: 'lazy' }) if thumbnail.blank?
         super
       end
     end

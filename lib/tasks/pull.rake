@@ -2,7 +2,7 @@
 
 namespace :arcdex do
   desc 'Pull data from pokemontcg.io'
-  task :pull do
+  task pull: :environment do
     BASE_URL = 'https://api.pokemontcg.io/v2'
     response = HTTP.get("#{BASE_URL}/sets")
     set_infos = response.parse['data'].map do |data|
@@ -40,7 +40,7 @@ namespace :arcdex do
       }
 
       puts "  Saving #{all_cards.size} cards for set #{id}"
-      File.write(Rails.root.join('data', "#{id}.json"), JSON.pretty_generate(simplified_data))
+      Rails.root.join('data', "#{id}.json").write(JSON.pretty_generate(simplified_data))
     end
   end
 end

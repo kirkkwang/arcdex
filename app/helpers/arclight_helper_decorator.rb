@@ -57,6 +57,10 @@ module ArclightHelperDecorator
   def card_active_class
     "active" if card_active?
   end
+
+  def last_navbar_partial?(config)
+    config == blacklight_config.navbar.partials.values.last
+  end
 end
 
 ArclightHelper.prepend(ArclightHelperDecorator)

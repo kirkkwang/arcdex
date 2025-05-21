@@ -1,0 +1,16 @@
+<a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="theme-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme">
+  <i class="bi bi-circle-half"></i>
+  <span class="d-md-none ms-2">Toggle theme</span>
+</a>
+<ul class="dropdown-menu dropdown-menu-end" data-controller="theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false" data-action="theme#setLight">
+      <i class="bi bi-sun-fill"></i><span class="ms-2">Light</span>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="true" data-action="theme#setDark" >
+      <i class="bi bi-moon-stars-fill"></i><span class="ms-2">Dark</span>
+    </button>
+  </li>
+</ul>

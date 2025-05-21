@@ -24,6 +24,12 @@ html {
   background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
 }
 
+// OVERRIDE Blacklight v8.10.1 to use effectively remove the background color
+// so it work better in dark mode
+.al-masthead.bg-light, .navbar-search.bg-light {
+  --bs-bg-opacity: inherit;
+}
+
 #indexed-terms {
   .set-symbol {
     max-width: 40px;

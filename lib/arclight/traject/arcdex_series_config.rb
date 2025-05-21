@@ -56,9 +56,8 @@ to_field 'components' do |records, accumulator, context|
     accumulator << output unless accumulator.include?(output)
   end
 
-  components = []
-  accumulator.each do |set|
-    components << set.delete('components').first
+  components = accumulator.map do |set|
+    set.delete('components').first
   end
 
   accumulator.uniq!

@@ -30,7 +30,7 @@ module Arcdex
         )
       end
 
-      values.to_sentence(two_words_connector: ' or ', last_word_connector: ', or ').html_safe
+      values.to_sentence(two_words_connector: ' or ', last_word_connector: ', or ').html_safe # rubocop:disable Rails/OutputSafety
     end
   end
 end

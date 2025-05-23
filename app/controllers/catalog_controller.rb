@@ -207,28 +207,6 @@ class CatalogController < ApplicationController
     # since we aren't specifying it otherwise.
     config.add_search_field 'all_fields', label: 'All Fields' do |field|
       field.include_in_simple_select = true
-
-      fields = %w[
-        attack_1_name_tesim
-        attack_2_name_tesim
-        attack_3_name_tesim
-        attack_4_name_tesim
-        attack_1_text_tesim
-        attack_2_text_tesim
-        attack_3_text_tesim
-        attack_4_text_tesim
-        ability_1_name_tesim
-        ability_2_name_tesim
-        ability_1_text_tesim
-        ability_2_text_tesim
-        title_tesim
-        flavor_text_tesim
-      ].join(' ')
-
-      field.solr_parameters = {
-        qf: fields,
-        pf: fields
-      }
     end
 
     config.add_search_field 'within_collection' do |field|
@@ -241,8 +219,8 @@ class CatalogController < ApplicationController
     config.add_search_field 'card_name', label: 'Card Name' do |field|
       field.qt = 'search'
       field.solr_parameters = {
-        qf: 'title_tesim',
-        pf: 'title_tesim',
+        qf: '${qf_title}',
+        pf: '${pf_title}',
         fq: 'level_ssim:Card'
       }
     end
@@ -250,8 +228,8 @@ class CatalogController < ApplicationController
     config.add_search_field 'set_name', label: 'Set Name' do |field|
       field.qt = 'search'
       field.solr_parameters = {
-        qf: 'title_tesim',
-        pf: 'title_tesim',
+        qf: '${qf_title}',
+        pf: '${pf_title}',
         fq: 'level_ssim:Set'
       }
     end

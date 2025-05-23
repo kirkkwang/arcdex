@@ -41,3 +41,4 @@
 .rubocop-https*
 /solr/conf/data/*
 /solr/conf/core.properties
+data/*

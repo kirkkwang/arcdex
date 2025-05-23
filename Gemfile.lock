@@ -12,10 +12,10 @@ GIT
 
 GIT
   remote: https://github.com/projectblacklight/blacklight-gallery.git
-  revision: a382b4426568886208fd94e127480e8dfdbda284
+  revision: 64b054b4d5ceef46104142930e26513fa6a90c5d
   branch: main
   specs:
-    blacklight-gallery (4.8.4)
+    blacklight-gallery (5.0.0)
       blacklight (>= 7.17, < 9)
       rails (>= 6.1, < 9)
 
@@ -30,7 +30,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails.git
-  revision: ad858b91a9a4bc94950708955e44c654a1f3789b
+  revision: f75dff480d15db298bc8103399a51a0d0a6f3d1f
   branch: main
   specs:
     actioncable (8.1.0.alpha)
@@ -143,7 +143,7 @@ GEM
     benchmark (0.4.0)
     bigdecimal (3.1.9)
     bindex (0.8.1)
-    blacklight (8.10.1)
+    blacklight (8.11.0)
       globalid
       i18n (>= 1.7.0)
       jbuilder (~> 2.7)
@@ -391,7 +391,7 @@ GEM
     rsolr (2.6.0)
       builder (>= 2.1.2)
       faraday (>= 0.9, < 3, != 2.0.0)
-    rubocop (1.75.6)
+    rubocop (1.75.7)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
@@ -506,9 +506,9 @@ GEM
     unicode-emoji (4.0.4)
     uri (1.0.3)
     useragent (0.16.11)
-    view_component (3.21.0)
+    view_component (3.23.1)
       activesupport (>= 5.2.0, < 8.1)
-      concurrent-ruby (~> 1.0)
+      concurrent-ruby (~> 1)
       method_source (~> 1.0)
     warden (1.2.9)
       rack (>= 2.0.9)

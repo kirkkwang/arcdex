@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   concern :range_searchable, BlacklightRangeLimit::Routes::RangeSearchable.new
   mount Blacklight::Engine => '/'
+  mount BlacklightAdvancedSearch::Engine => '/'
   mount Arclight::Engine => '/'
 
   root to: 'arclight/repositories#index'

@@ -20,6 +20,15 @@ GIT
       rails (>= 6.1, < 9)
 
 GIT
+  remote: https://github.com/projectblacklight/blacklight_advanced_search.git
+  revision: f3840353833cd3e8fb758485d87a3a875c052f6e
+  branch: main
+  specs:
+    blacklight_advanced_search (8.0.0.alpha2)
+      blacklight (>= 7.15, < 9)
+      parslet
+
+GIT
   remote: https://github.com/projectblacklight/blacklight_range_limit.git
   revision: 75ed59f1050a136ee5bde58a37c9041515f0dd65
   branch: main
@@ -338,6 +347,7 @@ GEM
     parser (3.3.8.0)
       ast (~> 2.4.1)
       racc
+    parslet (2.0.0)
     pg (1.5.9)
     popper_js (2.11.8)
     pp (0.6.2)
@@ -538,6 +548,7 @@ DEPENDENCIES
   arclight!
   blacklight-gallery!
   blacklight-locale_picker
+  blacklight_advanced_search!
   blacklight_range_limit!
   bootsnap
   bootstrap (~> 5.3)

@@ -7,6 +7,12 @@ class CatalogController < ApplicationController
   include Arclight::Catalog
 
   configure_blacklight do |config|
+    # default advanced config values
+    config.advanced_search ||= Blacklight::OpenStructWithHashAccess.new
+    config.advanced_search[:enabled] = true
+    config.advanced_search[:form_solr_paramters] = {}
+    # config.advanced_search[:qt] ||= 'advanced'
+    config.advanced_search[:query_parser] ||= 'dismax'
     config.view.gallery(document_component: Blacklight::Gallery::DocumentComponent, icon: Blacklight::Gallery::Icons::GalleryComponent)
     # config.view.masonry(document_component: Blacklight::Gallery::DocumentComponent, icon: Blacklight::Gallery::Icons::MasonryComponent)
     # config.view.slideshow(document_component: Blacklight::Gallery::SlideshowComponent, icon: Blacklight::Gallery::Icons::SlideshowComponent)

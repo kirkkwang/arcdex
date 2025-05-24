@@ -215,18 +215,11 @@ class CatalogController < ApplicationController
       field.include_in_simple_select = true
     end
 
-    config.add_search_field 'within_collection' do |field|
-      field.include_in_simple_select = false
-      field.solr_parameters = {
-        fq: '-level_ssim:Collection'
-      }
-    end
-
     config.add_search_field 'card_name', label: 'Card Name' do |field|
       field.qt = 'search'
       field.solr_parameters = {
-        qf: '${qf_title}',
-        pf: '${pf_title}',
+        qf: 'title_tesim',
+        pf: 'title_tesim',
         fq: 'level_ssim:Card'
       }
     end
@@ -234,8 +227,8 @@ class CatalogController < ApplicationController
     config.add_search_field 'set_name', label: 'Set Name' do |field|
       field.qt = 'search'
       field.solr_parameters = {
-        qf: '${qf_title}',
-        pf: '${pf_title}',
+        qf: 'title_tesim',
+        pf: 'title_tesim',
         fq: 'level_ssim:Set'
       }
     end

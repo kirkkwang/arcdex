@@ -71,4 +71,8 @@ class SolrDocument
   def collection_unitid
     collection&.id
   end
+
+  def tcgplayer_price_updated_at
+    self['tcgplayer_price_updated_at_ssi'] || ''
+  end
 end

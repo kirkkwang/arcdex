@@ -1,5 +1,10 @@
 en:
   arclight:
+    collection_info_component:
+      complete_set_count: Complete Set Count
+      last_updated: Last Updated
+      master_set_count: Master Set Count
+      set_id: Set ID
     masthead_heading_html: Arcdex
     routes:
       repositories: Series

@@ -1,0 +1,28 @@
+<%#
+  OVERRIDE Arclight v2.0.0.alpha to customize what's displayed
+%>
+
+<div class='al-show-actions-box-info w-100'>
+  <div class="px-3 pt-1">
+    <table class='w-100'>
+      <tr>
+        <th scope="row"><%= t('arclight.collection_info_component.set_id') %></th>
+        <td><%= collection_unitid %></td>
+      </tr>
+      <tr>
+        <th scope="row"><%= t('arclight.collection_info_component.complete_set_count') %></th>
+        <td><%= complete_set_count %></td>
+      </tr>
+      <% if complete_set_count != master_set_count%>
+      <tr>
+        <th scope="row"><%= t('arclight.collection_info_component.master_set_count') %></th>
+        <td><%= master_set_count %></td>
+      </tr>
+      <% end %>
+      <tr>
+        <th scope="row"><%= t('arclight.collection_info_component.last_updated') %></th>
+        <td><%= last_indexed.strftime('%F') %></td>
+      </tr>
+    </table>
+  </div>
+</div>

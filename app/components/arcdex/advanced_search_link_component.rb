@@ -1,6 +1,6 @@
 module Arcdex
   class AdvancedSearchLinkComponent < ::Blacklight::Component
-    def initialize(text:, id:, url:)
+    def initialize(text:, id:, url: '/catalog/advanced')
       @text = text
       @id = id
       @url = url

@@ -1,0 +1,23 @@
+services:
+  web:
+    command: sleep infinity
+    volumes:
+    - .:/home/app/webapp
+    - ../gems/:/app/gems
+
+# I keep my project structure outside of docker like this:
+#
+# projects/
+# ├── arcdex/          # your main app
+# └── gems/            # shared gem development area
+#     ├── arclight/
+#     └── blacklight/
+#
+# I `git clone` the gems into my gems dir so in my Gemfile I can do:
+#
+# ```Gemfile
+# gem 'arclight', path: 'gems/arclight'
+# gem 'blacklight', path: 'gems/blacklight'
+# ```
+# So I can put debuggers inside the gems itself.
+# I have a lot of other projects that share these gmes so that's why the structure is shared.

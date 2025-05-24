@@ -69,7 +69,7 @@ end
 gem 'arclight', github: 'projectblacklight/arclight', branch: 'main'
 gem 'blacklight-gallery', github: 'projectblacklight/blacklight-gallery', branch: 'main'
 gem 'blacklight_range_limit', github: 'projectblacklight/blacklight_range_limit', branch: 'main'
-
+gem 'blacklight_advanced_search', github: 'projectblacklight/blacklight_advanced_search', branch: 'main'
 group :development, :test do
   gem 'solr_wrapper', '>= 0.3'
 end

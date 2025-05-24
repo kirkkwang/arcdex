@@ -58,6 +58,13 @@ class SearchBuilder < Blacklight::SearchBuilder
     solr_parameters[:sort] = sort
   end
 
+  # OVERRIDE Blacklight v8.11.0 so we don't limit the facets on the advanced search form
+  def facet_limit_with_pagination(field_name)
+    return if @search_state.controller.action_name == 'advanced_search'
+
+    super
+  end
+
   private
 
   def solr_field_for(key)

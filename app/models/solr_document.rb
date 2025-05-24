@@ -23,6 +23,14 @@ class SolrDocument
     self['printed_total_isi'] < self['total_items_isi']
   end
 
+  def master_set_count
+    self['total_items_isi'] || ''
+  end
+
+  def complete_set_count
+    self['printed_total_isi'] || ''
+  end
+
   def logo_url
     self['logo_url_ssm'].first || ''
   end
@@ -57,5 +65,10 @@ class SolrDocument
 
   def image_html
     (collection? ? self['logo_url_html_ssm'].first : self['large_url_html_ssm']&.first) || ''
+  end
+
+  # OVERRIDE Arclight v2.0.0.alpha to get set id
+  def collection_unitid
+    collection&.id
   end
 end

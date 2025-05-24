@@ -136,15 +136,15 @@ class CatalogController < ApplicationController
     # :index_range can be an array or range of prefixes that will be used to create the navigation
     #  (note: It is case sensitive when searching values)
 
-    config.add_facet_field 'Category', field: 'level_ssim', limit: 10, excludable: true
-    config.add_facet_field 'series', field: 'series_ssm', limit: 10, excludable: true
-    config.add_facet_field 'set', field: 'collection_ssim', limit: 10, excludable: true
-    config.add_facet_field 'rarity', field: 'rarity_ssm', limit: 10, excludable: true
+    config.add_facet_field 'Category', field: 'level_ssim', excludable: true
+    config.add_facet_field 'series', field: 'series_ssm', excludable: true
+    config.add_facet_field 'set', field: 'collection_ssim', excludable: true
+    config.add_facet_field 'rarity', field: 'rarity_ssm', excludable: true
     config.add_facet_field 'release year', field: 'release_year_isi', range: true, range_config: {
       show_missing_link: false
     }
-    config.add_facet_field 'supertype', field: 'supertype_ssm', limit: 10, excludable: true
-    config.add_facet_field 'subtypes', field: 'subtypes_ssm', limit: 10, excludable: true
+    config.add_facet_field 'supertype', field: 'supertype_ssm', excludable: true
+    config.add_facet_field 'subtypes', field: 'subtypes_ssm', excludable: true
     config.add_facet_field 'Hit Points', field: 'hp_isi', range: true, range_config: {
       show_missing_link: false
     }, if: ->(_controller, _field, facet_field) do
@@ -167,7 +167,7 @@ class CatalogController < ApplicationController
     }, if: ->(_controller, _field, facet_field) do
       facet_field.response.facet_counts['facet_fields']['converted_retreat_cost_isi'].present?
     end
-    config.add_facet_field 'artist', field: 'artist_ssm', limit: 10, excludable: true
+    config.add_facet_field 'artist', field: 'artist_ssm', excludable: true
 
 
     # Have BL send all facet field names to Solr, which has been the default
@@ -215,18 +215,11 @@ class CatalogController < ApplicationController
       field.include_in_simple_select = true
     end
 
-    config.add_search_field 'within_collection' do |field|
-      field.include_in_simple_select = false
-      field.solr_parameters = {
-        fq: '-level_ssim:Collection'
-      }
-    end
-
     config.add_search_field 'card_name', label: 'Card Name' do |field|
       field.qt = 'search'
       field.solr_parameters = {
-        qf: '${qf_title}',
-        pf: '${pf_title}',
+        qf: 'title_tesim',
+        pf: 'title_tesim',
         fq: 'level_ssim:Card'
       }
     end
@@ -234,8 +227,8 @@ class CatalogController < ApplicationController
     config.add_search_field 'set_name', label: 'Set Name' do |field|
       field.qt = 'search'
       field.solr_parameters = {
-        qf: '${qf_title}',
-        pf: '${pf_title}',
+        qf: 'title_tesim',
+        pf: 'title_tesim',
         fq: 'level_ssim:Set'
       }
     end

@@ -221,3 +221,24 @@ details[open] summary::before {
   margin-left: -1rem;
 	rotate: 90deg;
 }
+
+.advanced-facet-limits {
+  @extend .sidenav;
+
+  .facet-values {
+    li {
+      .facet-checkbox {
+        margin-right: 2rem;
+      }
+
+      span:last-child:not([class]) {
+        width: 100%;
+
+        label {
+          width: 100%;
+          display: flex;
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,7 @@
 <%#
   OVERRIDE Blacklight v8.9.0 to fix auto complete popup not being easily dismissible
+    and to move advanced search button into the form element so we can style the
+    spacing between the search bar and the advanced search button much easier
 %>
 
 <search>
@@ -39,9 +41,9 @@
       <%= append %>
       <%= search_button || render(Blacklight::SearchButtonComponent.new(id: "#{@prefix}search", text: scoped_t('submit'))) %>
     </div>
-  <% end %>
 
-  <% if advanced_search_enabled? %>
-    <%= link_to t('blacklight.advanced_search.more_options'), @advanced_search_url, class: 'advanced_search btn btn-secondary'%>
+    <% if advanced_search_enabled? %>
+      <%= render(Arcdex::AdvancedSearchLinkComponent.new(id: "advanced-search", text: t('blacklight.advanced_search.more_options'), url: @advanced_search_url)) %>
+    <% end %>
   <% end %>
 </search>

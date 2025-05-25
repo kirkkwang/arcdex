@@ -298,7 +298,7 @@ to_field 'tcg_player_market_price_isi' do |record, accumulator|
         prices << price_info['market']
       end
     end
-    accumulator << prices.max
+    accumulator << prices.compact&.max
   end
 end
 

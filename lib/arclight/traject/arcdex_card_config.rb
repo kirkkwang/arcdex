@@ -301,6 +301,17 @@ to_field 'tcg_player_market_price_isi' do |record, accumulator|
     accumulator << prices.compact&.max
   end
 end
+to_field 'tcg_player_price_updated_at_ssi' do |record, accumulator|
+  if record['tcgplayer'] && record['tcgplayer']['updatedAt']
+    formatted_date = record['tcgplayer']['updatedAt'].gsub('/', '-')
+    accumulator << formatted_date
+  end
+end
+to_field 'tcg_player_prices_json_ssi' do |record, accumulator|
+  if record['tcgplayer'] && record['tcgplayer']['prices']
+    accumulator << record['tcgplayer']['prices'].to_json
+  end
+end
 
 to_field 'cardmarket_url_ssm' do |record, accumulator|
   if record['cardmarket']

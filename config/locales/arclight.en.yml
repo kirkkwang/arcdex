@@ -1,4 +1,10 @@
 en:
+  arcdex:
+    tcg_player_prices_component:
+      header: TCGplayer Prices
+      last_updated: last updated
+      card_type: Card Type
+      no_pricing_data_available: No pricing data available
   arclight:
     collection_info_component:
       complete_set_count: Complete Set Count

@@ -76,5 +76,11 @@ class SolrDocument
     self['tcg_player_price_updated_at_ssi'] || ''
   end
 
+  def tcg_player_prices_object
+    begin
+      JSON.parse(self['tcg_player_prices_json_ssi'])
+    rescue JSON::ParserError, TypeError
+      {}
+    end
   end
 end

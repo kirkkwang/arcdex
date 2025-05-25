@@ -48,6 +48,7 @@ html {
 #about-this-set {
   .large-card-image {
     max-height: 45rem;
+    max-width: 100%;
   }
 }
 
@@ -240,5 +241,71 @@ details[open] summary::before {
         }
       }
     }
+  }
+}
+
+$dark-text-primary: #dfe2e6;
+$dark-text-muted: rgba(222, 226, 230, 0.75);
+$dark-text-secondary: #828b95;
+$dark-border: #3d4144;
+$dark-bg-secondary: #1e2125;
+$dark-highlight: rgb(101, 83, 33);
+$dark-icon-light: #f8f9fa;
+
+html[data-bs-theme=dark] {
+  .breadcrumb {
+    .breadcrumb-item.active,
+    .breadcrumb-item + .breadcrumb-item::before {
+      color: $dark-text-muted;
+    }
+
+    svg {
+      fill: $dark-text-primary;
+    }
+  }
+
+  .blacklight-icons-remove {
+    svg {
+      fill: $dark-text-primary;
+
+      &:hover {
+        fill: #cb444a
+      }
+    }
+  }
+
+  .form-control::placeholder {
+    color: $dark-text-muted;
+    opacity: 1;
+  }
+
+  .al-show-actions-box {
+    border: 1px solid $dark-border;
+    background-color: $dark-bg-secondary;
+  }
+
+  .al-hierarchy-highlight > .documentHeader {
+    background: $dark-highlight;
+  }
+
+  .dl-invert dt {
+    color: $dark-text-muted;
+  }
+
+  .al-show-breadcrumb .breadcrumb-item-4:first-child > .breadcrumb-text:first-child::before {
+    content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='20' height='15'%3e%3cpath fill='%23dfe2e6' fill-rule='evenodd' d='M1.5 1.5A.5.5 0 0 0 1 2v4.8a2.5 2.5 0 0 0 2.5 2.5h9.793l-3.347 3.346a.5.5 0 0 0 .708.708l4.2-4.2a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 8.3H3.5A1.5 1.5 0 0 1 2 6.8V2a.5.5 0 0 0-.5-.5z'%3e%3c/path%3e%3c/svg%3e");
+  }
+
+  .toggle-bookmark .blacklight-icons svg {
+    fill: $dark-icon-light;
+  }
+
+  summary,
+  summary::before {
+    color: $dark-text-secondary;
+  }
+
+  .facet-count {
+    color: $dark-text-primary;
   }
 }

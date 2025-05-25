@@ -117,7 +117,7 @@ to_field 'thumbnail_path_ssi' do |record, accumulator|
   end
 end
 
-to_field 'tcgplayer_price_updated_at_ssi' do |record, accumulator|
+to_field 'tcg_player_price_updated_at_ssi' do |record, accumulator|
   if record.first['tcgplayer'] && record.first['tcgplayer']['updatedAt']
     formatted_date = record.first['tcgplayer']['updatedAt'].gsub('/', '-')
     accumulator << formatted_date

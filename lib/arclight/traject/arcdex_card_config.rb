@@ -277,18 +277,18 @@ to_field 'large_url_html_ssm' do |record, accumulator|
   end
 end
 
-to_field 'tcgplayer_url_ssm' do |record, accumulator|
+to_field 'tcg_player_url_ssm' do |record, accumulator|
   if record['tcgplayer']
     accumulator << record['tcgplayer']['url']
   end
 end
-to_field 'tcgplayer_url_html_ssi' do |record, accumulator|
+to_field 'tcg_player_url_html_ssi' do |record, accumulator|
   if record['tcgplayer']
     url = record['tcgplayer']['url']
     accumulator << "<a href=\"#{url}\" target=\"_blank\">#{url}</a>"
   end
 end
-to_field 'tcgplayer_market_price_isi' do |record, accumulator|
+to_field 'tcg_player_market_price_isi' do |record, accumulator|
   if record['tcgplayer'] && record['tcgplayer']['prices']
     prices_keys = record['tcgplayer']['prices'].keys
     prices = []

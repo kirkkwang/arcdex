@@ -140,10 +140,10 @@ class CatalogController < ApplicationController
     config.add_facet_field 'series', field: 'series_ssm', limit: 10, excludable: true
     config.add_facet_field 'set', field: 'collection_ssim', limit: 10, excludable: true
     config.add_facet_field 'rarity', field: 'rarity_ssm', limit: 10, excludable: true
-    config.add_facet_field 'tcplayer_market_price', label: 'TCGPlayer Market Price', field: 'tcgplayer_market_price_isi', range: true, range_config: {
+    config.add_facet_field 'tcplayer_market_price', label: 'TCGplayer Market Price', field: 'tcg_player_market_price_isi', range: true, range_config: {
       show_missing_link: false
     }, if: ->(_controller, _field, facet_field) do
-      facet_field.response.facet_counts['facet_fields']['tcgplayer_market_price_isi'].present?
+      facet_field.response.facet_counts['facet_fields']['tcg_player_market_price_isi'].present?
     end
     config.add_facet_field 'release year', field: 'release_year_isi', range: true, range_config: {
       show_missing_link: false
@@ -262,10 +262,10 @@ class CatalogController < ApplicationController
     # except in the relevancy case).
     config.add_sort_field 'release_date_sort desc, sort_ssi asc', label: 'release date (new to old)'
     config.add_sort_field 'release_date_sort asc, sort_ssi asc', label: 'release date (old to new)'
-    config.add_sort_field 'tcgplayer_market_price_isi desc', label: 'TCGPlayer market price ($$$ to $)', if: ->(controller, _field) do
+    config.add_sort_field 'tcg_player_market_price_isi desc', label: 'TCGplayer market price ($$$ to $)', if: ->(controller, _field) do
       controller.params[:range]&.has_key?(:tcplayer_market_price)
     end
-    config.add_sort_field 'tcgplayer_market_price_isi asc', label: 'TCGPlayer market price ($ to $)', if: ->(controller, _field) do
+    config.add_sort_field 'tcg_player_market_price_isi asc', label: 'TCGplayer market price ($ to $)', if: ->(controller, _field) do
       controller.params[:range]&.has_key?(:tcplayer_market_price)
     end
 
@@ -321,7 +321,7 @@ class CatalogController < ApplicationController
     config.add_component_indexed_terms_field 'evolves_to', field: 'evolves_to_ssm', component: Arcdex::PokemonSearchComponent
     config.add_component_indexed_terms_field 'card number', field: 'number_ssm'
     config.add_component_indexed_terms_field 'artist', field: 'artist_ssm', link_to_facet: true
-    config.add_component_indexed_terms_field 'tcgplayer_url', label: 'TCGplayer', field: 'tcgplayer_url_html_ssi', helper_method: :render_html_tags
+    config.add_component_indexed_terms_field 'tcg_player_url', label: 'TCGplayer', field: 'tcg_player_url_html_ssi', helper_method: :render_html_tags
     config.add_component_indexed_terms_field 'cardmarket_url', label: 'Cardmarket', field: 'cardmarket_url_html_ssi', helper_method: :render_html_tags
 
     # # Component Show Page - Indexed Terms Section

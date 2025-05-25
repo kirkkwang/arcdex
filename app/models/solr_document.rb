@@ -72,7 +72,9 @@ class SolrDocument
     collection&.id
   end
 
-  def tcgplayer_price_updated_at
-    self['tcgplayer_price_updated_at_ssi'] || ''
+  def tcg_player_price_updated_at
+    self['tcg_player_price_updated_at_ssi'] || ''
+  end
+
   end
 end

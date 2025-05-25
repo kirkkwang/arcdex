@@ -2,6 +2,6 @@
 
 module Arcdex
   class CollectionInfoComponent < ::Arclight::CollectionInfoComponent
-    delegate :complete_set_count, :master_set_count, :tcgplayer_price_updated_at, to: :collection
+    delegate :complete_set_count, :master_set_count, :tcg_player_price_updated_at, to: :collection
   end
 end

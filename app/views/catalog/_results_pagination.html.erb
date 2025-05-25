@@ -1,0 +1,11 @@
+<%#
+  OVERRIDE Blacklight v8.11.0 to center the bottom pagination nav
+%>
+
+<% if show_pagination? and @response.total_pages > 1 %>
+ <div class="row record-padding">
+  <div class="col-md-12 d-flex justify-content-center">
+    <%= render Blacklight::Response::PaginationComponent.new(response: @response) %>
+  </div>
+ </div>
+<% end %>

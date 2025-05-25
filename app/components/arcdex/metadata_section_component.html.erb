@@ -1,0 +1,11 @@
+<%#
+  OVERRIDE Arclight v2.0.0.alpha to remove @heading and render our own custom html
+%>
+
+<%= tag.div id: 'prices'.parameterize do %>
+  <%= tag.div class: 'row' do %>
+    <% @presenter.field_presenters.each do |field_presenter| %>
+      <%= render (field_presenter.component || Blacklight::MetadataFieldComponent).new(field: field_presenter, show: true, **@metadata_attr) %>
+    <% end %>
+  <% end %>
+<% end %>

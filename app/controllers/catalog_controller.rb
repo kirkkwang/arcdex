@@ -90,7 +90,7 @@ class CatalogController < ApplicationController
     config.show.sidebar_component = Arclight::SidebarComponent
     config.show.breadcrumb_component = Arclight::BreadcrumbsHierarchyComponent
     config.show.embed_component = Arclight::EmbedComponent
-    config.show.access_component = Arclight::AccessComponent
+    config.show.access_component = Arcdex::PricesMetadataComponent
     config.show.online_status_component = Arclight::OnlineStatusIndicatorComponent
     config.show.expand_hierarchy_component = Arclight::ExpandHierarchyButtonComponent
     config.show.display_type_field = 'level_ssm'
@@ -104,6 +104,10 @@ class CatalogController < ApplicationController
     config.show.component_metadata_partials = %i[
       component_field
       component_indexed_terms_field
+    ]
+
+    config.show.component_access_items = %i[
+      component_terms_field
     ]
 
     ##
@@ -355,11 +359,7 @@ class CatalogController < ApplicationController
     config.add_terms_field 'terms', field: 'userestrict_html_tesm', helper_method: :render_html_tags
 
     # Component Show Page Access Tab - Terms and Condition Section
-    config.add_component_terms_field 'restrictions', field: 'accessrestrict_html_tesm', helper_method: :render_html_tags
-    config.add_component_terms_field 'terms', field: 'userestrict_html_tesm', helper_method: :render_html_tags
-    config.add_component_terms_field 'parent_restrictions', field: 'parent_access_restrict_tesm', helper_method: :render_html_tags
-    config.add_component_terms_field 'parent_terms', field: 'parent_access_terms_tesm', helper_method: :render_html_tags
-
+    config.add_component_terms_field 'tcg_player_prices', label: 'TCGplayer Prices', field: 'tcg_player_prices_json_ssi', component: Arcdex::TcgPlayerPricesComponent
     # Collection and Component Show Page Access Tab - In Person Section
     config.add_in_person_field 'repository_location', values: ->(_, document, _) { document.repository_config }, component: Arclight::RepositoryLocationComponent
     config.add_in_person_field 'before_you_visit', values: ->(_, document, _) { document.repository_config&.visit_note }

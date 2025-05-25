@@ -288,6 +288,19 @@ to_field 'tcgplayer_url_html_ssi' do |record, accumulator|
     accumulator << "<a href=\"#{url}\" target=\"_blank\">#{url}</a>"
   end
 end
+to_field 'tcgplayer_market_price_isi' do |record, accumulator|
+  if record['tcgplayer'] && record['tcgplayer']['prices']
+    prices_keys = record['tcgplayer']['prices'].keys
+    prices = []
+    prices_keys.each do |price_type|
+      if record['tcgplayer']['prices'][price_type]
+        price_info = record['tcgplayer']['prices'][price_type]
+        prices << price_info['market']
+      end
+    end
+    accumulator << prices.max
+  end
+end
 
 to_field 'cardmarket_url_ssm' do |record, accumulator|
   if record['cardmarket']

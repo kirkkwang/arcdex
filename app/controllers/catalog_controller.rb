@@ -63,7 +63,9 @@ class CatalogController < ApplicationController
     config.add_results_document_tool(:online, component: Arclight::OnlineStatusIndicatorComponent)
     config.add_results_document_tool(:arclight_bookmark_control, component: Arclight::BookmarkComponent)
 
-    config.add_results_collection_tool(:group_toggle)
+    config.add_results_collection_tool(:group_toggle, unless: ->(controller, _field, _facet_field) do
+      controller.params[:f]&.keys&.include?('set')
+    end)
     config.add_results_collection_tool(:sort_widget)
     config.add_results_collection_tool(:per_page_widget)
     config.add_results_collection_tool(:view_type_group)

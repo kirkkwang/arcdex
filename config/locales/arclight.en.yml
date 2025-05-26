@@ -3,7 +3,12 @@ en:
     tcg_player_prices_component:
       header: TCGplayer Prices
       last_updated: last updated
-      card_type: Card Type
+      price_type: Price Type
+      no_pricing_data_available: No pricing data available
+    cardmarket_prices_component:
+      header: Cardmarket Prices
+      last_updated: last updated
+      price_type: Price Type
       no_pricing_data_available: No pricing data available
   arclight:
     collection_info_component:

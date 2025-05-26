@@ -144,7 +144,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'series', field: 'series_ssm', limit: 10, excludable: true
     config.add_facet_field 'set', field: 'collection_ssim', limit: 10, excludable: true
     config.add_facet_field 'rarity', field: 'rarity_ssm', limit: 10, excludable: true
-    config.add_facet_field 'tcplayer_market_price', label: 'TCGplayer Market Price', field: 'tcg_player_market_price_isi', range: true, range_config: {
+    config.add_facet_field 'tcg_player_market_price', label: 'TCGplayer Market Price', field: 'tcg_player_market_price_isi', range: true, range_config: {
       show_missing_link: false
     }, if: ->(_controller, _field, facet_field) do
       facet_field.response.facet_counts['facet_fields']['tcg_player_market_price_isi'].present?
@@ -267,7 +267,7 @@ class CatalogController < ApplicationController
     config.add_sort_field 'release_date_sort desc, sort_ssi asc', label: 'release date (new to old)'
     config.add_sort_field 'release_date_sort asc, sort_ssi asc', label: 'release date (old to new)'
     config.add_sort_field 'tcg_player_market_price_isi desc', label: 'TCGplayer market price ($$$ to $)', if: ->(controller, _field) do
-      controller.params[:range]&.has_key?(:tcplayer_market_price)
+      controller.params[:range]&.has_key?(:tcg_player_market_price)
     end
     config.add_sort_field 'tcg_player_market_price_isi asc', label: 'TCGplayer market price ($ to $)', if: ->(controller, _field) do
       controller.params[:range]&.has_key?(:tcplayer_market_price)

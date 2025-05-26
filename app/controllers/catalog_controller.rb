@@ -336,8 +336,8 @@ class CatalogController < ApplicationController
     config.add_component_indexed_terms_field 'evolves_to', field: 'evolves_to_ssm', component: Arcdex::PokemonSearchComponent
     config.add_component_indexed_terms_field 'card number', field: 'number_ssm'
     config.add_component_indexed_terms_field 'artist', field: 'artist_ssm', link_to_facet: true
-    config.add_component_indexed_terms_field 'tcg_player_url', label: 'TCGplayer', field: 'tcg_player_url_html_ssi', helper_method: :render_html_tags
-    config.add_component_indexed_terms_field 'cardmarket_url', label: 'Cardmarket', field: 'cardmarket_url_html_ssi', helper_method: :render_html_tags
+    # config.add_component_indexed_terms_field 'tcg_player_url', label: 'TCGplayer', field: 'tcg_player_url_html_ssi', helper_method: :render_html_tags
+    # config.add_component_indexed_terms_field 'cardmarket_url', label: 'Cardmarket', field: 'cardmarket_url_html_ssi', helper_method: :render_html_tags
 
     # # Component Show Page - Indexed Terms Section
     # config.add_component_indexed_terms_field "access_subjects", field: "access_subjects_ssim", link_to_facet: true, separator_options: {

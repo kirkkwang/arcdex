@@ -193,6 +193,7 @@ to_field 'sort_ssi' do |record, accumulator|
 end
 
 to_field 'artist_ssm', lambda { |record, accumulator| accumulator << record['artist'] }
+to_field 'artist_tesim', lambda { |record, accumulator| accumulator << record['artist'] }
 
 to_field 'rarity_ssm', lambda { |record, accumulator| accumulator << record['rarity'] }
 

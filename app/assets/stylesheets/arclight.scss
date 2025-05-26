@@ -238,6 +238,18 @@ details[open] summary::before {
   }
 }
 
+.al-grouped-results .grouped-documents .documents-gallery .document {
+  &:nth-last-child(-n+3) {
+    border-bottom: 0;
+  }
+
+  @media (max-width: 767px) {
+    &:nth-last-child(-n+3):not(:last-child) {
+      border-bottom: 1px solid #dee2e6;
+    }
+  }
+}
+
 $dark-text-primary: #dfe2e6;
 $dark-text-muted: rgba(222, 226, 230, 0.75);
 $dark-text-secondary: #828b95;

@@ -247,6 +247,14 @@ class CatalogController < ApplicationController
       }
     end
 
+    config.add_search_field 'artist', label: 'Artist' do |field|
+      field.qt = 'search'
+      field.solr_parameters = {
+        qf: 'artist_tesim',
+        pf: 'artist_tesim'
+      }
+    end
+
     config.add_search_field 'id', label: 'ID' do |field|
       field.qt = 'search'
       field.solr_parameters = {

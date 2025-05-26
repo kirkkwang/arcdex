@@ -324,3 +324,19 @@ to_field 'cardmarket_url_html_ssi' do |record, accumulator|
     accumulator << "<a href=\"#{url}\" target=\"_blank\">#{url}</a>"
   end
 end
+to_field 'cardmarket_avg7_price_isi' do |record, accumulator|
+  if record['cardmarket'] && record['cardmarket']['prices'] && record['cardmarket']['prices']['avg7']
+    accumulator << record['cardmarket']['prices']['avg7']
+  end
+end
+to_field 'cardmarket_price_updated_at_ssi' do |record, accumulator|
+  if record['cardmarket'] && record['cardmarket']['updatedAt']
+    formatted_date = record['cardmarket']['updatedAt'].gsub('/', '-')
+    accumulator << formatted_date
+  end
+end
+to_field 'cardmarket_prices_json_ssi' do |record, accumulator|
+  if record['cardmarket'] && record['cardmarket']['prices']
+    accumulator << record['cardmarket']['prices'].to_json
+  end
+end

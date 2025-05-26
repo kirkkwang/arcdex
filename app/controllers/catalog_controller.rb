@@ -149,6 +149,11 @@ class CatalogController < ApplicationController
     }, if: ->(_controller, _field, facet_field) do
       facet_field.response.facet_counts['facet_fields']['tcg_player_market_price_isi'].present?
     end
+    config.add_facet_field 'cardmarket_avg7_price', label: 'Cardmarket Avg7 Price', field: 'cardmarket_avg7_price_isi', range: true, range_config: {
+      show_missing_link: false
+    }, if: ->(_controller, _field, facet_field) do
+      facet_field.response.facet_counts['facet_fields']['cardmarket_avg7_price_isi'].present?
+    end
     config.add_facet_field 'release year', field: 'release_year_isi', range: true, range_config: {
       show_missing_link: false
     }
@@ -270,7 +275,13 @@ class CatalogController < ApplicationController
       controller.params[:range]&.has_key?(:tcg_player_market_price)
     end
     config.add_sort_field 'tcg_player_market_price_isi asc', label: 'TCGplayer market price ($ to $)', if: ->(controller, _field) do
-      controller.params[:range]&.has_key?(:tcplayer_market_price)
+      controller.params[:range]&.has_key?(:tcg_player_market_price)
+    end
+    config.add_sort_field 'cardmarket_avg7_price_isi desc', label: 'Cardmarket avg7 price ($$$ to $)', if: ->(controller, _field) do
+      controller.params[:range]&.has_key?(:cardmarket_avg7_price)
+    end
+    config.add_sort_field 'cardmarket_avg7_price_isi asc', label: 'Cardmarket avg7 price ($ to $)', if: ->(controller, _field) do
+      controller.params[:range]&.has_key?(:cardmarket_avg7_price)
     end
 
     # If there are more than this many search results, no spelling ("did you
@@ -360,6 +371,7 @@ class CatalogController < ApplicationController
 
     # Component Show Page Access Tab - Terms and Condition Section
     config.add_component_terms_field 'tcg_player_prices', label: 'TCGplayer Prices', field: 'tcg_player_prices_json_ssi', component: Arcdex::TcgPlayerPricesComponent
+    config.add_component_terms_field 'cardmarket_prices', label: 'Cardmarket Prices', field: 'cardmarket_prices_json_ssi', component: Arcdex::CardmarketPricesComponent
     # Collection and Component Show Page Access Tab - In Person Section
     config.add_in_person_field 'repository_location', values: ->(_, document, _) { document.repository_config }, component: Arclight::RepositoryLocationComponent
     config.add_in_person_field 'before_you_visit', values: ->(_, document, _) { document.repository_config&.visit_note }

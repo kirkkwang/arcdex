@@ -83,4 +83,16 @@ class SolrDocument
       {}
     end
   end
+
+  def cardmarket_price_updated_at
+    self['cardmarket_price_updated_at_ssi'] || ''
+  end
+
+  def cardmarket_prices_object
+    begin
+      JSON.parse(self['cardmarket_prices_json_ssi'])
+    rescue JSON::ParserError, TypeError
+      {}
+    end
+  end
 end

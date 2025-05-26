@@ -308,4 +308,18 @@ html[data-bs-theme=dark] {
   .facet-count {
     color: $dark-text-primary;
   }
+
+  .al-document-highlight {
+    em {
+      background-color: $dark-highlight;
+    }
+  }
+
+  .al-grouped-results .al-grouped-title-bar {
+    background-color: var(--bs-tertiary-bg);
+
+    .breadcrumb-links a {
+      color: inherit;
+    }
+  }
 }

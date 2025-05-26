@@ -4,6 +4,8 @@ module Arcdex
     delegate :document, :field_config, to: :field
     delegate :tcg_player_price_updated_at, :tcg_player_prices_object, to: :document
 
+    private
+
     def prices_object
       @prices_object ||= tcg_player_prices_object
     end
@@ -15,8 +17,6 @@ module Arcdex
     def last_updated_at
       "#{t('.last_updated')}: #{tcg_player_price_updated_at}"
     end
-
-    private
 
     def format_price(price)
       return '-' if price.nil?

@@ -124,6 +124,12 @@ to_field 'tcg_player_price_updated_at_ssi' do |record, accumulator|
   end
 end
 
+to_field 'extent_ssm' do |record, accumulator|
+  accumulator << "#{record.first['set']['total']} total cards"
+  accumulator << "ID: #{record.first['set']['id']}"
+  accumulator << "Release Date: #{record.first['set']['releaseDate'].gsub('/', '-')}"
+end
+
 # =============================
 # Each component child document
 # =============================

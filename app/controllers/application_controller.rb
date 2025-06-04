@@ -15,4 +15,8 @@ class ApplicationController < ActionController::Base
     # otherwise an unwanted divider would render
     blacklight_config.navbar.partials.delete(:locale) unless helpers.available_locales.many?
   end
+
+  def render404
+    raise ActionController::RoutingError, 'Not Found'
+  end
 end

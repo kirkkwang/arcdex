@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   concern :range_searchable, BlacklightRangeLimit::Routes::RangeSearchable.new
+
+  ##### REMOVE SEARCH HISTORY #####
+  # Note: has to be before we mount Blacklight::Engine
+  get '/search_history', to: 'application#render404'
+  delete '/search_history/clear', to: 'application#render404'
+
   mount Blacklight::Engine => '/'
   mount BlacklightAdvancedSearch::Engine => '/'
   mount Arclight::Engine => '/'
@@ -21,13 +27,14 @@ Rails.application.routes.draw do
     concerns :exportable
   end
 
-  resources :bookmarks, only: [:index, :update, :create, :destroy] do
-    concerns :exportable
+  ##### REMOVE BOOKMARK #####
+  # resources :bookmarks, only: [:index, :update, :create, :destroy] do
+  #   concerns :exportable
 
-    collection do
-      delete 'clear'
-    end
-  end
+  #   collection do
+  #     delete 'clear'
+  #   end
+  # end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

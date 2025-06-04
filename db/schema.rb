@@ -11,10 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[8.1].define(version: 2025_04_25_015534) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "pg_catalog.plpgsql"
-
-  create_table "bookmarks", id: :serial, force: :cascade do |t|
+  create_table "bookmarks", force: :cascade do |t|
     t.datetime "created_at", precision: nil, null: false
     t.string "document_id"
     t.string "document_type"
@@ -26,7 +23,7 @@ ActiveRecord::Schema[8.1].define(version: 2025_04_25_015534) do
     t.index ["user_id"], name: "index_bookmarks_on_user_id"
   end
 
-  create_table "searches", id: :serial, force: :cascade do |t|
+  create_table "searches", force: :cascade do |t|
     t.datetime "created_at", precision: nil, null: false
     t.binary "query_params"
     t.datetime "updated_at", precision: nil, null: false

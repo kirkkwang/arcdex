@@ -122,9 +122,5 @@ accessories:
     port: "8983:8983"
     directories:
       - "solr/conf:/var/solr/data/arclight"
-    cmd: >
-      bash -c "
-        solr create -c arclight
-      "
     volumes:
       - "solr_data:/var/solr/data"

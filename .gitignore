@@ -41,7 +41,7 @@
 .rubocop-https*
 /solr/conf/data/*
 /solr/conf/core.properties
-data/*
+data/*.json
 
 *.sqlite3
 *.sqlite3-*

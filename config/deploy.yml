@@ -1,13 +1,13 @@
 # Name of your application. Used to uniquely configure containers.
-service: app
+service: arcdex
 
 # Name of the container image.
-image: your-user/app
+image: kirkkwang/arcdex
 
 # Deploy to these servers.
 servers:
   web:
-    - 192.168.0.1
+    - 164.92.92.244
   # job:
   #   hosts:
   #     - 192.168.0.1
@@ -19,13 +19,13 @@ servers:
 # Note: If using Cloudflare, set encryption mode in SSL/TLS setting to "Full" to enable CF-to-app encryption.
 proxy:
   ssl: true
-  host: app.example.com
+  host: arcdex.dev
 
 # Credentials for your image host.
 registry:
   # Specify the registry server, if you're not using Docker Hub
   # server: registry.digitalocean.com / ghcr.io / ...
-  username: your-user
+  username: kirkkwang
 
   # Always use an access token rather than real password when possible.
   password:
@@ -114,3 +114,16 @@ builder:
 #     port: 6379
 #     directories:
 #       - data:/data
+accessories:
+  solr:
+    image: solr:9.7.0
+    host: 164.92.92.244
+    port: "8983:8983"
+    directories:
+      - "solr/conf:/var/solr/data/arclight"
+    cmd: >
+      bash -c "
+        solr-create -c arclight -d /var/solr/data/arclight
+      "
+    volumes:
+      - "solr_data:/var/solr/data"

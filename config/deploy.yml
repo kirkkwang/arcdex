@@ -128,3 +128,6 @@ accessories:
       "
     volumes:
       - "solr_data:/var/solr/data"
+
+env:
+  SOLR_URL: http://arcdex-solr:8983/solr/arclight

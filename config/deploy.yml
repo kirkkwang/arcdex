@@ -119,8 +119,6 @@ accessories:
   solr:
     image: solr:9.7.0
     host: 164.92.92.244
-    port: "8983:8983"
-    directories:
-      - "solr/conf:/var/solr/data/arclight"
+    port: 8983
     volumes:
       - "solr_data:/var/solr/data"

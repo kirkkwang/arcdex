@@ -124,7 +124,7 @@ accessories:
       - "solr/conf:/var/solr/data/arclight"
     cmd: >
       bash -c "
-        solr-create -c arclight -d /var/solr/data/arclight
+        solr create -c arclight
       "
     volumes:
       - "solr_data:/var/solr/data"

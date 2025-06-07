@@ -11,13 +11,14 @@ services:
       - .:/app
     environment:
       - RAILS_ENV=development
-      - SOLR_URL=http://solr:8983/solr/arclight
     depends_on:
-      - solr
+      - arcdex-solr
     stdin_open: true
     tty: true
+    env_file:
+      - .env
 
-  solr:
+  arcdex-solr:
     image: solr:9.7.0
     ports:
       - "8983:8983"
@@ -28,6 +29,8 @@ services:
       - -c
       - |
         solr-create -c arclight -d /var/solr/data/arclight
+    env_file:
+      - .env
 
 volumes:
   pgdata:

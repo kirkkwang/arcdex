@@ -35,7 +35,7 @@ class SearchBuilder < Blacklight::SearchBuilder
     queries.compact_blank!
 
     solr_parameters[:fq] = if queries.present? && solr_parameters[:fq].present?
-                             (solr_parameters[:fq].map { |fq| "(_query_:\"#{fq}\")" } + queries).join(' AND ')
+                             (Array.wrap(solr_parameters[:fq]).map { |fq| "(_query_:\"#{fq}\")" } + queries).join(' AND ')
     elsif queries.present? && solr_parameters[:fq].blank?
                              queries.join(' AND ')
     end

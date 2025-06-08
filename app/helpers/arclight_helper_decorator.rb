@@ -10,19 +10,17 @@ module ArclightHelperDecorator
   end
 
   def sets_path
-    search_action_url(
-      f: {
-        Category: ['Set']
-      }
-    )
+    search_path_with_view(f: { Category: ['Set'] })
   end
 
   def cards_path
-    search_action_url(
-      f: {
-        Category: ['Card']
-      }
-    )
+    search_path_with_view(f: { Category: ['Card'] })
+  end
+
+  def search_path_with_view(base_params)
+    search_params = base_params.dup
+    search_params[:view] = params[:view] if params[:view].present?
+    search_action_url(search_params)
   end
 
   def repository_collections_path(repository)

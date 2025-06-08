@@ -329,6 +329,12 @@ html[data-bs-theme=dark] {
     }
   }
 
+  #documents {
+    .breadcrumb-links a {
+      color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+    }
+  }
+
   // OVERRIDE Blacklight v8.10.1 to use effectively remove the background color
   // so it work better in dark mode
   .al-masthead.bg-light, .navbar-search.bg-light {

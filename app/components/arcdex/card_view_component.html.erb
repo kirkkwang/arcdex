@@ -1,3 +1,10 @@
-<%= content_tag :div, class: "arcdex-image d-flex justify-content-center px-5" do -%>
-  <% image %>
-<% end -%>
+<div data-controller="image-zoom">
+  <%= content_tag :div, class: "arcdex-image d-flex justify-content-center px-5" do %>
+    <%= image %>
+  <% end %>
+
+  <div data-image-zoom-target="overlay" class="zoom-overlay" data-action="click->image-zoom#close">
+    <div class="close-indicator">&times;</div>
+    <img data-image-zoom-target="zoomImage" src="" alt="Zoomed image" data-action="click->image-zoom#preventClose">
+  </div>
+</div>

@@ -51,12 +51,20 @@ class CatalogController < ApplicationController
     ## parameters included in the Blacklight-jetty document requestHandler.
     #
     config.default_document_solr_params = {
-     qt: 'document',
-     fl: '*,collection:[subquery]',
-     'collection.q': '{!terms f=id v=$row._root_}',
-     'collection.defType': 'lucene',
-     'collection.fl': '*',
-     'collection.rows': 1
+      qt: 'document',
+      fl: '*,collection:[subquery],cards:[subquery]',
+
+      'collection.q': '{!terms f=id v=$row._root_}',
+      'collection.defType': 'lucene',
+      'collection.fl': '*',
+      'collection.rows': 1,
+
+      'cards.q': '{!terms f=_root_ v=$row._root_}',
+      'cards.fq': '-level_ssm:"collection"',
+      'cards.defType': 'lucene',
+      'cards.fl': 'id,title_ssm',
+      'cards.sort': 'sort_ssi asc',
+      'cards.rows': 10_000
     }
 
     config.header_component = Arclight::HeaderComponent
@@ -89,7 +97,7 @@ class CatalogController < ApplicationController
     # solr field configuration for document/show views
     # config.show.title_field = 'title_display'
     config.show.document_component = Arcdex::Arclight::DocumentComponent
-    config.show.sidebar_component = Arclight::SidebarComponent
+    config.show.sidebar_component = Arcdex::Arclight::SidebarComponent
     config.show.breadcrumb_component = Arclight::BreadcrumbsHierarchyComponent
     config.show.embed_component = Arclight::EmbedComponent
     config.show.access_component = Arcdex::PricesMetadataComponent

@@ -1,0 +1,12 @@
+<%#
+  OVERRIDE Arclight v1.5.0 to render a custom card list
+%>
+
+<div class="offcanvas-lg offcanvas-start p-3 p-lg-1" tabindex="-1" id="sidebar">
+  <%= collection_context %>
+  <%= render (blacklight_config.show.show_tools_component || Blacklight::Document::ShowToolsComponent).new(document: document) %>
+  <%= collection_sidebar %>
+  <div id="collection-context" class="sidebar-section">
+    <%= render Arcdex::CardListComponent.new(document:) %> <%# OVERRIDE %>
+  </div>
+</div>

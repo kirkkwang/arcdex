@@ -99,4 +99,16 @@ class SolrDocument
       {}
     end
   end
+
+  def title
+    self['title_ssm'].first || ''
+  end
+
+  def cards
+    return [] unless self['cards']
+
+    @cards ||= self['cards']['docs'].map do |card_hash|
+      self.class.new(card_hash, @response)
+    end
+  end
 end

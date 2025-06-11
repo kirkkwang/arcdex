@@ -93,6 +93,7 @@ class CatalogController < ApplicationController
     config.index.document_presenter_class = Arclight::IndexPresenter
     config.index.search_bar_component = Arcdex::Arclight::SearchBarComponent
     config.index.thumbnail_field = 'thumbnail_path_ssi'
+    config.index.thumbnail_component = Arcdex::Blacklight::Document::ThumbnailComponent
 
     # solr field configuration for document/show views
     # config.show.title_field = 'title_display'

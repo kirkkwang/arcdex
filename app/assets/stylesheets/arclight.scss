@@ -351,7 +351,8 @@ html[data-bs-theme=dark] {
 }
 
 // Styles for the large card image zoom feature
-.large-card-image {
+.large-card-image,
+.documents-gallery .img-thumbnail {
   max-width: 100%;
   height: auto;
   cursor: pointer;

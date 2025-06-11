@@ -71,6 +71,10 @@ class SolrDocument
     (collection? ? self['logo_url_ssm'].first : self['large_url_ssm'].first) || ''
   end
 
+  def thumbnail_url
+    (collection? ? self['logo_url_ssm'].first : self['thumbnail_path_ssi']) || ''
+  end
+
   # OVERRIDE Arclight v2.0.0.alpha to get set id
   def collection_unitid
     collection&.id

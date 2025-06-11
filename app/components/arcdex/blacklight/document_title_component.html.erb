@@ -1,5 +1,5 @@
 <%#
-  OVERRIDE Blacklight v8.9.0 to not render the title
+  OVERRIDE Blacklight v8.9.0 to not render the counter and actions
 %>
 
 <header class="documentHeader row">
@@ -8,7 +8,7 @@
       <%= t %>
     <% end %>
 
-    <%#= counter -%><%#= title -%>
+    <%#= counter -%><%= title -%>
 
     <% after_titles.each do |t| %>
       <%= t %>
@@ -16,6 +16,6 @@
   <% end %>
 
   <% actions.each do |action| %>
-    <%= action %>
+    <%#= action %>
   <% end %>
 </header>

@@ -1,0 +1,5 @@
+<% value = presenter.thumbnail.render(@image_options) %>
+
+<% if value %>
+  <%= render Arcdex::CardViewComponent.new(document: @document, url: @document.thumbnail_url) %>
+<% end %>

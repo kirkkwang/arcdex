@@ -14,7 +14,7 @@ export default class extends Controller {
     const triggerImage = event.currentTarget
 
     // Set the zoomed image source and alt
-    this.zoomImageTarget.src = triggerImage.src
+    this.zoomImageTarget.src = triggerImage.dataset.zoomedImageUrl
     this.zoomImageTarget.alt = triggerImage.alt
 
     // Add a history entry for the zoom state

@@ -1,0 +1,43 @@
+<%#
+  OVERRIDE Blacklight v8.11.0 for infinite scroll
+%>
+
+<% @page_title = t('blacklight.search.page_title.title', constraints: render_search_to_page_title(search_state), application_name: application_name) %>
+
+<% content_for(:head) do -%>
+  <%= render 'catalog/opensearch_response_metadata', response: @response %>
+  <%= rss_feed_link_tag %>
+  <%= atom_feed_link_tag %>
+  <%= json_api_link_tag %>
+<% end %>
+
+<% content_for(:skip_links) do -%>
+  <%= render Blacklight::SkipLinkItemComponent.new(text: t('blacklight.skip_links.first_result'), href: '#documents') %>
+<% end %>
+
+<% content_for(:container_header) do -%>
+  <%= render 'search_results_header' %>
+  <%= render 'constraints' %>
+<% end %>
+
+<%= render 'search_header' %>
+
+<h2 class="sr-only visually-hidden"><%= t('blacklight.search.search_results') %></h2>
+
+<%- if @response.empty? %>
+  <%= render "zero_results" %>
+<%- elsif render_grouped_response? %>
+  <%= render 'group' %>
+<%- else %>
+  <div data-controller="scroll-position infinite-scroll"
+       data-infinite-scroll-url-value="<%= url_for(search_state.to_h.merge(only_path: true)) %>"
+       data-infinite-scroll-current-page-value="<%= @response.current_page %>"
+       data-infinite-scroll-total-pages-value="<%= @response.total_pages %>">
+
+    <%= render_document_index @response.documents %>
+
+    <div data-infinite-scroll-target="pagination">
+      <%= render 'results_pagination' %>
+    </div>
+  </div>
+<%- end %>

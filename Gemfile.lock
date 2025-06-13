@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 4b7fb1d14b954d2348d2065ff955466479509656
+  revision: fd49d6a3180244969fb5ab9768d0bc7d9e4df9fe
   branch: main
   specs:
     actioncable (8.1.0.alpha)
@@ -105,7 +105,7 @@ GEM
       railties
     addressable (2.8.7)
       public_suffix (>= 2.0.2, < 7.0)
-    arclight (1.5.0)
+    arclight (1.6.0)
       blacklight (>= 8.0.0, < 9)
       gretel
       rails (>= 7.1, < 9)
@@ -203,9 +203,8 @@ GEM
       actionview (>= 6.1)
       railties (>= 6.1)
     hashie (5.0.0)
-    http (5.2.0)
+    http (5.3.1)
       addressable (~> 2.8)
-      base64 (~> 0.1)
       http-cookie (~> 1.0)
       http-form_data (~> 2.2)
       llhttp-ffi (~> 0.5.0)
@@ -376,7 +375,7 @@ GEM
     rsolr (2.6.0)
       builder (>= 2.1.2)
       faraday (>= 0.9, < 3, != 2.0.0)
-    rubocop (1.76.0)
+    rubocop (1.76.1)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
@@ -387,7 +386,7 @@ GEM
       rubocop-ast (>= 1.45.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 4.0)
-    rubocop-ast (1.45.0)
+    rubocop-ast (1.45.1)
       parser (>= 3.3.7.2)
       prism (~> 1.4)
     rubocop-capybara (2.22.1)
@@ -446,13 +445,13 @@ GEM
       ostruct
       retriable
       ruby-progressbar
-    sqlite3 (2.6.0-aarch64-linux-gnu)
-    sqlite3 (2.6.0-aarch64-linux-musl)
-    sqlite3 (2.6.0-arm-linux-gnu)
-    sqlite3 (2.6.0-arm-linux-musl)
-    sqlite3 (2.6.0-arm64-darwin)
-    sqlite3 (2.6.0-x86_64-linux-gnu)
-    sqlite3 (2.6.0-x86_64-linux-musl)
+    sqlite3 (2.7.0-aarch64-linux-gnu)
+    sqlite3 (2.7.0-aarch64-linux-musl)
+    sqlite3 (2.7.0-arm-linux-gnu)
+    sqlite3 (2.7.0-arm-linux-musl)
+    sqlite3 (2.7.0-arm64-darwin)
+    sqlite3 (2.7.0-x86_64-linux-gnu)
+    sqlite3 (2.7.0-x86_64-linux-musl)
     sshkit (1.24.0)
       base64
       logger

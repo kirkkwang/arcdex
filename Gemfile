@@ -82,3 +82,4 @@ gem 'blacklight-locale_picker'
 gem 'listen'
 gem 'openseadragon', '~> 1.0'
 gem 'request_store'
+gem 'whenever', require: false

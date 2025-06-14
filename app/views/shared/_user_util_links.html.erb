@@ -20,9 +20,19 @@
     });
   })();
 </script>
-<ul class="navbar-nav">
+<ul class="navbar-nav" data-controller="scroll-position">
+  <li class="nav-item ms-3 mt-3 mt-md-0 <%= repositories_active_class %>">
+    <%= link_to t('arclight.routes.series'), arclight_engine.repositories_path, class: 'nav-link' %>
+  </li>
+  <li class="nav-item ms-3 <%= collection_active_class %>">
+    <%= link_to t('arclight.routes.sets'), sets_path, class: 'nav-link' %>
+  </li>
+  <li class="nav-item ms-3 <%= card_active_class %>">
+    <%= link_to t('arclight.routes.cards'), cards_path, class: 'nav-link' %>
+  </li>
+  <%= render "shared/divider" unless last_navbar_partial?(config) %>
   <%= render_nav_actions do |config, action|%>
-    <li class="nav-item <%= config.additional_classes %>"><%= action %></li>
+    <li class="nav-item ms-3 ms-md-2 <%= config.additional_classes %>"><%= action %></li>
     <%= render "shared/divider" unless last_navbar_partial?(config) %>
   <% end %>
 </ul>

@@ -19,7 +19,7 @@ module ArclightHelperDecorator
 
   def search_path_with_view(base_params)
     search_params = base_params.dup
-    search_params[:view] = params[:view] if params[:view].present?
+    search_params[:view] = params[:view] || 'gallery'
     search_action_url(search_params)
   end
 

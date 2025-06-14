@@ -26,6 +26,11 @@ COPY . .
 # Precompile gems with bootsnap (optional but improves performance)
 RUN bundle exec bootsnap precompile --gemfile || true
 
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y cron && \
+    rm -rf /var/lib/apt/lists /var/cache/apt/archives && \
+    rm -rf /etc/cron.*/*
+
 # Expose Rails port
 EXPOSE 3000
 

@@ -8,6 +8,12 @@ image: kirkkwang/arcdex
 servers:
   web:
     - 164.92.92.244
+  cron:
+    hosts:
+      - 164.92.92.244
+    cmd: bash -c "bundle exec whenever --update-crontab && env > /etc/environment && cron -f"
+    options:
+      user: root
   # job:
   #   hosts:
   #     - 192.168.0.1

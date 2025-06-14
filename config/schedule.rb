@@ -18,3 +18,10 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+set :output, { standard: '/proc/1/fd/1', error: '/proc/1/fd/2' }
+
+job_type :rake, '/rails/bin/cron_executor bundle exec rake :task :output'
+
+every 24.hours do
+  rake 'arcdex:pull arcdex:index'
+end

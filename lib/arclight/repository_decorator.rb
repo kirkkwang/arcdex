@@ -7,10 +7,11 @@ module Arclight
 
     class_methods do
       def all
-        search_service = Blacklight.repository_class.new(CatalogController.blacklight_config)
-        documents = search_service.search(q: 'series_ssim:*', fq: 'level_ssm:"collection"', rows: 10_000).documents
-
-        documents.group_by(&:series).map { |name, documents| new(name, documents) }
+        RequestStore.store[:arclight_repositories] ||= begin
+          search_service = Blacklight.repository_class.new(CatalogController.blacklight_config)
+          documents = search_service.search(q: 'series_ssim:*', fq: 'level_ssm:"collection"', rows: 10_000).documents
+          documents.group_by(&:series).map { |name, documents| new(name, documents) }
+        end
       end
 
       def find(id)

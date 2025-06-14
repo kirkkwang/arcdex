@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   mount BlacklightAdvancedSearch::Engine => '/'
   mount Arclight::Engine => '/'
 
-  root to: 'arclight/repositories#index'
+  root to: 'catalog#index', q: '', search_field: 'all_fields', view: 'gallery'
   concern :searchable, Blacklight::Routes::Searchable.new
 
   resource :catalog, only: [], as: 'catalog', path: '/catalog', controller: 'catalog' do

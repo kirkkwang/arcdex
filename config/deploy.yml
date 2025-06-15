@@ -8,6 +8,12 @@ image: kirkkwang/arcdex
 servers:
   web:
     - 164.92.92.244
+  cron:
+    hosts:
+      - 164.92.92.244
+    cmd: bash -c "bundle exec whenever --update-crontab && env > /etc/environment && cron -f"
+    options:
+      user: root
   # job:
   #   hosts:
   #     - 192.168.0.1
@@ -60,6 +66,7 @@ aliases:
   shell: app exec --interactive --reuse "bash"
   logs: app logs -f
   dbc: app exec --interactive --reuse "bin/rails dbconsole"
+  cron-logs: app logs -f -r cron
 
 
 # Use a persistent storage volume for sqlite database files and local Active Storage files.

@@ -67,6 +67,7 @@ aliases:
   logs: app logs -f
   dbc: app exec --interactive --reuse "bin/rails dbconsole"
   cron-logs: app logs -f -r cron
+  solr-logs: accessory logs solr -f
 
 
 # Use a persistent storage volume for sqlite database files and local Active Storage files.

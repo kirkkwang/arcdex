@@ -23,7 +23,6 @@ set :output, { standard: '/proc/1/fd/1', error: '/proc/1/fd/2' }
 job_type :rake, '/rails/bin/cron_executor bundle exec rake :task :output'
 
 # Server is in UTC but I'm on the west coast
-Time.zone = 'Pacific Time (US & Canada)'
-every 1.day, at: Time.zone.parse('5:00 am').localtime do
+every 1.day, at: '12:00pm' do
   rake 'arcdex:pull arcdex:index'
 end

@@ -10,6 +10,14 @@ Rails.application.routes.draw do
   mount BlacklightAdvancedSearch::Engine => '/'
   mount Arclight::Engine => '/'
 
+  # OVERRIDE Arclight repository routes to use /series instead
+  # this is for anything that still uses /repositories or /repository/:id
+  get '/series', to: 'arclight/repositories#index', as: 'repositories'
+  get '/series/:id', to: 'arclight/repositories#show', as: 'repository'
+
+  get '/series', to: 'arclight/repositories#index', as: 'series'
+  get '/series/:id', to: 'arclight/repositories#show', as: 'serie'
+
   root to: 'catalog#index', q: '', search_field: 'all_fields', view: 'gallery'
   concern :searchable, Blacklight::Routes::Searchable.new
 

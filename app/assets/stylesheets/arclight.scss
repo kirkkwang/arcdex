@@ -225,21 +225,52 @@ details[open] summary::before {
 	rotate: 90deg;
 }
 
-.advanced-facet-limits {
-  @extend .sidenav;
+.advanced-search-form {
+  #advanced_search {
+    label {
+      text-align: right;
+    }
+  }
 
-  .facet-values {
-    li {
-      .facet-checkbox {
-        margin-right: 2rem;
+  .advanced.page-header {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .row {
+    .col-md-8 {
+      .advanced {
+        .form-group.row {
+          margin-bottom: 4rem;
+        }
       }
+    }
 
-      span:last-child:not([class]) {
-        width: 100%;
+    .col-md-4 {
+      .card-default {
+        position: sticky;
+        top: 1rem;
+        margin-top: 1.5rem;
+      }
+    }
+  }
 
-        label {
+  .advanced-facet-limits {
+    @extend .sidenav;
+
+    .facet-values {
+      li {
+        .facet-checkbox {
+          margin-right: 2rem;
+        }
+
+        span:last-child:not([class]) {
           width: 100%;
-          display: flex;
+
+          label {
+            width: 100%;
+            display: flex;
+          }
         }
       }
     }
@@ -312,6 +343,12 @@ html[data-bs-theme=dark] {
 
   .toggle-bookmark .blacklight-icons svg {
     fill: $dark-icon-light;
+  }
+
+  .card-body {
+    .inclusive_or.card.card-body.bg-light {
+      background-color: $dark-bg-secondary !important;
+    }
   }
 
   summary,

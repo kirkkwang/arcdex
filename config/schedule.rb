@@ -24,5 +24,5 @@ job_type :rake, '/rails/bin/cron_executor bundle exec rake :task :output'
 
 # Server is in UTC but I'm on the west coast
 every 1.day, at: '12:00pm' do
-  rake 'arcdex:pull arcdex:index'
+  rake 'arcdex:pull arcdex:index_dir'
 end

@@ -103,3 +103,7 @@ en:
           place: Place
           subject: Subject
           access: Access
+      filters:
+        remove_excluded:
+          label_value: 'Remove excluded constraint %{label}: %{value}'
+          value: Remove excluded constraint %{value}

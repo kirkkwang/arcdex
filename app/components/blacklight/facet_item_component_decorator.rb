@@ -19,6 +19,14 @@ module Blacklight
       link_to_unless(@suppress_link, exclude_filter_icon, exclude_href, class: 'me-1 exclude-facet-link', rel: 'nofollow')
     end
 
+    def render_selected_facet_value
+      exclude_class = helpers.blacklight_config.view_config.constraints_component_exclude_styling
+      facet_value = super
+      return facet_value if hits.present?
+
+      facet_value.gsub('class="selected"', "class=\"selected #{exclude_class}\"").html_safe # rubocop:disable Rails/OutputSafety
+    end
+
     private
 
     def exclude_filter_icon

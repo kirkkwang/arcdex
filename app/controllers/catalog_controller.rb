@@ -90,6 +90,7 @@ class CatalogController < ApplicationController
     config.index.document_component = Arclight::SearchResultComponent
     config.index.group_component = Arcdex::Arclight::GroupComponent
     config.index.constraints_component = Arclight::ConstraintsComponent
+    config.index.constraints_component_exclude_styling = 'text-decoration-line-through'
     config.index.document_presenter_class = Arclight::IndexPresenter
     config.index.search_bar_component = Arcdex::Arclight::SearchBarComponent
     config.index.thumbnail_field = 'thumbnail_path_ssi'

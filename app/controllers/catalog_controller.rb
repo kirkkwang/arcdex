@@ -422,7 +422,7 @@ class CatalogController < ApplicationController
               formats: [:html],  # Force HTML format
               locals: {
                 documents: @response.documents,
-                view_config: blacklight_config.view_config(params[:view] || 'list')
+                view_config: blacklight_config.view_config(params[:view] || 'gallery')
               }
             ),
             pagination: {

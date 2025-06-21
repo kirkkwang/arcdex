@@ -22,17 +22,24 @@ namespace :arcdex do
       total_pages.times do |i|
         puts "  Fetching page #{i+1}/#{total_pages}..."
         r = HTTP.get("#{BASE_URL}/cards?page=#{page}&pageSize=#{page_size}&q=set.id:#{id}")
+
         begin
           retries ||= 0
           page_hash = r.parse
         rescue => e
           Rails.logger.error "Error parsing response: #{e.message}"
-          sleep(5) # Wait a bit before retrying
-          retry if (retries += 1) < 3
+          if (retries += 1) < 3
+            sleep(5) # Wait a bit before retrying
+            retry
+          else
+            Rails.logger.error "Failed to parse response after 3 retries for page #{i+1}/#{total_pages}. Skipping page."
+            page += 1
+            next # Skip to the next iteration
+          end
         end
 
         # Extract just the cards data and add to our collection
-        if page_hash['data']
+        if page_hash && page_hash['data']
           all_cards += page_hash['data']
         end
 

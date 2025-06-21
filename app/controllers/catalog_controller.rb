@@ -6,13 +6,20 @@ class CatalogController < ApplicationController
   include BlacklightRangeLimit::ControllerOverride
   include Arclight::Catalog
 
+  before_action :modify_sort, only: [:index]
+
+  class_attribute :tcg_price_desc_field, default: 'tcg_player_market_price_isi desc'
+  class_attribute :tcg_price_asc_field, default: 'tcg_player_market_price_isi asc'
+  class_attribute :cardmarket_desc_field, default: 'cardmarket_avg7_price_isi desc'
+  class_attribute :cardmarket_asc_field, default: 'cardmarket_avg7_price_isi asc'
+
   configure_blacklight do |config|
     # default advanced config values
     config.advanced_search ||= Blacklight::OpenStructWithHashAccess.new
     config.advanced_search[:enabled] = true
     config.advanced_search[:form_solr_paramters] = {}
     # config.advanced_search[:qt] ||= 'advanced'
-    config.advanced_search[:query_parser] ||= 'dismax'
+    config.advanced_search[:query_parser] ||= 'edismax'
     config.view.gallery(document_component: Blacklight::Gallery::DocumentComponent, icon: Blacklight::Gallery::Icons::GalleryComponent)
     # config.view.masonry(document_component: Blacklight::Gallery::DocumentComponent, icon: Blacklight::Gallery::Icons::MasonryComponent)
     # config.view.slideshow(document_component: Blacklight::Gallery::SlideshowComponent, icon: Blacklight::Gallery::Icons::SlideshowComponent)
@@ -289,20 +296,12 @@ class CatalogController < ApplicationController
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
+    config.add_sort_field tcg_price_desc_field, label: 'TCGplayer market price ($$$ to $)'
+    config.add_sort_field tcg_price_asc_field, label: 'TCGplayer market price ($ to $)'
+    config.add_sort_field cardmarket_desc_field, label: 'Cardmarket avg7 price ($$$ to $)'
+    config.add_sort_field cardmarket_asc_field, label: 'Cardmarket avg7 price ($ to $)'
     config.add_sort_field 'release_date_sort desc, sort_ssi asc', label: 'release date (new to old)'
     config.add_sort_field 'release_date_sort asc, sort_ssi asc', label: 'release date (old to new)'
-    config.add_sort_field 'tcg_player_market_price_isi desc', label: 'TCGplayer market price ($$$ to $)', if: ->(controller, _field) do
-      controller.params[:range]&.has_key?(:tcg_player_market_price)
-    end
-    config.add_sort_field 'tcg_player_market_price_isi asc', label: 'TCGplayer market price ($ to $)', if: ->(controller, _field) do
-      controller.params[:range]&.has_key?(:tcg_player_market_price)
-    end
-    config.add_sort_field 'cardmarket_avg7_price_isi desc', label: 'Cardmarket avg7 price ($$$ to $)', if: ->(controller, _field) do
-      controller.params[:range]&.has_key?(:cardmarket_avg7_price)
-    end
-    config.add_sort_field 'cardmarket_avg7_price_isi asc', label: 'Cardmarket avg7 price ($ to $)', if: ->(controller, _field) do
-      controller.params[:range]&.has_key?(:cardmarket_avg7_price)
-    end
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
@@ -439,6 +438,19 @@ class CatalogController < ApplicationController
       end
       additional_response_formats(format)
       document_export_formats(format)
+    end
+  end
+
+  private
+
+  def modify_sort
+    if params[:range]&.fetch('tcg_player_market_price', nil).nil?
+      blacklight_config.sort_fields.delete(tcg_price_desc_field)
+      blacklight_config.sort_fields.delete(tcg_price_asc_field)
+    end
+    if params[:range]&.fetch('cardmarket_avg7_price', nil).nil?
+      blacklight_config.sort_fields.delete(cardmarket_desc_field)
+      blacklight_config.sort_fields.delete(cardmarket_asc_field)
     end
   end
 end

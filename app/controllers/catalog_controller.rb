@@ -253,7 +253,7 @@ class CatalogController < ApplicationController
       field.solr_parameters = {
         qf: 'title_tesim',
         pf: 'title_tesim',
-        fq: 'level_ssim:Card'
+        fq: ['level_ssim:Card']
       }
     end
 
@@ -262,7 +262,7 @@ class CatalogController < ApplicationController
       field.solr_parameters = {
         qf: 'title_tesim',
         pf: 'title_tesim',
-        fq: 'level_ssim:Set'
+        fq: ['level_ssim:Set']
       }
     end
 

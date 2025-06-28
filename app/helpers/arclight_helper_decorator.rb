@@ -63,7 +63,8 @@ module ArclightHelperDecorator
   def bookmarks_to_catalog_search_path(bookmarks)
     search_catalog_url(
       search_field: 'id',
-      q: bookmarks.pluck(:document_id).join(' OR ')
+      q: bookmarks.pluck(:document_id).join(' OR '),
+      view: 'gallery'
     )
   end
 end

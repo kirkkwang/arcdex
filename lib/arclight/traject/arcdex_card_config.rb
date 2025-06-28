@@ -278,15 +278,9 @@ to_field 'large_url_html_ssm' do |record, accumulator|
   end
 end
 
-to_field 'tcg_player_url_ssm' do |record, accumulator|
+to_field 'tcg_player_url_ssi' do |record, accumulator|
   if record['tcgplayer']
     accumulator << record['tcgplayer']['url']
-  end
-end
-to_field 'tcg_player_url_html_ssi' do |record, accumulator|
-  if record['tcgplayer']
-    url = record['tcgplayer']['url']
-    accumulator << "<a href=\"#{url}\" target=\"_blank\">#{url}</a>"
   end
 end
 to_field 'tcg_player_market_price_isi' do |record, accumulator|
@@ -314,15 +308,9 @@ to_field 'tcg_player_prices_json_ssi' do |record, accumulator|
   end
 end
 
-to_field 'cardmarket_url_ssm' do |record, accumulator|
+to_field 'cardmarket_url_ssi' do |record, accumulator|
   if record['cardmarket']
     accumulator << record['cardmarket']['url']
-  end
-end
-to_field 'cardmarket_url_html_ssi' do |record, accumulator|
-  if record['cardmarket']
-    url = record['cardmarket']['url']
-    accumulator << "<a href=\"#{url}\" target=\"_blank\">#{url}</a>"
   end
 end
 to_field 'cardmarket_avg7_price_isi' do |record, accumulator|

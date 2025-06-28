@@ -1,6 +1,6 @@
 <%#
   OVERRIDE Arclight 2.0.0.alpha to disable if searching on Category => sets
-    and if on bookmarks index
+    and if on bookmarks index, it will render a search results button
 %>
 
 <% unless collection_active? || controller_name == 'bookmarks' %>
@@ -13,5 +13,11 @@
                 search_catalog_path(search_with_group),
                 class: "btn btn-outline-secondary #{'active' if grouped?}"
     %>
+  </div>
+<% end %>
+
+<% if controller_name == 'bookmarks' %>
+  <div class="flex-grow-1">
+    <%= link_to t('blacklight.bookmarks.view_on_search_results'), bookmarks_to_catalog_search_path(@bookmarks), class: 'flex-grow-1 btn btn-info' %>
   </div>
 <% end %>

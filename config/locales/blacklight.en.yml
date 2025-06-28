@@ -3,3 +3,4 @@ en:
     application_name: 'Arcdex'
     bookmarks:
       no_bookmarks: You have no cards bookmarked
+      view_on_search_results: View on Search Results

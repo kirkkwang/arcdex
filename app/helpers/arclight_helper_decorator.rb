@@ -59,6 +59,13 @@ module ArclightHelperDecorator
   def last_navbar_partial?(config)
     config == blacklight_config.navbar.partials.values.last
   end
+
+  def bookmarks_to_catalog_search_path(bookmarks)
+    search_catalog_url(
+      search_field: 'id',
+      q: bookmarks.pluck(:document_id).join(' OR ')
+    )
+  end
 end
 
 ArclightHelper.prepend(ArclightHelperDecorator)

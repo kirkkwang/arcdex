@@ -35,14 +35,17 @@ Rails.application.routes.draw do
     concerns :exportable
   end
 
-  ##### REMOVE BOOKMARK #####
-  # resources :bookmarks, only: [:index, :update, :create, :destroy] do
-  #   concerns :exportable
+  ##### TOGGLEABLE BOOKMARK via CatalogtController #####
+  if CatalogController.blacklight_config.bookmarks == true
+    resources :bookmarks, only: [:index, :update, :create, :destroy] do
+      concerns :exportable
 
-  #   collection do
-  #     delete 'clear'
-  #   end
-  # end
+      collection do
+        delete 'clear'
+      end
+    end
+  end
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

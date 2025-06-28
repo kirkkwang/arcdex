@@ -53,6 +53,10 @@ class CatalogController < ApplicationController
 
     # items to show per page, each number in the array represent another option to choose from.
     config.per_page = [30]
+
+    # turn on bookmarks with a configuration
+    config.bookmarks = true
+
     ## Default parameters to send on single-document requests to Solr.
     ## These settings are the Blacklight defaults (see SearchHelper#solr_doc_params) or
     ## parameters included in the Blacklight-jetty document requestHandler.
@@ -75,8 +79,8 @@ class CatalogController < ApplicationController
     }
 
     config.header_component = Arclight::HeaderComponent
-    config.add_results_document_tool(:online, component: Arclight::OnlineStatusIndicatorComponent)
-    # config.add_results_document_tool(:arclight_bookmark_control, component: Arclight::BookmarkComponent)
+    # config.add_results_document_tool(:online, component: Arclight::OnlineStatusIndicatorComponent)
+    config.add_results_document_tool(:arclight_bookmark_control, component: Arclight::BookmarkComponent) if config.bookmarks == true
 
     config.add_results_collection_tool(:group_toggle, unless: ->(controller, _field, _facet_field) do
       controller.params[:f]&.keys&.include?('set')
@@ -85,7 +89,7 @@ class CatalogController < ApplicationController
     config.add_results_collection_tool(:per_page_widget)
     config.add_results_collection_tool(:view_type_group)
 
-    # config.add_nav_action(:bookmark, partial: 'blacklight/nav/bookmark', if: :render_bookmarks_control?)
+    config.add_nav_action(:bookmark, partial: 'blacklight/nav/bookmark', if: :render_bookmarks_control?) if config.bookmarks == true
     # config.add_nav_action(:search_history, partial: 'blacklight/nav/search_history')
     config.add_nav_action(:theme_picker, partial: 'arcdex/nav/theme_picker', additional_classes: 'dropdown')
 
@@ -105,7 +109,7 @@ class CatalogController < ApplicationController
 
     # solr field configuration for document/show views
     # config.show.title_field = 'title_display'
-    config.show.document_component = Arcdex::Arclight::DocumentComponent
+    config.show.document_component = Arclight::DocumentComponent
     config.show.sidebar_component = Arcdex::Arclight::SidebarComponent
     config.show.breadcrumb_component = Arclight::BreadcrumbsHierarchyComponent
     config.show.embed_component = Arclight::EmbedComponent

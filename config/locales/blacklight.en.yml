@@ -1,3 +1,5 @@
 en:
   blacklight:
     application_name: 'Arcdex'
+    bookmarks:
+      no_bookmarks: You have no cards bookmarked

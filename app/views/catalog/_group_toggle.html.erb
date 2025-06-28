@@ -1,8 +1,9 @@
 <%#
   OVERRIDE Arclight 2.0.0.alpha to disable if searching on Category => sets
+    and if on bookmarks index
 %>
 
-<% unless collection_active? %>
+<% unless collection_active? || controller_name == 'bookmarks' %>
   <div class="result-type-group btn-group" role="group" aria-label="<%= t('arclight.views.index.group_results') %>">
     <%= link_to t('arclight.views.index.all_results'),
                 search_catalog_path(search_without_group),

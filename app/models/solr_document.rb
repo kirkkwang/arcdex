@@ -92,6 +92,10 @@ class SolrDocument
     end
   end
 
+  def tcg_player_url
+    self['tcg_player_url_ssi'] || ''
+  end
+
   def cardmarket_price_updated_at
     self['cardmarket_price_updated_at_ssi'] || ''
   end
@@ -102,6 +106,10 @@ class SolrDocument
     rescue JSON::ParserError, TypeError
       {}
     end
+  end
+
+  def cardmarket_url
+    self['cardmarket_url_ssi'] || ''
   end
 
   def title

@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 9a14fb110d937a99d126e003cb60b8624f877846
+  revision: 04690da5fbe56141eb49590df9f79f2d048675f1
   branch: main
   specs:
     actioncable (8.1.0.alpha)
@@ -362,7 +362,7 @@ GEM
     rb-fsevent (0.11.2)
     rb-inotify (0.11.1)
       ffi (~> 1.0)
-    rdoc (6.14.1)
+    rdoc (6.14.2)
       erb
       psych (>= 4.0.0)
     regexp_parser (2.10.0)

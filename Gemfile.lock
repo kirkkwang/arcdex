@@ -448,13 +448,13 @@ GEM
       ostruct
       retriable
       ruby-progressbar
-    sqlite3 (2.7.0-aarch64-linux-gnu)
-    sqlite3 (2.7.0-aarch64-linux-musl)
-    sqlite3 (2.7.0-arm-linux-gnu)
-    sqlite3 (2.7.0-arm-linux-musl)
-    sqlite3 (2.7.0-arm64-darwin)
-    sqlite3 (2.7.0-x86_64-linux-gnu)
-    sqlite3 (2.7.0-x86_64-linux-musl)
+    sqlite3 (2.7.2-aarch64-linux-gnu)
+    sqlite3 (2.7.2-aarch64-linux-musl)
+    sqlite3 (2.7.2-arm-linux-gnu)
+    sqlite3 (2.7.2-arm-linux-musl)
+    sqlite3 (2.7.2-arm64-darwin)
+    sqlite3 (2.7.2-x86_64-linux-gnu)
+    sqlite3 (2.7.2-x86_64-linux-musl)
     sshkit (1.24.0)
       base64
       logger
@@ -564,7 +564,7 @@ DEPENDENCIES
   solid_cache
   solid_queue
   solr_wrapper (>= 0.3)
-  sqlite3 (~> 2.6)
+  sqlite3 (~> 2.7)
   stimulus-rails
   thruster
   turbo-rails

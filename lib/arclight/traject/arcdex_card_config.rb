@@ -203,7 +203,7 @@ to_field 'flavor_text_html_ssm' do |record, accumulator|
   accumulator << "<em>#{record["flavorText"]}</em>" if record['flavorText']
 end
 
-to_field 'national_pokedex_numbers_ssm' do |record, accumulator|
+to_field 'national_pokedex_numbers_isim' do |record, accumulator|
   if record['nationalPokedexNumbers']
     record['nationalPokedexNumbers'].each do |number|
       accumulator << number

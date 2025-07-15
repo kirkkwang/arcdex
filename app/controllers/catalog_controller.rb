@@ -177,6 +177,11 @@ class CatalogController < ApplicationController
     }, if: ->(_controller, _field, facet_field) do
       facet_field.response.facet_counts['facet_fields']['cardmarket_avg7_price_isi'].present?
     end
+    config.add_facet_field 'national pokex no.', field: 'national_pokedex_numbers_isim', range: true, range_config: {
+      show_missing_link: false
+    }, if: ->(_controller, _field, facet_field) do
+      facet_field.response.facet_counts['facet_fields']['national_pokedex_numbers_isim'].present?
+    end
     config.add_facet_field 'release year', field: 'release_year_isi', range: true, range_config: {
       show_missing_link: false
     }
@@ -350,7 +355,7 @@ class CatalogController < ApplicationController
     config.add_component_indexed_terms_field 'name', field: 'normalized_title_ssm', component: Arcdex::PokemonSearchComponent
     config.add_component_indexed_terms_field 'set', field: 'parent_unittitles_ssm', link_to_facet: true
     config.add_component_indexed_terms_field 'supertype', field: 'supertype_ssm', link_to_facet: true
-    config.add_component_indexed_terms_field 'national_pokedex_number', field: 'national_pokedex_numbers_ssm'
+    config.add_component_indexed_terms_field 'national_pokedex_number', field: 'national_pokedex_numbers_isim'
     config.add_component_indexed_terms_field 'subtypes', field: 'subtypes_ssm', link_to_facet: true
     config.add_component_indexed_terms_field 'level', field: 'level_ssi'
     config.add_component_indexed_terms_field 'types', label: 'Type(s)', field: 'types_ssm', link_to_facet: true

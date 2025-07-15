@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: ca4713b654caa8060b59e6536b64ce42ad3a6402
+  revision: 3963a13103121f43f188d2a1d1e871c421c42d24
   branch: main
   specs:
     actioncable (8.1.0.alpha)
@@ -96,6 +96,7 @@ GIT
       rackup (>= 1.0.0)
       rake (>= 12.2)
       thor (~> 1.0, >= 1.2.2)
+      tsort (>= 0.2)
       zeitwerk (~> 2.6)
 
 GEM
@@ -220,7 +221,7 @@ GEM
       actionpack (>= 6.0.0)
       activesupport (>= 6.0.0)
       railties (>= 6.0.0)
-    io-console (0.8.0)
+    io-console (0.8.1)
     irb (1.15.2)
       pp (>= 0.6.0)
       rdoc (>= 4.0.0)
@@ -490,6 +491,7 @@ GEM
       deprecation
       jsonpath
       traject (~> 3.0)
+    tsort (0.2.0)
     turbo-rails (2.0.16)
       actionpack (>= 7.1.0)
       railties (>= 7.1.0)

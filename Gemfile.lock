@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 3963a13103121f43f188d2a1d1e871c421c42d24
+  revision: 2eb6c45eb7fe464ca3f40351603b2f385cf3c175
   branch: main
   specs:
     actioncable (8.1.0.alpha)
@@ -174,7 +174,7 @@ GEM
     dotenv (3.1.8)
     drb (2.2.3)
     ed25519 (1.4.0)
-    erb (5.0.1)
+    erb (5.0.2)
     erubi (1.13.1)
     et-orbi (1.2.11)
       tzinfo

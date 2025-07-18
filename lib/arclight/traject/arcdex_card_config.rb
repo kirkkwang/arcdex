@@ -241,7 +241,8 @@ end
 to_field 'release_date_sort' do |record, accumulator|
   if record['set']['releaseDate']
     # Keep the format YYYY/MM/DD which sorts correctly as strings
-    accumulator << record['set']['releaseDate']
+    # Append set ID to ensure the set is grouped together even in all results view
+    accumulator << (record['set']['releaseDate'] + record['set']['id'])
   end
 end
 

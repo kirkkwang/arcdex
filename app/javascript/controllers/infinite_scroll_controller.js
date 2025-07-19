@@ -71,6 +71,7 @@ export default class extends Controller {
     // Trigger when we're 200px from the bottom
     if (scrollTop + windowHeight >= documentHeight - 200) {
       this.loadNextPage()
+      this.updatePageEntriesCount()
     }
   }
 
@@ -117,6 +118,12 @@ export default class extends Controller {
     }
   }
 
+  updatePageEntriesCount() {
+    const pageEntriesSpan = document.querySelector('.page-entries strong:nth-child(2)')
+    const currentEntries = parseInt(pageEntriesSpan.textContent)
+    const newEntriesCount = currentEntries + 30
+    pageEntriesSpan.textContent = newEntriesCount.toString()
+  }
 
   appendDocuments(documentsHtml) {
     // Use the actual #documents container we found in connect()

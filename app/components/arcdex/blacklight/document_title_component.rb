@@ -6,7 +6,7 @@ module Arcdex
   module Blacklight
     class DocumentTitleComponent < ::Blacklight::DocumentTitleComponent
       def title
-        link_to(@document.title, solr_document_path(@document), itemprop: 'name')
+        link_to(@document.title, solr_document_path(@document, anchor: 'title'), itemprop: 'name')
       end
     end
   end

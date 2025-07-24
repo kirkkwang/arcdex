@@ -182,20 +182,39 @@ end
 to_field 'converted_retreat_cost_isi', lambda { |record, accumulator| accumulator << record['convertedRetreatCost'].to_i }
 
 to_field 'number_ssm' do |record, accumulator|
-  accumulator << "#{record["number"]}/#{settings[:complete_set_count]}"
+  if record['id'] == 'zsv10pt5-80'
+    accumulator << "80/#{settings[:complete_set_count]}"
+  else
+    accumulator << "#{record['number']}/#{settings[:complete_set_count]}"
+  end
 end
 
 to_field 'sort_ssi' do |record, accumulator|
   # the api doesn't necessarily return all cards in the right order
   # ex. in set 151, Ivysaur is first and Bulbasaur is second
-  number = record['number'].rjust(8, '0')
+
+  # Revert when https://api.pokemontcg.io/v2/cards/zsv10pt5-80 number gets corrected
+  number = if record['id'] == 'zsv10pt5-80'
+    '00000080'
+  else
+    record['number'].rjust(8, '0')
+  end
+
   accumulator << number
 end
 
 to_field 'artist_ssm', lambda { |record, accumulator| accumulator << record['artist'] }
 to_field 'artist_tesim', lambda { |record, accumulator| accumulator << record['artist'] }
 
-to_field 'rarity_ssm', lambda { |record, accumulator| accumulator << record['rarity'] }
+to_field 'rarity_ssm' do |record, accumulator|
+  # Revert when https://api.pokemontcg.io/v2/cards/rsv10pt5-172 and https://api.pokemontcg.io/v2/cards/zsv10pt5-171
+  # rarities gets corrected
+  if record['id'] == 'rsv10pt5-172' || record['id'] == 'zsv10pt5-171'
+    accumulator << 'Black White Rare'
+  else
+    accumulator << record['rarity']
+  end
+end
 
 to_field 'flavor_text_ssi', lambda { |record, accumulator| accumulator << record['flavorText'] }
 to_field 'flavor_text_tesim', lambda { |record, accumulator| accumulator << record['flavorText'] }

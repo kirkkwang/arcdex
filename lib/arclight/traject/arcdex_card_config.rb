@@ -230,6 +230,9 @@ to_field 'rarity_ssm' do |record, accumulator|
   end
 end
 
+to_field 'regulation_mark_tesim', lambda { |record, accumulator| accumulator << record['regulationMark'] if record['regulationMark'] }
+to_field 'regulation_mark_ssi', lambda { |record, accumulator| accumulator << record['regulationMark'] if record['regulationMark'] }
+
 to_field 'flavor_text_ssi', lambda { |record, accumulator| accumulator << record['flavorText'] }
 to_field 'flavor_text_tesim', lambda { |record, accumulator| accumulator << record['flavorText'] }
 to_field 'flavor_text_html_ssm' do |record, accumulator|

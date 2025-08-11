@@ -461,3 +461,10 @@ body.zoom-active {
     font-size: 1.5rem;
   }
 }
+
+.avatar-img {
+  border-radius: 50%;
+  width: 1.375rem;
+  height: 1.375rem;
+  object-fit: cover;
+}

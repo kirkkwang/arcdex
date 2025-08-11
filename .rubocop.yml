@@ -16,4 +16,3 @@ Style/StringLiterals:
 Layout/SpaceInsideArrayLiteralBrackets:
   EnforcedStyle: no_space
   EnforcedStyleForEmptyBrackets: no_space
-  EnforcedStyleArrayLiteral: no_space

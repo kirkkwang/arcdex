@@ -83,3 +83,6 @@ gem 'listen'
 gem 'openseadragon', '~> 1.0'
 gem 'request_store'
 gem 'whenever', require: false
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'

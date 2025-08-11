@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_04_25_015534) do
+ActiveRecord::Schema[8.1].define(version: 2025_08_03_200024) do
   create_table "bookmarks", force: :cascade do |t|
     t.datetime "created_at", precision: nil, null: false
     t.string "document_id"
@@ -33,13 +33,16 @@ ActiveRecord::Schema[8.1].define(version: 2025_04_25_015534) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "avatar_url"
     t.datetime "created_at", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.boolean "guest", default: false
+    t.string "provider"
     t.datetime "remember_created_at"
     t.datetime "reset_password_sent_at"
     t.string "reset_password_token"
+    t.string "uid"
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

@@ -166,7 +166,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'Category', field: 'level_ssim', limit: 10, excludable: true
     config.add_facet_field 'series', field: 'series_ssm', limit: 10, excludable: true
     config.add_facet_field 'set', field: 'collection_ssim', limit: 10, excludable: true
-    config.add_facet_field 'regulation_mark', field: 'regulation_mark_ssi', limit: 10
+    config.add_facet_field 'regulation_mark', field: 'regulation_mark_ssi', limit: 10, excludable: true
     config.add_facet_field 'rarity', field: 'rarity_ssm', limit: 10, excludable: true
     config.add_facet_field 'tcg_player_market_price', label: 'TCGplayer Market Price', field: 'tcg_player_market_price_isi', range: true, range_config: {
       show_missing_link: false

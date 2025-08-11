@@ -188,6 +188,20 @@ to_field 'number_ssm' do |record, accumulator|
     accumulator << "#{record['number']}/#{settings[:complete_set_count]}"
   end
 end
+to_field 'number_tesim' do |record, accumulator|
+  if record['id'] == 'zsv10pt5-80'
+    accumulator << "80/#{settings[:complete_set_count]}"
+  else
+    accumulator << "#{record['number']}/#{settings[:complete_set_count]}"
+  end
+end
+to_field 'number_no_set_tesim' do |record, accumulator|
+  if record['id'] == 'zsv10pt5-80'
+    accumulator << '80'
+  else
+    accumulator << "#{record['number']}"
+  end
+end
 
 to_field 'sort_ssi' do |record, accumulator|
   # the api doesn't necessarily return all cards in the right order

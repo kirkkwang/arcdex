@@ -166,6 +166,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'Category', field: 'level_ssim', limit: 10, excludable: true
     config.add_facet_field 'series', field: 'series_ssm', limit: 10, excludable: true
     config.add_facet_field 'set', field: 'collection_ssim', limit: 10, excludable: true
+    config.add_facet_field 'regulation_mark', field: 'regulation_mark_ssi', limit: 10
     config.add_facet_field 'rarity', field: 'rarity_ssm', limit: 10, excludable: true
     config.add_facet_field 'tcg_player_market_price', label: 'TCGplayer Market Price', field: 'tcg_player_market_price_isi', range: true, range_config: {
       show_missing_link: false
@@ -283,6 +284,14 @@ class CatalogController < ApplicationController
       }
     end
 
+    config.add_search_field 'regulation_mark', label: 'Regulation Mark' do |field|
+      field.qt = 'search'
+      field.solr_parameters = {
+        qf: 'regulation_mark_tesim',
+        pf: 'regulation_mark_tesim'
+      }
+    end
+
     config.add_search_field 'id', label: 'ID' do |field|
       field.qt = 'search'
       field.solr_parameters = {
@@ -362,6 +371,7 @@ class CatalogController < ApplicationController
     config.add_component_indexed_terms_field 'rarity', field: 'rarity_ssm', link_to_facet: true
     config.add_component_indexed_terms_field 'evolves_from', field: 'evolves_from_ssm', component: Arcdex::PokemonSearchComponent
     config.add_component_indexed_terms_field 'evolves_to', field: 'evolves_to_ssm', component: Arcdex::PokemonSearchComponent
+    config.add_component_indexed_terms_field 'regulation_mark', field: 'regulation_mark_ssi', link_to_facet: true
     config.add_component_indexed_terms_field 'card number', field: 'number_ssm'
     config.add_component_indexed_terms_field 'artist', field: 'artist_ssm', link_to_facet: true
 

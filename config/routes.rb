@@ -25,7 +25,8 @@ Rails.application.routes.draw do
     concerns :searchable
     concerns :range_searchable
   end
-  devise_for :users, skip: :all
+
+  devise_for :user, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   concern :exportable, Blacklight::Routes::Exportable.new
   concern :hierarchy, Arclight::Routes::Hierarchy.new

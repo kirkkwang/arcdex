@@ -6,7 +6,8 @@ export default class extends Controller {
     url: String,
     currentPage: Number,
     totalPages: Number,
-    loading: Boolean
+    loading: Boolean,
+    documentCount: Number
   }
 
   connect() {
@@ -14,6 +15,21 @@ export default class extends Controller {
 
     // Find the actual #documents div inside our element and set it as our target
     this.actualDocumentsContainer = this.element.querySelector('#documents')
+
+    // Get the total count from the page entries info
+    const pageEntriesSpan = document.querySelector('.page-entries strong:last-child')
+    if (pageEntriesSpan) {
+      this.totalItems = parseInt(pageEntriesSpan.textContent, 10)
+    }
+
+    // Initialize current document count from page entries info
+    const currentEntriesSpan = document.querySelector('.page-entries strong:nth-child(2)')
+    if (currentEntriesSpan) {
+      this.documentCountValue = parseInt(currentEntriesSpan.textContent, 10)
+    } else {
+      // Fallback to counting DOM elements
+      this.documentCountValue = this.actualDocumentsContainer ? this.actualDocumentsContainer.children.length : 0
+    }
 
     this.setupInfiniteScroll()
   }
@@ -71,7 +87,6 @@ export default class extends Controller {
     // Trigger when we're 200px from the bottom
     if (scrollTop + windowHeight >= documentHeight - 200) {
       this.loadNextPage()
-      this.updatePageEntriesCount()
     }
   }
 
@@ -102,8 +117,14 @@ export default class extends Controller {
 
       const data = await response.json()
 
+      // Get number of new documents from the response data if available
+      let newDocumentCount = 0
+      if (data.pagination && data.pagination.limit) {
+        newDocumentCount = data.pagination.limit
+      }
+
       // Append new documents to the existing list
-      this.appendDocuments(data.documents_html)
+      this.appendDocuments(data.documents_html, newDocumentCount)
 
       // Update pagination info
       this.currentPageValue = data.pagination.current_page
@@ -119,13 +140,23 @@ export default class extends Controller {
   }
 
   updatePageEntriesCount() {
-    const pageEntriesSpan = document.querySelector('.page-entries strong:nth-child(2)')
-    const currentEntries = parseInt(pageEntriesSpan.textContent)
-    const newEntriesCount = currentEntries + 30
-    pageEntriesSpan.textContent = newEntriesCount.toString()
+    // Update the entries display with the correct count
+    const pageEntriesInfoElement = document.querySelector('.page-entries')
+    if (pageEntriesInfoElement) {
+      const firstEntrySpan = pageEntriesInfoElement.querySelector('strong:first-child')
+      const currentEntriesSpan = pageEntriesInfoElement.querySelector('strong:nth-child(2)')
+      const totalEntriesSpan = pageEntriesInfoElement.querySelector('strong:last-child')
+
+      if (firstEntrySpan && currentEntriesSpan && totalEntriesSpan) {
+        // Keep first entry as 1
+        // Update current entries to match our count
+        currentEntriesSpan.textContent = this.documentCountValue.toString()
+        // Ensure total doesn't change
+      }
+    }
   }
 
-  appendDocuments(documentsHtml) {
+  appendDocuments(documentsHtml, expectedCount) {
     // Use the actual #documents container we found in connect()
     if (this.actualDocumentsContainer) {
       // Create a temporary container to parse the HTML
@@ -134,22 +165,43 @@ export default class extends Controller {
 
       // Find the documents container in the returned HTML and extract its children
       const newDocumentsContainer = tempDiv.querySelector('#documents')
+      let addedCount = 0
 
       if (newDocumentsContainer) {
+        // Count document elements in the new container
+        const documentElements = newDocumentsContainer.querySelectorAll('.document')
+        addedCount = documentElements.length
+
         // Move each child from the new container to the existing one
         while (newDocumentsContainer.firstChild) {
           this.actualDocumentsContainer.appendChild(newDocumentsContainer.firstChild)
         }
       } else {
         // Fallback: if no #documents container found, append all content
+        // and count document elements
+        const documentElements = tempDiv.querySelectorAll('.document')
+        addedCount = documentElements.length
+
         while (tempDiv.firstChild) {
           this.actualDocumentsContainer.appendChild(tempDiv.firstChild)
         }
       }
-    }
-  }
 
-  showLoadingIndicator() {
+      // If we got an expected count from the API, use that
+      // Otherwise use the actual number of elements we counted
+      const countToAdd = expectedCount || addedCount
+
+      // Don't exceed the total items count
+      if (this.totalItems && this.documentCountValue + countToAdd > this.totalItems) {
+        this.documentCountValue = this.totalItems
+      } else {
+        this.documentCountValue += countToAdd
+      }
+
+      // Update the page entries display
+      this.updatePageEntriesCount()
+    }
+  }  showLoadingIndicator() {
     if (this.hasLoadingIndicatorTarget) {
       this.loadingIndicatorTarget.style.display = 'block'
     }

@@ -49,5 +49,15 @@ module App
         Rails.configuration.cache_classes ? require(c) : load(c)
       end
     end
+
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '/catalog/*/manifest',
+          headers: :any,
+          methods: [:get, :options],
+          max_age: 86400
+      end
+    end
   end
 end

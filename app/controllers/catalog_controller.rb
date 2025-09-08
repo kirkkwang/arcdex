@@ -6,6 +6,7 @@ class CatalogController < ApplicationController
   include BlacklightRangeLimit::ControllerOverride
   include Arclight::Catalog
   include Arcdex::InfiniteScrollable
+  include Arcdex::IiifManifestable
 
   before_action :modify_sort, only: [:index] # rubocop:disable Rails/LexicallyScopedActionFilter
 
@@ -366,9 +367,9 @@ class CatalogController < ApplicationController
     config.add_component_indexed_terms_field 'set', field: 'parent_unittitles_ssm', link_to_facet: true
     config.add_component_indexed_terms_field 'supertype', field: 'supertype_ssm', link_to_facet: true
     config.add_component_indexed_terms_field 'national_pokedex_number', field: 'national_pokedex_numbers_isim'
-    config.add_component_indexed_terms_field 'subtypes', field: 'subtypes_ssm', link_to_facet: true
+    config.add_component_indexed_terms_field 'subtype', field: 'subtypes_ssm', link_to_facet: true
     config.add_component_indexed_terms_field 'level', field: 'level_ssi'
-    config.add_component_indexed_terms_field 'types', label: 'Type(s)', field: 'types_ssm', link_to_facet: true
+    config.add_component_indexed_terms_field 'type', field: 'types_ssm', link_to_facet: true
     config.add_component_indexed_terms_field 'rarity', field: 'rarity_ssm', link_to_facet: true
     config.add_component_indexed_terms_field 'evolves_from', field: 'evolves_from_ssm', component: Arcdex::PokemonSearchComponent
     config.add_component_indexed_terms_field 'evolves_to', field: 'evolves_to_ssm', component: Arcdex::PokemonSearchComponent

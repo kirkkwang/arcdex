@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirador Viewer</title>
+  </head>
+  <body>
+    <script src="https://unpkg.com/mirador@latest/dist/mirador.min.js"></script>
+    <div id="mirador-viewer"></div>
+
+    <script type="text/javascript">
+      const urlParams = new URLSearchParams(window.location.search);
+      const manifest = urlParams.get('manifest');
+      const canvasIndex = urlParams.get('canvasIndex') || 0;
+      const theme = urlParams.get('theme') || 'light';
+
+      var mirador = Mirador.viewer({
+        "id": "mirador-viewer",
+        "windows": [
+          {
+            "loadedManifest": manifest,
+            "canvasIndex": canvasIndex,
+            "thumbnailNavigationPosition": 'far-right'
+          }
+        ],
+        selectedTheme: theme
+      });
+    </script>
+  </body>
+</html>

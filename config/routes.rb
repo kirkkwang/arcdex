@@ -32,8 +32,12 @@ Rails.application.routes.draw do
   concern :hierarchy, Arclight::Routes::Hierarchy.new
 
   resources :solr_documents, only: [:show], path: '/catalog', controller: 'catalog' do
-  concerns :hierarchy
+    concerns :hierarchy
     concerns :exportable
+
+    member do
+      get 'manifest', to: 'catalog#iiif_manifest', defaults: { format: 'json' }, constraints: { format: 'json' }
+    end
   end
 
   ##### TOGGLEABLE BOOKMARK via CatalogtController #####

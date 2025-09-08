@@ -1,6 +1,6 @@
 <div data-controller="image-zoom">
-  <%= content_tag :div, class: "arcdex-image d-flex justify-content-center px-5" do %>
-    <%= image %>
+  <%= content_tag :div, class: "arcdex-image d-flex justify-content-center" do %>
+    <%= viewer %>
   <% end %>
 
   <%= render Arcdex::ZoomedCardViewComponent.new(document:) %>

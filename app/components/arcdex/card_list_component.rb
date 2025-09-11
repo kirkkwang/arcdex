@@ -22,7 +22,7 @@ module Arcdex
     def card_item_content(card)
       content_tag :div, class: 'documentHeader', data: { document_id: card.id } do
         content_tag :div, class: 'index_title document-title-heading' do
-          current_card?(card) ? card.title : link_to(card.title, "#{card.id}")
+          current_card?(card) ? card.title : link_to(card.title, "#{card.id}#title")
         end
       end
     end

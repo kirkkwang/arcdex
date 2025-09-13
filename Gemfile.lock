@@ -204,6 +204,7 @@ GEM
     gretel (5.0.1)
       actionview (>= 6.1)
       railties (>= 6.1)
+    hashids (1.0.6)
     hashie (5.0.0)
     http (5.3.1)
       addressable (~> 2.8)
@@ -580,6 +581,7 @@ DEPENDENCIES
   debug
   devise
   devise-guests (~> 0.8)
+  hashids
   importmap-rails
   jbuilder
   kamal

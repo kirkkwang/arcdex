@@ -19,5 +19,6 @@
 <% if controller_name == 'bookmarks' %>
   <div class="flex-grow-1">
     <%= link_to t('blacklight.bookmarks.view_on_search_results'), bookmarks_to_catalog_search_path(@bookmarks), class: 'flex-grow-1 btn btn-info' %>
+    <%= link_to t('blacklight.bookmarks.view_in_iiif_viewer'), mirador_viewer(id: @bookmarks.first.user_id, encode: true), class: 'ms-1 flex-grow-1 btn btn-light' %>
   </div>
 <% end %>

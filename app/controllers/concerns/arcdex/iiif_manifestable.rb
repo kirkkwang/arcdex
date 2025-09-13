@@ -9,10 +9,11 @@ module Arcdex
     def iiif_manifest
       presenter = Arcdex::IiifManifestPresenter.new(
         base_url: request.protocol + request.host_with_port + search_catalog_path,
-        start_id: params[:id],
+        start_id: @start_id,
         fields: blacklight_config.component_indexed_terms_fields,
         documents: @documents,
-        set_id: @set_id
+        set_id: @set_id,
+        from_bookmarks: @from_bookmarks
       )
 
       respond_to do |format|
@@ -23,10 +24,23 @@ module Arcdex
     private
 
     def fetch_documents
-      @set_id = params[:id].split('-').first
-      @documents = search_service.repository.search(
-        { q: "parent_ids_ssim:\"#{@set_id}\"", sort: 'sort_ssi asc', rows: 1_000 }
-      ).documents
+      user_id = Arcdex::Hashids.decode(params[:id])
+
+      if user_id.present?
+        ids = Bookmark.where(user_id: user_id).pluck(:document_id)
+        query = { q: '*:*', fq: "id:(#{ids.join(' OR ')})", rows: ids.size, sort: 'release_date_sort desc' }
+
+        @set_id = params[:id]
+        @start_id = nil
+        @documents = search_service.repository.search(query).documents
+        @from_bookmarks = true
+      else
+        @set_id = params[:id].split('-').first
+        @start_id = params[:id]
+        @documents = search_service.repository.search(
+          { q: "parent_ids_ssim:\"#{@set_id}\"", sort: 'sort_ssi asc', rows: 1_000 }
+        ).documents
+      end
     end
   end
 end

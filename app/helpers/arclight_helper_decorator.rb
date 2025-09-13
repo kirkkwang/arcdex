@@ -67,6 +67,18 @@ module ArclightHelperDecorator
       view: 'gallery'
     )
   end
+
+  def mirador_viewer(id:, encode: false)
+    encoded_id = Arcdex::Hashids.encode(id) if encode
+
+    encoded_id ||= id
+
+    "/mirador_viewer.html?manifest=#{manifest_solr_document_url(encoded_id)}&theme=#{preferred_theme}"
+  end
+
+  def preferred_theme
+    cookies[:theme] || 'dark'
+  end
 end
 
 ArclightHelper.prepend(ArclightHelperDecorator)

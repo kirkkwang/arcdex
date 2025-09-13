@@ -12,7 +12,7 @@
     <script type="text/javascript">
       const urlParams = new URLSearchParams(window.location.search);
       const manifest = urlParams.get('manifest');
-      const canvasIndex = urlParams.get('canvasIndex') || 0;
+      const maximized = urlParams.get('maximized') === 'true';
       const theme = urlParams.get('theme') || 'light';
 
       var mirador = Mirador.viewer({
@@ -20,8 +20,8 @@
         "windows": [
           {
             "loadedManifest": manifest,
-            "canvasIndex": canvasIndex,
-            "thumbnailNavigationPosition": 'far-right'
+            "thumbnailNavigationPosition": 'far-right',
+            "maximized": maximized
           }
         ],
         selectedTheme: theme

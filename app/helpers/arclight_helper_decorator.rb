@@ -68,12 +68,12 @@ module ArclightHelperDecorator
     )
   end
 
-  def mirador_viewer(id:, encode: false)
+  def mirador_viewer(id:, encode: false, maximized: true)
     encoded_id = Arcdex::Hashids.encode(id) if encode
 
     encoded_id ||= id
 
-    "/mirador_viewer.html?manifest=#{manifest_solr_document_url(encoded_id)}&theme=#{preferred_theme}"
+    "/mirador_viewer.html?manifest=#{manifest_solr_document_url(encoded_id)}&theme=#{preferred_theme}&maximized=#{maximized}"
   end
 
   def preferred_theme

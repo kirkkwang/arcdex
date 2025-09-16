@@ -28,11 +28,12 @@ module Arcdex
 
       if user_id.present?
         ids = Bookmark.where(user_id: user_id).pluck(:document_id)
-        query = { q: '*:*', fq: "id:(#{ids.join(' OR ')})", rows: ids.size, sort: 'release_date_sort desc' }
+        query = { q: '*:*', fq: "id:(#{ids.join(' OR ')})", rows: ids.size }
 
         @set_id = params[:id]
         @start_id = nil
         @documents = search_service.repository.search(query).documents
+        @documents.sort_by! { |doc| ids.index(doc.id) || Float::INFINITY }
         @from_bookmarks = true
       else
         @set_id = params[:id].split('-').first

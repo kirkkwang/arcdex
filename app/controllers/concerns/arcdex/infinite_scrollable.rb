@@ -9,6 +9,8 @@ module Arcdex
     def index
       @response = search_service.search_results
 
+      yield if block_given?
+
       respond_to do |format|
         format.html { store_preferred_view }
         format.rss  { render layout: false }

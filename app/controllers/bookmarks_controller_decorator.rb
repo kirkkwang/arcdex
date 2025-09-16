@@ -12,10 +12,20 @@ module BookmarksControllerDecorator
     infinite_scroll_index do
       return if params[:sort].present?
 
-      sort_order = @bookmarks.pluck(:document_id)
+      sort_order = token_or_current_or_guest_user.bookmark_order || @bookmarks.pluck(:document_id)
       @response.documents.sort_by! do |doc|
         sort_order.index(doc.id) || Float::INFINITY
       end
+    end
+  end
+
+  def update_order
+    order_array = params[:new_order].split(',')
+
+    if token_or_current_or_guest_user.update_bookmark_order!(order_array)
+      head :ok
+    else
+      head :unprocessable_entity
     end
   end
 

@@ -27,7 +27,8 @@ module Arcdex
       user_id = Arcdex::Hashids.decode(params[:id])
 
       if user_id.present?
-        ids = Bookmark.where(user_id: user_id).pluck(:document_id)
+        user = User.find_by(id: user_id)
+        ids =   user.ordered_bookmark_ids
         query = { q: '*:*', fq: "id:(#{ids.join(' OR ')})", rows: ids.size }
 
         @set_id = params[:id]

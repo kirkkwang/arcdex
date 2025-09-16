@@ -40,14 +40,13 @@ Rails.application.routes.draw do
     end
   end
 
-  ##### TOGGLEABLE BOOKMARK via CatalogtController #####
-  if CatalogController.blacklight_config.bookmarks == true
-    resources :bookmarks, only: [:index, :update, :create, :destroy] do
-      concerns :exportable
 
-      collection do
-        delete 'clear'
-      end
+  resources :bookmarks, only: [:index, :update, :create, :destroy] do
+    concerns :exportable
+
+    collection do
+      delete 'clear'
+      post :update_order
     end
   end
 

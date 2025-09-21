@@ -23,6 +23,13 @@ module BookmarksControllerDecorator
     order_array = params[:new_order].split(',')
 
     if token_or_current_or_guest_user.update_bookmark_order!(order_array)
+      ActionCable.server.broadcast(
+        "bookmarks_#{token_or_current_or_guest_user.id}",
+        {
+          action: 'order_updated',
+          new_order: order_array
+        }
+      )
       head :ok
     else
       head :unprocessable_entity

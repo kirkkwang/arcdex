@@ -1,9 +1,18 @@
 import { Controller } from '@hotwired/stimulus'
+import { createConsumer } from "@rails/actioncable"
 import Sortable from 'sortablejs'
 
 export default class extends Controller {
   connect() {
     this.create();
+    this.setupCableSubscription();
+    this.isUpdating = false;
+  }
+
+  disconnect() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 
   create() {
@@ -18,7 +27,58 @@ export default class extends Controller {
     })
   }
 
+  setupCableSubscription() {
+    this.cable = createConsumer();
+    this.subscription = this.cable.subscriptions.create("BookmarksChannel", {
+      received: (data) => {
+        if (data.action === 'order_updated') {
+          this.handleRemoteOrderUpdate(data.new_order);
+        }
+      }
+    });
+  }
+
+  handleRemoteOrderUpdate(newOrder) {
+    // Set flag to prevent our own update from triggering another broadcast
+    this.isUpdating = true;
+
+    // Reorder the DOM elements to match the new order
+    this.reorderElements(newOrder);
+
+    // Reset flag after a short delay
+    setTimeout(() => {
+      this.isUpdating = false;
+    }, 100);
+  }
+
+  reorderElements(newOrder) {
+    const container = this.element;
+    const elements = Array.from(container.children);
+
+    // Create a map of document-id to element for quick lookup
+    const elementMap = {};
+    elements.forEach(el => {
+      const docId = el.getAttribute('data-document-id');
+      if (docId) {
+        elementMap[docId] = el;
+      }
+    });
+
+    // Reorder elements according to newOrder
+    newOrder.forEach(docId => {
+      const element = elementMap[docId];
+      if (element) {
+        container.appendChild(element); // This moves the element to the end
+      }
+    });
+  }
+
   onEnd() {
+    // Don't send update if this was triggered by a remote update
+    if (this.isUpdating) {
+      return;
+    }
+
     const bookmarkOrder = this.sortable.toArray().join(',');
 
     fetch('/bookmarks/update_order', {

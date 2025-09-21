@@ -2,6 +2,12 @@
   OVERRIDE Blacklight v8.12.1 to add sortablejs controller to bookmarks index view
 %>
 
+<% if controller_name == 'bookmarks' %>
+  <% content_for :head do %>
+    <%= action_cable_meta_tag %>
+  <% end %>
+<% end  %>
+
 <% view_config = local_assigns[:view_config] || blacklight_config&.view_config(document_index_view_type) %>
 <div class="container">
   <div id="documents" class="<%= (Array(view_config.classes || 'row-cols-2 row-cols-md-3') + ["row documents-#{view_config.key}"]).join(' ') %>" data-controller=<%= "sortable" if controller_name == 'bookmarks' %>>

@@ -120,7 +120,7 @@ GEM
     benchmark (0.4.1)
     bigdecimal (3.2.3)
     bindex (0.8.1)
-    blacklight (8.12.1)
+    blacklight (8.12.2)
       globalid
       i18n (>= 1.7.0)
       jbuilder (~> 2.7)

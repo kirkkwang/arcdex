@@ -1,23 +1,21 @@
 module Arcdex
   class CardViewComponent < Arcdex::UpperMetadataLayoutComponent
+    delegate :id, :image_url, to: :document
+
     def image
       content_tag :img, nil,
-                  src: document.image_url,
+                  src: image_url,
                   alt: 'Card image',
                   class: 'large-card-image',
                   data: {
                     action: 'click->image-zoom#open',
                     image_zoom_target: 'trigger',
-                    zoomed_image_url: document.image_url
+                    zoomed_image_url: image_url
                   }
     end
 
     def viewer
-      content_tag :iframe, nil,
-                  src: helpers.mirador_viewer(id: document.id, encode: false),
-                  width: '100%',
-                  height: '700px',
-                  allow: 'fullscreen'
+      render Arcdex::MiradorViewerComponent.new(id:)
     end
   end
 end

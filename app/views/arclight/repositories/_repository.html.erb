@@ -1,7 +1,14 @@
 <%#
   OVERRIDE Arclight v2.0.0.alpha for a complete redesign since we are not using
     the yml loaded Arclight::Repository objects.
+    Also add Mirador viewer if on the repository show page.
 %>
+
+<% if action_name == 'show' %>
+  <div class="mirador-viewer mb-3">
+    <%= render Arcdex::MiradorViewerComponent.new(id: repository.slug) %>
+  </div>
+<% end %>
 
 <div class="card arcdex-series mb-5">
   <div class="card-header">

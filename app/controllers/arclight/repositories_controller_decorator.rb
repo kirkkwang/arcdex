@@ -10,6 +10,17 @@ module Arclight
       @repository = Arclight::Repository.find(params[:id])
       @collections = @repository.documents.reverse
     end
+
+    def iiif_collection
+      presenter = Arcdex::IiifCollectionPresenter.new(
+        series: Arclight::Repository.find(params[:id]),
+        base_url: request.protocol + request.host_with_port + series_path
+      )
+
+      respond_to do |format|
+        format.json { render json: presenter }
+      end
+    end
   end
 end
 

@@ -25,6 +25,13 @@ module Arcdex
         manifest[:rights] = RIGHTS_STATEMENT
         manifest[:requiredStatement] = required_statement
         manifest[:homepage] = [homepage] unless from_bookmarks
+        manifest[:thumbnail] = [{
+          id: SolrDocument.find(set_id).thumbnail_url,
+          type: 'Image',
+          height: 342,
+          width: 245,
+          format: 'image/png'
+        }]
       end
     end
 

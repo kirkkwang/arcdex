@@ -57,6 +57,10 @@ module App
           headers: :any,
           methods: [:get, :options],
           max_age: 86400
+        resource '/series/*/manifest',
+          headers: :any,
+          methods: [:get, :options],
+          max_age: 86400
       end
     end
   end

@@ -12,8 +12,13 @@ Rails.application.routes.draw do
 
   # OVERRIDE Arclight repository routes to use /series instead
   # this is for anything that still uses /repositories or /repository/:id
-  get '/series', to: 'arclight/repositories#index', as: 'repositories'
-  get '/series/:id', to: 'arclight/repositories#show', as: 'repository'
+  resources :repositories, only: [:index, :show], path: '/series', controller: 'arclight/repositories' do
+    member do
+      get 'manifest', to: 'arclight/repositories#iiif_collection', defaults: { format: 'json' }, constraints: { format: 'json' }
+    end
+  end
+
+  get '/repositories/:id/manifest', to: redirect('/series/%{id}/manifest')
 
   get '/series', to: 'arclight/repositories#index', as: 'series'
   get '/series/:id', to: 'arclight/repositories#show', as: 'serie'

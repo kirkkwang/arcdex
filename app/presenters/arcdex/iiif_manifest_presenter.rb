@@ -1,6 +1,6 @@
 module Arcdex
   class IiifManifestPresenter
-    attr_reader :documents, :start_id, :set_id, :fields, :base_url, :from_bookmarks
+    attr_reader :documents, :start_id, :set_id, :fields, :base_url, :series, :from_bookmarks
 
     PRESENTATION_API_URL = 'http://iiif.io/api/presentation/3/context.json'
     RIGHTS_STATEMENT = 'http://rightsstatements.org/vocab/InC/1.0/'
@@ -11,6 +11,7 @@ module Arcdex
       @fields = fields
       @documents = documents
       @set_id = set_id
+      @series = SolrDocument.find(set_id).series unless from_bookmarks
       @from_bookmarks = from_bookmarks
     end
 
@@ -25,6 +26,8 @@ module Arcdex
         manifest[:rights] = RIGHTS_STATEMENT
         manifest[:requiredStatement] = required_statement
         manifest[:homepage] = [homepage] unless from_bookmarks
+        manifest[:thumbnail] = [thumbnail] unless from_bookmarks
+        manifest[:partOf] = [part_of] if series.present?
       end
     end
 
@@ -70,6 +73,23 @@ module Arcdex
       series = Array.wrap(documents.first['series_ssm'])
       set = Array.wrap(documents.first['parent_unittitles_ssm'])
       "#{series.first} - #{set.first}"
+    end
+
+    def thumbnail
+      {
+        id: SolrDocument.find(set_id).thumbnail_url,
+        type: 'Image',
+        height: 342,
+        width: 245,
+        format: 'image/png'
+      }
+    end
+
+    def part_of
+      {
+        id: "#{base_url.gsub('/catalog', '/series')}/#{series}/manifest",
+        type: 'Collection'
+      }
     end
   end
 end

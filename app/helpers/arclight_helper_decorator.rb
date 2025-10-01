@@ -73,7 +73,11 @@ module ArclightHelperDecorator
 
     encoded_id ||= id
 
-    "/mirador_viewer.html?manifest=#{manifest_solr_document_url(encoded_id)}&theme=#{preferred_theme}&maximized=#{maximized}"
+    if Arclight::Repository.find(id)
+      "/mirador_viewer.html?manifest=#{manifest_repository_url(CGI.escape(id))}&theme=#{preferred_theme}&maximized=#{maximized}"
+    else
+      "/mirador_viewer.html?manifest=#{manifest_solr_document_url(encoded_id)}&theme=#{preferred_theme}&maximized=#{maximized}"
+    end
   end
 
   def preferred_theme

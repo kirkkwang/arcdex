@@ -30,6 +30,7 @@ module Arcdex
           canvas[:metadata] = canvas_metadata
           canvas[:thumbnail] = [thumbnail_body]
           canvas[:homepage] = [homepage]
+          canvas[:partOf] = [part_of] if document.series.present?
         end
       end
     end
@@ -96,6 +97,13 @@ module Arcdex
 
     def metadata_value(field)
       Array.wrap(document[field]).to_sentence(two_words_connector: ' and ', last_word_connector: ', and ')
+    end
+
+    def part_of
+      {
+        id: "#{base_url.gsub('/catalog', '/series')}/#{document.series}/manifest",
+        type: 'Collection'
+      }
     end
   end
 end

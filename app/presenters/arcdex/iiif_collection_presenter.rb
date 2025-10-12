@@ -1,5 +1,7 @@
 module Arcdex
   class IiifCollectionPresenter
+    include Arcdex::IiifPresentable
+
     attr_reader :base_url, :series
 
     def initialize(series:, base_url:)
@@ -9,12 +11,12 @@ module Arcdex
 
     def as_json
       {}.tap do |collection|
-        collection['@context'] = 'http://iiif.io/api/presentation/3/context.json'
+        collection['@context'] = presentation_api_url
         collection[:id] = generate_id
         collection[:type] = 'Collection'
         collection[:label] = { en: [series.name] }
         collection[:items] = items
-        collection[:rights] = 'http://rightsstatements.org/vocab/InC/1.0/'
+        collection[:rights] = rights_statement
         collection[:requiredStatement] = required_statement
       end
     end
@@ -31,26 +33,9 @@ module Arcdex
           id: catalog_id(base_url, set),
           type: 'Manifest',
           label: { en: [set.title] },
-          thumbnail: [thumbnail(set)]
+          thumbnail: [thumbnail_body(set.thumbnail_url)]
         }
       end
-    end
-
-    def thumbnail(set)
-      {
-        id: set.thumbnail_url,
-        type: 'Image',
-        height: 342,
-        width: 245,
-        format: 'image/png'
-      }
-    end
-
-    def required_statement
-      {
-        label: { en: ['Attribution'] },
-        value: { en: ['Data provided by <a href="https://pokemontcg.io/" target="_blank">Pokémon TCG Developers</a>'] }
-      }
     end
 
     def catalog_id(base_url, set)

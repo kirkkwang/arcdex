@@ -1,14 +1,11 @@
 module Arcdex
   class IiifCanvasesPresenter
+    include Arcdex::IiifPresentable
+
     attr_reader :documents, :fields, :base_url
     attr_accessor :document
 
     delegate :id, :title, :image_url, :thumbnail_url, to: :document
-
-    IMAGE_HEIGHT = 1024
-    IMAGE_WIDTH = 733
-    THUMBNAIL_HEIGHT = 342
-    THUMBNAIL_WIDTH = 245
 
     def initialize(documents:, base_url:, fields:)
       @documents = documents
@@ -23,8 +20,8 @@ module Arcdex
         {}.tap do |canvas|
           canvas[:id] = generate_id(id:, str: 'canvas')
           canvas[:type] = 'Canvas'
-          canvas[:height] = IMAGE_HEIGHT
-          canvas[:width] = IMAGE_WIDTH
+          canvas[:height] = image_height
+          canvas[:width] = image_width
           canvas[:label] = { en: [title] }
           canvas[:items] = [annotation_page]
           canvas[:metadata] = canvas_metadata
@@ -36,6 +33,10 @@ module Arcdex
     end
 
     private
+
+    def image_height = 1024
+
+    def image_width = 733
 
     def annotation_page
       {
@@ -59,16 +60,6 @@ module Arcdex
       {
         id: image_url,
         type: 'Image',
-        format: 'image/png'
-      }
-    end
-
-    def thumbnail_body
-      {
-        id: thumbnail_url,
-        type: 'Image',
-        height: THUMBNAIL_HEIGHT,
-        width: THUMBNAIL_WIDTH,
         format: 'image/png'
       }
     end

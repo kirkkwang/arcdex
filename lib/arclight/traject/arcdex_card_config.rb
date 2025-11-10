@@ -8,7 +8,9 @@ settings do
   provide 'logger', Logger.new($stderr)
 end
 
-to_field 'id', lambda { |record, accumulator| accumulator << record['id'] }
+factory = Arcdex::CardAdapterFactory
+
+to_field 'id', lambda { |record, accumulator| accumulator << factory.call(record).id }
 
 to_field 'parent_ids_ssim' do |_record, accumulator, _context|
   accumulator.concat(settings[:parent].output_hash['parent_ids_ssim'] || [])
@@ -44,228 +46,145 @@ to_field 'normalized_title_ssm' do |_record, accumulator, context|
   accumulator << title
 end
 
-to_field 'series_ssm', lambda { |record, accumulator| accumulator << record['set']['series'] }
-to_field 'series_ssim', lambda { |record, accumulator| accumulator << record['set']['series'] }
-to_field 'series_tesim', lambda { |record, accumulator| accumulator << record['set']['series'] }
+to_field 'series_ssm', lambda { |record, accumulator| accumulator << factory.call(record).series }
+to_field 'series_ssim', lambda { |record, accumulator| accumulator << factory.call(record).series }
+to_field 'series_tesim', lambda { |record, accumulator| accumulator << factory.call(record).series }
 
-to_field 'supertype_ssm', lambda { |record, accumulator| accumulator << record['supertype'] }
+to_field 'supertype_ssm', lambda { |record, accumulator| accumulator << factory.call(record).supertype }
 
 to_field 'subtypes_ssm' do |record, accumulator|
-  if record['subtypes']
-    record['subtypes'].each do |subtype|
-      accumulator << subtype
-    end
+  factory.call(record).subtypes.each do |subtype|
+    accumulator << subtype
   end
 end
 
-to_field 'level_ssi', lambda { |record, accumulator| accumulator << record['level'] if record['level'] }
-to_field 'hp_isi', lambda { |record, accumulator| accumulator << record['hp'] if record['hp'] }
+to_field 'level_ssi', lambda { |record, accumulator| accumulator << factory.call(record).level }
+
+to_field 'hp_isi', lambda { |record, accumulator| accumulator << factory.call(record).hp }
 
 to_field 'types_ssm' do |record, accumulator|
-  if record['types']
-    record['types'].each do |type|
-      accumulator << type
-    end
+  factory.call(record).types.each do |type|
+    accumulator << type
   end
 end
 
-to_field 'evolves_from_ssm', lambda { |record, accumulator| accumulator << record['evolvesFrom'] if record['evolvesFrom'] }
+to_field 'evolves_from_ssm', lambda { |record, accumulator| accumulator << factory.call(record).evolves_from }
 
 to_field 'evolves_to_ssm' do |record, accumulator|
-  if record['evolvesTo']
-    record['evolvesTo'].each do |evolution|
-      accumulator << evolution
-    end
+  factory.call(record).evolves_to.each do |evolution|
+    accumulator << evolution
   end
 end
 
-to_field 'abilities_json_ssm' do |record, accumulator|
-  if record['abilities']
-    accumulator << record['abilities'].to_json
-  end
-end
+to_field 'abilities_json_ssm', lambda { |record, accumulator| accumulator << factory.call(record).abilities_json }
 to_field 'ability_fields' do |record, accumulator, context|
-  if record['abilities']
-    record['abilities'].each_with_index do |ability, index|
-      # Create indexed field names (1-based index)
-      ability_num = index + 1
+  factory.call(record).abilities.each_with_index do |ability, index|
+    # Create indexed field names (1-based index)
+    ability_num = index + 1
 
-      # Ability name
-      context.output_hash["ability_#{ability_num}_name_tesim"] = [ability['name']] if ability['name']
+    # Ability name
+    context.output_hash["ability_#{ability_num}_name_tesim"] = [factory.call(record).ability_name(index)]
 
-      # Ability text
-      context.output_hash["ability_#{ability_num}_text_tesim"] = [ability['text']] if ability['text']
+    # Ability text
+    context.output_hash["ability_#{ability_num}_text_tesim"] = [factory.call(record).ability_text(index)]
 
-      # Ability type
-      context.output_hash["ability_#{ability_num}_type_tesim"] = [ability['type']] if ability['type']
-    end
+    # Ability type
+    context.output_hash["ability_#{ability_num}_type_tesim"] = [factory.call(record).ability_type(index)]
   end
 end
-to_field 'number_of_abilities_isi' do |record, accumulator|
-  if record['abilities']
-    accumulator << record['abilities'].length
-  end
-end
+to_field 'number_of_abilities_isi', lambda { |record, accumulator| accumulator << factory.call(record).abilities.size }
 
-to_field 'attacks_json_ssm' do |record, accumulator|
-  if record['attacks']
-    accumulator << record['attacks'].to_json
-  end
-end
+to_field 'attacks_json_ssm', lambda { |record, accumulator| accumulator << factory.call(record).attacks_json }
 to_field 'attack_fields' do |record, accumulator, context|
-  if record['attacks']
-    record['attacks'].each_with_index do |attack, index|
-      # Create indexed field names (1-based index)
-      attack_num = index + 1
+  factory.call(record).attacks.each_with_index do |attack, index|
+    # Create indexed field names (1-based index)
+    attack_num = index + 1
 
-      # Attack name
-      context.output_hash["attack_#{attack_num}_name_tesim"] = [attack['name']] if attack['name']
+    # Attack name
+    context.output_hash["attack_#{attack_num}_name_tesim"] = [factory.call(record).attack_name(index)]
 
-      # Attack cost
-      if attack['cost']
-        context.output_hash["attack_#{attack_num}_cost_ssm"] = [attack['cost'].join(', ')]
-      end
+    # Attack cost
+    context.output_hash["attack_#{attack_num}_cost_ssm"] = [factory.call(record).attack_cost(index).join(', ')]
 
-      # Converted energy cost
-      if attack['convertedEnergyCost']
-        context.output_hash["attack_#{attack_num}_converted_cost_isi"] = [attack['convertedEnergyCost']]
-      end
+    # Converted energy cost
+    context.output_hash["attack_#{attack_num}_converted_cost_isi"] = [factory.call(record).attack_converted_energy_cost(index)]
 
-      # Attack damage
-      context.output_hash["attack_#{attack_num}_damage_ssm"] = [attack['damage']] if attack['damage']
-
-      # Attack text/effect
-      context.output_hash["attack_#{attack_num}_text_tesim"] = [attack['text']] if attack['text']
-    end
+    # Attack damage
+    context.output_hash["attack_#{attack_num}_damage_ssm"] = [factory.call(record).attack_damage(index)] if factory.call(record).attack_damage(index)
+    # Attack text/effect
+    context.output_hash["attack_#{attack_num}_text_tesim"] = [factory.call(record).attack_text(index)] if factory.call(record).attack_text(index)
   end
 
   # Also store complete attacks as JSON for flexibility
-  if record['attacks']
-    context.output_hash['attacks_json_ssi'] = [record['attacks'].to_json]
-  end
+  context.output_hash['attacks_json_ssi'] = [factory.call(record).attacks.to_json]
 end
-to_field 'number_of_attacks_isi' do |record, accumulator|
-  if record['attacks']
-    accumulator << record['attacks'].length
-  end
-end
+to_field 'number_of_attacks_isi', lambda { |record, accumulator| accumulator << factory.call(record).attacks.size }
 
-to_field 'weaknesses_json_ssm' do |record, accumulator|
-  if record['weaknesses']
-    accumulator << record['weaknesses'].to_json
-  end
-end
+to_field 'weaknesses_json_ssm', lambda { |record, accumulator| accumulator << factory.call(record).weaknesses_json }
 to_field 'weaknesses_ssm' do |record, accumulator|
-  if record['weaknesses']
-    record['weaknesses'].each do |weakness|
-      weakness_info = "#{weakness['type']}: #{weakness['value']}"
-      accumulator << weakness_info
-    end
+  factory.call(record).weaknesses.each_with_index do |weakness, index|
+    weakness_info = "#{factory.call(record).weakness_type(index)}: #{factory.call(record).weakness_value(index)}"
+    accumulator << weakness_info
   end
 end
 to_field 'weakness_type_ssm' do |record, accumulator|
-  if record['weaknesses']
-    record['weaknesses'].each do |weakness|
-      accumulator << weakness['type']
+  if factory.call(record).weaknesses.any?
+    factory.call(record).weaknesses.each_with_index do |weakness, index|
+      accumulator << factory.call(record).weakness_type(index)
     end
   else
-    accumulator << 'None' if record['supertype'] == 'Pokémon'
+    accumulator << 'None' if factory.call(record).supertype == 'Pokémon'
   end
 end
 
-to_field 'retreat_cost_ssm' do |record, accumulator|
-  if record['retreatCost']
-    accumulator << record['retreatCost'].join(', ')
-  end
-end
+to_field 'retreat_cost_ssm', lambda { |record, accumulator| accumulator << factory.call(record).retreat_cost }
 
-to_field 'converted_retreat_cost_isi', lambda { |record, accumulator| accumulator << record['convertedRetreatCost'].to_i }
+to_field 'converted_retreat_cost_isi', lambda { |record, accumulator| accumulator << factory.call(record).converted_retreat_cost }
 
 to_field 'number_ssm' do |record, accumulator|
-  if record['id'] == 'zsv10pt5-80'
-    accumulator << "80/#{settings[:complete_set_count]}"
-  else
-    accumulator << "#{record['number']}/#{settings[:complete_set_count]}"
-  end
+  complete_set_count = settings[:complete_set_count]
+  accumulator << "#{factory.call(record).number}/#{complete_set_count}"
 end
 to_field 'number_tesim' do |record, accumulator|
-  if record['id'] == 'zsv10pt5-80'
-    accumulator << "80/#{settings[:complete_set_count]}"
-  else
-    accumulator << "#{record['number']}/#{settings[:complete_set_count]}"
-  end
+  complete_set_count = settings[:complete_set_count]
+  accumulator << "#{factory.call(record).number}/#{complete_set_count}"
 end
 to_field 'number_no_set_tesim' do |record, accumulator|
-  if record['id'] == 'zsv10pt5-80'
-    accumulator << '80'
-  else
-    accumulator << "#{record['number']}"
-  end
+  complete_set_count = settings[:complete_set_count]
+  accumulator << factory.call(record).number
 end
 
 to_field 'sort_ssi' do |record, accumulator|
   # the api doesn't necessarily return all cards in the right order
   # ex. in set 151, Ivysaur is first and Bulbasaur is second
-
-  # Revert when https://api.pokemontcg.io/v2/cards/zsv10pt5-80 number gets corrected
-  number = if record['id'] == 'zsv10pt5-80'
-    '00000080'
-  else
-    record['number'].rjust(8, '0')
-  end
-
-  accumulator << number
+  accumulator << factory.call(record).number.to_s.rjust(8, '0')
 end
 
-to_field 'artist_ssm', lambda { |record, accumulator| accumulator << record['artist'] }
-to_field 'artist_tesim', lambda { |record, accumulator| accumulator << record['artist'] }
+to_field 'artist_ssm', lambda { |record, accumulator| accumulator << factory.call(record).artist }
+to_field 'artist_tesim', lambda { |record, accumulator| accumulator << factory.call(record).artist }
 
-to_field 'rarity_ssm' do |record, accumulator|
-  # Revert when https://api.pokemontcg.io/v2/cards/rsv10pt5-172 and https://api.pokemontcg.io/v2/cards/zsv10pt5-171
-  # rarities gets corrected
-  if record['id'] == 'rsv10pt5-172' || record['id'] == 'zsv10pt5-171'
-    accumulator << 'Black White Rare'
-  else
-    accumulator << record['rarity']
-  end
-end
+to_field 'rarity_ssm', lambda { |record, accumulator| accumulator << factory.call(record).rarity }
 
-to_field 'regulation_mark_tesim', lambda { |record, accumulator| accumulator << record['regulationMark'] if record['regulationMark'] }
-to_field 'regulation_mark_ssi', lambda { |record, accumulator| accumulator << record['regulationMark'] if record['regulationMark'] }
+to_field 'regulation_mark_tesim', lambda { |record, accumulator| accumulator << factory.call(record).regulation_mark }
+to_field 'regulation_mark_ssi', lambda { |record, accumulator| accumulator << factory.call(record).regulation_mark }
 
-to_field 'flavor_text_ssi', lambda { |record, accumulator| accumulator << record['flavorText'] }
-to_field 'flavor_text_tesim', lambda { |record, accumulator| accumulator << record['flavorText'] }
+to_field 'flavor_text_ssi', lambda { |record, accumulator| accumulator << factory.call(record).flavor_text }
+to_field 'flavor_text_tesim', lambda { |record, accumulator| accumulator << factory.call(record).flavor_text }
 to_field 'flavor_text_html_ssm' do |record, accumulator|
-  accumulator << "<em>#{record["flavorText"]}</em>" if record['flavorText']
+  accumulator << "<em>#{factory.call(record).flavor_text}</em>" if factory.call(record).flavor_text
 end
 
-to_field 'national_pokedex_numbers_isim' do |record, accumulator|
-  if record['nationalPokedexNumbers']
-    record['nationalPokedexNumbers'].each do |number|
-      accumulator << number
-    end
-  end
-end
+to_field 'national_pokedex_numbers_isim', lambda { |record, accumulator| accumulator.concat(factory.call(record).national_pokedex_numbers) }
 
-to_field 'legalities_json_ssi' do |record, accumulator|
-  if record['legalities']
-    accumulator << record['legalities'].to_json
-  end
-end
+to_field 'legalities_json_ssi', lambda { |record, accumulator| accumulator << factory.call(record).legalities_json }
 to_field 'legalities_ssm' do |record, accumulator|
-  if record['legalities']
-    record['legalities'].each do |format, status|
-      accumulator << "#{format}: #{status}"
-    end
+  factory.call(record).legalities.each do |format, status|
+    accumulator << "#{format}: #{status}"
   end
 end
 
 to_field 'release_date_ssm' do |record, accumulator|
-  if record['set']['releaseDate']
-    # Convert from 1999/01/09 to 1999-01-09 format
-    formatted_date = record['set']['releaseDate'].gsub('/', '-')
-    accumulator << formatted_date
-  end
+  accumulator << settings[:release_date]
 end
 to_field 'release_year_isi' do |_record, accumulator, context|
   context.output_hash['release_date_ssm'].each do |date|
@@ -275,58 +194,32 @@ to_field 'release_year_isi' do |_record, accumulator, context|
   end
 end
 to_field 'release_date_sort' do |record, accumulator|
-  if record['set']['releaseDate']
-    # Keep the format YYYY/MM/DD which sorts correctly as strings
-    # Append set ID to ensure the set is grouped together even in all results view
-    accumulator << (record['set']['releaseDate'] + record['set']['id'])
-  end
+  # Keep the format YYYY/MM/DD which sorts correctly as strings
+  # Append set ID to ensure the set is grouped together even in all results view
+  accumulator << (settings[:release_date] + settings[:set_id]) if settings[:release_date]
 end
 
-to_field 'images_json_ssi' do |record, accumulator|
-  if record['images']
-    accumulator << record['images'].to_json
-  end
-end
-to_field 'small_url_ssm' do |record, accumulator|
-  if record['images'] && record['images']['small']
-    accumulator << record['images']['small']
-  end
-end
+to_field 'images_json_ssi', lambda { |record, accumulator| accumulator << factory.call(record).images_json }
+to_field 'small_url_ssm', lambda { |record, accumulator| accumulator << factory.call(record).small_image }
 to_field 'small_url_html_ssm' do |record, accumulator|
-  if record['images'] && record['images']['small']
-    url = record['images']['small']
-    accumulator << "<img src=\"#{url}\" alt=\"Card image\" class=\"small-card-image\" />"
-  end
+  url = factory.call(record).small_image
+  accumulator << "<img src=\"#{url}\" alt=\"Card image\" class=\"small-card-image\" />"
 end
-to_field 'thumbnail_path_ssi' do |record, accumulator|
-  if record['images'] && record['images']['small']
-    accumulator << record['images']['small']
-  end
-end
-to_field 'large_url_ssm' do |record, accumulator|
-  if record['images'] && record['images']['large']
-    accumulator << record['images']['large']
-  end
-end
+to_field 'thumbnail_path_ssi', lambda { |record, accumulator| accumulator << factory.call(record).small_image }
+to_field 'large_url_ssm', lambda { |record, accumulator| accumulator << factory.call(record).large_image }
 to_field 'large_url_html_ssm' do |record, accumulator|
-  if record['images'] && record['images']['large']
-    url = record['images']['large']
-    accumulator << "<img src=\"#{url}\" alt=\"Card image\" class=\"large-card-image\" />"
-  end
+  url = factory.call(record).large_image
+  accumulator << "<img src=\"#{url}\" alt=\"Card image\" class=\"large-card-image\" />"
 end
 
-to_field 'tcg_player_url_ssi' do |record, accumulator|
-  if record['tcgplayer']
-    accumulator << record['tcgplayer']['url']
-  end
-end
+to_field 'tcg_player_url_ssi', lambda { |record, accumulator| accumulator << factory.call(record).tcg_player_price_url }
 to_field 'tcg_player_market_price_isi' do |record, accumulator|
-  if record['tcgplayer'] && record['tcgplayer']['prices']
-    prices_keys = record['tcgplayer']['prices'].keys
+  if factory.call(record).tcgplayer && factory.call(record).tcgplayer_prices
+    prices_keys = factory.call(record).tcgplayer_prices.keys
     prices = []
     prices_keys.each do |price_type|
-      if record['tcgplayer']['prices'][price_type]
-        price_info = record['tcgplayer']['prices'][price_type]
+      if factory.call(record).tcgplayer_prices[price_type]
+        price_info = factory.call(record).tcgplayer_prices[price_type]
         prices << price_info['market']
       end
     end
@@ -334,35 +227,31 @@ to_field 'tcg_player_market_price_isi' do |record, accumulator|
   end
 end
 to_field 'tcg_player_price_updated_at_ssi' do |record, accumulator|
-  if record['tcgplayer'] && record['tcgplayer']['updatedAt']
-    formatted_date = record['tcgplayer']['updatedAt'].gsub('/', '-')
+  if factory.call(record).tcgplayer && factory.call(record).tcgplayer_updated_at
+    formatted_date = factory.call(record).tcgplayer_updated_at
     accumulator << formatted_date
   end
 end
 to_field 'tcg_player_prices_json_ssi' do |record, accumulator|
-  if record['tcgplayer'] && record['tcgplayer']['prices']
-    accumulator << record['tcgplayer']['prices'].to_json
+  if factory.call(record).tcgplayer && factory.call(record).tcgplayer_prices
+    accumulator << factory.call(record).tcgplayer_prices.to_json
   end
 end
 
-to_field 'cardmarket_url_ssi' do |record, accumulator|
-  if record['cardmarket']
-    accumulator << record['cardmarket']['url']
-  end
-end
+to_field 'cardmarket_url_ssi', lambda { |record, accumulator| accumulator << factory.call(record).cardmarket_url }
 to_field 'cardmarket_avg7_price_isi' do |record, accumulator|
-  if record['cardmarket'] && record['cardmarket']['prices'] && record['cardmarket']['prices']['avg7']
-    accumulator << record['cardmarket']['prices']['avg7']
+  if factory.call(record).cardmarket && factory.call(record).cardmarket_prices && factory.call(record).cardmarket_prices['avg7']
+    accumulator << factory.call(record).cardmarket_avg7_price
   end
 end
 to_field 'cardmarket_price_updated_at_ssi' do |record, accumulator|
-  if record['cardmarket'] && record['cardmarket']['updatedAt']
-    formatted_date = record['cardmarket']['updatedAt'].gsub('/', '-')
+  if factory.call(record).cardmarket && factory.call(record).cardmarket_updated_at
+    formatted_date = factory.call(record).cardmarket_updated_at
     accumulator << formatted_date
   end
 end
 to_field 'cardmarket_prices_json_ssi' do |record, accumulator|
-  if record['cardmarket'] && record['cardmarket']['prices']
-    accumulator << record['cardmarket']['prices'].to_json
+  if factory.call(record).cardmarket && factory.call(record).cardmarket_prices
+    accumulator << factory.call(record).cardmarket_prices_json
   end
 end

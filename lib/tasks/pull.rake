@@ -34,12 +34,12 @@ namespace :arcdex do
 
   desc 'Pull Pokémon TCG Pocket data from TCGdex'
   task pull_pocket: :environment do
-    puts "🎮 Fetching Pokémon TCG Pocket series..."
+    puts '🎮 Fetching Pokémon TCG Pocket series...'
     url = "#{TCGDEX_BASE_URL}/#{TCGDEX_LANGUAGE}/series/tcgp"
 
     response_data = fetch_and_parse_with_retry(url)
 
-    set_ids = response_data['sets'].map { |s| s['id'] }
+    set_ids = response_data['sets'].pluck('id')
     puts "📦 Found #{set_ids.length} Pocket sets: #{set_ids.join(', ')}"
 
     set_ids.each do |set_id|
@@ -68,12 +68,12 @@ namespace :arcdex do
 
     # Check if booster data exists
     if set_data['boosters']
-      puts "🎲 Boosters: #{set_data['boosters'].map { |b| b['name'] }.join(', ')}"
+      puts "🎲 Boosters: #{set_data['boosters'].pluck('name').join(', ')}"
     else
       puts "⚠️  No booster data available for #{set_id} yet"
     end
 
-    card_ids = set_data['cards'].map { |c| c['id'] }
+    card_ids = set_data['cards'].pluck('id')
     puts "🃏 Fetching full details for #{card_ids.length} cards..."
 
     # Fetch all cards concurrently

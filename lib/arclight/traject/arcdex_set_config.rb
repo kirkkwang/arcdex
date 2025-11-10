@@ -1,4 +1,5 @@
 require_relative 'json_reader'
+require_relative '../../arcdex/card_adapter_factory'
 require 'logger'
 require 'debug'
 
@@ -9,6 +10,8 @@ settings do
   provide 'logger', Logger.new($stderr)
 end
 
+factory = Arcdex::CardAdapterFactory
+
 # ==================
 # Basic field mapping
 # ==================
@@ -16,49 +19,36 @@ end
 # Set this as a collection-level record
 to_field 'level_ssm', lambda { |_record, accumulator| accumulator << 'collection' }
 to_field 'level_ssim', lambda { |_record, accumulator| accumulator << 'Set' }
-to_field 'id', lambda { |record, accumulator| accumulator << record.first['set']['id'] }
-to_field 'child_component_count_isi', lambda { |record, accumulator| accumulator << record.count }
-to_field 'ead_ssi' do |record, accumulator|
- accumulator << record.first['set']['id']
-end
+to_field 'id', lambda { |record, accumulator| accumulator << factory.call(record).set_id }
+to_field 'child_component_count_isi', lambda { |record, accumulator| accumulator << factory.call(record).child_component_count }
+to_field 'ead_ssi', lambda { |record, accumulator| accumulator << factory.call(record).set_id }
 
 # Set collection fields
-to_field 'title_ssm', lambda { |record, accumulator| accumulator << record.first['set']['name'] }
-to_field 'title_tesim', lambda { |record, accumulator| accumulator << record.first['set']['name'] }
-to_field 'normalized_title_ssm', lambda { |record, accumulator| accumulator << record.first['set']['name'] }
+to_field 'title_ssm', lambda { |record, accumulator| accumulator << factory.call(record).set_name }
+to_field 'title_tesim', lambda { |record, accumulator| accumulator << factory.call(record).set_name }
+to_field 'normalized_title_ssm', lambda { |record, accumulator| accumulator << factory.call(record).set_name }
 
-to_field 'series_ssm', lambda { |record, accumulator| accumulator << record.first['set']['series'] if record.first['set']['series'] }
-to_field 'series_ssim', lambda { |record, accumulator| accumulator << record.first['set']['series'] if record.first['set']['series'] }
+to_field 'series_ssm', lambda { |record, accumulator| accumulator << factory.call(record).series }
+to_field 'series_ssim', lambda { |record, accumulator| accumulator << factory.call(record).series }
 
-to_field 'printed_total_isi', lambda { |record, accumulator| accumulator << record.first['set']['printedTotal'].to_i if record.first['set']['printedTotal'] }
-to_field 'printed_total_ssim', lambda { |record, accumulator| accumulator << record.first['set']['printedTotal'] if record.first['set']['printedTotal'] }
+to_field 'printed_total_isi', lambda { |record, accumulator| accumulator << factory.call(record).printed_total&.to_i }
+to_field 'printed_total_ssim', lambda { |record, accumulator| accumulator << factory.call(record).printed_total }
 
-to_field 'total_items_isi', lambda { |record, accumulator| accumulator << record.first['set']['total'].to_i if record.first['set']['total'] }
-to_field 'total_items_ssim', lambda { |record, accumulator| accumulator << record.first['set']['total'] if record.first['set']['total'] }
+to_field 'total_items_isi', lambda { |record, accumulator| accumulator << factory.call(record).total&.to_i }
+to_field 'total_items_ssim', lambda { |record, accumulator| accumulator << factory.call(record).total }
 
-to_field 'legalities_json_ssi' do |record, accumulator|
-  if record.first['set']['legalities']
-    accumulator << record.first['set']['legalities'].to_json
-  end
-end
+to_field 'legalities_json_ssi', lambda { |record, accumulator| accumulator << factory.call(record).legalities&.to_json }
 to_field 'legalities_ssm' do |record, accumulator|
-  if record.first['set']['legalities']
-    record.first['set']['legalities'].each do |format, status|
-      accumulator << "#{format}: #{status}"
-    end
+  factory.call(record).legalities&.each do |format, status|
+    accumulator << "#{format}: #{status}"
   end
 end
 
-to_field 'ptcgo_code_ssi', lambda { |record, accumulator| accumulator << record.first['set']['ptcgoCode'] if record.first['set']['ptcgoCode'] }
-to_field 'ptcgo_code_ssim', lambda { |record, accumulator| accumulator << record.first['set']['ptcgoCode'] if record.first['set']['ptcgoCode'] }
+to_field 'ptcgo_code_ssi', lambda { |record, accumulator| accumulator << factory.call(record).ptcgo_code }
+to_field 'ptcgo_code_ssim', lambda { |record, accumulator| accumulator << factory.call(record).ptcgo_code }
 
-to_field 'release_date_ssm' do |record, accumulator|
-  if record.first['set']['releaseDate']
-    # Convert from 1999/01/09 to 1999-01-09 format
-    formatted_date = record.first['set']['releaseDate'].gsub('/', '-')
-    accumulator << formatted_date
-  end
-end
+# Convert from 1999/01/09 to 1999-01-09 format
+to_field 'release_date_ssm', lambda { |record, accumulator| accumulator << factory.call(record).release_date }
 to_field 'release_year_isi' do |_record, accumulator, context|
   context.output_hash['release_date_ssm'].each do |date|
     # Extract the year from the date string
@@ -67,68 +57,56 @@ to_field 'release_year_isi' do |_record, accumulator, context|
   end
 end
 to_field 'release_date_sort' do |record, accumulator|
-  if record.first['set']['releaseDate']
-    # Keep the format YYYY/MM/DD which sorts correctly as strings
-    # Append set ID to ensure the set is grouped together even in all results view
-    accumulator << (record.first['set']['releaseDate'] + record.first['set']['id'])
-  end
+  # Keep the format YYYY/MM/DD which sorts correctly as strings
+  # Append set ID to ensure the set is grouped together even in all results view
+  accumulator << (factory.call(record).release_date + factory.call(record).set_id)
 end
 
-to_field 'updated_at_ssm' do |record, accumulator|
-  accumulator << record.first['set']['updatedAt'] if record.first['set']['updatedAt']
-end
+to_field 'updated_at_ssm', lambda { |record, accumulator| accumulator << factory.call(record).updated_at }
 to_field 'updated_at_sort' do |record, accumulator|
-  if record.first['set']['updatedAt']
+  if factory.call(record).updated_at
     # Convert from "2022/10/10 15:12:00" to "2022-10-10T15:12:00"
-    formatted_datetime = record.first['set']['updatedAt'].gsub('/', '-').gsub(' ', 'T')
+    formatted_datetime = factory.call(record).updated_at&.gsub('/', '-').gsub(' ', 'T')
     accumulator << formatted_datetime
   end
 end
 
-to_field 'images_json_ssi' do |record, accumulator|
-  if record.first['set']['images']
-    accumulator << record.first['set']['images'].to_json
-  end
-end
-to_field 'symbol_url_ssm' do |record, accumulator|
-  if record.first['set']['images'] && record.first['set']['images']['symbol']
-    accumulator << record.first['set']['images']['symbol']
-  end
-end
+to_field 'images_json_ssi', lambda { |record, accumulator| accumulator << factory.call(record).images_json }
+to_field 'symbol_url_ssm', lambda { |record, accumulator| accumulator << factory.call(record).symbol_url }
 to_field 'symbol_url_html_ssm' do |record, accumulator|
-  if record.first['set']['images'] && record.first['set']['images']['symbol']
-    url = record.first['set']['images']['symbol']
+  if factory.call(record).images_json && factory.call(record).symbol_url
+    url = factory.call(record).symbol_url
     accumulator << "<img src=\"#{url}\" alt=\"Set symbol\" class=\"set-symbol\" />"
   end
 end
 to_field 'logo_url_ssm' do |record, accumulator|
-  if record.first['set']['images'] && record.first['set']['images']['logo']
-    accumulator << record.first['set']['images']['logo']
+  if factory.call(record).images_json && factory.call(record).logo_url
+    accumulator << factory.call(record).logo_url
   end
 end
 to_field 'logo_url_html_ssm' do |record, accumulator|
-  if record.first['set']['images'] && record.first['set']['images']['logo']
-    url = record.first['set']['images']['logo']
+  if factory.call(record).images_json && factory.call(record).logo_url
+    url = factory.call(record).logo_url
     accumulator << "<img src=\"#{url}\" alt=\"Set logo\" class=\"set-logo\" />"
   end
 end
 to_field 'thumbnail_path_ssi' do |record, accumulator|
-  if record.first['set']['images'] && record.first['set']['images']['logo']
-    accumulator << record.first['set']['images']['logo']
+  if factory.call(record).images_json && factory.call(record).logo_url
+    accumulator << factory.call(record).logo_url
   end
 end
 
 to_field 'tcg_player_price_updated_at_ssi' do |record, accumulator|
-  if record.first['tcgplayer'] && record.first['tcgplayer']['updatedAt']
-    formatted_date = record.first['tcgplayer']['updatedAt'].gsub('/', '-')
+  if factory.call(record).tcgplayer && factory.call(record).tcgplayer_updated_at
+    formatted_date = factory.call(record).tcgplayer_updated_at
     accumulator << formatted_date
   end
 end
 
 to_field 'extent_ssm' do |record, accumulator|
-  accumulator << "#{record.first['set']['total']} total cards"
-  accumulator << "ID: #{record.first['set']['id']}"
-  accumulator << "Release Date: #{record.first['set']['releaseDate'].gsub('/', '-')}"
+  accumulator << "#{factory.call(record).total} total cards"
+  accumulator << "ID: #{factory.call(record).set_id}"
+  accumulator << "Release Date: #{factory.call(record).release_date}"
 end
 
 # =============================
@@ -136,7 +114,11 @@ end
 # =============================
 
 to_field 'components' do |records, accumulator, context|
-  cards = records
+  cards = if records.is_a?(Array) # pokemontcg.io
+            records
+  else # tcgdex.dev
+            records.fetch('cards', [])
+  end
 
   counter = Class.new do
     def increment
@@ -155,7 +137,9 @@ to_field 'components' do |records, accumulator, context|
       provide :logger, context.settings[:logger]
       provide :card_config, context.settings[:card_config]
       provide :total_records_count, cards.size
-      provide :complete_set_count, cards.first['set']['printedTotal']
+      provide :complete_set_count, factory.call(records).total
+      provide :release_date, factory.call(records).release_date
+      provide :set_id, factory.call(records).set_id
     end
 
     i.load_config_file(context.settings[:card_config])

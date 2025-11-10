@@ -16,7 +16,7 @@ namespace :arcdex do
   desc 'Index a directory of EADs, use DIR=<path/to/directory>'
   task :index_dir do
     dir = ENV.fetch('DIR', 'data')
-    Dir.glob(File.join(dir, '*.json')).each do |file|
+    Dir.glob(File.join(dir, '**', '*.json')).each do |file|
       system("FILE=#{file} rails arcdex:index")
     end
   end

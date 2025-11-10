@@ -1,11 +1,13 @@
 # frozen_string_literal: true
 
 namespace :arcdex do
-  BASE_URL = 'https://api.pokemontcg.io/v2'
+  POKEMON_TCG_IO_BASE_URL = 'https://api.pokemontcg.io/v2'
+  TCGDEX_BASE_URL = 'https://api.tcgdex.net/v2'
+  TCGDEX_LANGUAGE = 'en'
 
   desc 'Pull data from pokemontcg.io'
   task pull: :environment do
-    url = "#{BASE_URL}/sets"
+    url = "#{POKEMON_TCG_IO_BASE_URL}/sets"
     puts "🌎 Fetching sets from #{url}"
     response_data = fetch_and_parse_with_retry(url)
 
@@ -23,11 +25,91 @@ namespace :arcdex do
     set_id = ENV.fetch('SET_ID', nil)
     raise 'SET_ID required' if set_id.nil?
 
-    url = "#{BASE_URL}/sets/#{set_id}"
+    url = "#{POKEMON_TCG_IO_BASE_URL}/sets/#{set_id}"
     puts "🌎 Fetching set from #{url}"
     response_data = fetch_and_parse_with_retry(url)
     set_info = response_data['data']
     pull_set(set_info)
+  end
+
+  desc 'Pull Pokémon TCG Pocket data from TCGdex'
+  task pull_pocket: :environment do
+    puts "🎮 Fetching Pokémon TCG Pocket series..."
+    url = "#{TCGDEX_BASE_URL}/#{TCGDEX_LANGUAGE}/series/tcgp"
+
+    response_data = fetch_and_parse_with_retry(url)
+
+    set_ids = response_data['sets'].map { |s| s['id'] }
+    puts "📦 Found #{set_ids.length} Pocket sets: #{set_ids.join(', ')}"
+
+    set_ids.each do |set_id|
+      pull_pocket_set(set_id)
+    end
+  end
+
+  desc 'Pull single Pocket set from TCGdex'
+  task pull_pocket_set: :environment do
+    set_id = ENV.fetch('SET_ID', nil)
+    raise 'SET_ID required (e.g., A1, A1a, B1)' if set_id.nil?
+
+    pull_pocket_set(set_id)
+  end
+
+  def pull_pocket_set(set_id) # rubocop:disable Rake/MethodDefinitionInTask
+    puts "\n📦 Processing Pocket set: #{set_id}"
+
+    # Get set info with brief card list
+    set_url = "#{TCGDEX_BASE_URL}/#{TCGDEX_LANGUAGE}/sets/#{set_id}"
+    puts "🌎 Fetching set from #{set_url}"
+    set_data = fetch_and_parse_with_retry(set_url)
+
+    puts "📋 Set: #{set_data['name']}"
+    puts "📊 Total cards: #{set_data['cardCount']['total']}"
+
+    # Check if booster data exists
+    if set_data['boosters']
+      puts "🎲 Boosters: #{set_data['boosters'].map { |b| b['name'] }.join(', ')}"
+    else
+      puts "⚠️  No booster data available for #{set_id} yet"
+    end
+
+    card_ids = set_data['cards'].map { |c| c['id'] }
+    puts "🃏 Fetching full details for #{card_ids.length} cards..."
+
+    # Fetch all cards concurrently
+    full_cards = fetch_cards_concurrently(card_ids)
+
+    # Replace brief cards with full data
+    set_data['cards'] = full_cards
+
+    # Save to file
+    output_path = Rails.root.join('data', 'pocket', "#{set_id}.json")
+    output_path.dirname.mkpath # Create pocket directory if needed
+
+    puts "💾 Saving to #{output_path}"
+    output_path.write(JSON.pretty_generate(set_data))
+
+    puts "✅ Done! Saved #{full_cards.length} cards for #{set_id}"
+  end
+
+  def fetch_cards_concurrently(card_ids, max_concurrent: 15) # rubocop:disable Rake/MethodDefinitionInTask
+    require 'concurrent'
+
+    pool = Concurrent::FixedThreadPool.new(max_concurrent)
+
+    promises = card_ids.map do |card_id|
+      Concurrent::Promise.execute(executor: pool) do
+        url = "#{TCGDEX_BASE_URL}/#{TCGDEX_LANGUAGE}/cards/#{card_id}"
+        fetch_and_parse_with_retry(url)
+      end
+    end
+
+    # Wait for all to complete
+    results = promises.map(&:value!)
+    pool.shutdown
+    pool.wait_for_termination
+
+    results
   end
 
   def fetch_and_parse_with_retry(url, max_retries: 10, base_delay: 2) # rubocop:disable Rake/MethodDefinitionInTask
@@ -77,7 +159,7 @@ namespace :arcdex do
 
     total_pages.times do |i|
       puts "📄 Fetching page #{i+1}/#{total_pages}..."
-      url = "#{BASE_URL}/cards?page=#{page}&pageSize=#{page_size}&q=set.id:#{id}"
+      url = "#{POKEMON_TCG_IO_BASE_URL}/cards?page=#{page}&pageSize=#{page_size}&q=set.id:#{id}"
       puts "🔗 Fetching URL: #{url}"
 
       begin

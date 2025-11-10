@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 9b054c66d4fc5ec526cff3566d1c058681302b67
+  revision: a9b4f5f638fbfc908dc4e657915278cc2451810c
   branch: main
   specs:
     actioncable (8.2.0.alpha)
@@ -229,7 +229,7 @@ GEM
     jbuilder (2.14.1)
       actionview (>= 7.0.0)
       activesupport (>= 7.0.0)
-    json (2.15.0)
+    json (2.16.0)
     jsonpath (1.1.5)
       multi_json
     jwt (3.1.2)
@@ -402,7 +402,7 @@ GEM
       psych (>= 4.0.0)
       tsort
     regexp_parser (2.11.3)
-    reline (0.6.2)
+    reline (0.6.3)
       io-console (~> 0.5)
     request_store (1.7.0)
       rack (>= 1.4)

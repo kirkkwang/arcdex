@@ -51,11 +51,15 @@ module Arcdex
     end
 
     def symbol_url
-      record.fetch('symbol', '') + '.png'
+      image = record.fetch('symbol', nil)
+      image = "https://assets.tcgdex.net/univ/tcgp/#{record.fetch('cards', nil)&.first&.fetch('set', nil)&.fetch('id', nil)}/symbol" if image.nil?
+      image + '.png'
     end
 
     def logo_url
-      record.fetch('logo', '') + '.png'
+      image = record.fetch('logo', nil)
+      image = "https://assets.tcgdex.net/en/tcgp/#{record.fetch('cards', nil)&.first&.fetch('set', nil)&.fetch('id', nil)}/logo" if image.nil?
+      image + '.png'
     end
 
     def tcgplayer

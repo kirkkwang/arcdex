@@ -193,12 +193,12 @@ class CatalogController < ApplicationController
     }
     config.add_facet_field 'supertype', field: 'supertype_ssm', limit: 10, excludable: true
     config.add_facet_field 'subtypes', field: 'subtypes_ssm', limit: 10, excludable: true
+    config.add_facet_field 'types', field: 'types_ssm', excludable: true
     config.add_facet_field 'Hit Points', field: 'hp_isi', range: true, range_config: {
       show_missing_link: false
     }, if: ->(_controller, _field, facet_field) do
       facet_field.response.facet_counts['facet_fields']['hp_isi'].present?
     end
-    config.add_facet_field 'types', field: 'types_ssm', excludable: true
     config.add_facet_field 'number of abilities', field: 'number_of_abilities_isi', range: true, range_config: {
       show_missing_link: false
     }, if: ->(_controller, _field, facet_field) do

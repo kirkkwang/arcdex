@@ -37,12 +37,20 @@ module Arcdex
         @documents.sort_by! { |doc| ids.index(doc.id) || Float::INFINITY }
         @from_bookmarks = true
       else
-        @set_id = params[:id].split('-').first
+        @set_id = normalized_set_id
         @start_id = params[:id]
         @documents = search_service.repository.search(
           { q: "parent_ids_ssim:\"#{@set_id}\"", sort: 'sort_ssi asc', rows: 1_000 }
         ).documents
       end
+    end
+
+    def normalized_set_id
+      id = params[:id]
+      return id unless id.include?('-')
+
+      prefix = id.rpartition('-').first
+      prefix.length <= 1 ? id : prefix
     end
   end
 end

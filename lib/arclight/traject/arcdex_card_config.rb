@@ -80,7 +80,7 @@ end
 
 to_field 'abilities_json_ssm', lambda { |record, accumulator| accumulator << factory.call(record).abilities_json }
 to_field 'ability_fields' do |record, accumulator, context|
-  factory.call(record).abilities.each_with_index do |ability, index|
+  factory.call(record).abilities&.each_with_index do |ability, index|
     # Create indexed field names (1-based index)
     ability_num = index + 1
 
@@ -94,11 +94,11 @@ to_field 'ability_fields' do |record, accumulator, context|
     context.output_hash["ability_#{ability_num}_type_tesim"] = [factory.call(record).ability_type(index)]
   end
 end
-to_field 'number_of_abilities_isi', lambda { |record, accumulator| accumulator << factory.call(record).abilities.size }
+to_field 'number_of_abilities_isi', lambda { |record, accumulator| accumulator << factory.call(record).abilities&.size }
 
 to_field 'attacks_json_ssm', lambda { |record, accumulator| accumulator << factory.call(record).attacks_json }
 to_field 'attack_fields' do |record, accumulator, context|
-  factory.call(record).attacks.each_with_index do |attack, index|
+  factory.call(record).attacks&.each_with_index do |attack, index|
     # Create indexed field names (1-based index)
     attack_num = index + 1
 
@@ -120,18 +120,18 @@ to_field 'attack_fields' do |record, accumulator, context|
   # Also store complete attacks as JSON for flexibility
   context.output_hash['attacks_json_ssi'] = [factory.call(record).attacks.to_json]
 end
-to_field 'number_of_attacks_isi', lambda { |record, accumulator| accumulator << factory.call(record).attacks.size }
+to_field 'number_of_attacks_isi', lambda { |record, accumulator| accumulator << factory.call(record).attacks&.size }
 
 to_field 'weaknesses_json_ssm', lambda { |record, accumulator| accumulator << factory.call(record).weaknesses_json }
 to_field 'weaknesses_ssm' do |record, accumulator|
-  factory.call(record).weaknesses.each_with_index do |weakness, index|
+  factory.call(record).weaknesses&.each_with_index do |weakness, index|
     weakness_info = "#{factory.call(record).weakness_type(index)}: #{factory.call(record).weakness_value(index)}"
     accumulator << weakness_info
   end
 end
 to_field 'weakness_type_ssm' do |record, accumulator|
-  if factory.call(record).weaknesses.any?
-    factory.call(record).weaknesses.each_with_index do |weakness, index|
+  if factory.call(record).weaknesses&.any?
+    factory.call(record).weaknesses&.each_with_index do |weakness, index|
       accumulator << factory.call(record).weakness_type(index)
     end
   else
@@ -180,7 +180,7 @@ to_field 'national_pokedex_numbers_isim', lambda { |record, accumulator| accumul
 
 to_field 'legalities_json_ssi', lambda { |record, accumulator| accumulator << factory.call(record).legalities_json }
 to_field 'legalities_ssm' do |record, accumulator|
-  factory.call(record).legalities.each do |format, status|
+  factory.call(record).legalities&.each do |format, status|
     accumulator << "#{format}: #{status}"
   end
 end

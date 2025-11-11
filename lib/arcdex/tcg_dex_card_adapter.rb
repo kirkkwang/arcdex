@@ -40,7 +40,7 @@ module Arcdex
     end
 
     def legalities
-      record.fetch('cards', nil)&.first&.fetch('legal', {})
+      record.fetch('cards', nil)&.first&.fetch('legal', nil)
     end
 
     def ptcgo_code
@@ -101,7 +101,7 @@ module Arcdex
     end
 
     def subtypes
-      Array(record.fetch('stage', '').gsub(/([a-zA-Z])(\d)/, '\1 \2'))
+      Array(record.fetch('stage', '').gsub(/([a-zA-Z])(\d)/, '\1 \2')).reject(&:empty?)
     end
 
     def level
@@ -125,31 +125,39 @@ module Arcdex
     end
 
     def abilities_json
+      return nil if abilities.nil?
+
       abilities.to_json
     end
 
     def abilities
-      record.fetch('abilities', [])
+      record.fetch('abilities', nil)
     end
 
     def ability_name(index)
+      return nil if abilities.nil?
+
       abilities[index]&.fetch('name', nil)
     end
 
     def ability_text(index)
+      return nil if abilities.nil?
+
       abilities[index]&.fetch('effect', nil)
     end
 
     def ability_type(index)
+      return nil if abilities.nil?
+
       abilities[index]&.fetch('type', nil)
     end
 
     def attacks_json
-      attacks.to_json
+      attacks&.to_json
     end
 
     def attacks
-      record.fetch('attacks', [])
+      record.fetch('attacks', nil)
     end
 
     def attack_name(index)
@@ -173,11 +181,18 @@ module Arcdex
     end
 
     def weaknesses_json
-      weaknesses.to_json
+      weaknesses&.to_json
     end
 
     def weaknesses
-      record.fetch('weaknesses', [])
+      weaknesses = record.fetch('weaknesses', nil)
+      return nil if weaknesses.nil?
+
+      # can be removed if they fix the API data https://api.tcgdex.net/v2/en/cards/A4-166
+      # weakness is coming in as Colorless instead of nothing
+      return nil if weaknesses[0]&.fetch('type', nil) == 'Colorless'
+
+      weaknesses
     end
 
     def weakness_type(index)
@@ -191,7 +206,7 @@ module Arcdex
     def retreat_cost
       cost = record.fetch('retreat', nil).to_i
       if cost.zero?
-        []
+        nil
       else
         Array.new(cost, 'Colorless').join(', ')
       end
@@ -227,11 +242,7 @@ module Arcdex
     end
 
     def legalities_json
-      legalities.to_json
-    end
-
-    def legalities
-      {}
+      legalities&.to_json
     end
 
     def images_json

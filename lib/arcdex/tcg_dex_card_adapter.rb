@@ -13,8 +13,16 @@ module Arcdex
 
     def series
       if record.fetch('cards', nil).nil?
-        "#{record['id'][0].upcase} Series"
+        id = record['id']
+        return 'A Series' if id.start_with?('P-A')
+        return 'B Series' if id.start_with?('P-B')
+
+        "#{id[0].upcase} Series"
       else
+        id = record.fetch('cards').first['id']
+        return 'A Series' if id.start_with?('P-A')
+        return 'B Series' if id.start_with?('P-B')
+
         "#{record.fetch('cards').first['id'][0].upcase} Series"
       end
     end
@@ -206,7 +214,7 @@ module Arcdex
     end
 
     def flavor_text
-      record.fetch('description', nil)
+      record.fetch('description', nil) || record.fetch('effect', nil)
     end
 
     def national_pokedex_numbers

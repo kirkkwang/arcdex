@@ -81,7 +81,7 @@ class CatalogController < ApplicationController
     }
 
     config.header_component = Arclight::HeaderComponent
-    # config.add_results_document_tool(:online, component: Arclight::OnlineStatusIndicatorComponent)
+    config.add_results_document_tool(:online, component: Arclight::OnlineStatusIndicatorComponent)
     config.add_results_document_tool(:arclight_bookmark_control, component: Arclight::BookmarkComponent) if config.bookmarks == true
 
     config.add_results_collection_tool(:group_toggle, unless: ->(controller, _field, _facet_field) do
@@ -164,7 +164,10 @@ class CatalogController < ApplicationController
     #  across a large set of results)
     # :index_range can be an array or range of prefixes that will be used to create the navigation
     #  (note: It is case sensitive when searching values)
-
+    config.add_facet_field 'format', query: {
+      physical: { label: 'Pokémon TCG', fq: 'has_online_content_ssim:false' },
+      online: { label: 'Pokémon TCG Pocket', fq: 'has_online_content_ssim:true' }
+    }, collapse: false
     config.add_facet_field 'Category', field: 'level_ssim', limit: 10, excludable: true
     config.add_facet_field 'series', field: 'series_ssm', limit: 10, excludable: true
     config.add_facet_field 'set', field: 'collection_ssim', limit: 10, excludable: true
@@ -231,10 +234,6 @@ class CatalogController < ApplicationController
     # config.add_index_field "abstract_or_scope", accessor: true, truncate: true, repository_context: true, helper_method: :render_html_tags, component: Arclight::IndexMetadataFieldComponent
     config.add_index_field 'flavor_text_html', accessor: 'flavor_text_html', component: Arclight::IndexMetadataFieldComponent, helper_method: :render_html_tags, if: ->(controller, _field, _document) { controller.params[:view] == 'list' }
     config.add_index_field 'breadcrumbs', accessor: :itself, component: Arclight::SearchResultBreadcrumbsComponent, compact: { count: 2 }, if: ->(controller, _field, _document) { controller.params[:view] == 'list' }
-
-    config.add_facet_field 'access', query: {
-      online: { label: 'Online access', fq: 'has_online_content_ssim:true' }
-    }
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display

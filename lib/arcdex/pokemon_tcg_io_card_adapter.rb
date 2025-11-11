@@ -10,6 +10,10 @@ module Arcdex
       record.first.fetch('set')&.fetch('id', nil)
     end
 
+    def has_online_content?
+      false # pokemontcg.io does not support Pocket cards
+    end
+
     def set_name
       record.first.fetch('set')&.fetch('name', nil)
     end

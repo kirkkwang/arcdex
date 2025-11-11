@@ -39,6 +39,8 @@ to_field 'component_level_isim', lambda { |_record, accumulator| accumulator << 
 to_field 'level_ssm', lambda { |_record, accumulator| accumulator << 'card' }
 to_field 'level_ssim', lambda { |_record, accumulator| accumulator << 'Card' }
 
+to_field 'has_online_content_ssim', lambda { |_record, accumulator| accumulator << settings[:has_online_content] }
+
 to_field 'title_ssm', lambda { |record, accumulator| accumulator << record['name'] }
 to_field 'title_tesim', lambda { |record, accumulator| accumulator << record['name'] }
 to_field 'normalized_title_ssm' do |_record, accumulator, context|

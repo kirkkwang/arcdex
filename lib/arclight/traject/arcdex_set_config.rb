@@ -23,6 +23,8 @@ to_field 'id', lambda { |record, accumulator| accumulator << factory.call(record
 to_field 'child_component_count_isi', lambda { |record, accumulator| accumulator << factory.call(record).child_component_count }
 to_field 'ead_ssi', lambda { |record, accumulator| accumulator << factory.call(record).set_id }
 
+to_field 'has_online_content_ssim', lambda { |record, accumulator| accumulator << factory.call(record).has_online_content? }
+
 # Set collection fields
 to_field 'title_ssm', lambda { |record, accumulator| accumulator << factory.call(record).set_name }
 to_field 'title_tesim', lambda { |record, accumulator| accumulator << factory.call(record).set_name }
@@ -140,6 +142,7 @@ to_field 'components' do |records, accumulator, context|
       provide :complete_set_count, factory.call(records).total
       provide :release_date, factory.call(records).release_date
       provide :set_id, factory.call(records).set_id
+      provide :has_online_content, factory.call(records).has_online_content?
     end
 
     i.load_config_file(context.settings[:card_config])

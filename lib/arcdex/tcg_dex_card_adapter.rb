@@ -7,6 +7,10 @@ module Arcdex
       record.fetch('cards', nil)&.first&.fetch('set', nil)&.fetch('id', nil)&.downcase
     end
 
+    def has_online_content?
+      record.fetch('serie', nil)&.fetch('id', nil) == 'tcgp'
+    end
+
     def set_name
       record.fetch('cards', nil)&.first&.fetch('set')&.fetch('name', nil)
     end

@@ -291,5 +291,9 @@ module Arcdex
     def cardmarket_prices_json
       nil
     end
+
+    def boosters
+      record.fetch('boosters', nil)&.map { |booster| booster['name'] } # rubocop:disable Rails/Pluck
+    end
   end
 end

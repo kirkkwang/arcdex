@@ -168,6 +168,7 @@ class CatalogController < ApplicationController
       physical: { label: 'Pokémon TCG', fq: 'has_online_content_ssim:false' },
       online: { label: 'Pokémon TCG Pocket', fq: 'has_online_content_ssim:true' }
     }, collapse: false
+    config.add_facet_field 'booster_packs', field: 'boosters_ssm', limit: 10, excludable: true
     config.add_facet_field 'Category', field: 'level_ssim', limit: 10, excludable: true
     config.add_facet_field 'series', field: 'series_ssm', limit: 10, excludable: true
     config.add_facet_field 'set', field: 'collection_ssim', limit: 10, excludable: true

@@ -257,3 +257,7 @@ to_field 'cardmarket_prices_json_ssi' do |record, accumulator|
     accumulator << factory.call(record).cardmarket_prices_json
   end
 end
+
+to_field 'boosters_ssm' do |record, accumulator|
+  accumulator.concat factory.call(record).boosters if factory.call(record).boosters
+end

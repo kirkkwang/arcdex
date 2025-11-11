@@ -272,5 +272,9 @@ module Arcdex
     def cardmarket_prices_json
       cardmarket_prices&.to_json
     end
+
+    def boosters
+      nil # pokemontcg.io does not provide booster information
+    end
   end
 end

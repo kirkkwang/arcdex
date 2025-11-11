@@ -229,5 +229,9 @@ module Arcdex
     def cardmarket_prices_json
       raise NoMethodError, 'Subclasses must implement the cardmarket_prices_json method'
     end
+
+    def boosters
+      raise NoMethodError, 'Subclasses must implement the boosters method'
+    end
   end
 end

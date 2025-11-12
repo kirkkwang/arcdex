@@ -311,6 +311,12 @@ html[data-bs-theme=dark] {
     }
   }
 
+  .blacklight-icons-online {
+    svg {
+      height: 2rem;
+    }
+  }
+
   .form-control::placeholder {
     color: $dark-text-muted;
     opacity: 1;

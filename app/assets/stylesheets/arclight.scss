@@ -247,6 +247,14 @@ details[open] summary::before {
     }
   }
 
+  #add-advanced-search-term:hover {
+    text-decoration: underline !important;
+  }
+
+  .remove-clause-row:hover {
+    text-decoration: underline !important;
+  }
+
   .advanced-facet-limits {
     @extend .sidenav;
 

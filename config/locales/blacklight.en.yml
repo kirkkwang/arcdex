@@ -1,5 +1,13 @@
 en:
   blacklight:
+    advanced_search:
+      form:
+        search: 'Search'
+        add_search_terms: 'Add search terms'
+        remove_search_term: 'Remove'
+      op:
+        must: 'Contains all'
+        should: 'Contains any'
     application_name: 'Arcdex'
     bookmarks:
       no_bookmarks: You have no cards bookmarked

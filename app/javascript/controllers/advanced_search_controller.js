@@ -5,7 +5,9 @@ export default class extends Controller {
 
   connect() {
     this.counter = 1
-    this.clauseRowTemplate = this.clauseRowTarget.cloneNode(true)
+    if (this.hasClauseRowTarget) {
+      this.clauseRowTemplate = this.clauseRowTarget.cloneNode(true)
+    }
   }
 
   addClauseRow() {
@@ -27,6 +29,6 @@ export default class extends Controller {
   }
 
   removeClauseRow(event) {
-    event.target.closest('[data-advanced-search-target="clauseRow"]').remove()
+    (event.target.closest('.clause-row') || event.target.closest('.filter-row')).remove()
   }
 }

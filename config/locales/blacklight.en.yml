@@ -5,6 +5,10 @@ en:
         search: 'Search'
         add_search_terms: 'Add search terms'
         remove_search_term: 'Remove'
+        limit_criteria_heading_html: 'Filters'
+        filter: 'Filter field'
+        inclusive: 'Includes'
+        exclusive: 'Excludes'
       op:
         must: 'Contains all'
         should: 'Contains any'

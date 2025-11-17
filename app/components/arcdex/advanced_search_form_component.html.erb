@@ -1,3 +1,9 @@
+<%# turn off turbo so Choices.js doesn't break when hitting the back button %>
+<%# this way the form just resets %>
+<% content_for :head do %>
+  <meta name="turbo-visit-control" content="reload">
+<% end %>
+
 <% if constraints? %>
   <div class="constraints well search_history">
     <h4><%= t 'blacklight.advanced_search.form.search_context' %></h4>

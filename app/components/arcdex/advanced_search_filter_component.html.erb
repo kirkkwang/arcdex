@@ -1,17 +1,30 @@
 <fieldset class="filter-row d-flex flex-row align-items-center mb-2 gap-2">
-  <legend class="visually-hidden">Filter Field</legend>
-  <label for="advanced_search_format" class="form-label flex-shrink-0" style="width: 175px"><%= facet_field_label %></label>
+  <legend class="visually-hidden"><%= t('blacklight.advanced_search.form.filter') %></legend>
+  <label for="advanced_search_<%= @facet_field.key %>" class="form-label flex-shrink-0" style="width: 175px"><%= facet_field_label %></label>
 
-  <!--<select id="<%= facet_field_id %>_operator" name="operator[<%= @facet_field.key %>]" class="form-select flex-shrink-0" style="width: 142px;">
+  <select id="<%= facet_field_id %>_operator"
+          name="operator[<%= @facet_field.key %>]"
+          class="form-select flex-shrink-0"
+          style="width: 142px;"
+          data-action="change->advanced-search#updateOperator"
+          <%= excludable? ? nil : 'disabled' %>>
     <option value="inclusive"><%= t('blacklight.advanced_search.form.inclusive') %></option>
-    <option value="exclusive"><%= t('blacklight.advanced_search.form.exclusive') %></option>
-  </select>-->
-
-  <select name="f_inclusive[<%= @facet_field.key %>][]" class="form-select">
-    <option value=""></option>
-    <%= facet_options %>
+    <option value="excludes"><%= t('blacklight.advanced_search.form.excludes') %></option>
   </select>
-  <button class="remove-clause-row btn btn-link d-flex align-items-center gap-1 text-decoration-none text-nowrap px-0"
+
+  <div class="flex-grow-1">
+    <select name="f_inclusive[<%= @facet_field.key %>][]"
+            class="form-select invisible"
+            data-advanced-search-target="filterSelect"
+            data-facet-key="<%= @facet_field.key %>"
+            id="advanced_search_<%= @facet_field.key %>"
+            multiple>
+      <option value=""></option>
+      <%= facet_options %>
+    </select>
+  </div>
+
+  <button class="remove-clause-row btn btn-link d-flex align-items-center gap-1 text-decoration-none text-nowrap px-0 flex-shrink-0"
           type="button"
           data-action="advanced-search#removeClauseRow">
     <%= Arcdex::Icons::AdvancedSearchComponent.minus.html_safe %>

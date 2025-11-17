@@ -8,7 +8,7 @@ en:
         limit_criteria_heading_html: 'Filters'
         filter: 'Filter field'
         inclusive: 'Includes'
-        exclusive: 'Excludes'
+        excludes: 'Excludes'
       op:
         must: 'Contains all'
         should: 'Contains any'

@@ -15,5 +15,9 @@ module Arcdex
         end
       end.join.html_safe # rubocop:disable Rails/OutputSafety
     end
+
+    def excludable?
+      @facet_field.facet_field.excludable
+    end
   end
 end

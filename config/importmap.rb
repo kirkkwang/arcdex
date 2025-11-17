@@ -23,3 +23,4 @@ pin 'openseadragon' # @5.0.1
 pin 'sortablejs', to: 'sortable.esm.js'
 pin '@rails/actioncable', to: 'actioncable.esm.js'
 pin_all_from 'app/javascript/channels', under: 'channels'
+pin 'choices.js' # @11.1.0

@@ -167,13 +167,13 @@ class CatalogController < ApplicationController
     config.add_facet_field 'format', query: {
       physical: { label: 'Pokémon TCG', fq: 'has_online_content_ssim:false' },
       online: { label: 'Pokémon TCG Pocket', fq: 'has_online_content_ssim:true' }
-    }, collapse: false
-    config.add_facet_field 'booster_packs', field: 'boosters_ssm', limit: 10, excludable: true
-    config.add_facet_field 'Category', field: 'level_ssim', limit: 10, excludable: true
-    config.add_facet_field 'series', field: 'series_ssm', limit: 10, excludable: true
-    config.add_facet_field 'set', field: 'collection_ssim', limit: 10, excludable: true
-    config.add_facet_field 'regulation_mark', field: 'regulation_mark_ssi', limit: 10, excludable: true
-    config.add_facet_field 'rarity', field: 'rarity_ssm', limit: 10, excludable: true
+    }, collapse: false, advanced_search_component: Arcdex::AdvancedSearchFilterComponent
+    config.add_facet_field 'booster_packs', field: 'boosters_ssm', limit: 10, excludable: true, advanced_search_component: Arcdex::AdvancedSearchFilterComponent
+    config.add_facet_field 'Category', field: 'level_ssim', limit: 10, excludable: true, advanced_search_component: Arcdex::AdvancedSearchFilterComponent
+    config.add_facet_field 'series', field: 'series_ssm', limit: 10, excludable: true, advanced_search_component: Arcdex::AdvancedSearchFilterComponent
+    config.add_facet_field 'set', field: 'collection_ssim', limit: 10, excludable: true, advanced_search_component: Arcdex::AdvancedSearchFilterComponent
+    config.add_facet_field 'regulation_mark', field: 'regulation_mark_ssi', limit: 10, excludable: true, advanced_search_component: Arcdex::AdvancedSearchFilterComponent
+    config.add_facet_field 'rarity', field: 'rarity_ssm', limit: 10, excludable: true, advanced_search_component: Arcdex::AdvancedSearchFilterComponent
     config.add_facet_field 'tcg_player_market_price', label: 'TCGplayer Market Price', field: 'tcg_player_market_price_isi', range: true, range_config: {
       show_missing_link: false
     }, if: ->(_controller, _field, facet_field) do
@@ -192,9 +192,9 @@ class CatalogController < ApplicationController
     config.add_facet_field 'release year', field: 'release_year_isi', range: true, range_config: {
       show_missing_link: false
     }
-    config.add_facet_field 'supertype', field: 'supertype_ssm', limit: 10, excludable: true
-    config.add_facet_field 'subtypes', field: 'subtypes_ssm', limit: 10, excludable: true
-    config.add_facet_field 'types', field: 'types_ssm', excludable: true
+    config.add_facet_field 'supertype', field: 'supertype_ssm', limit: 10, excludable: true, advanced_search_component: Arcdex::AdvancedSearchFilterComponent
+    config.add_facet_field 'subtypes', field: 'subtypes_ssm', limit: 10, excludable: true, advanced_search_component: Arcdex::AdvancedSearchFilterComponent
+    config.add_facet_field 'types', field: 'types_ssm', excludable: true, advanced_search_component: Arcdex::AdvancedSearchFilterComponent
     config.add_facet_field 'Hit Points', field: 'hp_isi', range: true, range_config: {
       show_missing_link: false
     }, if: ->(_controller, _field, facet_field) do
@@ -210,13 +210,13 @@ class CatalogController < ApplicationController
     }, if: ->(_controller, _field, facet_field) do
       facet_field.response.facet_counts['facet_fields']['number_of_attacks_isi'].present?
     end
-    config.add_facet_field 'weakness type', field: 'weakness_type_ssm', excludable: true
+    config.add_facet_field 'weakness type', field: 'weakness_type_ssm', excludable: true, advanced_search_component: Arcdex::AdvancedSearchFilterComponent
     config.add_facet_field 'retreat cost', field: 'converted_retreat_cost_isi', range: true, range_config: {
       show_missing_link: false
     }, if: ->(_controller, _field, facet_field) do
       facet_field.response.facet_counts['facet_fields']['converted_retreat_cost_isi'].present?
     end
-    config.add_facet_field 'artist', field: 'artist_ssm', limit: 10, excludable: true
+    config.add_facet_field 'artist', field: 'artist_ssm', limit: 10, excludable: true, advanced_search_component: Arcdex::AdvancedSearchFilterComponent
 
 
     # Have BL send all facet field names to Solr, which has been the default

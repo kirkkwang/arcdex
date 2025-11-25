@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 77191f5afb9c39aa5968219047ae69cdb2f48b14
+  revision: b22cb0c0cb39b103d816a66d560991acf0a57163
   branch: main
   specs:
     actioncable (8.2.0.alpha)
@@ -148,7 +148,7 @@ GEM
     builder (3.3.0)
     chronic (0.10.2)
     concurrent-ruby (1.3.5)
-    connection_pool (2.5.4)
+    connection_pool (2.5.5)
     crass (1.0.6)
     cssbundling-rails (1.4.3)
       railties (>= 6.0.0)

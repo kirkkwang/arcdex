@@ -317,9 +317,9 @@ class CatalogController < ApplicationController
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
     config.add_sort_field tcg_price_desc_field, label: 'TCGplayer market price ($$$ to $)'
-    config.add_sort_field tcg_price_asc_field, label: 'TCGplayer market price ($ to $)'
+    config.add_sort_field tcg_price_asc_field, label: 'TCGplayer market price ($ to $$$)'
     config.add_sort_field cardmarket_desc_field, label: 'Cardmarket avg7 price ($$$ to $)'
-    config.add_sort_field cardmarket_asc_field, label: 'Cardmarket avg7 price ($ to $)'
+    config.add_sort_field cardmarket_asc_field, label: 'Cardmarket avg7 price ($ to $$$)'
     config.add_sort_field 'release_date_sort desc, sort_ssi asc', label: 'release date (new to old)'
     config.add_sort_field 'release_date_sort asc, sort_ssi asc', label: 'release date (old to new)'
 

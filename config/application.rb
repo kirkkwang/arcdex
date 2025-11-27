@@ -63,5 +63,9 @@ module App
           max_age: 86400
       end
     end
+
+    config.exceptions_app = ->(env) {
+      ErrorsController.action(:show).call(env)
+    }
   end
 end

@@ -1,0 +1,11 @@
+<div class="error-container vw-100 py-4">
+  <div class="error-text position-absolute start-50 translate-middle text-center w-75">
+    <h1 class="display-4 fw-bold"><%= "#{status_code} - #{header}"%></h1>
+    <p class="lead"><%= paragraph %></p>
+  </div>
+  <div class="card-images-container d-flex flex-nowrap justify-content-center align-items-end">
+    <% (1..10).to_a.shuffle.each do |i| %>
+      <%= image_tag("errors/#{status_code}-#{i}.png") %>
+    <% end %>
+  </div>
+</div>

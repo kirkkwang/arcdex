@@ -365,7 +365,7 @@ class CatalogController < ApplicationController
 
     config.add_component_indexed_terms_field 'name', field: 'normalized_title_ssm', component: Arcdex::PokemonSearchComponent
     config.add_component_indexed_terms_field 'set', field: 'parent_unittitles_ssm', link_to_facet: true
-    config.add_component_indexed_terms_field 'booster packs', field: 'boosters_ssm', link_to_facet: true
+    config.add_component_indexed_terms_field 'booster packs', field: 'boosters_ssm', link_to_facet: true, component: Arcdex::BoosterPackComponent
     config.add_component_indexed_terms_field 'supertype', field: 'supertype_ssm', link_to_facet: true
     config.add_component_indexed_terms_field 'national_pokedex_number', field: 'national_pokedex_numbers_isim'
     config.add_component_indexed_terms_field 'subtype', field: 'subtypes_ssm', link_to_facet: true

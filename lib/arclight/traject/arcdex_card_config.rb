@@ -258,6 +258,6 @@ to_field 'cardmarket_prices_json_ssi' do |record, accumulator|
   end
 end
 
-to_field 'boosters_ssm' do |record, accumulator|
+to_field 'boosters_tesim' do |record, accumulator|
   accumulator.concat factory.call(record).boosters if factory.call(record).boosters
 end

@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 4f4e0acaf558f6adf7df3ac23a51beb470463901
+  revision: a84c99b1a6a80d0be5059626941deea09c898446
   branch: main
   specs:
     actioncable (8.2.0.alpha)
@@ -265,7 +265,7 @@ GEM
       ffi-compiler (~> 1.0)
       rake (~> 13.0)
     logger (1.7.0)
-    loofah (2.24.1)
+    loofah (2.25.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
     mail (2.9.0)
@@ -282,7 +282,8 @@ GEM
     marcel (1.1.0)
     mini_mime (1.1.5)
     minitar (1.1.0)
-    minitest (5.27.0)
+    minitest (6.0.0)
+      prism (~> 1.5)
     msgpack (1.8.0)
     multi_json (1.17.0)
     multi_xml (0.7.2)
@@ -290,7 +291,7 @@ GEM
     mutex_m (0.3.0)
     net-http (0.8.0)
       uri (>= 0.11.1)
-    net-imap (0.5.12)
+    net-imap (0.6.2)
       date
       net-protocol
     net-pop (0.1.2)
@@ -510,7 +511,7 @@ GEM
     thruster (0.1.17-aarch64-linux)
     thruster (0.1.17-arm64-darwin)
     thruster (0.1.17-x86_64-linux)
-    timeout (0.5.0)
+    timeout (0.6.0)
     traject (3.8.3)
       concurrent-ruby (>= 0.8.0)
       csv

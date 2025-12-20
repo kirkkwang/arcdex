@@ -89,3 +89,13 @@ gem 'omniauth-rails_csrf_protection'
 gem 'rack-cors'
 gem 'hashids'
 gem 'rack-attack'
+
+group :development, :test do
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'capybara-playwright-driver'
+  gem 'simplecov', require: false
+end

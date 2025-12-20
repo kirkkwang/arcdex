@@ -19,6 +19,7 @@ WORKDIR /app
 # Copy gemfiles and install
 COPY Gemfile Gemfile.lock ./
 RUN bundle install
+RUN npx playwright install --with-deps chromium
 
 # Copy everything else
 COPY . .

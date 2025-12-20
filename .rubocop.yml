@@ -16,3 +16,6 @@ Style/StringLiterals:
 Layout/SpaceInsideArrayLiteralBrackets:
   EnforcedStyle: no_space
   EnforcedStyleForEmptyBrackets: no_space
+
+Rails/Exit:
+  Enabled: false

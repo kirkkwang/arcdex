@@ -1,6 +1,6 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
-ENV['RAILS_ENV'] ||= 'test'
+ENV['RAILS_ENV'] = 'test'
 require_relative '../config/environment'
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
@@ -84,4 +84,16 @@ RSpec.configure do |config|
   config.before(:each, type: :system) do
     driven_by :playwright
   end
+
+  # config.before(:suite) do
+  #   # Clear Solr test core before running specs
+  #   Blacklight.default_index.connection.delete_by_query('*:*')
+  #   Blacklight.default_index.connection.commit
+  # end
+
+  # config.after(:each) do
+  #   # Clean up after each test
+  #   Blacklight.default_index.connection.delete_by_query('*:*')
+  #   Blacklight.default_index.connection.commit
+  # end
 end

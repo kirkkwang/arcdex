@@ -410,6 +410,10 @@ GEM
       rack (>= 1.3)
     rackup (2.3.1)
       rack (>= 3)
+    rails-controller-testing (1.0.5)
+      actionpack (>= 5.0.1.rc1)
+      actionview (>= 5.0.1.rc1)
+      activesupport (>= 5.0.1.rc1)
     rails-dom-testing (2.3.0)
       activesupport (>= 5.0.0)
       minitest
@@ -650,6 +654,7 @@ DEPENDENCIES
   rack-attack
   rack-cors
   rails!
+  rails-controller-testing
   request_store
   rsolr (>= 1.0, < 3)
   rspec-rails

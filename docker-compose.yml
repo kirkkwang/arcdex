@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   web:
     build:
@@ -23,12 +21,15 @@ services:
     ports:
       - "8983:8983"
     volumes:
-      - ./solr/conf:/var/solr/data/arclight
+      - ./solr/conf:/opt/solr/configsets/arclight/conf:ro
+      - solr_data:/var/solr
     command:
       - bash
       - -c
       - |
-        solr-create -c arclight -d /var/solr/data/arclight
+        precreate-core arclight /opt/solr/configsets/arclight
+        precreate-core arclight-test /opt/solr/configsets/arclight
+        exec solr-foreground
     env_file:
       - .env
 

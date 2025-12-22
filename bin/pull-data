@@ -1,0 +1,15 @@
+#!/bin/bash
+set -e
+
+echo "Getting server from kamal config..."
+SERVER=$(kamal config | grep ":primary_host:" | awk '{print $2}')
+echo "Server: $SERVER"
+
+echo "Finding running container..."
+CONTAINER_ID=$(ssh root@$SERVER "docker ps --filter 'name=arcdex-web' --format '{{.ID}}' | head -n 1")
+echo "Container ID: $CONTAINER_ID"
+
+echo "Streaming data directly from container to local..."
+ssh root@$SERVER "docker exec $CONTAINER_ID tar -cz -C /rails data" | tar -xz -C .
+
+echo "Done! Data pulled to ./data/"

@@ -181,13 +181,32 @@ namespace :arcdex do
       sleep(0.5) # Be nice to the API
     end
 
+    # Validate we got data before saving
+    if all_cards.empty?
+      puts "⚠️  WARNING: No cards fetched for set #{id} (#{set_info['name']}). Skipping save to preserve existing data."
+      return
+    end
+
     # Create the simplified structure with just data and totalCount
     simplified_data = {
       'data' => all_cards,
       'totalCount' => all_cards.size
     }
 
+    output_path = Rails.root.join('data', "#{id}.json")
+
+    # Check if file exists and compare counts
+    if output_path.exist?
+      existing_data = JSON.parse(output_path.read)
+      existing_count = existing_data['totalCount'] || 0
+
+      if all_cards.size < existing_count
+        puts "⚠️  WARNING: New data has fewer cards (#{all_cards.size}) than existing (#{existing_count}). Skipping save."
+        return
+      end
+    end
+
     puts "💾 Saving #{all_cards.size} cards for set #{id}"
-    Rails.root.join('data', "#{id}.json").write(JSON.pretty_generate(simplified_data))
+    output_path.write(JSON.pretty_generate(simplified_data))
   end
 end

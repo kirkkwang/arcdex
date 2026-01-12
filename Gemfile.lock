@@ -141,7 +141,7 @@ GEM
       view_component (>= 2.54, < 5)
     bootsnap (1.20.1)
       msgpack (~> 1.2)
-    bootstrap (5.3.5)
+    bootstrap (5.3.8)
       popper_js (>= 2.11.8, < 3)
     brakeman (7.1.2)
       racc

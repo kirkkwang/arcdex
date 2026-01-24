@@ -43,7 +43,7 @@
     </div>
 
     <% if advanced_search_enabled? %>
-      <%= render(Arcdex::AdvancedSearchLinkComponent.new(id: "advanced-search", text: t('blacklight.advanced_search.more_options'))) %>
+      <%= render(Arcdex::AdvancedSearchLinkComponent.new(id: "advanced-search", text: t('blacklight.advanced_search.more_options'), url: helpers.search_action_url(controller.search_state.params.merge(action: 'advanced_search')))) %>
     <% end %>
   <% end %>
 </search>

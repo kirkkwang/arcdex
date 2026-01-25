@@ -39,6 +39,7 @@
 /node_modules
 
 .rubocop-https*
+.rubocop-remote*
 /solr/conf/data/*
 /solr/conf/core.properties
 data/**/*.json

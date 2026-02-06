@@ -14,9 +14,11 @@ module Arcdex
 
       private
 
-      def pocket?(record)
-        record.is_a?(Hash) && !record.fetch('images', {}).values.first&.include?('pokemontcg')
-      end
+    def pocket?(record)
+      record.is_a?(Hash) &&
+        !record.fetch('images', {}).values.first&.include?('pokemontcg') &&
+        !record.fetch('images', {}).values.first&.include?('scrydex')
+    end
     end
   end
 end

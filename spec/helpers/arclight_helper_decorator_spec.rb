@@ -51,6 +51,24 @@ RSpec.describe ArclightHelperDecorator do
     end
   end
 
+  describe '#repository_collections_path' do
+    # search_action_url is a Blacklight controller helper, not on ActionView::Base
+    # so we test via a plain object extended with the module + a defined singleton method
+    let(:repository) { double('repository', name: 'Base Set') } # rubocop:disable RSpec/VerifiedDoubles
+    let(:obj) do
+      Object.new.tap do |o|
+        o.extend(described_class)
+        o.define_singleton_method(:search_action_url) { |params| "/catalog?#{params}" }
+      end
+    end
+
+    it 'builds a search URL filtered to the repository series and Sets category' do
+      allow(obj).to receive(:search_action_url).and_call_original
+      obj.repository_collections_path(repository)
+      expect(obj).to have_received(:search_action_url).with(hash_including(f: { series: ['Base Set'], Category: ['Set'] }))
+    end
+  end
+
   describe '#preferred_theme' do
     context 'when the theme cookie is set' do
       before { allow(helper).to receive(:cookies).and_return({ theme: 'light' }) }

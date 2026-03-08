@@ -18,6 +18,37 @@ RSpec.describe BookmarksController do
       .and_return(mock_user)
   end
 
+  describe '#index' do
+    let(:mock_docs) { [instance_double(SolrDocument, id: 'doc-1')] }
+    let(:mock_response) do
+      instance_double(
+        Blacklight::Solr::Response,
+        documents: mock_docs,
+        current_page: 1,
+        total_pages: 1,
+        next_page: nil
+      )
+    end
+    let(:mock_bookmarks) do
+      instance_double(ActiveRecord::Associations::CollectionProxy, pluck: ['doc-1'], count: 1)
+    end
+
+    before do
+      allow_any_instance_of(described_class).to receive(:search_service) # rubocop:disable RSpec/AnyInstance
+        .and_return(instance_double(Blacklight::SearchService, search_results: mock_response))
+      allow(mock_user).to receive_messages(bookmarks: mock_bookmarks, bookmark_order: ['doc-1'])
+      get :index
+    end
+
+    it 'returns 200 ok' do
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'assigns bookmarks' do
+      expect(assigns(:bookmarks)).to eq(mock_bookmarks)
+    end
+  end
+
   describe '#update_order' do
     context 'when the order update succeeds' do
       before do

@@ -27,6 +27,22 @@ RSpec.describe Arclight::RepositoriesController do
     end
   end
 
+  describe '#iiif_collection' do
+    # Arclight::Repository.find delegates to all.find { name == id }; the outer
+    # all stub returns [old_repo, new_repo], so id: 'Base Set' resolves to new_repo.
+    let(:mock_presenter) { instance_double(Arcdex::IiifCollectionPresenter) }
+
+    before do
+      allow(Arcdex::IiifCollectionPresenter).to receive(:new).and_return(mock_presenter)
+      allow(mock_presenter).to receive(:to_json).and_return('{}')
+      get :iiif_collection, params: { id: 'Base Set' }, format: :json
+    end
+
+    it 'returns a JSON response' do
+      expect(response).to have_http_status(:ok)
+    end
+  end
+
   describe '#show' do
     let(:first_doc) { instance_double(SolrDocument) }
     let(:second_doc) { instance_double(SolrDocument) }

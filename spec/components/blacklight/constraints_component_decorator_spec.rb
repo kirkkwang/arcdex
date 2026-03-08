@@ -34,6 +34,18 @@ RSpec.describe Blacklight::ConstraintsComponentDecorator, type: :component do
       end
     end
 
+    context 'with a regular (non-exclude) facet filter' do
+      let(:search_state) { Blacklight::SearchState.new({ f: { 'rarity' => ['Rare'] } }, blacklight_config) }
+      let(:component) { Blacklight::ConstraintsComponent.new(search_state: search_state) }
+
+      before { allow(component).to receive(:helpers).and_return(mock_helpers) }
+
+      it 'yields a regular facet item presenter' do
+        presenters = component.send(:facet_item_presenters).to_a
+        expect(presenters).not_to be_empty
+      end
+    end
+
     context 'with only exclude facet filters' do
       let(:search_state) { Blacklight::SearchState.new({ f: { '-rarity' => ['Rare'] } }, blacklight_config) }
       let(:component) { Blacklight::ConstraintsComponent.new(search_state: search_state) }

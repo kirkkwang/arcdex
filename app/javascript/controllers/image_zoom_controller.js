@@ -6,10 +6,10 @@ export default class extends Controller {
   connect() {
     // Bind event handlers
     this.escapeHandler = this.handleEscape.bind(this)
-    this.popstateHandler = this.handlePopstate.bind(this)
     this.keydownHandler = this.handleKeydown.bind(this)
     this.touchStartHandler = this.handleTouchStart.bind(this)
     this.touchEndHandler = this.handleTouchEnd.bind(this)
+    this.popstateHandler = this.handlePopstate.bind(this)
     this.isZoomOpen = false
     this.currentIndex = 0
     this.imageElements = []
@@ -36,7 +36,7 @@ export default class extends Controller {
       this.overlayTarget.dataset.singleImage = "false"
     }
 
-    // Add a history entry for the zoom state
+    // Add a history entry so the back button closes the zoom instead of navigating away
     history.pushState({ imageZoomOpen: true }, '', window.location.href)
     this.isZoomOpen = true
 
@@ -51,7 +51,7 @@ export default class extends Controller {
     document.addEventListener('keydown', this.keydownHandler)
     this.overlayTarget.addEventListener('touchstart', this.touchStartHandler, { passive: true })
     this.overlayTarget.addEventListener('touchend', this.touchEndHandler, { passive: true })
-    window.addEventListener('popstate', this.popstateHandler)
+    window.addEventListener('popstate', this.popstateHandler, { capture: true })
   }
 
   close() {
@@ -68,13 +68,14 @@ export default class extends Controller {
     document.removeEventListener('keydown', this.keydownHandler)
     this.overlayTarget.removeEventListener('touchstart', this.touchStartHandler)
     this.overlayTarget.removeEventListener('touchend', this.touchEndHandler)
-    window.removeEventListener('popstate', this.popstateHandler)
+    window.removeEventListener('popstate', this.popstateHandler, { capture: true })
 
     this.isZoomOpen = false
 
-    // Go back in history if we're still on the zoom state
+    // Replace the zoom history entry with a neutral state. replaceState does not
+    // fire a popstate event, so Turbo never sees it and won't trigger a navigation.
     if (history.state && history.state.imageZoomOpen) {
-      history.back()
+      history.replaceState({}, '', window.location.href)
     }
   }
 
@@ -103,22 +104,20 @@ export default class extends Controller {
   }
 
   handlePopstate(event) {
-    // If user hits back button while zoom is open, close the zoom
+    // Back button pressed while zoom is open, close the zoom and block Turbo
+    // from treating this popstate as a navigation (we registered in capture phase,
+    // so we fire before Turbo's bubble-phase listener).
     if (this.isZoomOpen) {
-      this.closeWithoutHistory()
+      event.stopImmediatePropagation()
+      this.overlayTarget.classList.remove('active')
+      document.body.classList.remove('zoom-active')
+      document.removeEventListener('keydown', this.escapeHandler)
+      document.removeEventListener('keydown', this.keydownHandler)
+      this.overlayTarget.removeEventListener('touchstart', this.touchStartHandler)
+      this.overlayTarget.removeEventListener('touchend', this.touchEndHandler)
+      window.removeEventListener('popstate', this.popstateHandler, { capture: true })
+      this.isZoomOpen = false
     }
-  }
-
-  closeWithoutHistory() {
-    // Close zoom without manipulating history (since back button already did that)
-    this.overlayTarget.classList.remove('active')
-    document.body.classList.remove('zoom-active')
-    document.removeEventListener('keydown', this.escapeHandler)
-    document.removeEventListener('keydown', this.keydownHandler)
-    this.overlayTarget.removeEventListener('touchstart', this.touchStartHandler)
-    this.overlayTarget.removeEventListener('touchend', this.touchEndHandler)
-    window.removeEventListener('popstate', this.popstateHandler)
-    this.isZoomOpen = false
   }
 
   handleEscape(event) {
@@ -193,7 +192,7 @@ export default class extends Controller {
       this.overlayTarget.removeEventListener('touchstart', this.touchStartHandler)
       this.overlayTarget.removeEventListener('touchend', this.touchEndHandler)
     }
-    window.removeEventListener('popstate', this.popstateHandler)
+    window.removeEventListener('popstate', this.popstateHandler, { capture: true })
     document.body.classList.remove('zoom-active')
     this.isZoomOpen = false
   }

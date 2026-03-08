@@ -544,6 +544,7 @@ html[data-bs-theme=dark] {
 
 body.zoom-active {
   overflow: hidden;
+  scrollbar-gutter: stable;
 }
 
 @media (max-width: 768px) {

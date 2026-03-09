@@ -2,6 +2,7 @@ name: CI
 
 on:
   pull_request:
+    branches: [ main ]
   push:
     branches: [ main ]
 
@@ -40,6 +41,7 @@ jobs:
 
   lint:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
@@ -53,3 +55,60 @@ jobs:
       - name: Lint code for consistent style
         run: bin/rubocop -f github
 
+  test:
+    runs-on: ubuntu-latest
+
+    env:
+      RAILS_ENV: test
+      SECRET_KEY_BASE: dummy_secret_key_base_for_ci
+      SOLR_URL: http://localhost:8983/solr/arclight-test
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .ruby-version
+          bundler-cache: true
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'yarn'
+
+      - name: Install JavaScript dependencies
+        run: yarn install
+
+      - name: Build CSS
+        run: yarn build:css
+
+      - name: Start Solr
+        run: |
+          docker run -d --name arcdex-solr \
+            -p 8983:8983 \
+            -v ${{ github.workspace }}/solr/conf:/opt/solr/configsets/arclight/conf:ro \
+            solr:9.7.0 \
+            bash -c "precreate-core arclight /opt/solr/configsets/arclight && precreate-core arclight-test /opt/solr/configsets/arclight && exec solr-foreground"
+
+      - name: Wait for Solr
+        run: |
+          for i in $(seq 1 30); do
+            if curl -sf http://localhost:8983/solr/arclight-test/admin/ping > /dev/null 2>&1; then
+              echo "Solr is ready"
+              break
+            fi
+            echo "Waiting for Solr... ($i/30)"
+            sleep 2
+          done
+
+      - name: Set up database
+        run: bin/rails db:test:prepare
+
+      - name: Install Playwright browsers
+        run: bundle exec playwright install --with-deps chromium
+
+      - name: Run RSpec
+        run: bundle exec rspec

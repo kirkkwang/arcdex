@@ -69,6 +69,75 @@ RSpec.describe ArclightHelperDecorator do
     end
   end
 
+  describe '#bookmarks_to_catalog_search_path' do
+    let(:bookmarks) { double('bookmarks') } # rubocop:disable RSpec/VerifiedDoubles
+    let(:obj) do
+      Object.new.tap do |o|
+        o.extend(described_class)
+        o.define_singleton_method(:search_catalog_url) { |params| "/catalog/search?#{params}" }
+      end
+    end
+
+    before { allow(bookmarks).to receive(:pluck).with(:document_id).and_return(%w[base-1-001 base-1-002]) }
+
+    it 'calls search_catalog_url with joined document ids' do
+      allow(obj).to receive(:search_catalog_url).and_call_original
+      obj.bookmarks_to_catalog_search_path(bookmarks)
+      expect(obj).to have_received(:search_catalog_url).with(
+        hash_including(
+          search_field: 'id',
+          q: 'base-1-001 OR base-1-002',
+          view: 'gallery'
+        )
+      )
+    end
+  end
+
+  describe '#mirador_viewer' do
+    let(:obj) do
+      Object.new.tap do |o|
+        o.extend(described_class)
+        o.define_singleton_method(:manifest_repository_url) { |id| "https://example.com/repo/#{id}/manifest" }
+        o.define_singleton_method(:manifest_solr_document_url) { |id| "https://example.com/catalog/#{id}/manifest" }
+        o.define_singleton_method(:cookies) { {} }
+      end
+    end
+
+    # Arclight::Repository.find is backed by RequestStore cache. Seed it directly
+    # to avoid querying Solr and to control what find returns.
+    after { RequestStore.store.delete(:arclight_repositories) }
+
+    context 'when the id belongs to a Repository' do
+      before { RequestStore.store[:arclight_repositories] = [double('repo', name: 'Base Set')] } # rubocop:disable RSpec/VerifiedDoubles
+
+      it 'builds a mirador URL using manifest_repository_url' do
+        result = obj.mirador_viewer(id: 'Base Set')
+        expect(result).to include('manifest=')
+        expect(result).to include('repo')
+      end
+    end
+
+    context 'when the id does not belong to a Repository' do
+      before { RequestStore.store[:arclight_repositories] = [] }
+
+      it 'builds a mirador URL using manifest_solr_document_url' do
+        result = obj.mirador_viewer(id: 'base-1-001')
+        expect(result).to include('manifest=')
+        expect(result).to include('catalog')
+      end
+    end
+
+    context 'when encode: true' do
+      before { RequestStore.store[:arclight_repositories] = [] }
+
+      it 'encodes the id with Arcdex::Hashids' do
+        allow(Arcdex::Hashids).to receive(:encode).with(42).and_return('abc12345')
+        result = obj.mirador_viewer(id: 42, encode: true)
+        expect(result).to include('abc12345')
+      end
+    end
+  end
+
   describe '#preferred_theme' do
     context 'when the theme cookie is set' do
       before { allow(helper).to receive(:cookies).and_return({ theme: 'light' }) }

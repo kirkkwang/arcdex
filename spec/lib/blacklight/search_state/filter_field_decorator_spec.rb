@@ -33,6 +33,18 @@ RSpec.describe Blacklight::SearchState::FilterFieldDecorator do
       end
     end
 
+    context 'when removing a MISSING facet value' do
+      let(:missing_param) { Blacklight::Engine.config.blacklight.facet_missing_param }
+      let(:params) { { f: { '-rarity' => [missing_param] } } }
+      let(:search_state) { Blacklight::SearchState.new(params, blacklight_config) }
+      let(:filter_field) { search_state.filter('rarity') }
+
+      it 'removes the MISSING entry from the negated facet bucket' do
+        new_state = filter_field.remove(Blacklight::SearchState::FilterField::MISSING)
+        expect(new_state.params.dig(:f, '-rarity')).to be_nil
+      end
+    end
+
     context 'when exclude: false (default)' do
       let(:params) { { f: { 'rarity' => ['Rare', 'Common'] } } }
       let(:search_state) { Blacklight::SearchState.new(params, blacklight_config) }

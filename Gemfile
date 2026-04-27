@@ -66,6 +66,7 @@ group :development do
   # gem 'xray-rails', github: 'kirkkwang/xray-rails'
 end
 
+gem 'benchmark', require: false
 gem 'arclight'
 # gem 'blacklight', path: 'gems/blacklight'
 gem 'blacklight-gallery'

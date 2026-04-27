@@ -117,6 +117,7 @@ GEM
     base64 (0.3.0)
     bcrypt (3.1.22)
     bcrypt_pbkdf (1.1.2)
+    benchmark (0.5.0)
     bigdecimal (4.1.2)
     bindex (0.8.1)
     blacklight (8.12.3)
@@ -633,6 +634,7 @@ PLATFORMS
 
 DEPENDENCIES
   arclight
+  benchmark
   blacklight-gallery
   blacklight-locale_picker
   blacklight_advanced_search

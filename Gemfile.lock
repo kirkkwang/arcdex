@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: a81db6a33489d673a80dbe476e87b76bee9e9896
+  revision: 2fde0a29f17f17026010c234fe53827f164af70b
   branch: main
   specs:
     actioncable (8.2.0.alpha)
@@ -247,7 +247,7 @@ GEM
     jbuilder (2.15.1)
       actionview (>= 7.0.0)
       activesupport (>= 7.0.0)
-    json (2.19.7)
+    json (2.19.8)
     jsonpath (1.1.5)
       multi_json
     jwt (3.1.2)

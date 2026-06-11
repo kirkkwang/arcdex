@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: a81db6a33489d673a80dbe476e87b76bee9e9896
+  revision: 6472bab7c48446a472a45e8bb4e02b1a396ad1f8
   branch: main
   specs:
     actioncable (8.2.0.alpha)
@@ -247,7 +247,7 @@ GEM
     jbuilder (2.15.1)
       actionview (>= 7.0.0)
       activesupport (>= 7.0.0)
-    json (2.19.7)
+    json (2.19.8)
     jsonpath (1.1.5)
       multi_json
     jwt (3.1.2)
@@ -317,7 +317,7 @@ GEM
     mutex_m (0.3.0)
     net-http (0.9.1)
       uri (>= 0.11.1)
-    net-imap (0.6.4)
+    net-imap (0.6.4.1)
       date
       net-protocol
     net-pop (0.1.2)
@@ -610,7 +610,7 @@ GEM
       actionview (>= 8.0.0)
       bindex (>= 0.4.0)
       railties (>= 8.0.0)
-    websocket-driver (0.8.0)
+    websocket-driver (0.8.1)
       base64
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)

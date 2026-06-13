@@ -261,11 +261,16 @@ module Arcdex
     end
 
     def small_image
-      record.fetch('image', '') + '/low.png'
+      image_url
     end
 
     def large_image
-      "https://images.arcdex.dev/#{id}.png"
+      image_url
+    end
+
+    # Both thumbnail and full-res resolve to the single webp object we sync to R2.
+    def image_url
+      "https://images.arcdex.dev/#{id}.webp"
     end
 
     def tcg_player_price_url

@@ -20,4 +20,16 @@ RSpec.describe Arcdex::TcgDexCardAdapter do
       expect(adapter.has_online_content?).to be(false)
     end
   end
+
+  describe 'image urls' do
+    subject(:adapter) { described_class.new({ 'id' => 'A1-001' }) }
+
+    it 'points the full-res image at the downcased webp object on R2' do
+      expect(adapter.large_image).to eq('https://images.arcdex.dev/a1-001.webp')
+    end
+
+    it 'serves the same webp object for the thumbnail' do
+      expect(adapter.small_image).to eq(adapter.large_image)
+    end
+  end
 end

@@ -11,6 +11,10 @@ module Arcdex
       record.fetch('serie', nil)&.fetch('id', nil) == 'tcgp'
     end
 
+    def game
+      'Pokémon TCG Pocket'
+    end
+
     def set_name
       record.fetch('cards', nil)&.first&.fetch('set')&.fetch('name', nil)
     end

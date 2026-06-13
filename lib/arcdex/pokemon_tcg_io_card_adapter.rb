@@ -14,6 +14,10 @@ module Arcdex
       false # pokemontcg.io does not support Pocket cards
     end
 
+    def game
+      'Pokémon TCG'
+    end
+
     def set_name
       record.first.fetch('set')&.fetch('name', nil)
     end

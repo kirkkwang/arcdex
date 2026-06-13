@@ -40,6 +40,7 @@ to_field 'level_ssm', lambda { |_record, accumulator| accumulator << 'card' }
 to_field 'level_ssim', lambda { |_record, accumulator| accumulator << 'Card' }
 
 to_field 'has_online_content_ssim', lambda { |_record, accumulator| accumulator << settings[:has_online_content] }
+to_field 'game_ssi', lambda { |_record, accumulator| accumulator << settings[:game] }
 
 to_field 'title_ssm', lambda { |record, accumulator| accumulator << record['name'] }
 to_field 'title_tesim', lambda { |record, accumulator| accumulator << record['name'] }

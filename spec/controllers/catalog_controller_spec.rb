@@ -57,6 +57,18 @@ RSpec.describe CatalogController do
     end
   end
 
+  describe 'game facet configuration' do
+    let(:facet_fields) { described_class.blacklight_config.facet_fields }
+
+    it 'facets on the indexed game_ssi field' do
+      expect(facet_fields['game'].field).to eq('game_ssi')
+    end
+
+    it 'no longer exposes the legacy format facet' do
+      expect(facet_fields).not_to have_key('format')
+    end
+  end
+
   describe 'Arcdex::IiifManifestable#fetch_documents (user bookmark branch)' do
     let(:mock_user) { instance_double(User, ordered_bookmark_ids: ['base-4']) }
     let(:mock_manifest_presenter) { instance_double(Arcdex::IiifManifestPresenter) }

@@ -164,10 +164,7 @@ class CatalogController < ApplicationController
     #  across a large set of results)
     # :index_range can be an array or range of prefixes that will be used to create the navigation
     #  (note: It is case sensitive when searching values)
-    config.add_facet_field 'format', query: {
-      physical: { label: 'Pokémon TCG', fq: 'has_online_content_ssim:false' },
-      online: { label: 'Pokémon TCG Pocket', fq: 'has_online_content_ssim:true' }
-    }, collapse: false, advanced_search_component: Arcdex::AdvancedSearchFilterComponent
+    config.add_facet_field 'game', field: 'game_ssi', limit: 10, collapse: false, excludable: true, advanced_search_component: Arcdex::AdvancedSearchFilterComponent
     config.add_facet_field 'booster_packs', field: 'boosters_ssm', limit: 10, excludable: true, advanced_search_component: Arcdex::AdvancedSearchFilterComponent
     config.add_facet_field 'Category', field: 'level_ssim', limit: 10, excludable: true, advanced_search_component: Arcdex::AdvancedSearchFilterComponent
     config.add_facet_field 'series', field: 'series_ssm', limit: 10, excludable: true, advanced_search_component: Arcdex::AdvancedSearchFilterComponent

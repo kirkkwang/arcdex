@@ -66,7 +66,7 @@ module Arcdex
         {
           'name' => name,
           'supertype' => 'Pokémon',
-          'subtypes' => [clean(infobox['evo stage']), paradox_subtype].compact,
+          'subtypes' => [clean(infobox['evo stage']), paradox_subtype, *ex_subtypes].compact,
           'hp' => infobox['hp']&.to_i,
           'types' => Array(infobox['type']).reject { |t| t.to_s.strip.empty? },
           'evolves_from' => clean(infobox['evolves from']),
@@ -100,6 +100,17 @@ module Arcdex
         return 'Future' if wt.include?('{{Cardtext/Future/Pocket')
 
         nil
+      end
+
+      # "ex" Pokémon carry a {{TCGP Icon|ex}} marker in the infobox name; Mega ex
+      # cards use {{TCGP Icon|Mega ex}} and count as both MEGA and ex (matching
+      # how the main Pokémon TCG splits the subtypes).
+      def ex_subtypes
+        name = infobox['en name'].to_s
+        return %w[MEGA ex] if name.match?(/\{\{TCGP Icon\|Mega ex\}\}/i)
+        return ['ex'] if name.match?(/\{\{TCGP Icon\|ex\}\}/i)
+
+        []
       end
 
       def weaknesses

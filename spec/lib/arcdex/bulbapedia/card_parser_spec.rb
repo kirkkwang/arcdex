@@ -116,6 +116,17 @@ RSpec.describe Arcdex::Bulbapedia::CardParser do
       wikitext = "{{TCG Card Infobox/Pokémon/Pocket\n|en name=X\n|type=Grass\n|hp=60\n|evo stage=Basic\n}}"
       expect(parse(wikitext)['subtypes']).to eq(['Basic'])
     end
+
+    it 'adds the ex subtype from the {{TCGP Icon|ex}} name marker' do
+      wikitext = "{{TCG Card Infobox/Pokémon/Pocket\n|en name=Iron Bundle {{TCGP Icon|ex}}\n|type=Water\n|hp=130\n|evo stage=Basic\n}}" \
+                 '{{Cardtext/Future/Pocket}}'
+      expect(parse(wikitext)['subtypes']).to eq(%w[Basic Future ex])
+    end
+
+    it 'treats Mega ex cards as both MEGA and ex' do
+      wikitext = "{{TCG Card Infobox/Pokémon/Pocket\n|en name=Mega Pidgeot {{TCGP Icon|Mega ex}}\n|type=Colorless\n|hp=150\n|evo stage=Stage 2\n}}"
+      expect(parse(wikitext)['subtypes']).to eq(['Stage 2', 'MEGA', 'ex'])
+    end
   end
 
   describe 'boosters from the expansion entry matching the set being pulled' do

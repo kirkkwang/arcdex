@@ -99,6 +99,23 @@ RSpec.describe Arcdex::Bulbapedia::CardParser do
                  "{{Carddex/Pocket|name=X|ndex=—|dex=...}}"
       expect(parse(wikitext)['national_pokedex_numbers']).to eq([])
     end
+
+    it 'adds the Future paradox subtype alongside the evo stage' do
+      wikitext = "{{TCG Card Infobox/Pokémon/Pocket\n|en name=Iron Moth\n|type=Fire\n|hp=90\n|evo stage=Basic\n}}" \
+                 '{{Cardtext/Future/Pocket}}'
+      expect(parse(wikitext)['subtypes']).to eq(%w[Basic Future])
+    end
+
+    it 'adds the Ancient paradox subtype' do
+      wikitext = "{{TCG Card Infobox/Pokémon/Pocket\n|en name=Raging Bolt\n|type=Dragon\n|hp=90\n|evo stage=Basic\n}}" \
+                 '{{Cardtext/Ancient/Pocket}}'
+      expect(parse(wikitext)['subtypes']).to eq(%w[Basic Ancient])
+    end
+
+    it 'omits a paradox subtype for non-paradox cards' do
+      wikitext = "{{TCG Card Infobox/Pokémon/Pocket\n|en name=X\n|type=Grass\n|hp=60\n|evo stage=Basic\n}}"
+      expect(parse(wikitext)['subtypes']).to eq(['Basic'])
+    end
   end
 
   describe 'boosters from the expansion entry matching the set being pulled' do

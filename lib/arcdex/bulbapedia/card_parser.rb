@@ -66,7 +66,7 @@ module Arcdex
         {
           'name' => name,
           'supertype' => 'Pokémon',
-          'subtypes' => Array(clean(infobox['evo stage'])),
+          'subtypes' => [clean(infobox['evo stage']), paradox_subtype].compact,
           'hp' => infobox['hp']&.to_i,
           'types' => Array(infobox['type']).reject { |t| t.to_s.strip.empty? },
           'evolves_from' => clean(infobox['evolves from']),
@@ -91,6 +91,15 @@ module Arcdex
           # trainer effect text through flavor_text.
           'flavor_text' => trainer_effect
         }
+      end
+
+      # Paradox mechanic, marked by a {{Cardtext/Ancient|Future/Pocket}} template
+      # (e.g. Iron Moth = Future, Raging Bolt = Ancient). Surfaced as a subtype.
+      def paradox_subtype
+        return 'Ancient' if wt.include?('{{Cardtext/Ancient/Pocket')
+        return 'Future' if wt.include?('{{Cardtext/Future/Pocket')
+
+        nil
       end
 
       def weaknesses

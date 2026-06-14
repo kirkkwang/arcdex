@@ -47,10 +47,7 @@ module Arcdex
 
     def normalized_set_id
       id = params[:id]
-      return id unless id.include?('-')
-
-      prefix = id.rpartition('-').first
-      prefix.length <= 1 ? id : prefix
+      id[/\A(.+)-\d+\z/, 1] || id
     end
   end
 end

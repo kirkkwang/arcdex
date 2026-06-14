@@ -1,0 +1,61 @@
+{{TCG Card Infobox/Trainer/Pocket
+|en name=Professor Sada
+|ja name=オーリム博士
+|trans name=Dr. Olim
+|subtype=Supporter
+|image=ProfessorSadaParadoxDrive.png
+|illustrator=hncl
+|image set=
+{{TCG Card Infobox/Tabbed Image/Pocket|image=ProfessorSadaParadoxDrive72.png|illustrator=hncl|tab caption=Uncommon}}
+{{TCG Card Infobox/Tabbed Image/Pocket|image=ProfessorSadaParadoxDrive87.png|illustrator=hncl|tab caption=Super Rare}}
+|expansions=
+{{TCG Card Infobox/Expansion Header/Pocket|Paradox Drive}}
+{{TCG Card Infobox/Expansion Entry/Pocket|pack=Any|rarity=Diamond|rarity count=2|number=072/074}}
+{{TCG Card Infobox/Expansion Entry/Pocket|pack=Any|rarity=Star|rarity count=2|number=087/074}}
+}}
+
+'''Professor Sada''' (Japanese: '''オーリム博士''' ''Dr. Olim'') is a {{TCGP|Supporter}} card in [[Pokémon Trading Card Game Pocket]]. It is part of the {{TCGP|Paradox Drive}} expansion.
+
+==Card text==
+{{TCGTrainerText
+|class=Supporter
+|rule=SWSH Supporter
+|effect=Attach 3 different types of Energy from your discard pile to your {{TCGP|Ancient}} Pokémon in any way you like.
+|Ancient=yes
+}}
+
+==Release information==
+===Gallery===
+{{TCGGallery
+|type=Supporter
+|image1=ProfessorSadaParadoxDrive72.png
+|caption1=Uncommon card<br>Illus. [[hncl]]
+|image2=ProfessorSadaParadoxDrive87.png
+|caption2=Super rare card<br>Illus. [[hncl]]
+}}
+
+==Trivia==
+*This card's effect is similar to that of {{TCG|Professor Sada's Vitality}} in the [[Pokémon Trading Card Game]] in that both cards attach discarded Energy to the player's {{TCGP|Ancient}} Pokémon.
+===Origin===
+*[[Professor Sada]] is the resident [[Pokémon Professor]] of the [[Paldea]] region in {{g|Scarlet}}.
+
+==In other languages==
+{{langtable|color={{TCG Supporter color}}|bordercolor={{TCG Supporter color dark}}
+|ja=オーリム博士 ''Ōlim-hakase''
+|zh_yue=奧琳博士 ''Oulàhm-boksih''
+|zh_cmn=奧琳博士 ''Àolín-bóshì''
+|fr=Professeure Olim
+|de=Professor Antiqua
+|it=Prof.ssa Olim
+|ko=올림박사 ''Olim-baksa''
+|pt_br=Professora Arka
+|es=Profesora Albora
+}}
+
+{{DoubleProjectTag|Sidegames|TCG|video games about the TCG.}}
+
+[[de:Professor Antiqua (TCG Pocket)]]
+[[fr:Professeure Olim (Propulsion Paradoxe 072)]]
+[[it:Prof.ssa Olim (Assalto dei Paradossi 72)]]
+[[ja:オーリム博士 (ポケポケ)]]
+[[zh:奥琳博士（TCGP）]]

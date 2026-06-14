@@ -1,0 +1,60 @@
+{{TCG Card Infobox/Pokémon/Pocket
+|en name=Surskit
+|ja name=アメタマ
+|trans name=Ametama
+|species=Surskit
+|type=Grass
+|image=SurskitParadoxDrive1.png
+|illustrator=Yoriyuki Ikegami
+|hp=60
+|weakness=Fire
+|retreat cost=1
+|evo stage=Basic
+|expansions=
+{{TCG Card Infobox/Expansion Header/Pocket|Paradox Drive}}
+{{TCG Card Infobox/Expansion Entry/Pocket|number=001/074|pack=Any|rarity=Diamond|rarity count=1}}
+}}
+
+'''Surskit''' (Japanese: '''アメタマ''' ''Ametama'') is a {{ct|Grass}} Basic Pokémon card in [[Pokémon Trading Card Game Pocket]]. It is part of the {{TCGP|Paradox Drive}} expansion.
+
+==Card text==
+{{Cardtext/Header/Pocket|type=Grass}}
+{{Cardtext/Attack/Pocket
+|type=Grass
+|cost={{e|Colorless}}
+|name=Ram
+|jname=ぶつかる
+|jtrans=Collide
+|damage=10
+|effect=
+}}
+{{Cardtext/Footer}}
+
+===Pokédex data===
+{{Carddex/Pocket
+|type=Grass
+|name=Surskit
+|category=Pond Skater
+|ndex=0283
+|height=1'8"
+|jheight=0.5
+|weight=3.7
+|jweight=1.7
+|dex=It secretes a thick, sweet-scented syrup from the tip of its head. It lives on weed-choked ponds.
+|jdex=頭の 先から 水飴に 似た 甘い 匂いの 液体を 出す。 水草の 多い 池に 棲む。
+}}
+
+==Trivia==
+===Origin===
+*This card's illustration was first featured on {{TCG ID|Paradox Rift|Surskit|1}} from the {{TCG|Paradox Rift}} expansion.
+*'''Ram''' is an attack that first appeared on {{TCG ID|Team Rocket|Zubat|70}} from the {{TCG|Team Rocket}} expansion.
+*This card's [[Pokédex]] entry comes from {{g|Violet}}.
+
+{{DoubleProjectTag|Sidegames|TCG|video games about the TCG.}}
+
+[[de:Gehweiher (Paradoxansturm 001)]]
+[[es:Surskit (Impulso Paradójico TCG Pocket)]]
+[[fr:Arakdo (Propulsion Paradoxe 001)]]
+[[it:Surskit (Assalto dei Paradossi 1)]]
+[[ja:アメタマ (ポケポケ B3a)]]
+[[zh:溜溜糖球（B3a）]]

@@ -1,0 +1,445 @@
+{{TCGPocketExpansionPrevNext | prev = Pulsing Aura | next = }}
+{{TCGPocketExpansionInfobox
+|setname=Paradox Drive
+|jasetname=進撃パラドックス
+|jasettrans=Advancing Paradox
+|setlogo=B3a Set Logo EN.png
+|release=May 28, 2026
+|cards= 109 (74 + 35 secret)
+|collections= 14 (6 + 8 secret)
+|dex missions=
+|deck missions= 14
+|decks= 7
+|battles=
+}}
+'''Paradox Drive''' (Japanese: '''進撃パラドックス''' ''Advancing Paradox'') is the seventh {{TCGP|B Series}} expansion in [[Pokémon Trading Card Game Pocket]].
+
+== Information ==
+'''Paradox Drive''' is the fourth themed booster pack of the {{TCGP|B Series}} released through [[Pokémon Trading Card Game Pocket]]. It introduces {{TCGP|Ancient}} and {{TCGP|Future}} cards to the game, which revolve primarily around the [[Paradox Pokémon]] introduced in {{g|Scarlet and Violet}}. The mechanics were first introduced in the [[Pokémon Trading Card Game]]'s {{TCG|Paradox Rift}} expansion.
+
+== Card list ==
+{{TCG Set List/header|tablecol=CA9147|bordercol=DB4695|cellcol=FEE0A7}}
+|-
+| 001/074 || {{TCG ID|Paradox Drive|Surskit|1}} || {{TCG Icon|Grass}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 002/074 || {{TCG ID|Paradox Drive|Masquerain|2}} || {{TCG Icon|Grass}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 003/074 || {{TCG ID|Paradox Drive|Brute Bonnet|3}} || {{TCG Icon|Grass}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 004/074 || {{TCG ID|Paradox Drive|Slither Wing|4}} || {{TCG Icon|Grass}} || {{Rar/TCGP|Diamond|2}}
+|-
+| 005/074 || {{TCG ID|Paradox Drive|Iron Moth|5}} || {{TCG Icon|Fire}} || {{Rar/TCGP|Diamond|2}}
+|-
+| 006/074 || {{TCG ID|Paradox Drive|Psyduck|6}} || {{TCG Icon|Water}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 007/074 || {{TCG ID|Paradox Drive|Golduck|7}} || {{TCG Icon|Water}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 008/074 || {{TCG ID|Paradox Drive|Vaporeon|8}} || {{TCG Icon|Water}} || {{Rar/TCGP|Diamond|2}}
+|-
+| 009/074 || {{TCG ID|Paradox Drive|Buizel|9}} || {{TCG Icon|Water}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 010/074 || {{TCG ID|Paradox Drive|Floatzel|10}} || {{TCG Icon|Water}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 011/074 || {{TCG ID|Paradox Drive|Snom|11}} || {{TCG Icon|Water}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 012/074 || {{TCG ID|Paradox Drive|Frosmoth|12}} || {{TCG Icon|Water}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 013/074 || {{TCG ID|Paradox Drive|Iron Bundle ex|13|Iron Bundle}}{{TCGP Icon|ex}} || {{TCG Icon|Water}} || {{Rar/TCGP|Diamond|4}}
+|-
+| 014/074 || {{TCG ID|Paradox Drive|Pawmi|14}} || {{TCG Icon|Lightning}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 015/074 || {{TCG ID|Paradox Drive|Pawmo|15}} || {{TCG Icon|Lightning}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 016/074 || {{TCG ID|Paradox Drive|Pawmot|16}} || {{TCG Icon|Lightning}} || {{Rar/TCGP|Diamond|2}}
+|-
+| 017/074 || {{TCG ID|Paradox Drive|Iron Hands|17}} || {{TCG Icon|Lightning}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 018/074 || {{TCG ID|Paradox Drive|Iron Thorns|18}} || {{TCG Icon|Lightning}} || {{Rar/TCGP|Diamond|2}}
+|-
+| 019/074 || {{TCG ID|Paradox Drive|Miraidon ex|19|Miraidon}}{{TCGP Icon|ex}} || {{TCG Icon|Lightning}} || {{Rar/TCGP|Diamond|4}}
+|-
+| 020/074 || {{TCG ID|Paradox Drive|Espeon|20}} || {{TCG Icon|Psychic}} || {{Rar/TCGP|Diamond|2}}
+|-
+| 021/074 || {{TCG ID|Paradox Drive|Flittle|21}} || {{TCG Icon|Psychic}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 022/074 || {{TCG ID|Paradox Drive|Espathra|22}} || {{TCG Icon|Psychic}} || {{Rar/TCGP|Diamond|2}}
+|-
+| 023/074 || {{TCG ID|Paradox Drive|Greavard|23}} || {{TCG Icon|Psychic}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 024/074 || {{TCG ID|Paradox Drive|Houndstone|24}} || {{TCG Icon|Psychic}} || {{Rar/TCGP|Diamond|2}}
+|-
+| 025/074 || {{TCG ID|Paradox Drive|Scream Tail|25}} || {{TCG Icon|Psychic}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 026/074 || {{TCG ID|Paradox Drive|Flutter Mane ex|26|Flutter Mane}}{{TCGP Icon|ex}} || {{TCG Icon|Psychic}} || {{Rar/TCGP|Diamond|4}}
+|-
+| 027/074 || {{TCG ID|Paradox Drive|Iron Valiant|27}} || {{TCG Icon|Psychic}} || {{Rar/TCGP|Diamond|3}}
+|-
+| 028/074 || {{TCG ID|Paradox Drive|Iron Leaves|28}} || {{TCG Icon|Psychic}} || {{Rar/TCGP|Diamond|3}}
+|-
+| 029/074 || {{TCG ID|Paradox Drive|Iron Boulder|29}} || {{TCG Icon|Psychic}} || {{Rar/TCGP|Diamond|3}}
+|-
+| 030/074 || {{TCG ID|Paradox Drive|Iron Crown|30}} || {{TCG Icon|Psychic}} || {{Rar/TCGP|Diamond|3}}
+|-
+| 031/074 || {{TCG ID|Paradox Drive|Nacli|31}} || {{TCG Icon|Fighting}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 032/074 || {{TCG ID|Paradox Drive|Naclstack|32}} || {{TCG Icon|Fighting}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 033/074 || {{TCG ID|Paradox Drive|Garganacl|33}} || {{TCG Icon|Fighting}} || {{Rar/TCGP|Diamond|3}}
+|-
+| 034/074 || {{TCG ID|Paradox Drive|Great Tusk|34}} || {{TCG Icon|Fighting}} || {{Rar/TCGP|Diamond|2}}
+|-
+| 035/074 || {{TCG ID|Paradox Drive|Sandy Shocks|35}} || {{TCG Icon|Fighting}} || {{Rar/TCGP|Diamond|2}}
+|-
+| 036/074 || {{TCG ID|Paradox Drive|Koraidon ex|36|Koraidon}}{{TCGP Icon|ex}} || {{TCG Icon|Fighting}} || {{Rar/TCGP|Diamond|4}}
+|-
+| 037/074 || {{TCG ID|Paradox Drive|Umbreon|37}} || {{TCG Icon|Darkness}} || {{Rar/TCGP|Diamond|2}}
+|-
+| 038/074 || {{TCG ID|Paradox Drive|Sneasel|38}} || {{TCG Icon|Darkness}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 039/074 || {{TCG ID|Paradox Drive|Weavile|39}} || {{TCG Icon|Darkness}} || {{Rar/TCGP|Diamond|2}}
+|-
+| 040/074 || {{TCG ID|Paradox Drive|Sableye|40}} || {{TCG Icon|Darkness}} || {{Rar/TCGP|Diamond|2}}
+|-
+| 041/074 || {{TCG ID|Paradox Drive|Pawniard|41}} || {{TCG Icon|Darkness}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 042/074 || {{TCG ID|Paradox Drive|Bisharp|42}} || {{TCG Icon|Darkness}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 043/074 || {{TCG ID|Paradox Drive|Kingambit|43}} || {{TCG Icon|Darkness}} || {{Rar/TCGP|Diamond|3}}
+|-
+| 044/074 || {{TCG ID|Paradox Drive|Glimmet|44}} || {{TCG Icon|Darkness}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 045/074 || {{TCG ID|Paradox Drive|Glimmora|45}} || {{TCG Icon|Darkness}} || {{Rar/TCGP|Diamond|3}}
+|-
+| 046/074 || {{TCG ID|Paradox Drive|Iron Jugulis|46}} || {{TCG Icon|Darkness}} || {{Rar/TCGP|Diamond|2}}
+|-
+| 047/074 || {{TCG ID|Paradox Drive|Roaring Moon|47}} || {{TCG Icon|Darkness}} || {{Rar/TCGP|Diamond|3}}
+|-
+| 048/074 || {{TCG ID|Paradox Drive|Corviknight|48}} || {{TCG Icon|Metal}} || {{Rar/TCGP|Diamond|2}}
+|-
+| 049/074 || {{TCG ID|Paradox Drive|Cufant|49}} || {{TCG Icon|Metal}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 050/074 || {{TCG ID|Paradox Drive|Copperajah|50}} || {{TCG Icon|Metal}} || {{Rar/TCGP|Diamond|2}}
+|-
+| 051/074 || {{TCG ID|Paradox Drive|Iron Treads|51}} || {{TCG Icon|Metal}} || {{Rar/TCGP|Diamond|2}}
+|-
+| 052/074 || {{TCG ID|Paradox Drive|Altaria|52}} || {{TCG Icon|Dragon}} || {{Rar/TCGP|Diamond|2}}
+|-
+| 053/074 || {{TCG ID|Paradox Drive|Walking Wake|53}} || {{TCG Icon|Dragon}} || {{Rar/TCGP|Diamond|3}}
+|-
+| 054/074 || {{TCG ID|Paradox Drive|Gouging Fire|54}} || {{TCG Icon|Dragon}} || {{Rar/TCGP|Diamond|3}}
+|-
+| 055/074 || {{TCG ID|Paradox Drive|Raging Bolt|55}} || {{TCG Icon|Dragon}} || {{Rar/TCGP|Diamond|3}}
+|-
+| 056/074 || {{TCG ID|Paradox Drive|Eevee|56}} || {{TCG Icon|Colorless}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 057/074 || {{TCG ID|Paradox Drive|Girafarig|57}} || {{TCG Icon|Colorless}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 058/074 || {{TCG ID|Paradox Drive|Farigiraf|58}} || {{TCG Icon|Colorless}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 059/074 || {{TCG ID|Paradox Drive|Dunsparce|59}} || {{TCG Icon|Colorless}} || {{Rar/TCGP|Diamond|2}}
+|-
+| 060/074 || {{TCG ID|Paradox Drive|Dudunsparce|60}} || {{TCG Icon|Colorless}} || {{Rar/TCGP|Diamond|3}}
+|-
+| 061/074 || {{TCG ID|Paradox Drive|Swablu|61}} || {{TCG Icon|Colorless}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 062/074 || {{TCG ID|Paradox Drive|Rufflet|62}} || {{TCG Icon|Colorless}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 063/074 || {{TCG ID|Paradox Drive|Braviary|63}} || {{TCG Icon|Colorless}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 064/074 || {{TCG ID|Paradox Drive|Hawlucha|64}} || {{TCG Icon|Colorless}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 065/074 || {{TCG ID|Paradox Drive|Rookidee|65}} || {{TCG Icon|Colorless}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 066/074 || {{TCG ID|Paradox Drive|Corvisquire|66}} || {{TCG Icon|Colorless}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 067/074 || {{TCG ID|Paradox Drive|Flamigo|67}} || {{TCG Icon|Colorless}} || {{Rar/TCGP|Diamond|1}}
+|-
+| 068/074 || {{TCG ID|Paradox Drive|Terapagos ex|68|Terapagos}}{{TCGP Icon|ex}} || {{TCG Icon|Colorless}} || {{Rar/TCGP|Diamond|4}}
+|-
+| 069/074 || {{TCG ID|Paradox Drive|Ancient Booster Energy Capsule|69}} || {{TCG Icon|Pokémon Tool}} || {{Rar/TCGP|Diamond|2}}
+|-
+| 070/074 || {{TCG ID|Paradox Drive|Future Booster Energy Capsule|70}} || {{TCG Icon|Pokémon Tool}} || {{Rar/TCGP|Diamond|2}}
+|-
+| 071/074 || {{TCG ID|Paradox Drive|Juliana|71}} || {{TCG Icon|Supporter}} || {{Rar/TCGP|Diamond|2}}
+|-
+| 072/074 || {{TCG ID|Paradox Drive|Professor Sada|72}} || {{TCG Icon|Supporter}} || {{Rar/TCGP|Diamond|2}}
+|-
+| 073/074 || {{TCG ID|Paradox Drive|Professor Turo|73}} || {{TCG Icon|Supporter}} || {{Rar/TCGP|Diamond|2}}
+|-
+| 074/074 || {{TCG ID|Paradox Drive|Area Zero|74}} || {{TCG Icon|Stadium}} || {{Rar/TCGP|Diamond|2}}
+|-
+| 075/074 || {{TCG ID|Paradox Drive|Snom|75}} || {{TCG Icon|Water}} || {{Rar/TCGP|Star|1}}
+|-
+| 076/074 || {{TCG ID|Paradox Drive|Flittle|76}} || {{TCG Icon|Psychic}} || {{Rar/TCGP|Star|1}}
+|-
+| 077/074 || {{TCG ID|Paradox Drive|Iron Boulder|77}} || {{TCG Icon|Psychic}} || {{Rar/TCGP|Star|1}}
+|-
+| 078/074 || {{TCG ID|Paradox Drive|Glimmora|78}} || {{TCG Icon|Darkness}} || {{Rar/TCGP|Star|1}}
+|-
+| 079/074 || {{TCG ID|Paradox Drive|Raging Bolt|79}} || {{TCG Icon|Dragon}} || {{Rar/TCGP|Star|1}}
+|-
+| 080/074 || {{TCG ID|Paradox Drive|Hawlucha|80}} || {{TCG Icon|Colorless}} || {{Rar/TCGP|Star|1}}
+|-
+| 081/074 || {{TCG ID|Paradox Drive|Iron Bundle ex|81|Iron Bundle}}{{TCGP Icon|ex}} || {{TCG Icon|Water}} || {{Rar/TCGP|Star|2}}
+|-
+| 082/074 || {{TCG ID|Paradox Drive|Miraidon ex|82|Miraidon}}{{TCGP Icon|ex}} || {{TCG Icon|Lightning}} || {{Rar/TCGP|Star|2}}
+|-
+| 083/074 || {{TCG ID|Paradox Drive|Flutter Mane ex|83|Flutter Mane}}{{TCGP Icon|ex}} || {{TCG Icon|Psychic}} || {{Rar/TCGP|Star|2}}
+|-
+| 084/074 || {{TCG ID|Paradox Drive|Koraidon ex|84|Koraidon}}{{TCGP Icon|ex}} || {{TCG Icon|Fighting}} || {{Rar/TCGP|Star|2}}
+|-
+| 085/074 || {{TCG ID|Paradox Drive|Terapagos ex|85|Terapagos}}{{TCGP Icon|ex}} || {{TCG Icon|Colorless}} || {{Rar/TCGP|Star|2}}
+|-
+| 086/074 || {{TCG ID|Paradox Drive|Juliana|86}} || {{TCG Icon|Supporter}} || {{Rar/TCGP|Star|2}}
+|-
+| 087/074 || {{TCG ID|Paradox Drive|Professor Sada|87}} || {{TCG Icon|Supporter}} || {{Rar/TCGP|Star|2}}
+|-
+| 088/074 || {{TCG ID|Paradox Drive|Professor Turo|88}} || {{TCG Icon|Supporter}} || {{Rar/TCGP|Star|2}}
+|-
+| 089/074 || {{TCG ID|Paradox Drive|Iron Bundle ex|89|Iron Bundle}}{{TCGP Icon|ex}} || {{TCG Icon|Water}} || {{Rar/TCGP|Star|2}}
+|-
+| 090/074 || {{TCG ID|Paradox Drive|Miraidon ex|90|Miraidon}}{{TCGP Icon|ex}} || {{TCG Icon|Lightning}} || {{Rar/TCGP|Star|2}}
+|-
+| 091/074 || {{TCG ID|Paradox Drive|Flutter Mane ex|91|Flutter Mane}}{{TCGP Icon|ex}} || {{TCG Icon|Psychic}} || {{Rar/TCGP|Star|2}}
+|-
+| 092/074 || {{TCG ID|Paradox Drive|Koraidon ex|92|Koraidon}}{{TCGP Icon|ex}} || {{TCG Icon|Fighting}} || {{Rar/TCGP|Star|2}}
+|-
+| 093/074 || {{TCG ID|Paradox Drive|Terapagos ex|93|Terapagos}}{{TCGP Icon|ex}} || {{TCG Icon|Colorless}} || {{Rar/TCGP|Star|3}}
+|-
+| 094/074 || {{TCG ID|Paradox Drive|Rellor|94}} || {{TCG Icon|Grass}} || {{Rar/TCGP|Shiny|1}}
+|-
+| 095/074 || {{TCG ID|Paradox Drive|Charcadet|95}} || {{TCG Icon|Fire}} || {{Rar/TCGP|Shiny|1}}
+|-
+| 096/074 || {{TCG ID|Paradox Drive|Tadbulb|96}} || {{TCG Icon|Lightning}} || {{Rar/TCGP|Shiny|1}}
+|-
+| 097/074 || {{TCG ID|Paradox Drive|Rabsca|97}} || {{TCG Icon|Psychic}} || {{Rar/TCGP|Shiny|1}}
+|-
+| 098/074 || {{TCG ID|Paradox Drive|Diglett|98}} || {{TCG Icon|Fighting}} || {{Rar/TCGP|Shiny|1}}
+|-
+| 099/074 || {{TCG ID|Paradox Drive|Dugtrio|99}} || {{TCG Icon|Fighting}} || {{Rar/TCGP|Shiny|1}}
+|-
+| 100/074 || {{TCG ID|Paradox Drive|Klawf|100}} || {{TCG Icon|Fighting}} || {{Rar/TCGP|Shiny|1}}
+|-
+| 101/074 || {{TCG ID|Paradox Drive|Orthworm|101}} || {{TCG Icon|Metal}} || {{Rar/TCGP|Shiny|1}}
+|-
+| 102/074 || {{TCG ID|Paradox Drive|Swablu|102}} || {{TCG Icon|Colorless}} || {{Rar/TCGP|Shiny|1}}
+|-
+| 103/074 || {{TCG ID|Paradox Drive|Altaria|103}} || {{TCG Icon|Colorless}} || {{Rar/TCGP|Shiny|1}}
+|-
+| 104/074 || {{TCG ID|Paradox Drive|Meowscarada ex|104|Meowscarada}}{{TCGP Icon|ex}} || {{TCG Icon|Grass}} || {{Rar/TCGP|Shiny|2}}
+|-
+| 105/074 || {{TCG ID|Paradox Drive|Armarouge ex|105|Armarouge}}{{TCGP Icon|ex}} || {{TCG Icon|Fire}} || {{Rar/TCGP|Shiny|2}}
+|-
+| 106/074 || {{TCG ID|Paradox Drive|Bellibolt ex|106|Bellibolt}}{{TCGP Icon|ex}} || {{TCG Icon|Lightning}} || {{Rar/TCGP|Shiny|2}}
+|-
+| 107/074 || {{TCG ID|Paradox Drive|Mega Altaria ex|107|Mega Altaria}}{{TCGP Icon|Mega ex}} || {{TCG Icon|Psychic}} || {{Rar/TCGP|Shiny|2}}
+|-
+| 108/074 || {{TCG ID|Paradox Drive|Iron Valiant|108}} || {{TCG Icon|Psychic}} || {{Rar/TCGP|Crown|1}}
+|-
+| 109/074 || {{TCG ID|Paradox Drive|Roaring Moon|109}} || {{TCG Icon|Darkness}} || {{Rar/TCGP|Crown|1}}
+|}
+
+==Missions==
+Players who collect a certain amount of cards from Paradox Drive will receive the following:
+
+{{TCGPocketMission/Header|reward=yes|tablecol=CA9147|bordercol=DB4695|cellcol=FEE0A7}}
+{{TCGPocketMission/Entry|mission=Got 40 different cards!|reward={{TCGPocketItem|Cover Paradox Drive Koraidon Miraidon|Paradox Drive: Koraidon & Miraidon (cover)}}}}
+{{TCGPocketMission/Entry|mission=Register all {{Rar/TCGP|Diamond|1}} – {{Rar/TCGP|Diamond|4}} cards in the card dex|reward={{TCGPocketItem|Koraidon Miraidon|Koraidon & Miraidon (emblem)|type=Emblem}}}}
+{{TCGPocketMission/Entry|mission=Register all {{Rar/TCGP|Diamond|1}} – {{Rar/TCGP|Diamond|4}} cards in the card dex|reward={{TCGPocketItem|Paradox Drive Koraidon|Paradox Drive: Koraidon (profile icon)|type=Profile Icon}}|lastitem=yes}}
+|}
+
+Players are rewarded for partially completing the card set. The rewards are given for each completed row (5 cards) and for collecting all cards of the same type.
+
+{{TCGPocketMission/Header|reward=yes|tablecol=CA9147|bordercol=DB4695|cellcol=FEE0A7}}
+{{TCGPocketMission/Entry|mission={{e|Grass}} Grass type complete!|reward={{TCGPocketItem|Trade Hourglass|num=24}}}}
+{{TCGPocketMission/Entry|mission={{e|Fire}} Fire type complete!|reward={{TCGPocketItem|Trade Hourglass|num=24}}}}
+{{TCGPocketMission/Entry|mission={{e|Water}} Water type complete!|reward={{TCGPocketItem|Trade Hourglass|num=24}}}}
+{{TCGPocketMission/Entry|mission={{e|Lightning}} Lightning type complete!|reward={{TCGPocketItem|Trade Hourglass|num=24}}}}
+{{TCGPocketMission/Entry|mission={{e|Psychic}} Psychic type complete!|reward={{TCGPocketItem|Trade Hourglass|num=24}}}}
+{{TCGPocketMission/Entry|mission={{e|Fighting}} Fighting type complete!|reward={{TCGPocketItem|Trade Hourglass|num=24}}}}
+{{TCGPocketMission/Entry|mission={{e|Darkness}} Darkness type complete!|reward={{TCGPocketItem|Trade Hourglass|num=24}}}}
+{{TCGPocketMission/Entry|mission={{e|Metal}} Metal type complete!|reward={{TCGPocketItem|Trade Hourglass|num=24}}}}
+{{TCGPocketMission/Entry|mission={{e|Dragon}} Dragon type complete!|reward={{TCGPocketItem|Trade Hourglass|num=24}}}}
+{{TCGPocketMission/Entry|mission={{e|Colorless}} Colorless type complete!|reward={{TCGPocketItem|Trade Hourglass|num=24}}}}
+{{TCGPocketMission/Entry|mission=Trainers complete!|reward={{TCGPocketItem|Pack Hourglass|num=3}}}}
+{{TCGPocketMission/Entry|mission={{Rar/TCGP|Star|1}} Rarity complete!|reward={{TCGPocketItem|Pack Hourglass|num=12}}}}
+{{TCGPocketMission/Entry|mission={{Rar/TCGP|Star|2}} Rarity complete!|reward={{TCGPocketItem|Pack Hourglass|num=12}}}}
+{{TCGPocketMission/Entry|mission={{Rar/TCGP|Star|3}} Rarity complete!|reward={{TCGPocketItem|Pack Hourglass|num=12}}}}
+{{TCGPocketMission/Entry|mission={{Rar/TCGP|Shiny|1}} Rarity complete!|reward={{TCGPocketItem|Pack Hourglass|num=12}}}}
+{{TCGPocketMission/Entry|mission={{Rar/TCGP|Shiny|2}} Rarity complete!|reward={{TCGPocketItem|Pack Hourglass|num=12}}}}
+{{TCGPocketMission/Entry|mission={{Rar/TCGP|Crown|1}} Rarity complete!|reward={{TCGPocketItem|Pack Hourglass|num=12}}}}
+|-
+! colspan="3" style="color:#FFF" | Repeatable Missions
+{{TCGPocketMission/Entry|mission=One row complete!|reward={{TCGPocketItem|Wonder Hourglass|num=2}}|lastitem=yes}}
+|}
+
+=== Deck Missions ===
+Paradox Drive has 7 [[deck]]s and 14 {{DL|Mission (TCG Pocket)|Deck Missions}}. Each deck has two missions:
+
+{{TCGPocketMission/Header|reward=yes|tablecol=CA9147|bordercol=DB4695|cellcol=FEE0A7}}
+{{TCGPocketMission/Entry|mission=Collect the highlight card(s) for [deck name]|reward={{TCGPocketItem|Rental Deck|[deck name] rental deck}}}}
+{{TCGPocketMission/Entry|mission=Collect cards for [deck name]|reward={{TCGPocketItem|Theme Deck List|[deck name] theme deck list}}|lastitem=yes}}
+|}
+
+The 7 available decks related to Paradox Drive are: 
+{{TCGPocketExpansionDeck/Header|tablecol=CA9147|bordercol=DB4695|cellcol=FEE0A7}}
+{{TCGPocketExpansionDeck/Entry|{{OBP|Iron Bundle ex Deck|Paradox Drive}}|{{e|Water}}|{{TCG ID|Paradox Drive|Iron Bundle ex|13}}}}
+{{TCGPocketExpansionDeck/Entry|{{OBP|Miraidon ex Deck|Paradox Drive}}|{{e|Lightning}}|{{TCG ID|Paradox Drive|Miraidon ex|19}}}}
+{{TCGPocketExpansionDeck/Entry|{{OBP|Flutter Mane ex Deck|Paradox Drive}}|{{e|Psychic}}|{{TCG ID|Paradox Drive|Flutter Mane ex|26}}}}
+{{TCGPocketExpansionDeck/Entry|{{OBP|Koraidon ex Deck|Paradox Drive}}|{{e|Fighting}}|{{TCG ID|Paradox Drive|Koraidon ex|36}}}}
+{{TCGPocketExpansionDeck/Entry|{{OBP|Terapagos ex Deck|Paradox Drive}}|{{e|Water}}{{e|Darkness}}{{e|Colorless}}|{{TCG ID|Paradox Drive|Terapagos ex|68}}}}
+{{TCGPocketExpansionDeck/Entry|{{OBP|Raging Bolt Deck|Paradox Drive}}|{{e|Dragon}}|{{TCG ID|Paradox Drive|Raging Bolt|55}}}}
+{{TCGPocketExpansionDeck/Entry|{{OBP|Iron Valiant Deck|Paradox Drive}}|{{e|Psychic}}|{{TCG ID|Paradox Drive|Iron Valiant|27}}|lastitem=yes}}
+|}
+
+=== Themed Collections ===
+Paradox Drive has 6 regular {{DL|Mission (TCG Pocket)|Themed Collections}} and 8 hidden Themed Collections.
+
+{{TCGPocketCollection/Header|tablecol=CA9147|bordercol=DB4695|cellcol=FEE0A7}}
+{{TCGPocketCollection/Entry|collection=Area Zero Ecology
+|cards=6 in any combination of:<br>{{TCG ID|Paradox Drive|Nacli|31}} (#031)<br>{{TCG ID|Paradox Drive|Farigiraf|58}} (#058)<br>{{TCG ID|Paradox Drive|Dudunsparce|60}} (#060)<br>{{TCG ID|Paradox Drive|Flamigo|67}} (#067)
+|reward={{TCGPocketItem|Cover Area Zero Ecology|Area Zero Ecology (cover)}}
+}}
+{{TCGPocketCollection/Entry|collection=Over 1,000 pounds!
+|cards=4 in any combination of:<br>{{TCG ID|Paradox Drive|Copperajah|50}} (#050)<br>{{TCG ID|Paradox Drive|Gouging Fire|54}} (#054)
+|reward={{TCGPocketItem|Wonder Hourglass|num=12}}<br>{{TCGPocketItem|Shop Ticket|num=2}}
+}}
+{{TCGPocketCollection/Entry|collection=Pokémon that resemble Volcarona
+|cards={{TCG ID|Paradox Drive|Slither Wing|4}} (#004)<br>{{TCG ID|Paradox Drive|Iron Moth|5}} (#005)
+|reward={{TCGPocketItem|Wonder Hourglass|num=12}}<br>{{TCGPocketItem|Shop Ticket|num=2}}
+}}
+{{TCGPocketCollection/Entry|collection=Pokémon that resemble Donphan
+|cards={{TCG ID|Paradox Drive|Great Tusk|34}} (#034)<br>{{TCG ID|Paradox Drive|Iron Treads|51}} (#051)
+|reward={{TCGPocketItem|Wonder Hourglass|num=12}}<br>{{TCGPocketItem|Shop Ticket|num=2}}
+}}
+{{TCGPocketCollection/Entry|collection=Pokémon with Long Necks
+|cards=6 in any combination of:<br>{{TCG ID|Paradox Drive|Espathra|22}} (#022)<br>{{TCG ID|Paradox Drive|Raging Bolt|55}} (#055 or #079)<br>{{TCG ID|Paradox Drive|Farigiraf|58}} (#058)
+|reward={{TCGPocketItem|Wonder Hourglass|num=12}}<br>{{TCGPocketItem|Shop Ticket|num=2}}
+}}
+{{TCGPocketCollection/Entry|collection=Collect 3 Scream Tail cards
+|cards={{TCG ID|Paradox Drive|Scream Tail|25}} (#025) × 3
+|reward={{TCGPocketItem|Scream Tail|Scream Tail (profile icon)|type=Profile Icon}}
+}}
+|-
+! colspan="3" style="color:#FFF" | Secret Missions
+{{TCGPocketCollection/Entry|collection=Glittering Like Jewels
+|cards={{TCG ID|Paradox Drive|Golduck|7}} (#007)<br>{{TCG ID|Paradox Drive|Weavile|39}} (#039)<br>{{TCG ID|Paradox Drive|Sableye|40}} (#040)<br>{{TCG ID|Paradox Drive|Terapagos ex|68}} (#068 or #085 or #093)
+|reward={{TCGPocketItem|Wonder Hourglass|num=12}}<br>{{TCGPocketItem|Shop Ticket|num=2}}
+}}
+{{TCGPocketCollection/Entry|collection=Legends of the Paldea Region
+|cards={{TCG ID|Paradox Drive|Miraidon ex|19}} (#019 or #082 or #090)<br>{{TCG ID|Paradox Drive|Koraidon ex|36}} (#036 or #084 or #092)
+|reward={{TCGPocketItem|Wonder Hourglass|num=12}}<br>{{TCGPocketItem|Shop Ticket|num=2}}
+}}
+{{TCGPocketCollection/Entry|collection=Future Swords of Justice?
+|cards={{TCG ID|Paradox Drive|Iron Leaves|28}} (#028)<br>{{TCG ID|Paradox Drive|Iron Boulder|29}} (#029 or #077)<br>{{TCG ID|Paradox Drive|Iron Crown|30}} (#030)
+|reward={{TCGPocketItem|Wonder Hourglass|num=12}}<br>{{TCGPocketItem|Shop Ticket|num=2}}
+}}
+{{TCGPocketCollection/Entry|collection=Legends Racing Across the Ancient World
+|cards={{TCG ID|Paradox Drive|Walking Wake|53}} (#053)<br>{{TCG ID|Paradox Drive|Gouging Fire|54}} (#054)<br>{{TCG ID|Paradox Drive|Raging Bolt|55}} (#055 or #079)
+|reward={{TCGPocketItem|Wonder Hourglass|num=12}}<br>{{TCGPocketItem|Shop Ticket|num=2}}
+}}
+{{TCGPocketCollection/Entry|collection=Paradox Drive Museum 1
+|cards={{TCG ID|Paradox Drive|Snom|75}} (#075)<br>{{TCG ID|Paradox Drive|Flittle|76}} (#076)<br>{{TCG ID|Paradox Drive|Iron Boulder|77}} (#077)<br>{{TCG ID|Paradox Drive|Glimmora|78}} (#078)<br>{{TCG ID|Paradox Drive|Raging Bolt|79}} (#079)<br>{{TCG ID|Paradox Drive|Hawlucha|80}} (#080)
+|reward={{TCGPocketItem|Wonder Hourglass|num=36}}<br>{{TCGPocketItem|Pack Hourglass|num=12}}<br>{{TCGPocketItem|Shop Ticket|num=10}}
+}}
+{{TCGPocketCollection/Entry|collection=Paradox Drive Museum 2
+|cards={{TCG ID|Paradox Drive|Iron Bundle ex|89}} (#089)<br>{{TCG ID|Paradox Drive|Miraidon ex|90}} (#090)<br>{{TCG ID|Paradox Drive|Flutter Mane ex|91}} (#091)<br>{{TCG ID|Paradox Drive|Koraidon ex|92}} (#092)
+|reward={{TCGPocketItem|Wonder Hourglass|num=36}}<br>{{TCGPocketItem|Pack Hourglass|num=12}}<br>{{TCGPocketItem|Shop Ticket|num=10}}
+}}
+{{TCGPocketCollection/Entry|collection=Ancient Pokémon
+|cards={{TCG ID|Paradox Drive|Brute Bonnet|3}} (#003)<br>{{TCG ID|Paradox Drive|Slither Wing|4}} (#004)<br>{{TCG ID|Paradox Drive|Scream Tail|25}} (#025)<br>{{TCG ID|Paradox Drive|Flutter Mane ex|26}} (#026 or #083 or #091)<br>{{TCG ID|Paradox Drive|Great Tusk|34}} (#034)<br>{{TCG ID|Paradox Drive|Sandy Shocks|35}} (#035)<br>{{TCG ID|Paradox Drive|Koraidon ex|36}} (#036 or #084 or #092)<br>{{TCG ID|Paradox Drive|Roaring Moon|47}} (#047 or #109)<br>{{TCG ID|Paradox Drive|Walking Wake|53}} (#053)<br>{{TCG ID|Paradox Drive|Gouging Fire|54}} (#054)<br>{{TCG ID|Paradox Drive|Raging Bolt|55}} (#055 or #079)
+|reward={{TCGPocketItem|Roaring Moon|Roaring Moon (emblem)|type=Emblem}}
+}}
+{{TCGPocketCollection/Entry|collection=Future Pokémon
+|cards={{TCG ID|Paradox Drive|Iron Moth|5}} (#005)<br>{{TCG ID|Paradox Drive|Iron Bundle ex|13}} (#013 or #081 or #089)<br>{{TCG ID|Paradox Drive|Iron Hands|17}} (#017)<br>{{TCG ID|Paradox Drive|Iron Thorns|18}} (#018)<br>{{TCG ID|Paradox Drive|Miraidon ex|19}} (#019 or #082 or #090)<br>{{TCG ID|Paradox Drive|Iron Valiant|27}} (#027 or #108)<br>{{TCG ID|Paradox Drive|Iron Leaves|28}} (#028)<br>{{TCG ID|Paradox Drive|Iron Boulder|29}} (#029 or #077)<br>{{TCG ID|Paradox Drive|Iron Crown|30}} (#030)<br>{{TCG ID|Paradox Drive|Iron Jugulis|46}} (#046)<br>{{TCG ID|Paradox Drive|Iron Treads|51}} (#051)
+|reward={{TCGPocketItem|Iron Valiant|Iron Valiant (emblem)|type=Emblem}}
+|lastitem=yes}}
+|}
+
+== Offering rates ==
+The following table outlines the offering rates for each individual card in the Paradox Drive booster pack.
+
+The probability of each type of pack appearing is as follows:
+* Regular pack - 94.711%
+* Regular pack + 1 card - 5.238%
+* Rare pack - 0.050%
+
+In regular packs with a bonus card, the card inclusion rates for the first five cards are the same as those for regular packs without a bonus card.
+
+{{Rar/TCGP|Shiny|1}} and {{Rar/TCGP|Shiny|2}} rarity cards are only available as bonus cards.
+
+{{TCGPocketRates/Header|tablecol=CA9147|bordercol=DB4695|cellcol=FEE0A7|bonuscard=yes}}
+|- style="background:#FFF"
+| {{rar/TCGP|Diamond|1}} || 3.125% || — || — || — || —
+|- style="background:#FFF"
+| {{rar/TCGP|Diamond|2}} || — || 3.599% || 2.399% || — || —
+|- style="background:#FFF"
+| {{rar/TCGP|Diamond|3}} || — || 0.416% || 1.666% || — || —
+|- style="background:#FFF"
+| {{rar/TCGP|Diamond|4}} || — || 0.333% || 1.333% || — || —
+|- style="background:#FFF"
+| {{rar/TCGP|Star|1}} || — || 0.428% || 1.714% || — || 4.761%
+|- style="background:#FFF"
+| {{rar/TCGP|Star|2}} || — || 0.041% || 0.166% || — || 4.761%
+|- style="background:#FFF"
+| {{rar/TCGP|Star|3}} || — || 0.222% || 0.889% || — || 4.761%
+|- style="background:#FFF"
+| {{rar/TCGP|Shiny|1}} || — || — || — || 6.818% || —
+|- style="background:#FFF"
+| {{rar/TCGP|Shiny|2}} || — || — || — || 7.955% || —
+|- style="background:#FFF"
+| style="border-bottom-left-radius:5px" | {{rar/TCGP|Crown}} || — || 0.020% || 0.080% || — || style="border-bottom-right-radius:5px" | 4.761%
+|}
+
+== Solo battles ==
+{{main|List of Paradox Drive solo battles in Pokémon TCG Pocket}}
+
+== Gallery ==
+=== Key artwork ===
+{{TCGMerchGallery
+|background=FEE0A7
+|border=DB4695
+|image1=B3a Key Art.jpg
+|size1=400px
+|caption1=Key artwork
+}}
+=== Pack artwork ===
+{{TCGMerchGallery
+|background=FEE0A7
+|border=DB4695
+|image1=B3a Booster EN.png
+|caption1=Booster pack
+}}
+<!--
+=== Pack logo ===
+{{TCGMerchGallery
+|background=FEE0A7
+|border=DB4695
+|image1=B3a Pack Logo EN.png
+|caption1=English logo
+}}
+-->
+== In other languages ==
+{{Langtable|color=FEE0A7|bordercolor=DB4695
+|ja=進撃パラドックス ''Shingeki Paradox''
+|zh_yue=進擊悖謬 ''Jeungīk Buhtmauh''
+|zh_cmn=進擊悖謬 ''Jìnjí Bèimiù''
+|fr=Propulsion Paradoxe
+|de=Paradoxansturm
+|it=Assalto dei Paradossi
+|ko=진격패러독스 ''Jin'gyeok Paradox''
+|pt_br=Impulso Paradoxal
+|es=Impulso Paradójico
+}}
+
+== Related articles ==
+{{TCGPocketNavigation}}
+
+{{DoubleProjectTag|Sidegames|TCG|video games about the TCG.}}
+
+[[de:Paradoxansturm (TCG Pocket)]]
+[[es:Impulso Paradójico (TCG Pocket)]]
+[[fr:Propulsion Paradoxe]]
+[[it:Assalto dei Paradossi (GCC Pocket)]]
+[[ja:進撃パラドックス]]
+[[zh:进击悖谬（TCGP）]]

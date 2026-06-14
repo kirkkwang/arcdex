@@ -1,0 +1,191 @@
+# frozen_string_literal: true
+
+require_relative 'wikitext'
+
+module Arcdex
+  module Bulbapedia
+    # Parse a single TCG Pocket card's wikitext into the normalized hash the
+    # BulbapediaCardAdapter reads.
+    class CardParser
+      include Wikitext
+
+      POKEMON_INFOBOX = 'TCG Card Infobox/Pokémon/Pocket'
+      TRAINER_INFOBOX = 'TCG Card Infobox/Trainer/Pocket'
+
+      # row: { 'number' => '001', 'name' => 'Surskit', 'rarity' => 'Diamond' }
+      def self.parse(wikitext, set_code:, set_name:, row:)
+        new(wikitext, set_code, set_name, row).parse
+      end
+
+      def initialize(wikitext, set_code, set_name, row)
+        @wt = wikitext
+        @set_code = set_code
+        @set_name = set_name
+        @row = row
+      end
+
+      def parse
+        base = {
+          '_source' => 'bulbapedia',
+          'id' => "#{set_code}-#{row['number']}",
+          'number' => row['number'],
+          'rarity' => row['rarity'],
+          'boosters' => boosters
+        }
+        pokemon? ? base.merge(pokemon_fields) : base.merge(trainer_fields)
+      end
+
+      private
+
+      attr_reader :wt, :set_code, :set_name, :row
+
+      def pokemon?
+        wt.include?("{{#{POKEMON_INFOBOX}")
+      end
+
+      def infobox
+        @infobox ||= template(wt, pokemon? ? POKEMON_INFOBOX : TRAINER_INFOBOX) || {}
+      end
+
+      # The card-list row name is the clean display name (and matches the page
+      # title), prefer it over the infobox en name, which composes icon templates
+      # like "Mega Altaria {{TCGP Icon|Mega ex}}".
+      def name
+        row_name = row['name'].to_s.strip
+        row_name.empty? ? clean(infobox['en name']) : row_name
+      end
+
+      # Top-level illustrator, or the first tabbed-image illustrator for cards
+      # that have multiple printings/variants.
+      def illustrator
+        clean(infobox['illustrator']) ||
+          clean(template(wt, 'TCG Card Infobox/Tabbed Image/Pocket')&.dig('illustrator'))
+      end
+
+      def pokemon_fields
+        {
+          'name' => name,
+          'supertype' => 'Pokémon',
+          'subtypes' => Array(clean(infobox['evo stage'])),
+          'hp' => infobox['hp']&.to_i,
+          'types' => Array(infobox['type']).reject { |t| t.to_s.strip.empty? },
+          'evolves_from' => clean(infobox['evolves from']),
+          'weaknesses' => weaknesses,
+          'retreat' => infobox['retreat cost'].to_i,
+          'illustrator' => illustrator,
+          'abilities' => abilities,
+          'attacks' => attacks,
+          'flavor_text' => flavor_text,
+          'national_pokedex_numbers' => national_pokedex_numbers
+        }
+      end
+
+      def trainer_fields
+        subtype = clean(infobox['subtype'])
+        {
+          'name' => name,
+          'supertype' => 'Trainer',
+          'subtypes' => Array(subtype).reject { |s| s.to_s.strip.empty? },
+          'illustrator' => illustrator,
+          # Trainer rules text lives in TCGTrainerText; mirror TCGdex which surfaced
+          # trainer effect text through flavor_text.
+          'flavor_text' => trainer_effect
+        }
+      end
+
+      def weaknesses
+        type = clean(infobox['weakness'])
+        return nil if type.nil? || type.casecmp?('none')
+
+        # Pokémon TCG Pocket weakness is always a flat +20 damage bonus.
+        [{ 'type' => type, 'value' => '+20' }]
+      end
+
+      def attacks
+        list = templates(wt, 'Cardtext/Attack/Pocket').map do |a|
+          damage = a['damage'].to_s.strip
+          {
+            'name' => clean(a['name']),
+            'cost' => energy(a['cost']),
+            'damage' => (damage.empty? ? nil : damage), # nil (not "") so the config skips it, matching TCGdex
+            'effect' => clean(a['effect'])
+          }
+        end
+        list.empty? ? nil : list
+      end
+
+      def abilities
+        list = templates(wt, 'Cardtext/Ability/Pocket').map do |a|
+          {
+            'name' => clean(a['name']),
+            'effect' => clean(a['effect']),
+            'type' => clean(a['type'])
+          }
+        end
+        list.empty? ? nil : list
+      end
+
+      def trainer_effect
+        clean(template(wt, 'TCGTrainerText')&.dig('effect'))
+      end
+
+      def flavor_text
+        clean(carddex['dex'])
+      end
+
+      def national_pokedex_numbers
+        digits = carddex['ndex'].to_s[/\d+/]
+        digits ? [digits.to_i] : []
+      end
+
+      # Parsed once; read by both flavor_text and national_pokedex_numbers.
+      def carddex
+        @carddex ||= template(wt, 'Carddex/Pocket') || {}
+      end
+
+      # Pack the card belongs to within THIS set (from its expansion entry).
+      def boosters
+        entry = expansion_entries.find do |e|
+          e[:set_name] == set_name && e[:number].to_s.split('/').first == row['number']
+        end
+        pack = entry && entry[:pack]
+        return [] if pack.nil? || pack.strip.empty? || pack.casecmp?('any')
+
+        [pack]
+      end
+
+      def expansion_entries
+        @expansion_entries ||= build_expansion_entries
+      end
+
+      def build_expansion_entries
+        header = '{{TCG Card Infobox/Expansion Header/Pocket'
+        entry = '{{TCG Card Infobox/Expansion Entry/Pocket'
+        points = []
+        [[header, :header], [entry, :entry]].each do |needle, type|
+          i = 0
+          while (pos = wt.index(needle, i))
+            points << [pos, type]
+            i = pos + needle.length
+          end
+        end
+        points.sort_by!(&:first)
+
+        entries = []
+        current_set = nil
+        points.each do |pos, type|
+          stop = matching_close(wt, pos)
+          next if stop.nil?
+
+          fields = params(wt[(pos + 2)...(stop - 2)])
+          if type == :header
+            current_set = fields['_positional']&.first
+          else
+            entries << { set_name: current_set, number: fields['number'], pack: fields['pack'] }
+          end
+        end
+        entries
+      end
+    end
+  end
+end

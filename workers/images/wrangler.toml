@@ -1,0 +1,22 @@
+name = "arcdex-images"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+# Direct, in-network handle to the R2 bucket, exposed to the Worker as env.BUCKET
+# (no credentials/HTTP — Cloudflare wires it up).
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "pokemon-tcg-pocket"
+
+# Run this Worker for every image URL (takes over from the plain R2 custom-domain
+# serving once deployed).
+[[routes]]
+pattern = "images.arcdex.dev/*"
+zone_name = "arcdex.dev"
+
+# Fallback object served on a 404, per bucket/game — named by the game slug
+# (game_ssi.parameterize). The Pocket bucket serves the Pocket back; a future
+# One Piece bucket reuses this worker.js with its own FALLBACK_KEY + bucket_name.
+# Upload this object to the bucket.
+[vars]
+FALLBACK_KEY = "pokemon-tcg-pocket.webp"

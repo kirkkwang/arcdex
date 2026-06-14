@@ -1,8 +1,11 @@
 # Omakase Ruby styling for Rails
 inherit_gem: { rubocop-rails-omakase: rubocop.yml }
 
+# Vendored copy of arclight's .rubocop.yml (was inherited from their `main`
+# branch remotely).  Pinned locally so an upstream change can't break CI, and
+# patched for the Capybara cops that moved to Capybara/RSpec/ in rubocop-capybara 2.21+.
 inherit_from:
-  - https://raw.githubusercontent.com/projectblacklight/arclight/refs/heads/main/.rubocop.yml
+  - .rubocop_arclight.yml
 
 AllCops:
   Exclude:
@@ -18,4 +21,15 @@ Layout/SpaceInsideArrayLiteralBrackets:
   EnforcedStyleForEmptyBrackets: no_space
 
 Rails/Exit:
+  Enabled: false
+
+# RSpec metric limits — owned here rather than inherited from arclight's todo.
+# Generous on purpose (component/system specs run long); keeps tests readable.
+RSpec/ExampleLength:
+  Max: 49
+RSpec/MultipleExpectations:
+  Max: 22
+RSpec/MultipleMemoizedHelpers:
+  Max: 10
+RSpec/ContextWording:
   Enabled: false

@@ -190,7 +190,9 @@ namespace :arcdex do
     # Create the simplified structure with just data and totalCount
     simplified_data = {
       'data' => all_cards,
-      'totalCount' => all_cards.size
+      'totalCount' => all_cards.size,
+      # Upstream set total at pull time; arcdex:sync compares it to detect grown sets.
+      'total' => set_info['total']
     }
 
     output_path = Rails.root.join('data', "#{id}.json")

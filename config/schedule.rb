@@ -28,5 +28,5 @@ every 1.day, at: '11:00am' do
 end
 
 every 1.day, at: '12:00pm' do
-  rake 'arcdex:pull arcdex:index_dir'
+  rake 'arcdex:sync'
 end

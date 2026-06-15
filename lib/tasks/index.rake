@@ -8,7 +8,9 @@ namespace :arcdex do
     print "Loading #{file} into index...\n"
     solr_url = ENV.fetch('SOLR_URL', Blacklight.default_index.connection.base_uri)
     elapsed_time = Benchmark.realtime do
-      `bundle exec traject -u #{solr_url} -c #{Rails.root}/lib/arclight/traject/arcdex_set_config.rb #{file}`
+      # RUBYOPT=-W0 silences the bundler/rubygems "already initialized constant"
+      # warnings the spawned traject process emits.
+      `RUBYOPT=-W0 bundle exec traject -u #{solr_url} -c #{Rails.root}/lib/arclight/traject/arcdex_set_config.rb #{file}`
     end
     print "Indexed #{file} (in #{elapsed_time.round(3)} secs).\n"
   end
@@ -17,7 +19,7 @@ namespace :arcdex do
   task index_dir: :environment do
     dir = ENV.fetch('DIR', 'data')
     Dir.glob(File.join(dir, '**', '*.json')).each do |file|
-      system("FILE=#{file} rails arcdex:index")
+      system("RUBYOPT=-W0 FILE=#{file} rails arcdex:index")
     end
   end
 

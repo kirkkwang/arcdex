@@ -7,7 +7,7 @@ settings do
   provide 'card_config', File.join(__dir__, 'arcdex_card_config.rb')
   provide 'reader_class_name', 'Arclight::Traject::JsonReader'
   provide 'solr_writer.commit_on_close', 'true'
-  provide 'logger', Logger.new($stderr)
+  provide 'logger', Logger.new($stderr, level: Logger::WARN)
 end
 
 factory = Arcdex::CardAdapterFactory

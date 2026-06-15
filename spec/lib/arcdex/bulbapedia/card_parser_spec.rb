@@ -175,6 +175,23 @@ RSpec.describe Arcdex::Bulbapedia::CardParser do
     end
   end
 
+  describe 'promo rarity' do
+    def parse_for(set_code)
+      described_class.parse("{{TCG Card Infobox/Pokémon/Pocket\n|en name=X\n|type=Water\n|hp=60\n}}",
+                            set_code: set_code, set_name: set_code,
+                            row: { 'number' => '001', 'name' => 'X', 'rarity' => nil })
+    end
+
+    it 'labels promo-set cards (no rarity symbol) as Promo' do
+      expect(parse_for('Promo-A')['rarity']).to eq('Promo')
+      expect(parse_for('Promo-B')['rarity']).to eq('Promo')
+    end
+
+    it 'leaves a non-promo card with no rarity as nil' do
+      expect(parse_for('B3a')['rarity']).to be_nil
+    end
+  end
+
   describe 'boosters from the expansion entry matching the set being pulled' do
     let(:wikitext) do
       <<~WIKI

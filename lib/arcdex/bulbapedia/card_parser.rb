@@ -168,9 +168,16 @@ module Arcdex
       # Disambiguate from the card page's per-printing tabbed-image caption,
       # matched to this card's number; otherwise keep the set-list value.
       def rarity
-        return row['rarity'] unless row['rarity'] == 'Super Rare'
+        base = row['rarity']
+        # Promo cards carry no rarity symbol on Bulbapedia; mirror the main TCG's "Promo".
+        base ||= 'Promo' if promo_set?
+        return base unless base == 'Super Rare'
 
         tab_caption_for(row['number'])&.match?(/special illustration/i) ? 'Special Illustration Rare' : 'Super Rare'
+      end
+
+      def promo_set?
+        set_code.to_s.downcase.start_with?('promo')
       end
 
       # The `tab caption` of the tabbed image whose filename ends in this number

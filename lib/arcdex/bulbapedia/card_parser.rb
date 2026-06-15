@@ -193,15 +193,15 @@ module Arcdex
         clean(image&.dig('tab caption'))
       end
 
-      # Pack the card belongs to within THIS set (from its expansion entry).
+      # The card's pack within THIS set (from its expansion entry). " Any" is kept
+      # as-is here and expanded to the set's full booster roster at pull time
+      # (the roster is a cross-card aggregate); a card with no pack -> [].
       def boosters
         entry = expansion_entries.find do |e|
           e[:set_name] == set_name && e[:number].to_s.split('/').first == row['number']
         end
-        pack = entry && entry[:pack]
-        return [] if pack.nil? || pack.strip.empty? || pack.casecmp?('any')
-
-        [pack]
+        pack = (entry && entry[:pack]).to_s.strip
+        pack.empty? ? [] : [pack]
       end
 
       def expansion_entries

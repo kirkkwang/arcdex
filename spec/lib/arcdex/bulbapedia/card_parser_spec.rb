@@ -214,11 +214,11 @@ RSpec.describe Arcdex::Bulbapedia::CardParser do
       expect(card['boosters']).to eq(['Pikachu'])
     end
 
-    it 'treats an "Any" pack as no specific booster' do
+    it 'keeps "Any" as-is (expanded to the full roster later, at pull time)' do
       any = wikitext.sub('pack=Pikachu', 'pack=Any')
       card = described_class.parse(any, set_code: 'A1', set_name: 'Genetic Apex',
                                         row: { 'number' => '094', 'name' => 'Pikachu', 'rarity' => 'Diamond' })
-      expect(card['boosters']).to eq([])
+      expect(card['boosters']).to eq(['Any'])
     end
   end
 end

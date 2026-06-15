@@ -262,3 +262,7 @@ end
 to_field 'boosters_tesim' do |record, accumulator|
   accumulator.concat factory.call(record).boosters if factory.call(record).boosters
 end
+
+to_field 'boosters_ssm' do |record, accumulator|
+  accumulator.concat factory.call(record).boosters if factory.call(record).boosters
+end

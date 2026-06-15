@@ -65,6 +65,7 @@ namespace :arcdex do
 
       Arcdex::Bulbapedia::CardParser.parse(wikitext, set_code: set_code, set_name: set_name, row: row)
     end
+    resolve_boosters!(cards, set_name)
 
     set_json = {
       '_source' => 'bulbapedia',
@@ -80,6 +81,18 @@ namespace :arcdex do
 
   def card_title(set_name, row) # rubocop:disable Rake/MethodDefinitionInTask
     "#{row['name']} (#{set_name} #{row['local_number']})"
+  end
+
+  # Expand each card's pack into the set's booster roster: the distinct named
+  # packs (e.g. Mewtwo/Charizard/Pikachu), or the set itself for a single-booster
+  # set.  A card marked "Any" belongs to every booster; a specific pack stays as
+  # is; a card with no pack (e.g. promos) gets none.
+  def resolve_boosters!(cards, set_name) # rubocop:disable Rake/MethodDefinitionInTask
+    roster = cards.flat_map { |c| c['boosters'] }.uniq - ['Any']
+    roster = [set_name] if roster.empty?
+    cards.each do |card|
+      card['boosters'] = roster if card['boosters'].include?('Any')
+    end
   end
 
   def write_pocket_json(set_code, set_json, card_count) # rubocop:disable Rake/MethodDefinitionInTask

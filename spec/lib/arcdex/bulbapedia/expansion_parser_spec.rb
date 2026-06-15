@@ -17,9 +17,22 @@ RSpec.describe Arcdex::Bulbapedia::ExpansionParser do
     )
   end
 
-  it 'extracts card-list rows with number, name and local number' do
+  it 'extracts card-list rows with number, name, local number and mapped rarity' do
     surskit = parsed['rows'].find { |r| r['name'] == 'Surskit' }
-    expect(surskit).to include('number' => '001', 'local_number' => '1', 'type' => 'Grass', 'rarity' => 'Diamond')
+    expect(surskit).to include('number' => '001', 'local_number' => '1', 'type' => 'Grass', 'rarity' => 'Common')
+  end
+
+  it 'maps the rarity symbol+count to the official name (Diamond|4 -> Double Rare)' do
+    double_rare = parsed['rows'].find { |r| r['rarity'] == 'Double Rare' }
+    expect(double_rare).not_to be_nil
+  end
+
+  it 'reads the rarity regardless of {{Rar}} vs {{rar}} casing' do
+    wikitext = <<~WIKI
+      == Card list ==
+      | 001/010 || {{TCG ID|X|Bulbasaur|1}} || {{TCG Icon|Grass}} || {{rar/TCGP|Diamond|2}}
+    WIKI
+    expect(described_class.parse(wikitext)['rows'].first['rarity']).to eq('Uncommon')
   end
 
   it 'derives release_date in YYYY-MM-DD form' do

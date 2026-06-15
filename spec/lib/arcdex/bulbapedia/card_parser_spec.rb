@@ -129,6 +129,52 @@ RSpec.describe Arcdex::Bulbapedia::CardParser do
     end
   end
 
+  describe 'Star|2 rarity disambiguation via tabbed-image caption' do
+    let(:wikitext) do
+      <<~WIKI
+        {{TCG Card Infobox/Pokémon/Pocket
+        |en name=Iron Bundle {{TCGP Icon|ex}}
+        |type=Water
+        |hp=130
+        |image set=
+        {{TCG Card Infobox/Tabbed Image/Pocket|image=IronBundleexParadoxDrive81.png|tab caption=Super Rare}}
+        {{TCG Card Infobox/Tabbed Image/Pocket|image=IronBundleexParadoxDrive89.png|tab caption=Special Illustration Rare}}
+        }}
+      WIKI
+    end
+
+    # row rarity is the already-mapped set-list value ("Super Rare" for Star|2)
+    def parse_number(number)
+      described_class.parse(wikitext, set_code: 'B3a', set_name: 'Paradox Drive',
+                                      row: { 'number' => number, 'name' => 'Iron Bundle ex', 'rarity' => 'Super Rare' })
+    end
+
+    it 'keeps Super Rare when the matching caption is Super Rare' do
+      expect(parse_number('081')['rarity']).to eq('Super Rare')
+    end
+
+    it 'refines to Special Illustration Rare from the caption' do
+      expect(parse_number('089')['rarity']).to eq('Special Illustration Rare')
+    end
+
+    it 'defaults to Super Rare when no tabbed image matches the number' do
+      expect(parse_number('999')['rarity']).to eq('Super Rare')
+    end
+
+    it 'stays Super Rare for a single-printing card with no tabbed images' do
+      plain = "{{TCG Card Infobox/Pokémon/Pocket\n|en name=Lone {{TCGP Icon|ex}}\n|type=Water\n|hp=130\n}}"
+      card = described_class.parse(plain, set_code: 'B3a', set_name: 'Paradox Drive',
+                                          row: { 'number' => '050', 'name' => 'Lone ex', 'rarity' => 'Super Rare' })
+      expect(card['rarity']).to eq('Super Rare')
+    end
+
+    it 'leaves non-Star|2 rarities untouched' do
+      card = described_class.parse(wikitext, set_code: 'B3a', set_name: 'Paradox Drive',
+                                             row: { 'number' => '013', 'name' => 'Iron Bundle ex', 'rarity' => 'Double Rare' })
+      expect(card['rarity']).to eq('Double Rare')
+    end
+  end
+
   describe 'boosters from the expansion entry matching the set being pulled' do
     let(:wikitext) do
       <<~WIKI

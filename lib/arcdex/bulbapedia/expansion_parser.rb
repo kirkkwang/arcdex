@@ -2,6 +2,7 @@
 
 require 'date'
 require_relative 'wikitext'
+require_relative 'rarity'
 
 module Arcdex
   module Bulbapedia
@@ -9,6 +10,7 @@ module Arcdex
     # fields plus the card-list rows used to enumerate and fetch each card.
     class ExpansionParser
       include Wikitext
+      include Rarity
 
       # Bulbapedia files promo logos as "PA"/"PB", but the canonical id follows
       # the Google Drive image filenames (PROMO-A-### -> promo-a-###), so the set
@@ -83,14 +85,18 @@ module Arcdex
           next unless number_cell
 
           type_m = line.match(/\{\{TCG Icon\|([^|}]+)\}\}/)
-          rarity_m = line.match(/\{\{Rar\/TCGP\|([^|}]+)/)
+          # {{Rar/TCGP|<symbol>|<count>}} -> mapped to the official rarity name.
+          # First letter is case-insensitive in MediaWiki and sets vary (Rar/rar);
+          # the count is optional (e.g. crowns are written {{rar/TCGP|Crown}}). No
+          # `}}` anchor, so any extra params are ignored rather than dropping the match.
+          rarity_m = line.match(/\{\{[Rr]ar\/TCGP\|([^|}]+)(?:\|([^|}]+))?/)
 
           {
             'number' => number_cell[1].split('/').first.strip, # "001/074" -> "001"
             'name' => id_m[2].strip,
             'local_number' => id_m[3].strip,
             'type' => type_m && type_m[1].strip,
-            'rarity' => rarity_m && rarity_m[1].strip
+            'rarity' => rarity_m && name(rarity_m[1], rarity_m[2])
           }
         end
       end

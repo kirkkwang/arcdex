@@ -29,7 +29,7 @@ module Arcdex
           '_source' => 'bulbapedia',
           'id' => "#{set_code}-#{row['number']}",
           'number' => row['number'],
-          'rarity' => row['rarity'],
+          'rarity' => rarity,
           'boosters' => boosters
         }
         pokemon? ? base.merge(pokemon_fields) : base.merge(trainer_fields)
@@ -161,6 +161,29 @@ module Arcdex
       # Parsed once; read by both flavor_text and national_pokedex_numbers.
       def carddex
         @carddex ||= template(wt, 'Carddex/Pocket') || {}
+      end
+
+      # The set list maps the rarity from the {{Rar/TCGP}} symbol, but Star|2 is
+      # ambiguous (Super Rare and Special Illustration Rare share the symbol).
+      # Disambiguate from the card page's per-printing tabbed-image caption,
+      # matched to this card's number; otherwise keep the set-list value.
+      def rarity
+        return row['rarity'] unless row['rarity'] == 'Super Rare'
+
+        tab_caption_for(row['number'])&.match?(/special illustration/i) ? 'Special Illustration Rare' : 'Super Rare'
+      end
+
+      # The `tab caption` of the tabbed image whose filename ends in this number
+      # (e.g. "...ParadoxDrive89.png" -> the 089 printing's caption).
+      def tab_caption_for(number)
+        target = number.to_i
+        return nil if target.zero? # no real card is numbered 0; avoids matching numberless filenames
+
+        image = templates(wt, 'TCG Card Infobox/Tabbed Image/Pocket').find do |tab|
+          digits = tab['image'].to_s[/(\d+)\.\w+\z/, 1]
+          digits && digits.to_i == target
+        end
+        clean(image&.dig('tab caption'))
       end
 
       # Pack the card belongs to within THIS set (from its expansion entry).

@@ -29,6 +29,38 @@ RSpec.describe Arcdex::BoosterPackComponent, type: :component do
     end
   end
 
+  describe '#booster_image_url (private)' do
+    context 'with a multi-booster card' do
+      let(:document) { SolrDocument.new('id' => 'a1-026', 'collection_ssim' => ['Genetic Apex']) }
+
+      it 'builds the R2 webp key from the set code and the parameterized pack' do
+        expect(component.send(:booster_image_url, 'Mewtwo')).to eq('https://images.arcdex.dev/a1-booster-mewtwo.webp')
+      end
+    end
+
+    context 'with a single-booster card (pack value is the set name)' do
+      let(:document) { SolrDocument.new('id' => 'b3a-026', 'collection_ssim' => ['Paradox Drive']) }
+
+      it 'parameterizes the set name' do
+        expect(component.send(:booster_image_url, 'Paradox Drive')).to eq('https://images.arcdex.dev/b3a-booster-paradox-drive.webp')
+      end
+    end
+
+    context 'with a document that has no id' do
+      it 'falls back without raising' do
+        expect(component.send(:booster_image_url, 'Mewtwo')).to eq('https://images.arcdex.dev/-booster-mewtwo.webp')
+      end
+    end
+
+    context 'with a hyphenated promo set code' do
+      let(:document) { SolrDocument.new('id' => 'promo-a-001', 'collection_ssim' => ['Promo-A']) }
+
+      it 'keeps the full set code, stripping only the trailing card number' do
+        expect(component.send(:booster_image_url, 'Promo-A Vol. 1')).to eq('https://images.arcdex.dev/promo-a-booster-promo-a-vol-1.webp')
+      end
+    end
+  end
+
   describe '#image_tag (private)' do
     # Must use render_inline so the component has a proper ActionView context for super
     let(:field_config_with_field) { double('field_config', compact: false, truncate: false, label: 'Booster Pack', field: 'booster_packs_ssm') } # rubocop:disable RSpec/VerifiedDoubles

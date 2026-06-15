@@ -7,7 +7,7 @@ module Arcdex
     def booster_pack(field, values)
       values.map! do |value|
         link_to(
-          image_tag("boosters/#{[document.collection_name, value].join('-').parameterize}.png",
+          image_tag(booster_image_url(value),
             alt: value,
             title: value,
             style: 'max-height: 1.75rem;'),
@@ -21,6 +21,17 @@ module Arcdex
     end
 
     private
+
+    # R2 keys are populated by scripts/harvest-set-images.sh.
+    def booster_image_url(value)
+      "https://images.arcdex.dev/#{set_code}-booster-#{value.parameterize}.webp"
+    end
+
+    # a1-026 -> a1, promo-a-001 -> promo-a
+    def set_code
+      id = document.id.to_s
+      id[/\A(.+)-\d+\z/, 1] || id
+    end
 
     def image_tag(source, options = {})
       if Rails.application.assets.resolver.resolve(source).nil?

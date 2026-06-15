@@ -62,14 +62,6 @@ module Arcdex
       record.first.fetch('set', nil)&.fetch('images', nil)&.fetch('logo', nil)
     end
 
-    def tcgplayer
-      record.first.fetch('tcgplayer', nil)
-    end
-
-    def tcgplayer_updated_at
-      tcgplayer&.fetch('updatedAt', nil)&.gsub('/', '-')
-    end
-
     def id
       record.first['id']
     end
@@ -243,38 +235,6 @@ module Arcdex
 
     def large_image
       images['large']
-    end
-
-    def tcg_player_price_url
-      tcgplayer&.fetch('url', nil)
-    end
-
-    def tcgplayer_prices
-      tcgplayer&.fetch('prices', nil)
-    end
-
-    def cardmarket
-      record.first.fetch('cardmarket', nil)
-    end
-
-    def cardmarket_url
-      cardmarket&.fetch('url', nil)
-    end
-
-    def cardmarket_avg7_price
-      cardmarket_prices&.fetch('avg7', nil)
-    end
-
-    def cardmarket_prices
-      cardmarket&.fetch('prices', nil)
-    end
-
-    def cardmarket_updated_at
-      cardmarket&.fetch('updatedAt', nil)
-    end
-
-    def cardmarket_prices_json
-      cardmarket_prices&.to_json
     end
 
     def boosters

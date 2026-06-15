@@ -80,37 +80,6 @@ class SolrDocument
     collection&.id
   end
 
-  def tcg_player_price_updated_at
-    self['tcg_player_price_updated_at_ssi'] || ''
-  end
-
-  def tcg_player_prices_object
-    begin
-      JSON.parse(self['tcg_player_prices_json_ssi'])
-    rescue JSON::ParserError, TypeError
-      {}
-    end
-  end
-
-  def tcg_player_url
-    self['tcg_player_url_ssi'] || ''
-  end
-
-  def cardmarket_price_updated_at
-    self['cardmarket_price_updated_at_ssi'] || ''
-  end
-
-  def cardmarket_prices_object
-    begin
-      JSON.parse(self['cardmarket_prices_json_ssi'])
-    rescue JSON::ParserError, TypeError
-      {}
-    end
-  end
-
-  def cardmarket_url
-    self['cardmarket_url_ssi'] || ''
-  end
 
   def title
     self['title_ssm'].first || ''

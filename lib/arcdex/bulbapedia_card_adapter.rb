@@ -61,14 +61,6 @@ module Arcdex
       nil
     end
 
-    def tcgplayer
-      nil
-    end
-
-    def tcgplayer_updated_at
-      nil
-    end
-
     def symbol_url
       "https://images.arcdex.dev/#{set_id}-symbol.webp" # set_id is already downcased
     end
@@ -234,34 +226,6 @@ module Arcdex
 
     def image_url
       "https://images.arcdex.dev/#{id}.webp"
-    end
-
-    def tcg_player_price_url
-      nil
-    end
-
-    def tcgplayer_prices
-      nil
-    end
-
-    def cardmarket
-      nil
-    end
-
-    def cardmarket_url
-      nil
-    end
-
-    def cardmarket_avg7_price
-      nil
-    end
-
-    def cardmarket_updated_at
-      nil
-    end
-
-    def cardmarket_prices_json
-      nil
     end
   end
 end

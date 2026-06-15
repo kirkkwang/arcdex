@@ -8,13 +8,6 @@ class CatalogController < ApplicationController
   include Arcdex::InfiniteScrollable
   include Arcdex::IiifManifestable
 
-  before_action :modify_sort, only: [:index] # rubocop:disable Rails/LexicallyScopedActionFilter
-
-  class_attribute :tcg_price_desc_field, default: 'tcg_player_market_price_isi desc'
-  class_attribute :tcg_price_asc_field, default: 'tcg_player_market_price_isi asc'
-  class_attribute :cardmarket_desc_field, default: 'cardmarket_avg7_price_isi desc'
-  class_attribute :cardmarket_asc_field, default: 'cardmarket_avg7_price_isi asc'
-
   configure_blacklight do |config|
     # default advanced config values
     config.advanced_search ||= Blacklight::OpenStructWithHashAccess.new
@@ -115,7 +108,7 @@ class CatalogController < ApplicationController
     config.show.sidebar_component = Arcdex::Arclight::SidebarComponent
     config.show.breadcrumb_component = Arclight::BreadcrumbsHierarchyComponent
     config.show.embed_component = Arclight::EmbedComponent
-    config.show.access_component = Arcdex::PricesMetadataComponent
+    config.show.access_component = Arcdex::AccessMetadataComponent
     config.show.online_status_component = Arclight::OnlineStatusIndicatorComponent
     config.show.expand_hierarchy_component = Arclight::ExpandHierarchyButtonComponent
     config.show.display_type_field = 'level_ssm'
@@ -171,16 +164,6 @@ class CatalogController < ApplicationController
     config.add_facet_field 'set', field: 'collection_ssim', limit: 10, excludable: true, advanced_search_component: Arcdex::AdvancedSearchFilterComponent
     config.add_facet_field 'regulation_mark', field: 'regulation_mark_ssi', limit: 10, excludable: true, advanced_search_component: Arcdex::AdvancedSearchFilterComponent
     config.add_facet_field 'rarity', field: 'rarity_ssm', limit: 10, excludable: true, advanced_search_component: Arcdex::AdvancedSearchFilterComponent
-    config.add_facet_field 'tcg_player_market_price', label: 'TCGplayer Market Price', field: 'tcg_player_market_price_isi', range: true, range_config: {
-      show_missing_link: false
-    }, if: ->(_controller, _field, facet_field) do
-      facet_field.response.facet_counts['facet_fields']['tcg_player_market_price_isi'].present?
-    end
-    config.add_facet_field 'cardmarket_avg7_price', label: 'Cardmarket Avg7 Price', field: 'cardmarket_avg7_price_isi', range: true, range_config: {
-      show_missing_link: false
-    }, if: ->(_controller, _field, facet_field) do
-      facet_field.response.facet_counts['facet_fields']['cardmarket_avg7_price_isi'].present?
-    end
     config.add_facet_field 'national pokex no.', field: 'national_pokedex_numbers_isim', range: true, range_config: {
       show_missing_link: false
     }, if: ->(_controller, _field, facet_field) do
@@ -321,10 +304,6 @@ class CatalogController < ApplicationController
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
-    config.add_sort_field tcg_price_desc_field, label: 'TCGplayer market price ($$$ to $)'
-    config.add_sort_field tcg_price_asc_field, label: 'TCGplayer market price ($ to $$$)'
-    config.add_sort_field cardmarket_desc_field, label: 'Cardmarket avg7 price ($$$ to $)'
-    config.add_sort_field cardmarket_asc_field, label: 'Cardmarket avg7 price ($ to $$$)'
     config.add_sort_field 'release_date_sort desc, sort_ssi asc', label: 'release date (new to old)'
     config.add_sort_field 'release_date_sort asc, sort_ssi asc', label: 'release date (old to new)'
 
@@ -414,8 +393,6 @@ class CatalogController < ApplicationController
     config.add_terms_field 'terms', field: 'userestrict_html_tesm', helper_method: :render_html_tags
 
     # Component Show Page Access Tab - Terms and Condition Section
-    config.add_component_terms_field 'tcg_player_prices', label: 'TCGplayer Prices', field: 'tcg_player_prices_json_ssi', component: Arcdex::TcgPlayerPricesComponent
-    config.add_component_terms_field 'cardmarket_prices', label: 'Cardmarket Prices', field: 'cardmarket_prices_json_ssi', component: Arcdex::CardmarketPricesComponent
     # Collection and Component Show Page Access Tab - In Person Section
     config.add_in_person_field 'repository_location', values: ->(_, document, _) { document.repository_config }, component: Arclight::RepositoryLocationComponent
     config.add_in_person_field 'before_you_visit', values: ->(_, document, _) { document.repository_config&.visit_note }
@@ -428,18 +405,5 @@ class CatalogController < ApplicationController
 
     # Group header values
     config.add_group_header_field 'abstract_or_scope', accessor: true, truncate: true, helper_method: :render_html_tags
-  end
-
-  private
-
-  def modify_sort
-    if params[:range]&.fetch('tcg_player_market_price', nil).nil?
-      blacklight_config.sort_fields.delete(tcg_price_desc_field)
-      blacklight_config.sort_fields.delete(tcg_price_asc_field)
-    end
-    if params[:range]&.fetch('cardmarket_avg7_price', nil).nil?
-      blacklight_config.sort_fields.delete(cardmarket_desc_field)
-      blacklight_config.sort_fields.delete(cardmarket_asc_field)
-    end
   end
 end

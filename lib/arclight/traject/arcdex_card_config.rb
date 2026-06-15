@@ -215,50 +215,6 @@ to_field 'large_url_html_ssm' do |record, accumulator|
   accumulator << "<img src=\"#{url}\" alt=\"Card image\" class=\"large-card-image\" />"
 end
 
-to_field 'tcg_player_url_ssi', lambda { |record, accumulator| accumulator << factory.call(record).tcg_player_price_url }
-to_field 'tcg_player_market_price_isi' do |record, accumulator|
-  if factory.call(record).tcgplayer && factory.call(record).tcgplayer_prices
-    prices_keys = factory.call(record).tcgplayer_prices.keys
-    prices = []
-    prices_keys.each do |price_type|
-      if factory.call(record).tcgplayer_prices[price_type]
-        price_info = factory.call(record).tcgplayer_prices[price_type]
-        prices << price_info['market']
-      end
-    end
-    accumulator << prices.compact&.max
-  end
-end
-to_field 'tcg_player_price_updated_at_ssi' do |record, accumulator|
-  if factory.call(record).tcgplayer && factory.call(record).tcgplayer_updated_at
-    formatted_date = factory.call(record).tcgplayer_updated_at
-    accumulator << formatted_date
-  end
-end
-to_field 'tcg_player_prices_json_ssi' do |record, accumulator|
-  if factory.call(record).tcgplayer && factory.call(record).tcgplayer_prices
-    accumulator << factory.call(record).tcgplayer_prices.to_json
-  end
-end
-
-to_field 'cardmarket_url_ssi', lambda { |record, accumulator| accumulator << factory.call(record).cardmarket_url }
-to_field 'cardmarket_avg7_price_isi' do |record, accumulator|
-  if factory.call(record).cardmarket && factory.call(record).cardmarket_prices && factory.call(record).cardmarket_prices['avg7']
-    accumulator << factory.call(record).cardmarket_avg7_price
-  end
-end
-to_field 'cardmarket_price_updated_at_ssi' do |record, accumulator|
-  if factory.call(record).cardmarket && factory.call(record).cardmarket_updated_at
-    formatted_date = factory.call(record).cardmarket_updated_at
-    accumulator << formatted_date
-  end
-end
-to_field 'cardmarket_prices_json_ssi' do |record, accumulator|
-  if factory.call(record).cardmarket && factory.call(record).cardmarket_prices
-    accumulator << factory.call(record).cardmarket_prices_json
-  end
-end
-
 to_field 'boosters_tesim' do |record, accumulator|
   accumulator.concat factory.call(record).boosters if factory.call(record).boosters
 end

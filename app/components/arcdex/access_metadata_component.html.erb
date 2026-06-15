@@ -1,3 +1,7 @@
+<%#
+  OVERRIDE Arclight v1.6.2 to drop the "Access" sub-heading (the gem
+  renders an <h2> here) and use our heading-less MetadataSectionComponent
+%>
 <% access_content = capture do %>
   <%= render Arcdex::MetadataSectionComponent.with_collection(section_names,
               metadata_attr: { layout: Arclight::UpperMetadataLayoutComponent },

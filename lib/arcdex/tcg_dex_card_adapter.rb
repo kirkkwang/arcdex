@@ -78,14 +78,6 @@ module Arcdex
       image + '.png'
     end
 
-    def tcgplayer
-      nil
-    end
-
-    def tcgplayer_updated_at
-      nil
-    end
-
     def id
       record['id'].downcase
     end
@@ -271,34 +263,6 @@ module Arcdex
     # Both thumbnail and full-res resolve to the single webp object we sync to R2.
     def image_url
       "https://images.arcdex.dev/#{id}.webp"
-    end
-
-    def tcg_player_price_url
-      nil # no data for Pokemon TCG Pocket cards
-    end
-
-    def tcgplayer_prices
-      nil # no data for Pokemon TCG Pocket cards
-    end
-
-    def cardmarket
-      nil # no data for Pokemon TCG Pocket cards
-    end
-
-    def cardmarket_url
-      nil
-    end
-
-    def cardmarket_avg7_price
-      nil
-    end
-
-    def cardmarket_updated_at
-      nil
-    end
-
-    def cardmarket_prices_json
-      nil
     end
 
     def boosters

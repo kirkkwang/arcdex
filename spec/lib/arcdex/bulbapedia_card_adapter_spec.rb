@@ -44,11 +44,6 @@ RSpec.describe Arcdex::BulbapediaCardAdapter do
       expect(adapter.weakness_type(0)).to eq('Fire')
       expect(adapter.weakness_value(0)).to eq('+20')
     end
-
-    it 'returns nil for pricing (Pocket has none)' do
-      expect(adapter.tcgplayer_prices).to be_nil
-      expect(adapter.cardmarket).to be_nil
-    end
   end
 
   describe 'a promo card record' do

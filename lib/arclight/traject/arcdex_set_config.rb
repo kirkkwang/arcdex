@@ -99,13 +99,6 @@ to_field 'thumbnail_path_ssi' do |record, accumulator|
   end
 end
 
-to_field 'tcg_player_price_updated_at_ssi' do |record, accumulator|
-  if factory.call(record).tcgplayer && factory.call(record).tcgplayer_updated_at
-    formatted_date = factory.call(record).tcgplayer_updated_at
-    accumulator << formatted_date
-  end
-end
-
 to_field 'extent_ssm' do |record, accumulator|
   accumulator << "#{factory.call(record).total} total cards"
   accumulator << "ID: #{factory.call(record).set_id}"

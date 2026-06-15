@@ -50,10 +50,6 @@ module Arcdex
       raise NoMethodError, 'Subclasses must implement the symbol_url method'
     end
 
-    def tcg_player_price_url
-      raise NoMethodError, 'Subclasses must implement the tcg_player_price_url method'
-    end
-
     def id
       raise NoMethodError, 'Subclasses must implement the id method'
     end
@@ -200,34 +196,6 @@ module Arcdex
 
     def images
       raise NoMethodError, 'Subclasses must implement the images method'
-    end
-
-    def tcg_player_price_url
-      raise NoMethodError, 'Subclasses must implement the tcg_player_price_url method'
-    end
-
-    def tcgplayer_prices
-      raise NoMethodError, 'Subclasses must implement the tcgplayer_prices method'
-    end
-
-    def cardmarket
-      raise NoMethodError, 'Subclasses must implement the cardmarket method'
-    end
-
-    def cardmarket_url
-      raise NoMethodError, 'Subclasses must implement the cardmarket_url method'
-    end
-
-    def cardmarket_avg7_price
-      raise NoMethodError, 'Subclasses must implement the cardmarket_avg7_price method'
-    end
-
-    def cardmarket_updated_at
-      raise NoMethodError, 'Subclasses must implement the cardmarket_updated_at method'
-    end
-
-    def cardmarket_prices_json
-      raise NoMethodError, 'Subclasses must implement the cardmarket_prices_json method'
     end
 
     def boosters

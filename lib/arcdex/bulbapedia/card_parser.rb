@@ -55,10 +55,12 @@ module Arcdex
         row_name.empty? ? clean(infobox['en name']) : row_name
       end
 
-      # Top-level illustrator, or the first tabbed-image illustrator for cards
-      # that have multiple printings/variants.
+      # Illustrator of this card's specific printing (matched to its number via
+      # the tabbed images), falling back to the infobox illustrator, then the
+      # first tabbed image for cards with no per-number match.
       def illustrator
-        clean(infobox['illustrator']) ||
+        clean(matching_tab&.dig('illustrator')) ||
+          clean(infobox['illustrator']) ||
           clean(template(wt, 'TCG Card Infobox/Tabbed Image/Pocket')&.dig('illustrator'))
       end
 
@@ -173,24 +175,30 @@ module Arcdex
         base ||= 'Promo' if promo_set?
         return base unless base == 'Super Rare'
 
-        tab_caption_for(row['number'])&.match?(/special illustration/i) ? 'Special Illustration Rare' : 'Super Rare'
+        clean(matching_tab&.dig('tab caption'))&.match?(/special illustration/i) ? 'Special Illustration Rare' : 'Super Rare'
       end
 
       def promo_set?
         set_code.to_s.downcase.start_with?('promo')
       end
 
-      # The `tab caption` of the tabbed image whose filename ends in this number
-      # (e.g. "...ParadoxDrive89.png" -> the 089 printing's caption).
-      def tab_caption_for(number)
-        target = number.to_i
-        return nil if target.zero? # no real card is numbered 0; avoids matching numberless filenames
+      # The tabbed image for this card's printing: the one whose filename ends in
+      # the card's number (e.g. "...MegaRising296.png" -> the 296 printing). Cards
+      # share a Bulbapedia page across printings, so this picks the right variant's
+      # illustrator/caption rather than the first one listed.
+      def matching_tab
+        return @matching_tab if defined?(@matching_tab)
 
-        image = templates(wt, 'TCG Card Infobox/Tabbed Image/Pocket').find do |tab|
-          digits = tab['image'].to_s[/(\d+)\.\w+\z/, 1]
-          digits && digits.to_i == target
-        end
-        clean(image&.dig('tab caption'))
+        target = row['number'].to_i
+        @matching_tab =
+          if target.zero? # no real card is numbered 0; avoids matching numberless filenames
+            nil
+          else
+            templates(wt, 'TCG Card Infobox/Tabbed Image/Pocket').find do |tab|
+              digits = tab['image'].to_s[/(\d+)\.\w+\z/, 1]
+              digits && digits.to_i == target
+            end
+          end
       end
 
       # The card's pack within THIS set (from its expansion entry). " Any" is kept

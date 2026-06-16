@@ -51,8 +51,15 @@ RSpec.describe Arcdex::Bulbapedia::CardParser do
       expect(card['attacks'].first['cost']).to eq(%w[Lightning Lightning])
     end
 
-    it 'falls back to the tabbed-image illustrator' do
+    it 'takes the illustrator of the printing matching this card number' do
       expect(card['illustrator']).to eq('kawayoo')
+    end
+
+    it 'takes a different printing\'s illustrator when pulled as that number' do
+      shiny = described_class.parse(fixture('zeraora_ability.wikitext'),
+                                    set_code: 'A4', set_name: 'Mega Rising',
+                                    row: { 'number' => '304', 'name' => 'Zeraora', 'rarity' => 'Shiny' })
+      expect(shiny['illustrator']).to eq('Souichirou Gunjima')
     end
   end
 

@@ -30,16 +30,20 @@ RSpec.describe Arcdex::BoosterPackComponent, type: :component do
   end
 
   describe '#booster_image_url (private)' do
-    context 'with a multi-booster card' do
-      let(:document) { SolrDocument.new('id' => 'a1-026', 'collection_ssim' => ['Genetic Apex']) }
+    def doc_in(id, set_name)
+      SolrDocument.new('id' => id, 'collection' => { 'docs' => [{ 'normalized_title_ssm' => [set_name] }] })
+    end
 
-      it 'builds the R2 webp key from the set code and the parameterized pack' do
-        expect(component.send(:booster_image_url, 'Mewtwo')).to eq('https://images.arcdex.dev/a1-booster-mewtwo.webp')
+    context 'with a multi-booster card' do
+      let(:document) { doc_in('a1-026', 'Genetic Apex') }
+
+      it 'strips the set prefix and keys the R2 webp by pack' do
+        expect(component.send(:booster_image_url, 'Genetic Apex - Mewtwo')).to eq('https://images.arcdex.dev/a1-booster-mewtwo.webp')
       end
     end
 
-    context 'with a single-booster card (pack value is the set name)' do
-      let(:document) { SolrDocument.new('id' => 'b3a-026', 'collection_ssim' => ['Paradox Drive']) }
+    context 'with a single-booster card (label is the bare set name)' do
+      let(:document) { doc_in('b3a-026', 'Paradox Drive') }
 
       it 'parameterizes the set name' do
         expect(component.send(:booster_image_url, 'Paradox Drive')).to eq('https://images.arcdex.dev/b3a-booster-paradox-drive.webp')
@@ -53,10 +57,10 @@ RSpec.describe Arcdex::BoosterPackComponent, type: :component do
     end
 
     context 'with a hyphenated promo set code' do
-      let(:document) { SolrDocument.new('id' => 'promo-a-001', 'collection_ssim' => ['Promo-A']) }
+      let(:document) { doc_in('promo-a-001', 'Promo-A') }
 
-      it 'keeps the full set code, stripping only the trailing card number' do
-        expect(component.send(:booster_image_url, 'Promo-A Vol. 1')).to eq('https://images.arcdex.dev/promo-a-booster-promo-a-vol-1.webp')
+      it 'keeps the full set code and strips the set prefix from the pack' do
+        expect(component.send(:booster_image_url, 'Promo-A - Vol. 1')).to eq('https://images.arcdex.dev/promo-a-booster-vol-1.webp')
       end
     end
   end

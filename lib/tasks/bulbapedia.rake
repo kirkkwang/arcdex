@@ -83,15 +83,19 @@ namespace :arcdex do
     "#{row['name']} (#{set_name} #{row['local_number']})"
   end
 
-  # Expand each card's pack into the set's booster roster: the distinct named
-  # packs (e.g. Mewtwo/Charizard/Pikachu), or the set itself for a single-booster
-  # set.  A card marked "Any" belongs to every booster; a specific pack stays as
-  # is; a card with no pack (e.g. promos) gets none.
+  # Resolve each card's pack(s) to the indexed label(s): "Set - Pack" for named
+  # packs, or just the set name for single-booster sets. A trailing " (Bonus)"
+  # qualifier is Bulbapedia's bonus-card marker and is normalized away, so
+  # "Ho-Oh (Bonus)" merges into "Ho-Oh" and "Any (Bonus)" into the set-wide "Any".
+  # An "Any" card belongs to every pack; a card with no pack (e.g. promos) gets none.
   def resolve_boosters!(cards, set_name) # rubocop:disable Rake/MethodDefinitionInTask
-    roster = cards.flat_map { |c| c['boosters'] }.uniq - ['Any']
-    roster = [set_name] if roster.empty?
     cards.each do |card|
-      card['boosters'] = roster if card['boosters'].include?('Any')
+      card['boosters'] = Array(card['boosters']).map { |b| b.sub(/\s*\(bonus\)\z/i, '') }.uniq
+    end
+    packs = cards.flat_map { |c| c['boosters'] }.uniq - ['Any']
+    cards.each do |card|
+      resolved = card['boosters'].include?('Any') ? (packs.empty? ? [set_name] : packs) : card['boosters']
+      card['boosters'] = resolved.map { |pack| pack == set_name ? pack : "#{set_name} - #{pack}" }
     end
   end
 

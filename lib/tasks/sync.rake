@@ -88,6 +88,6 @@ namespace :arcdex do
   # Raise on a failed index so the set is reported as failed, not silently
   # counted as synced (the data file is already written either way).
   def index_set(path) # rubocop:disable Rake/MethodDefinitionInTask
-    raise "indexing failed for #{path}" unless system("RUBYOPT=-W0 FILE=#{path} rails arcdex:index")
+    raise "indexing failed for #{path}" unless system("RUBYOPT=-W0 RAILS_LOG_LEVEL=error FILE=#{path} rails arcdex:index")
   end
 end

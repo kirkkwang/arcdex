@@ -19,7 +19,7 @@ namespace :arcdex do
   task index_dir: :environment do
     dir = ENV.fetch('DIR', 'data')
     Dir.glob(File.join(dir, '**', '*.json')).each do |file|
-      system("RUBYOPT=-W0 FILE=#{file} rails arcdex:index")
+      system("RUBYOPT=-W0 RAILS_LOG_LEVEL=error FILE=#{file} rails arcdex:index")
     end
   end
 

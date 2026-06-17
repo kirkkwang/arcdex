@@ -20,6 +20,9 @@
 # Learn more: http://github.com/javan/whenever
 set :output, { standard: '/proc/1/fd/1', error: '/proc/1/fd/2' }
 
+# Quiet the edge-Rails premature-load-hook warnings that rake boots emit.
+env 'RAILS_LOG_LEVEL', 'error'
+
 job_type :rake, '/rails/bin/cron_executor bundle exec rake :task :output'
 
 # Server is in UTC but I'm on the west coast

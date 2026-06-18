@@ -18,12 +18,13 @@ RSpec.describe Blacklight::FacetItemComponentDecorator, type: :component do
 
   # Blacklight 8.12.3+ calls label, hits, href, and selected? in FacetItemComponent#initialize.
   # facet_item_presenter uses dynamically-added decorator methods not defined on the base class.
-  def build_facet_item_double(facet_config:, exclude_href:, selected: false, hits: nil)
+  def build_facet_item_double(facet_config:, exclude_href:, selected: false, hits: nil, excluded: false)
     instance_double(Blacklight::FacetItemPresenter,
                     label: 'Rare',
                     hits: hits,
                     href: '/catalog',
                     selected?: selected,
+                    excluded_facet_item?: excluded,
                     exclude_href: exclude_href,
                     facet_config: facet_config)
   end
@@ -72,27 +73,41 @@ RSpec.describe Blacklight::FacetItemComponentDecorator, type: :component do
   end
 
   describe '#render_selected_facet_value' do
-    context 'when the facet item is selected with no hits' do
+    # helpers in ViewComponent uses dynamically composed view context;
+    # allow_any_instance_of is the only practical way to stub it across render_inline
+    before do
+      view_config = double('view_config', constraints_component_exclude_styling: exclude_class) # rubocop:disable RSpec/VerifiedDoubles
+      bl_config = double('bl_config', view_config: view_config) # rubocop:disable RSpec/VerifiedDoubles
+      allow_any_instance_of(Blacklight::FacetItemComponent).to receive(:helpers) do |_instance| # rubocop:disable RSpec/AnyInstance
+        double('helpers', blacklight_config: bl_config, t: 'Remove') # rubocop:disable RSpec/VerifiedDoubles
+      end
+    end
+
+    context 'when the facet item is an excluded facet item' do
       let(:facet_item_presenter) do
         build_facet_item_double(facet_config: excludable_facet_config,
                                 exclude_href: '/catalog?f[-rarity][]=Rare',
                                 selected: true,
-                                hits: nil)
-      end
-
-      # helpers in ViewComponent uses dynamically composed view context;
-      # allow_any_instance_of is the only practical way to stub it across render_inline
-      before do
-        view_config = double('view_config', constraints_component_exclude_styling: exclude_class) # rubocop:disable RSpec/VerifiedDoubles
-        bl_config = double('bl_config', view_config: view_config) # rubocop:disable RSpec/VerifiedDoubles
-        allow_any_instance_of(Blacklight::FacetItemComponent).to receive(:helpers) do |_instance| # rubocop:disable RSpec/AnyInstance
-          double('helpers', blacklight_config: bl_config, t: 'Remove') # rubocop:disable RSpec/VerifiedDoubles
-        end
+                                excluded: true)
       end
 
       it 'adds the exclude class to the selected span' do
         rendered = render_inline(Blacklight::FacetItemComponent.new(facet_item: facet_item_presenter))
         expect(rendered.to_html).to include(exclude_class)
+      end
+    end
+
+    context 'when the facet item is an inclusively selected facet item' do
+      let(:facet_item_presenter) do
+        build_facet_item_double(facet_config: excludable_facet_config,
+                                exclude_href: '/catalog?f[-rarity][]=Rare',
+                                selected: true,
+                                excluded: false)
+      end
+
+      it 'does not add the exclude class to the selected span' do
+        rendered = render_inline(Blacklight::FacetItemComponent.new(facet_item: facet_item_presenter))
+        expect(rendered.to_html).not_to include(exclude_class)
       end
     end
   end

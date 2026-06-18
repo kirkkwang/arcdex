@@ -20,14 +20,18 @@ module Blacklight
     end
 
     def render_selected_facet_value
-      exclude_class = helpers.blacklight_config.view_config.constraints_component_exclude_styling
       facet_value = super
-      return facet_value if hits.present?
+      return facet_value unless excluded_facet_item?
 
+      exclude_class = helpers.blacklight_config.view_config.constraints_component_exclude_styling
       facet_value.gsub('class="selected"', "class=\"selected #{exclude_class}\"").html_safe # rubocop:disable Rails/OutputSafety
     end
 
     private
+
+    def excluded_facet_item?
+      @facet_item.respond_to?(:excluded_facet_item?) && @facet_item.excluded_facet_item?
+    end
 
     def exclude_filter_icon
       return '' unless @facet_item.facet_config.excludable

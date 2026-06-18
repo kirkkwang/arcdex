@@ -23,15 +23,15 @@ module Blacklight
       view_context.search_action_path(path.filter(excluded_key).remove(facet_item))
     end
 
+    def excluded_facet_item?
+      search_state.params.dig(:f, "-#{facet_config.key}")&.include?(value.to_s)
+    end
+
     private
 
     def add_exclude_href(path_options = {})
       negated_facet_config_key = '-' + facet_config.key
       view_context.search_action_path(search_state.add_facet_params_and_redirect(negated_facet_config_key, facet_item).merge(path_options))
-    end
-
-    def excluded_facet_item?
-      search_state.params.dig(:f, "-#{facet_config.key}")&.include?(value.to_s)
     end
   end
 end

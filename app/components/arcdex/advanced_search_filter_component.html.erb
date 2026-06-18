@@ -8,12 +8,12 @@
           style="width: 142px;"
           data-action="change->advanced-search#updateOperator"
           <%= excludable? ? nil : 'disabled' %>>
-    <option value="inclusive"><%= t('blacklight.advanced_search.form.inclusive') %></option>
-    <option value="excludes"><%= t('blacklight.advanced_search.form.excludes') %></option>
+    <option value="inclusive" <%= 'selected' unless excluded? %>><%= t('blacklight.advanced_search.form.inclusive') %></option>
+    <option value="excludes" <%= 'selected' if excluded? %>><%= t('blacklight.advanced_search.form.excludes') %></option>
   </select>
 
   <div class="flex-grow-1">
-    <select name="f_inclusive[<%= @facet_field.key %>][]"
+    <select name="<%= filter_field_name %>"
             class="form-select invisible"
             data-advanced-search-target="filterSelect"
             data-facet-key="<%= @facet_field.key %>"

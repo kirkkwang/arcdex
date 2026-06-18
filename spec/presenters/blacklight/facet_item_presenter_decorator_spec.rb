@@ -47,6 +47,24 @@ RSpec.describe Blacklight::FacetItemPresenterDecorator do
     end
   end
 
+  describe '#excluded_facet_item?' do
+    context 'when the value is in the exclude bucket' do
+      let(:search_state) { Blacklight::SearchState.new({ f: { '-rarity' => ['Rare'] } }, blacklight_config) }
+
+      it 'is true' do
+        expect(presenter).to be_excluded_facet_item
+      end
+    end
+
+    context 'when the value is only an inclusive filter' do
+      let(:search_state) { Blacklight::SearchState.new({ f_inclusive: { 'rarity' => ['Rare'] } }, blacklight_config) }
+
+      it 'is falsey' do
+        expect(presenter).not_to be_excluded_facet_item
+      end
+    end
+  end
+
   describe '#selected?' do
     context 'when the facet is not selected' do
       let(:search_state) { Blacklight::SearchState.new({}, blacklight_config) }

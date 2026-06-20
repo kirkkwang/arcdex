@@ -45,6 +45,31 @@ RSpec.describe Arcdex::Bulbapedia::Wikitext do
       expect(described_class.clean('Iron Bundle {{TCGP Icon|ex}}')).to eq('Iron Bundle ex')
     end
 
+    it 'strips TCG abilities' do
+      expect(described_class.clean('The Defending Pokémon loses all {{TCG|Ability|Abilities}}.'))
+        .to eq('The Defending Pokémon loses all Abilities.')
+    end
+
+    it 'strips TCG ID' do
+      expect(described_class.clean('If {{TCG ID|Crimson Blaze|Quick-Grow Extract|67}} is in your discard pile'))
+        .to eq('If Quick-Grow Extract is in your discard pile')
+    end
+
+    it 'strips cat' do
+      expect(
+        described_class
+        .clean(
+          'If 1 of your Pokémon used {{cat|TCG Pocket cards with Sweets Relay|Sweets Relay}} during your last turn'
+          )
+        )
+        .to eq('If 1 of your Pokémon used Sweets Relay during your last turn')
+    end
+
+    it 'strips DL' do
+      expect(described_class.clean('If you have Arceus or {{DL|Arceus (TCG Pocket)|Arceus ex}} in play'))
+        .to eq('If you have Arceus or Arceus ex in play')
+    end
+
     it 'returns nil for blank values' do
       expect(described_class.clean('')).to be_nil
       expect(described_class.clean(nil)).to be_nil

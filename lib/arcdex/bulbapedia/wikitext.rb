@@ -117,13 +117,17 @@ module Arcdex
 
         text = value.dup
         text.gsub!(/\{\{e\|([^}|]+)\}\}/i, '\1') # energy
-        text.gsub!(/\{\{TCGP Icon\|([^}|]+)\}\}/i, '\1') # {{TCGP Icon|ex}} -> ex
         text.gsub!(/\{\{(?:TCGP|TCG|ct|m|p|g|DL)\|([^}|]+)\}\}/i, '\1') # link-ish templates
         text.gsub!(/\[\[[^\]|]*\|([^\]]+)\]\]/, '\1') # [[target|label]] -> label
         text.gsub!(/\[\[([^\]]+)\]\]/, '\1') # [[label]] -> label
         text.gsub!(/'''?/, '') # bold/italic
         text.gsub!(/<[^>]+>/, '') # stray html tags
         text.gsub!(/\s+/, ' ') # collapse whitespace
+        text.gsub!(/\{\{(.+?)\}\}/) do # strips handlebars
+          parts = $1.split('|')
+          parts.first == 'TCG ID' ? parts[2] : parts.last
+        end
+
         text = text.strip
         text.empty? ? nil : text
       end

@@ -1,6 +1,6 @@
 module Arcdex
   class CardViewComponent < Arcdex::UpperMetadataLayoutComponent
-    delegate :id, :image_url, to: :document
+    delegate :id, :image_url, :flavor_text_html, to: :document
 
     def image
       content_tag :img, nil,
@@ -16,6 +16,10 @@ module Arcdex
 
     def viewer
       render Arcdex::MiradorViewerComponent.new(id:)
+    end
+
+    def flavor_text
+      flavor_text_html.html_safe # rubocop:disable Rails/OutputSafety
     end
   end
 end

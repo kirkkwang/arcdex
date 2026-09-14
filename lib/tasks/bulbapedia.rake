@@ -118,5 +118,12 @@ namespace :arcdex do
 
     output_path.write(JSON.pretty_generate(set_json))
     puts "   💾 saved #{card_count} cards → #{output_path.relative_path_from(Rails.root)}"
+
+    # A set whose page is still filling in saves short; say so, because the file
+    # records the full upstream total and otherwise looks complete on disk.
+    total = set_json['total'].to_i
+    return unless total.positive? && card_count < total
+
+    puts "   ⚠️  partial harvest for #{set_code}: #{card_count} of #{total} cards; sync will re-pull until complete."
   end
 end

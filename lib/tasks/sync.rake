@@ -65,14 +65,16 @@ namespace :arcdex do
     end
   end
 
-  # Both sources persist their upstream `total`, so an unchanged set compares
-  # equal and is skipped; a missing file or a higher upstream total triggers a pull.
+  # Compare the upstream total against the cards actually on disk, not the
+  # `total` the pull recorded: a set harvested while its Bulbapedia page was
+  # still incomplete stores the full upstream total beside a short card list,
+  # which would compare equal and never re-pull.
   def needs_pull?(id, path, upstream_total) # rubocop:disable Rake/MethodDefinitionInTask
     return true if forced?(id)
     return true unless path.exist?
 
     stored = JSON.parse(path.read)
-    have = stored['total'] || stored['totalCount'] || stored['cards']&.size || 0
+    have = (stored['cards'] || stored['data'])&.size || 0
     upstream_total.to_i > have.to_i
   end
 

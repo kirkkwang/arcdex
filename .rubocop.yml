@@ -11,7 +11,7 @@ AllCops:
   Exclude:
     - "gems/**/*"
     - "db/**/*"
-  TargetRubyVersion: 3.4.3
+  TargetRubyVersion: 4.0
 
 Style/StringLiterals:
   EnforcedStyle: single_quotes

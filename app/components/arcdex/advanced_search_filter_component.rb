@@ -1,5 +1,5 @@
 module Arcdex
-  class AdvancedSearchFilterComponent < ::Blacklight::FacetFieldCheckboxesComponent
+  class AdvancedSearchFilterComponent < ::Blacklight::Facets::CheckboxesComponent
     MISSING_PARAM = ::Blacklight::Engine.config.blacklight.facet_missing_param
 
     def facet_field_id

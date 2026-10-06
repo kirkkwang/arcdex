@@ -33,14 +33,14 @@ module Arcdex
 
         @set_id = params[:id]
         @start_id = nil
-        @documents = search_service.repository.search(query).documents
+        @documents = search_service.repository.search(params: query).documents
         @documents.sort_by! { |doc| ids.index(doc.id) || Float::INFINITY }
         @from_bookmarks = true
       else
         @set_id = normalized_set_id
         @start_id = params[:id]
         @documents = search_service.repository.search(
-          { q: "parent_ids_ssim:\"#{@set_id}\"", sort: 'sort_ssi asc', rows: 1_000 }
+          params: { q: "parent_ids_ssim:\"#{@set_id}\"", sort: 'sort_ssi asc', rows: 1_000 }
         ).documents
       end
     end

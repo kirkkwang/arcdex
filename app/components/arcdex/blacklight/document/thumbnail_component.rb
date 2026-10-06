@@ -1,10 +1,10 @@
-# OVERRIDE Blacklight v8.11.0 to render custom thumbnail with zoomable image
+# OVERRIDE Blacklight v9.2.1 to render custom thumbnail with zoomable image
 
 module Arcdex
   module Blacklight
     module Document
       class ThumbnailComponent < ::Blacklight::Document::ThumbnailComponent
-        attr_reader :document
+        delegate :document, to: :presenter
         delegate :id, :thumbnail_url, to: :document
 
         def thumbnail_image

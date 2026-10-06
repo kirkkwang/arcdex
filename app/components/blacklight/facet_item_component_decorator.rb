@@ -1,4 +1,4 @@
-# OVERRIDE Blacklight v8.9.0 to support exclude facets by adding a link/icon for users
+# OVERRIDE Blacklight v9.2.1 to support exclude facets by adding a link/icon for users
 #   to click on the exclude certains results
 
 module Blacklight
@@ -20,11 +20,12 @@ module Blacklight
     end
 
     def render_selected_facet_value
-      facet_value = super
-      return facet_value unless excluded_facet_item?
+      return super unless excluded_facet_item?
 
       exclude_class = helpers.blacklight_config.view_config.constraints_component_exclude_styling
-      facet_value.gsub('class="selected"', "class=\"selected #{exclude_class}\"").html_safe # rubocop:disable Rails/OutputSafety
+      selected_value = render(Blacklight::Facets::SelectedValueComponent.new(label:, href:))
+      concat selected_value.sub('class="selected"', "class=\"selected #{exclude_class}\"").html_safe # rubocop:disable Rails/OutputSafety
+      concat render_facet_count(classes: ['selected'])
     end
 
     private
@@ -41,4 +42,4 @@ module Blacklight
   end
 end
 
-Blacklight::FacetItemComponent.prepend(Blacklight::FacetItemComponentDecorator)
+Blacklight::Facets::ItemComponent.prepend(Blacklight::FacetItemComponentDecorator)

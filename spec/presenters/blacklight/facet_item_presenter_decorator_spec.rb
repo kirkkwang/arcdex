@@ -23,14 +23,6 @@ RSpec.describe Blacklight::FacetItemPresenterDecorator do
            blacklight_config: blacklight_config)
   end
 
-  describe '#classes' do
-    let(:search_state) { Blacklight::SearchState.new({}, blacklight_config) }
-
-    it 'returns an empty string' do
-      expect(presenter.classes).to eq('')
-    end
-  end
-
   describe '#exclude_href' do
     let(:search_state) { Blacklight::SearchState.new({}, blacklight_config) }
 

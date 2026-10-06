@@ -36,7 +36,7 @@ module Arcdex
             }
           else
             # Standard JSON response
-            @presenter = Blacklight::JsonPresenter.new(@response, blacklight_config)
+            @presenter = json_presenter(@response)
           end
         end
         additional_response_formats(format)

@@ -67,9 +67,9 @@ group :development do
 end
 
 gem 'benchmark', require: false
-gem 'arclight'
+gem 'arclight', github: 'projectblacklight/arclight', branch: 'main'
 # gem 'blacklight', path: 'gems/blacklight'
-gem 'blacklight-gallery'
+gem 'blacklight-gallery', github: 'projectblacklight/blacklight-gallery', branch: 'main'
 gem 'blacklight_range_limit'
 gem 'blacklight_advanced_search'
 group :development, :test do

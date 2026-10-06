@@ -16,7 +16,7 @@ RSpec.describe Blacklight::FacetItemComponentDecorator, type: :component do
   let(:excludable_facet_config) { blacklight_config.facet_fields['rarity'] }
   let(:non_excludable_facet_config) { blacklight_config.facet_fields['supertype'] }
 
-  # Blacklight 8.12.3+ calls label, hits, href, and selected? in FacetItemComponent#initialize.
+  # Blacklight 8.12.3+ calls label, hits, href, and selected? in Facets::ItemComponent#initialize.
   # facet_item_presenter uses dynamically-added decorator methods not defined on the base class.
   def build_facet_item_double(facet_config:, exclude_href:, selected: false, hits: nil, excluded: false)
     instance_double(Blacklight::FacetItemPresenter,
@@ -36,7 +36,7 @@ RSpec.describe Blacklight::FacetItemComponentDecorator, type: :component do
     end
 
     it 'sets exclude_href from the facet_item presenter' do
-      component = Blacklight::FacetItemComponent.new(facet_item: facet_item_presenter)
+      component = Blacklight::Facets::ItemComponent.new(facet_item: facet_item_presenter)
       expect(component.exclude_href).to eq('/catalog?f[-rarity][]=Rare')
     end
   end
@@ -49,12 +49,12 @@ RSpec.describe Blacklight::FacetItemComponentDecorator, type: :component do
       end
 
       it 'renders a link with the exclude-facet-link class' do
-        rendered = render_inline(Blacklight::FacetItemComponent.new(facet_item: facet_item_presenter))
+        rendered = render_inline(Blacklight::Facets::ItemComponent.new(facet_item: facet_item_presenter))
         expect(rendered).to have_css('a.exclude-facet-link')
       end
 
       it 'renders the exclude icon' do
-        rendered = render_inline(Blacklight::FacetItemComponent.new(facet_item: facet_item_presenter))
+        rendered = render_inline(Blacklight::Facets::ItemComponent.new(facet_item: facet_item_presenter))
         expect(rendered).to have_css('span.exclude-facet-icon')
       end
     end
@@ -66,22 +66,14 @@ RSpec.describe Blacklight::FacetItemComponentDecorator, type: :component do
       end
 
       it 'does not render the exclude icon' do
-        rendered = render_inline(Blacklight::FacetItemComponent.new(facet_item: facet_item_presenter))
+        rendered = render_inline(Blacklight::Facets::ItemComponent.new(facet_item: facet_item_presenter))
         expect(rendered).to have_no_css('span.exclude-facet-icon')
       end
     end
   end
 
   describe '#render_selected_facet_value' do
-    # helpers in ViewComponent uses dynamically composed view context;
-    # allow_any_instance_of is the only practical way to stub it across render_inline
-    before do
-      view_config = double('view_config', constraints_component_exclude_styling: exclude_class) # rubocop:disable RSpec/VerifiedDoubles
-      bl_config = double('bl_config', view_config: view_config) # rubocop:disable RSpec/VerifiedDoubles
-      allow_any_instance_of(Blacklight::FacetItemComponent).to receive(:helpers) do |_instance| # rubocop:disable RSpec/AnyInstance
-        double('helpers', blacklight_config: bl_config, t: 'Remove') # rubocop:disable RSpec/VerifiedDoubles
-      end
-    end
+    before { allow(vc_test_controller).to receive(:blacklight_config).and_return(blacklight_config) }
 
     context 'when the facet item is an excluded facet item' do
       let(:facet_item_presenter) do
@@ -92,8 +84,8 @@ RSpec.describe Blacklight::FacetItemComponentDecorator, type: :component do
       end
 
       it 'adds the exclude class to the selected span' do
-        rendered = render_inline(Blacklight::FacetItemComponent.new(facet_item: facet_item_presenter))
-        expect(rendered.to_html).to include(exclude_class)
+        rendered = render_inline(Blacklight::Facets::ItemComponent.new(facet_item: facet_item_presenter))
+        expect(rendered).to have_css("span.selected.#{exclude_class}", count: 1)
       end
     end
 
@@ -106,7 +98,7 @@ RSpec.describe Blacklight::FacetItemComponentDecorator, type: :component do
       end
 
       it 'does not add the exclude class to the selected span' do
-        rendered = render_inline(Blacklight::FacetItemComponent.new(facet_item: facet_item_presenter))
+        rendered = render_inline(Blacklight::Facets::ItemComponent.new(facet_item: facet_item_presenter))
         expect(rendered.to_html).not_to include(exclude_class)
       end
     end

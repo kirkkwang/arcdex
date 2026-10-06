@@ -1,15 +1,10 @@
-# OVERRIDE Blacklight v8.9.0 to support exclude facets by adding the exclude href to
-#   the link/icon of the terms.  Also adding the classes method so downstream presenters
-#   can override and use it.
+# OVERRIDE Blacklight v9.2.1 to support exclude facets by adding the exclude href to
+#   the link/icon of the terms.
 
 module Blacklight
   module FacetItemPresenterDecorator
     def exclude_href(path_options = {})
       add_exclude_href(path_options)
-    end
-
-    def classes
-      ''
     end
 
     def selected?

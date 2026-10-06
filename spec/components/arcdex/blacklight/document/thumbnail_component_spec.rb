@@ -12,7 +12,8 @@ RSpec.describe Arcdex::Blacklight::Document::ThumbnailComponent do
     )
   end
 
-  let(:component) { described_class.allocate.tap { |c| c.instance_variable_set(:@document, document) } }
+  let(:presenter) { double('presenter', document: document) } # rubocop:disable RSpec/VerifiedDoubles
+  let(:component) { described_class.allocate.tap { |c| c.instance_variable_set(:@presenter, presenter) } }
 
   describe '#thumbnail_image' do
     before do

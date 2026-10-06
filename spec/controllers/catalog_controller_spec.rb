@@ -43,13 +43,7 @@ RSpec.describe CatalogController do
     end
 
     context 'with standard JSON request (no infinite_scroll)' do
-      # Arcdex::Blacklight is defined by component files, causing Blacklight::JsonPresenter
-      # inside Arcdex::InfiniteScrollable to resolve as Arcdex::Blacklight::JsonPresenter.
-      # Stub the constant to work around this namespace collision.
-      before do
-        stub_const('Arcdex::Blacklight::JsonPresenter', Class.new { def initialize(*args); end })
-        get :index, format: :json
-      end
+      before { get :index, format: :json }
 
       it 'returns a successful JSON response' do
         expect(response).to have_http_status(:ok)

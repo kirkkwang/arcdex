@@ -18,10 +18,15 @@ RSpec.describe Blacklight::ConstraintsComponentDecorator, type: :component do
     double('helpers', # rubocop:disable RSpec/VerifiedDoubles
            blacklight_config: blacklight_config,
            search_action_path: '/catalog',
-           search_state: search_state)
+           search_state: search_state,
+           facet_field_presenter: facet_field_presenter)
   end
 
-  describe '#facet_item_presenters' do
+  let(:facet_field_presenter) do
+    double('facet_field_presenter', label: 'Rarity', item_presenter: instance_double(Blacklight::FacetItemPresenter)) # rubocop:disable RSpec/VerifiedDoubles
+  end
+
+  describe '#constraint_presenters' do
     context 'with no facet filters' do
       let(:search_state) { Blacklight::SearchState.new({}, blacklight_config) }
       let(:component) { Blacklight::ConstraintsComponent.new(search_state: search_state) }
@@ -29,7 +34,7 @@ RSpec.describe Blacklight::ConstraintsComponentDecorator, type: :component do
       before { allow(component).to receive(:helpers).and_return(mock_helpers) }
 
       it 'yields no presenters' do
-        presenters = component.send(:facet_item_presenters).to_a
+        presenters = component.send(:constraint_presenters).to_a
         expect(presenters).to be_empty
       end
     end
@@ -41,7 +46,7 @@ RSpec.describe Blacklight::ConstraintsComponentDecorator, type: :component do
       before { allow(component).to receive(:helpers).and_return(mock_helpers) }
 
       it 'yields a regular facet item presenter' do
-        presenters = component.send(:facet_item_presenters).to_a
+        presenters = component.send(:constraint_presenters).to_a
         expect(presenters).not_to be_empty
       end
     end
@@ -52,10 +57,11 @@ RSpec.describe Blacklight::ConstraintsComponentDecorator, type: :component do
 
       before { allow(component).to receive(:helpers).and_return(mock_helpers) }
 
-      it 'yields an ExcludeFacetItemPresenter' do
-        presenters = component.send(:facet_item_presenters).to_a
+      it 'yields a constraint presenter wrapping an ExcludeFacetItemPresenter' do
+        presenters = component.send(:constraint_presenters).to_a
         expect(presenters.length).to eq(1)
-        expect(presenters.first).to be_a(Arcdex::ExcludeFacetItemPresenter)
+        expect(presenters.first.facet_item_presenter).to be_a(Arcdex::ExcludeFacetItemPresenter)
+        expect(presenters.first.field_label).to eq('Rarity')
       end
     end
 
@@ -65,10 +71,10 @@ RSpec.describe Blacklight::ConstraintsComponentDecorator, type: :component do
 
       before { allow(component).to receive(:helpers).and_return(mock_helpers) }
 
-      it 'yields one ExcludeFacetItemPresenter per excluded value' do
-        presenters = component.send(:facet_item_presenters).to_a
+      it 'yields one exclude constraint presenter per excluded value' do
+        presenters = component.send(:constraint_presenters).to_a
         expect(presenters.length).to eq(2)
-        expect(presenters).to all(be_a(Arcdex::ExcludeFacetItemPresenter))
+        expect(presenters.map(&:facet_item_presenter)).to all(be_a(Arcdex::ExcludeFacetItemPresenter))
       end
     end
 
@@ -79,7 +85,7 @@ RSpec.describe Blacklight::ConstraintsComponentDecorator, type: :component do
       before { allow(component).to receive(:helpers).and_return(mock_helpers) }
 
       it 'yields an inclusive facet item presenter' do
-        presenters = component.send(:facet_item_presenters).to_a
+        presenters = component.send(:constraint_presenters).to_a
         expect(presenters).not_to be_empty
       end
     end

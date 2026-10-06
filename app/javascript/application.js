@@ -3,7 +3,7 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import * as bootstrap from "bootstrap"
 import githubAutoCompleteElement from "@github/auto-complete-element"
-import Blacklight from "blacklight"
+import Blacklight from "blacklight-frontend"
 
 import "arclight"
 import BlacklightRangeLimit from "blacklight-range-limit";

@@ -1,4 +1,4 @@
-<%# OVERRIDE Blacklight v8.12.1 to add infinite scroll support %>
+<%# OVERRIDE Blacklight v9.2.1 to add infinite scroll support %>
 
 <% @page_title = t('blacklight.bookmarks.page_title', :application_name => application_name) %>
 
@@ -15,7 +15,7 @@
   <% else %>
     <%= render 'sort_and_per_page' %>
     <%= render partial: 'tools', locals: { document_list: @response.documents } %>
-    <h2 class='section-heading sr-only visually-hidden'><%= t('blacklight.bookmarks.list_title') %></h2>
+    <h2 class='section-heading visually-hidden'><%= t('blacklight.bookmarks.list_title') %></h2>
     <%# OVERRIDE begin %>
     <div data-controller="scroll-position infinite-scroll"
          data-infinite-scroll-url-value="<%= url_for(search_state.to_h.merge(only_path: true)) %>"

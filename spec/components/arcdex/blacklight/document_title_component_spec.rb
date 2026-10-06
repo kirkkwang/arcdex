@@ -4,7 +4,8 @@ require 'rails_helper'
 
 RSpec.describe Arcdex::Blacklight::DocumentTitleComponent do
   let(:document) { double('document', title: 'Charizard', id: 'base-4') } # rubocop:disable RSpec/VerifiedDoubles
-  let(:component) { described_class.allocate.tap { |c| c.instance_variable_set(:@document, document) } }
+  let(:presenter) { double('presenter', document: document) } # rubocop:disable RSpec/VerifiedDoubles
+  let(:component) { described_class.allocate.tap { |c| c.instance_variable_set(:@presenter, presenter) } }
 
   describe '#title' do
     before do

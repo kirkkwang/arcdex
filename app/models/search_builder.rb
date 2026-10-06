@@ -19,7 +19,7 @@ class SearchBuilder < Blacklight::SearchBuilder
 
   # Adding logic to alter the fq to exclude facets using the '-' (NOT) operator
   def exclude_facets(solr_parameters)
-    f = blacklight_params[:f]&.select { |key, _| key.starts_with?('-') }
+    f = search_state.params[:f]&.select { |key, _| key.starts_with?('-') }
     return if f.blank?
 
     queries = []

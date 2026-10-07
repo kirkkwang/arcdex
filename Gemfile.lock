@@ -455,9 +455,9 @@ GEM
       railties (>= 7.0)
     retriable (5.0.1)
     rexml (3.4.4)
-    rsolr (2.6.0)
+    rsolr (3.0.0)
       builder (>= 2.1.2)
-      faraday (>= 0.9, < 3, != 2.0.0)
+      faraday (>= 1.0, < 3)
     rspec-core (3.13.6)
       rspec-support (~> 3.13.0)
     rspec-expectations (3.13.5)
@@ -669,7 +669,7 @@ DEPENDENCIES
   rails (~> 8.1)
   rails-controller-testing
   request_store
-  rsolr (>= 1.0, < 3)
+  rsolr (>= 1.0, < 4)
   rspec-rails
   rubocop-capybara
   rubocop-factory_bot

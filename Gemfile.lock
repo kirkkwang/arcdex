@@ -13,7 +13,7 @@ GIT
 
 GIT
   remote: https://github.com/projectblacklight/blacklight-gallery.git
-  revision: 1829c3edd2b8a78f17efc666da0352a9900e4569
+  revision: 3ee634811cc97d96685832d618c25182d8b1f8f1
   branch: main
   specs:
     blacklight-gallery (6.0.0)
@@ -154,7 +154,7 @@ GEM
     cssbundling-rails (1.4.3)
       railties (>= 6.0.0)
     csv (3.3.6)
-    date (3.5.1)
+    date (3.6.0)
     debug (1.11.1)
       irb (~> 1.10)
       reline (>= 0.3.8)
@@ -369,7 +369,7 @@ GEM
     popper_js (2.11.8)
     pp (0.6.4)
       prettyprint
-    prettyprint (0.2.0)
+    prettyprint (0.2.1)
     prism (1.9.0)
     propshaft (1.3.2)
       actionpack (>= 7.0.0)
@@ -602,7 +602,7 @@ GEM
     unicode-display_width (3.3.0)
       unicode-emoji (~> 4.3)
     unicode-emoji (4.3.0)
-    uri (1.1.1)
+    uri (1.1.2)
     useragent (0.16.11)
     version_gem (1.1.15)
     view_component (4.15.0)

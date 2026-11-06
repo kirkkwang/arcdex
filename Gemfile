@@ -75,7 +75,7 @@ gem 'blacklight_advanced_search'
 group :development, :test do
   gem 'solr_wrapper', '>= 0.3'
 end
-gem 'rsolr', '>= 1.0', '< 3'
+gem 'rsolr', '>= 1.0', '< 4'
 gem 'bootstrap', '~> 5.3'
 gem 'devise'
 gem 'devise-guests', '~> 0.8'

@@ -72,7 +72,7 @@ RSpec.describe BookmarksController do
       end
 
       it 'returns 422 unprocessable entity' do
-        expect(response).to have_http_status(:unprocessable_entity)
+        expect(response).to have_http_status(:unprocessable_content)
       end
     end
   end

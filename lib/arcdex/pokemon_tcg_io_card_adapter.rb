@@ -55,11 +55,11 @@ module Arcdex
     end
 
     def symbol_url
-      record.first.fetch('set', nil)&.fetch('images', nil)&.fetch('symbol', nil)
+      scrydex_set_image(record.first.fetch('set', nil)&.fetch('images', nil)&.fetch('symbol', nil))
     end
 
     def logo_url
-      record.first.fetch('set', nil)&.fetch('images', nil)&.fetch('logo', nil)
+      scrydex_set_image(record.first.fetch('set', nil)&.fetch('images', nil)&.fetch('logo', nil))
     end
 
     def id
@@ -239,6 +239,17 @@ module Arcdex
 
     def boosters
       nil # pokemontcg.io does not provide booster information
+    end
+
+    private
+
+    # pokemontcg.io moved its images to Scrydex, but newer sets (e.g. me6) still
+    # list set logos/symbols at images.pokemontcg.io, where they 404.
+    def scrydex_set_image(url)
+      match = url&.match(%r{\Ahttps://images\.pokemontcg\.io/([^/]+)/(logo|symbol)\.png\z})
+      return url unless match
+
+      "https://images.scrydex.com/pokemon/#{match[1]}-#{match[2]}/#{match[2]}"
     end
   end
 end

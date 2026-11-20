@@ -20,7 +20,9 @@ class SolrDocument
   end
 
   def master_set?
-    self['printed_total_isi'] < self['total_items_isi']
+    printed = self['printed_total_isi']
+    total = self['total_items_isi']
+    printed.present? && total.present? && printed < total
   end
 
   def master_set_count

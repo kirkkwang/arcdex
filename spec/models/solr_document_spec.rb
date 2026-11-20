@@ -28,6 +28,10 @@ RSpec.describe SolrDocument do
       doc = build_doc('printed_total_isi' => 102, 'total_items_isi' => 102)
       expect(doc.master_set?).to be false
     end
+
+    it 'returns false when the set has no printed total' do
+      expect(build_doc('total_items_isi' => 20).master_set?).to be false
+    end
   end
 
   describe '#master_set_count' do

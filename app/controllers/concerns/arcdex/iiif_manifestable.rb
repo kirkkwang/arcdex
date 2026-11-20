@@ -47,7 +47,7 @@ module Arcdex
 
     def normalized_set_id
       id = params[:id]
-      id[/\A(.+)-\d+\z/, 1] || id
+      id[/\A(.+)-_?\d+\z/, 1] || id
     end
   end
 end

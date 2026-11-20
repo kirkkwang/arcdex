@@ -29,10 +29,10 @@ module Arcdex
       "https://images.arcdex.dev/#{set_code}-booster-#{pack.parameterize}.webp"
     end
 
-    # a1-026 -> a1, promo-a-001 -> promo-a
+    # a1-026 -> a1, promo-a-001 -> promo-a, sp1-_1 -> sp1
     def set_code
       id = document.id.to_s
-      id[/\A(.+)-\d+\z/, 1] || id
+      id[/\A(.+)-_?\d+\z/, 1] || id
     end
 
     def image_tag(source, options = {})

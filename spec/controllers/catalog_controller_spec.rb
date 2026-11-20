@@ -93,4 +93,13 @@ RSpec.describe CatalogController do
       expect(response).to have_http_status(:ok)
     end
   end
+
+  describe 'Arcdex::IiifManifestable#normalized_set_id (private)' do
+    it 'derives the set from numbered and unnumbered card ids' do
+      { 'a1-026' => 'a1', 'promo-a-001' => 'promo-a', 'sp1-_1' => 'sp1' }.each do |id, set|
+        controller.params = ActionController::Parameters.new(id:)
+        expect(controller.send(:normalized_set_id)).to eq(set)
+      end
+    end
+  end
 end

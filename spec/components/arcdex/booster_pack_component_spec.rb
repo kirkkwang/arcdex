@@ -63,6 +63,14 @@ RSpec.describe Arcdex::BoosterPackComponent, type: :component do
         expect(component.send(:booster_image_url, 'Promo-A - Vol. 1')).to eq('https://images.arcdex.dev/promo-a-booster-vol-1.webp')
       end
     end
+
+    context 'with an unnumbered card' do
+      let(:document) { doc_in('sp1-_1', 'First Partners') }
+
+      it 'strips the _N suffix from the set code' do
+        expect(component.send(:booster_image_url, 'First Partners')).to eq('https://images.arcdex.dev/sp1-booster-first-partners.webp')
+      end
+    end
   end
 
   describe '#image_tag (private)' do

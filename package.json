@@ -5,7 +5,7 @@
     "@popperjs/core": "^2.11.8",
     "arclight": "github:projectblacklight/arclight#105af73da603b337b1f8fa54d76103f34e98350a",
     "autoprefixer": "^10.4.21",
-    "blacklight-frontend": "9.2.1",
+    "blacklight-frontend": "9.3.0",
     "bootstrap": "^5.3.5",
     "bootstrap-icons": "^1.11.3",
     "nodemon": "^3.1.10",

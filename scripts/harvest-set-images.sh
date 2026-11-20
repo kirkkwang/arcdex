@@ -142,8 +142,8 @@ try: print(json.load(sys.stdin)['parse']['wikitext']['*'])
 except Exception: print('')"
 }
 
-harvest_boosters() { # $1 = logo code (A1/PA), $2 = set name, $3 = code_lc
-  local logo_code="$1" name="$2" code_lc="$3" wt packs pack rc=0
+harvest_boosters() { # $1 = logo code (A1/PA), $2 = set name, $3 = code_lc, $4 = set logo file
+  local logo_code="$1" name="$2" code_lc="$3" logo_file="$4" wt packs pack rc=0
   wt="$(expansion_wikitext "${name} (TCG Pocket)")"
   [[ -n "$wt" ]] || { echo "    (no expansion page for boosters)" >&2; return 0; }
 
@@ -161,30 +161,34 @@ harvest_boosters() { # $1 = logo code (A1/PA), $2 = set name, $3 = code_lc
     done <<< "$packs"
   else
     # Single-booster sets have no per-pack art; the booster value is the set name.
-    harvest "${logo_code} Set Logo EN.png" "${code_lc}-booster-$(slug "$name").webp" || rc=1
+    harvest "$logo_file" "${code_lc}-booster-$(slug "$name").webp" || rc=1
   fi
   return "$rc"
 }
 
 # Harvest logo + symbol + boosters for one set. Returns non-zero if any failed.
 harvest_set() { # $1 = set code (as in the logo filename), $2 = set name
-  local code="$1" name="$2" canon logo_code code_lc name_us rc=0
-  # Promo logos are filed as "PA"/"PB", but ids + R2 keys follow the Drive
-  # (promo-a/promo-b). Canonicalize for the key; keep the raw code for the logo.
+  local code="$1" name="$2" canon logo_code logo_file code_lc name_us rc=0
+  # Promo logos are filed as "PA"/"PB"/"PC", but ids + R2 keys follow the Drive
+  # (promo-a/promo-b/promo-c). Canonicalize for the key; keep the raw code for the logo.
   case "$code" in
     PA | Promo-A | promo-a) canon="Promo-A"; logo_code="PA" ;;
     PB | Promo-B | promo-b) canon="Promo-B"; logo_code="PB" ;;
+    PC | Promo-C | promo-c) canon="Promo-C"; logo_code="PC" ;;
     *)                      canon="$code"; logo_code="$code" ;;
   esac
+  logo_file="${logo_code} Set Logo EN.png"
+  # Bulbapedia filed the Promo-C logo without the EN suffix.
+  [[ "$logo_code" == "PC" ]] && logo_file="PC Set Logo.png"
   code_lc="$(printf '%s' "$canon" | tr '[:upper:]' '[:lower:]')"
   # MediaWiki file titles drop ':' (namespace sep), so "Deluxe Pack: ex" ->
   # SetSymbolDeluxe_Pack_ex.png. Strip colons, then spaces -> underscores.
   name_us="${name//:/}"
   name_us="${name_us// /_}"
   echo "### ${code} — ${name} (R2: ${code_lc})"
-  harvest "${logo_code} Set Logo EN.png" "${code_lc}-logo.webp" || rc=1
+  harvest "$logo_file" "${code_lc}-logo.webp" || rc=1
   harvest "SetSymbol${name_us}.png" "${code_lc}-symbol.webp" || rc=1
-  harvest_boosters "$logo_code" "$name" "$code_lc" || rc=1
+  harvest_boosters "$logo_code" "$name" "$code_lc" "$logo_file" || rc=1
   return "$rc"
 }
 

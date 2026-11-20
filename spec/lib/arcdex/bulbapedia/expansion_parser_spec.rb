@@ -69,6 +69,22 @@ RSpec.describe Arcdex::Bulbapedia::ExpansionParser do
       expect(described_class.parse(wikitext)['id']).to eq('Promo-A')
     end
 
+    it 'canonicalizes the Promo-C logo, which has no EN suffix (PC -> Promo-C)' do
+      wikitext = "{{TCGPocketExpansionInfobox\n|setname=Promo-C\n|setlogo=PC Set Logo.png\n|cards=1\n}}"
+      expect(described_class.parse(wikitext)['id']).to eq('Promo-C')
+    end
+
+    it 'numbers unnumbered cards _1, _2, ... in list order to match the Drive filenames' do
+      wikitext = <<~WIKI
+        == Card list ==
+        | 027/027 || {{TCG ID|First Partners|Quaxly|27}} || {{TCG Icon|Water}} || {{Rar/TCGP|Diamond|1}}
+        | —/027 || {{TCG ID|First Partners|Mew|R}} || {{TCG Icon|Psychic}} || —
+        | —/027 || {{TCG ID|First Partners|Mew|G}} || {{TCG Icon|Psychic}} || —
+      WIKI
+      rows = described_class.parse(wikitext)['rows']
+      expect(rows.map { |r| [r['number'], r['local_number']] }).to eq([%w[027 27], %w[_1 R], %w[_2 G]])
+    end
+
     it 'ignores a {{TCG ID}} that is not a real table row (e.g. a footnote)' do
       wikitext = <<~WIKI
         == Card list ==

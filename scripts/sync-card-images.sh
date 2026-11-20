@@ -111,8 +111,9 @@ while IFS= read -r -d '' f; do
   base="$(basename "$f")"
   name="${base%.*}"   # strip extension
 
-  # only files that look like a card: "{SET}-{NUMBER}" (set may contain one hyphen, e.g. P-A)
-  if [[ ! "$name" =~ ^[A-Za-z0-9]+(-[A-Za-z0-9]+)?-[0-9]+$ ]]; then
+  # only files that look like a card: "{SET}-{NUMBER}" (set may contain one hyphen,
+  # e.g. P-A; unnumbered cards are "_1", "_2", ... e.g. SP1-_1)
+  if [[ ! "$name" =~ ^[A-Za-z0-9]+(-[A-Za-z0-9]+)?-_?[0-9]+$ ]]; then
     echo "  skip (not a card filename): $base"
     skipped_nomatch=$((skipped_nomatch + 1))
     continue

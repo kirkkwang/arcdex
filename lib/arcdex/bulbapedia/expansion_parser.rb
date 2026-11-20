@@ -15,7 +15,7 @@ module Arcdex
       # Bulbapedia files promo logos as "PA"/"PB", but the canonical id follows
       # the Google Drive image filenames (PROMO-A-### -> promo-a-###), so the set
       # code is "Promo-A"/"Promo-B" (also Bulbapedia's expansion page name).
-      PROMO_CODE_ALIASES = { 'PA' => 'Promo-A', 'PB' => 'Promo-B' }.freeze
+      PROMO_CODE_ALIASES = { 'PA' => 'Promo-A', 'PB' => 'Promo-B', 'PC' => 'Promo-C' }.freeze
 
       def self.parse(wikitext)
         new(wikitext).parse
@@ -71,6 +71,7 @@ module Arcdex
 
       # Rows from the "Card list" table only (avoids TCG ID links in Trivia, etc.).
       def rows
+        unnumbered = 0
         card_list_section.each_line.filter_map do |line|
           next unless line.include?('{{TCG ID|')
 
@@ -91,8 +92,13 @@ module Arcdex
           # `}}` anchor, so any extra params are ignored rather than dropping the match.
           rarity_m = line.match(/\{\{[Rr]ar\/TCGP\|([^|}]+)(?:\|([^|}]+))?/)
 
+          number = number_cell[1].split('/').first.strip # "001/074" -> "001"
+          # Unnumbered cards ("—/027", e.g. SP1's three Mew) take the Drive's
+          # "_1", "_2", ... names, in list order.
+          number = "_#{unnumbered += 1}" unless number.match?(/\A\d+\z/)
+
           {
-            'number' => number_cell[1].split('/').first.strip, # "001/074" -> "001"
+            'number' => number,
             'name' => id_m[2].strip,
             'local_number' => id_m[3].strip,
             'type' => type_m && type_m[1].strip,

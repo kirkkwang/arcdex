@@ -160,7 +160,7 @@ end
 to_field 'sort_ssi' do |record, accumulator|
   # the api doesn't necessarily return all cards in the right order
   # ex. in set 151, Ivysaur is first and Bulbasaur is second
-  accumulator << factory.call(record).number.to_s.rjust(8, '0')
+  accumulator << factory.call(record).sort_key
 end
 
 to_field 'artist_ssm', lambda { |record, accumulator| accumulator << factory.call(record).artist }

@@ -162,6 +162,10 @@ module Arcdex
       raise NoMethodError, 'Subclasses must implement the number method'
     end
 
+    def sort_key
+      number.to_s.rjust(8, '0')
+    end
+
     def artist
       raise NoMethodError, 'Subclasses must implement the artist method'
     end

@@ -46,6 +46,21 @@ RSpec.describe Arcdex::BulbapediaCardAdapter do
     end
   end
 
+  describe 'sorting and numbering' do
+    def adapter_for(number)
+      described_class.new('_source' => 'bulbapedia', 'id' => "SP1-#{number}", 'number' => number)
+    end
+
+    it 'sorts unnumbered cards after numbered ones, in list order' do
+      keys = %w[_2 027 _1 001].map { |n| adapter_for(n).sort_key }
+      expect(keys.sort).to eq(%w[00000001 00000027 ~_1 ~_2])
+    end
+
+    it 'shows unnumbered cards with a dash, like Bulbapedia' do
+      expect(adapter_for('_1').number).to eq('—')
+    end
+  end
+
   describe 'a promo card record' do
     subject(:adapter) do
       described_class.new('_source' => 'bulbapedia', 'id' => 'Promo-A-074', 'number' => '074',

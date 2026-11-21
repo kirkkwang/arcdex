@@ -176,7 +176,16 @@ module Arcdex
     end
 
     def number
-      record['number'].to_i
+      unnumbered? ? '—' : record['number'].to_i
+    end
+
+    # Unnumbered cards ("_1", "_2", ...) sort after the numbered ones, as on Bulbapedia.
+    def sort_key
+      unnumbered? ? "~#{record['number']}" : super
+    end
+
+    def unnumbered?
+      record['number'].to_s.start_with?('_')
     end
 
     def artist

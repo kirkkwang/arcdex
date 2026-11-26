@@ -13,6 +13,10 @@ en:
         must: 'Contains all'
         should: 'Contains any'
     application_name: 'Arcdex'
+    search:
+      facets:
+        sort:
+          release: 'Release Date Sort'
     bookmarks:
       no_bookmarks: You have no cards bookmarked
       view_on_search_results: View on Search Results

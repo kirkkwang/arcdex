@@ -65,6 +65,18 @@ class SearchBuilder < Blacklight::SearchBuilder
     super
   end
 
+  # OVERRIDE Blacklight v9.3.0: the facet modal passes sort: nil when no sort is chosen, which would
+  # replace the facet's configured json sort. JSON facets also default to 10 values when no limit is
+  # sent (classic facets return them all), which would truncate the advanced search dropdowns.
+  # Upstream names the JSON facet by its config key, but the sidebar, modal and advanced form all
+  # look up response.aggregations by the Solr field, so name it by the field instead.
+  def add_solr_facet_json_params(solr_parameters, field_name, facet, **additional_parameters)
+    super(solr_parameters, field_name, facet, **additional_parameters.compact)
+    json_facet = solr_parameters[:json][:facet].delete(field_name)
+    json_facet[:limit] ||= -1
+    solr_parameters[:json][:facet][facet.field] = json_facet
+  end
+
   private
 
   def solr_field_for(key)

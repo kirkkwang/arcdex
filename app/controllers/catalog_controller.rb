@@ -101,6 +101,7 @@ class CatalogController < ApplicationController
     config.index.search_bar_component = Arcdex::Arclight::SearchBarComponent
     config.index.thumbnail_field = 'thumbnail_path_ssi'
     config.index.thumbnail_component = Arcdex::Blacklight::Document::ThumbnailComponent
+    config.index.facet_pagination_component = Arcdex::Blacklight::FacetFieldPaginationComponent
 
     # solr field configuration for document/show views
     # config.show.title_field = 'title_display'
@@ -157,11 +158,13 @@ class CatalogController < ApplicationController
     #  across a large set of results)
     # :index_range can be an array or range of prefixes that will be used to create the navigation
     #  (note: It is case sensitive when searching values)
+    # Solr's JSON Facet API can sort values by a stat, so these list the newest release first
+    newest_release_first = { sort: 'release desc', facet: { release: 'max(release_date_sort)' } }.freeze
     config.add_facet_field 'game', field: 'game_ssi', limit: 10, collapse: false, excludable: true, advanced_search_component: Arcdex::AdvancedSearchFilterComponent
-    config.add_facet_field 'booster_packs', field: 'boosters_ssm', limit: 10, excludable: true, advanced_search_component: Arcdex::AdvancedSearchFilterComponent
+    config.add_facet_field 'booster_packs', field: 'boosters_ssm', limit: 10, excludable: true, json: newest_release_first, advanced_search_component: Arcdex::AdvancedSearchFilterComponent
     config.add_facet_field 'Category', field: 'level_ssim', limit: 10, excludable: true, advanced_search_component: Arcdex::AdvancedSearchFilterComponent
-    config.add_facet_field 'series', field: 'series_ssm', limit: 10, excludable: true, advanced_search_component: Arcdex::AdvancedSearchFilterComponent
-    config.add_facet_field 'set', field: 'collection_ssim', limit: 10, excludable: true, advanced_search_component: Arcdex::AdvancedSearchFilterComponent
+    config.add_facet_field 'series', field: 'series_ssm', limit: 10, excludable: true, json: newest_release_first, advanced_search_component: Arcdex::AdvancedSearchFilterComponent
+    config.add_facet_field 'set', field: 'collection_ssim', limit: 10, excludable: true, json: newest_release_first, advanced_search_component: Arcdex::AdvancedSearchFilterComponent
     config.add_facet_field 'regulation_mark', field: 'regulation_mark_ssi', limit: 10, excludable: true, advanced_search_component: Arcdex::AdvancedSearchFilterComponent
     config.add_facet_field 'rarity', field: 'rarity_ssm', limit: 10, excludable: true, advanced_search_component: Arcdex::AdvancedSearchFilterComponent
     config.add_facet_field 'national pokex no.', field: 'national_pokedex_numbers_isim', range: true, range_config: {

@@ -95,4 +95,33 @@ RSpec.describe SearchBuilder do
       expect(result).not_to be_nil
     end
   end
+
+  describe '#add_solr_facet_json_params' do
+    let(:set_facet) { blacklight_config.facet_fields['set'] }
+
+    it 'keeps the configured release date sort when the caller passes a nil sort' do
+      solr_params = {}
+      build.add_solr_facet_json_params(solr_params, 'set', set_facet, limit: 21, sort: nil)
+      expect(solr_params[:json][:facet]['collection_ssim']).to include(sort: 'release desc', limit: 21)
+    end
+
+    it 'names the json facet by its solr field so response aggregations line up with the config' do
+      solr_params = {}
+      build.add_solr_facet_json_params(solr_params, 'set', set_facet)
+      expect(solr_params[:json][:facet].keys).to eq(['collection_ssim'])
+    end
+
+    it 'lets an explicit sort replace the configured one' do
+      solr_params = {}
+      build.add_solr_facet_json_params(solr_params, 'set', set_facet, sort: 'index')
+      expect(solr_params[:json][:facet]['collection_ssim'][:sort]).to eq('index')
+    end
+
+    it 'asks for every value when there is no limit, as on the advanced search form' do
+      advanced_scope = double('scope', blacklight_config:, action_name: 'advanced_search') # rubocop:disable RSpec/VerifiedDoubles
+      solr_params = {}
+      described_class.new(advanced_scope).with({}).add_solr_facet_json_params(solr_params, 'set', set_facet)
+      expect(solr_params[:json][:facet]['collection_ssim'][:limit]).to eq(-1)
+    end
+  end
 end
